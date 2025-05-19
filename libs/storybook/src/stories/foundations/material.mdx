@@ -1,0 +1,198 @@
+import { Meta, Markdown, ColorItem, ColorPalette } from '@storybook/blocks';
+
+<Meta title="Foundations/Material" />
+
+# Material
+
+> The My Health belgium.be design kit is built upon Angular Material, using the framework's extensive excellent accessibility and design features.
+> Our design kit overrules Angular Material to push forward our own design, while taking advantage of these features.
+
+## Color palette
+
+The color palette used by MyHealth adheres to the [Material Design color system](https://m3.material.io/styles/color/system/overview), with a few custom colors added.
+
+The colors improted into Angular Material are primary, secondary, tertiary, neutral and warning.
+The success and error colors are not imported into Angular Material, as the system does not use these, though they are still used in the design kit.
+
+<ColorPalette>
+  <ColorItem
+    title="Primary"
+    subtitle="Primary color blue (0 - 100)"
+    colors={{
+      0: '#000000',
+      10: '#040c16',
+      20: '#07172c',
+      25: '#0e2e58',
+      30: '#164583',
+      35: '#1d5caf',
+      40: '#2473db',
+      50: '#3e84df',
+      60: '#5d98e4',
+      70: '#77a8e9',
+      80: '#91b9ed',
+      90: '#accaf1',
+      95: '#caddf6',
+      98: '#e5eefb',
+      99: '#f2f7fd',
+      100: '#ffffff',
+    }}
+  />
+  <ColorItem
+    title="Secondary"
+    subtitle="Secondary color green (0 - 100)"
+    colors={{
+      0: '#000000',
+      10: '#05150e',
+      20: '#0a2e1e',
+      25: '#145c3c',
+      30: '#1d8657',
+      35: '#27b475',
+      40: '#3fd591',
+      50: '#58daa0',
+      60: '#71e0ae',
+      70: '#86e4ba',
+      80: '#9feac8',
+      90: '#b8efd6',
+      95: '#d1f5e5',
+      98: '#e6faf1',
+      99: '#f2fcf8',
+      100: '#ffffff',
+    }}
+  />
+  <ColorItem
+    title="Tertiary"
+    subtitle="Tertiary color yellow (0 - 100)"
+    colors={{
+      0: '#000000',
+      10: '#191600',
+      20: '#332b00',
+      25: '#665700',
+      30: '#998200',
+      35: '#ccad00',
+      40: '#ffd700',
+      50: '#ffdd1f',
+      60: '#ffe342',
+      70: '#ffe761',
+      80: '#ffec80',
+      90: '#fff09e',
+      95: '#fff6c2',
+      98: '#fffae0',
+      99: '#fffdf0',
+      100: '#ffffff',
+    }}
+  />
+  <ColorItem
+    title="Neutral"
+    subtitle="Neutral grayscale (0 - 100)"
+    colors={{
+      0: '#000000',
+      10: '#1f1f1f',
+      20: '#424242',
+      25: '#696969',
+      30: '#737373',
+      35: '#7a7a7a',
+      40: '#7a7a7a',
+      50: '#808080',
+      60: '#8f8f8f',
+      70: '#9c9c9c',
+      80: '#a8a8a8',
+      90: '#c4c4c4',
+      95: '#ebebeb',
+      98: '#f5f5f5',
+      99: '#fafafa',
+      100: '#ffffff',
+    }}
+  />
+  <ColorItem
+    title="Warning"
+    subtitle="Warning color orange (0 - 100)"
+    colors={{
+      0: '#000000',
+      10: '#190b00',
+      20: '#331700',
+      25: '#662e00',
+      30: '#994500',
+      35: '#cc5c00',
+      40: '#ff7300',
+      50: '#ff841f',
+      60: '#ff9742',
+      70: '#ffa861',
+      80: '#ffb980',
+      90: '#ffca9e',
+      95: '#ffddc2',
+      98: '#ffeee0',
+      99: '#fff7f0',
+      100: '#ffffff',
+    }}
+  />
+  <ColorItem
+    title="Success"
+    subtitle="Success color green (0 - 100)"
+    colors={{
+      0: '#000000',
+      10: '#05150e',
+      20: '#0a2e1e',
+      25: '#145c3c',
+      30: '#1d8657',
+      35: '#27b475',
+      40: '#3fd591',
+      50: '#58daa0',
+      60: '#71e0ae',
+      70: '#86e4ba',
+      80: '#9feac8',
+      90: '#b8efd6',
+      95: '#d1f5e5',
+      98: '#e6faf1',
+      99: '#f2fcf8',
+      100: '#ffffff',
+    }}
+  />
+  <ColorItem
+    title="Error"
+    subtitle="Error color red (0 - 100)"
+    colors={{
+      0: '#000000',
+      10: '#240300',
+      20: '#470600',
+      25: '#8f0c00',
+      30: '#d11100',
+      35: '#ff2d1a',
+      40: '#ff6f61',
+      50: '#ff8175',
+      60: '#ff938a',
+      70: '#ffa69e',
+      80: '#ffb9b3',
+      90: '#ffc7c2',
+      95: '#ffdad6',
+      98: '#ffeceb',
+      99: '#fff6f5',
+      100: '#ffffff',
+    }}
+  />
+</ColorPalette>
+
+All of these colors can be used in the design kit by calling the corresponding color variable of format `${color}-{shade}`.
+For example: `$primary-40`.
+
+These colors are used to build the design kit, and are available as variables in the design kit, however we **advise against using these variables directly** in your app.
+Instead, **use the [Design Kit's color tokens](/docs/foundations-color-tokens--docs)**.
+
+## Standard values
+
+Because we want to stay within the standards of Angular Material as much as possible, we will use their standard values for our custom styling as well.
+These standards can include heights of base components, breakpoints, etc.
+
+### Breakpoints
+
+One of the most important Material standards we use are the following breakpoints:
+
+<Markdown>
+  {`
+| token                  | px   |
+| :--------------------- | :--- |
+| \`$media-breakpoint-xs\` | 600  |
+| \`$media-breakpoint-s\`  | 960  |
+| \`$media-breakpoint-m\`  | 1280 |
+| \`$media-breakpoint-l\`  | 1920 |
+`}
+</Markdown>

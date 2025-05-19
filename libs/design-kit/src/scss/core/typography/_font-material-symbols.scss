@@ -1,0 +1,37 @@
+@mixin use-font-material-symbols($use-local-fonts: false) {
+  @if ($use-local-fonts) {
+    @font-face {
+      font-family: 'Material Symbols Rounded';
+      font-style: normal;
+      font-weight: 100 700;
+      src: url('../../../assets/fonts/MatSymbols-Rounded.woff2') format('woff2');
+    }
+  } @else {
+    @font-face {
+      font-family: 'Material Symbols Rounded';
+      font-style: normal;
+      font-weight: 100 700;
+      src: url(https://fonts.gstatic.com/s/materialsymbolsrounded/v226/sykg-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjzaqkNCeE.woff2)
+        format('woff2');
+    }
+  }
+
+  .material-icons,
+  .material-symbols {
+    font-family: 'Material Symbols Rounded';
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    font-display: swap;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+}

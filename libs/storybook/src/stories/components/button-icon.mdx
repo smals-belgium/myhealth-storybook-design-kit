@@ -1,0 +1,55 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Buttons/Icon" />
+
+# Icon Button
+
+> The button component is based of Angular Material's [button](https://material.angular.io/components/button). Material's core features will remain the same and can be implemented in the same way.
+> The My Health belgium.be Design Kit will simply overrule the component's styling.
+
+## Usage
+
+To use the **icon button component** My Health styles, include them in your root SCSS file:
+
+The `$dark-theme` variable is optional and defaults to `false` when it is not included. It allows you to set the theme of the icon button to dark or light.
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-mat-button-icon($dark-theme);
+```
+
+Alternatively, you can use **all component** My Health styles by including them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-all-mat-components();
+```
+
+### Dark & light themes
+
+The icon button component is available in both dark and light themes. To use the dark or light theme **everywhere**, set the `$dark-theme` variable to `true` or `false` respectively when including the styles:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-mat-button-icon(true);
+```
+
+Alternatively, you can set the dark and light themes on one specific button using the `dark-mat-icon-button()` and `light-mat-icon-button()` mixins:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+button.dark {
+  @include mh.dark-mat-icon-button();
+}
+
+button.light {
+  @include mh.light-mat-icon-button();
+}
+```
+
+Note that the `light` and `dark` classes are just examples. You can use any class name you want.
+The important part is to include the `dark-mat-icon-button()` or `light-mat-icon-button()` mixin inside the class.

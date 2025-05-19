@@ -1,0 +1,47 @@
+import { Meta, Markdown } from '@storybook/blocks';
+
+<Meta title="Foundations/Spacing" />
+
+# Spacing
+
+> Spacing is an important — and often overlooked — part of visual design.
+> We take a lot of the guesswork out of spacing, making it easier for designer to create clear, functional layouts.
+
+## Applying spacing
+
+The spacing scale can be applied to `margin` or `padding` properties, as well as to both vertical and horizontal edges. We always use a multiple of 4 for these values.
+
+An overview of all values used for `spacing`:
+
+<Markdown>{`
+| token            | size  |
+| :--------------- | :---- |
+| \`$spacing-2xs\` | 6px   |
+| \`$spacing-xs\`  | 8px   |
+| \`$spacing-s\`   | 10px  |
+| \`$spacing-m\`   | 16px  |
+| \`$spacing-l\`   | 20px  |
+| \`$spacing-xl\`  | 30px  |
+| \`$spacing-2xl\` | 40px  |
+| \`$spacing-3xl\` | 80px  |
+| \`$spacing-4xl\` | 120px |
+| \`$spacing-5xl\` | 160px |
+`}</Markdown>
+
+There are also predefined values for `border-radius`:
+
+<Markdown>{`
+| token                    | size   |
+| :----------------------- | :----- |
+| \`$border-radius-s\`     | 6px    |
+| \`$border-radius-m\`     | 12px   |
+| \`$border-radius-l\`     | 24px   |
+| \`$border-radius-xl\`    | 32px   |
+| \`$border-radius-round\` | 9999px |
+`}</Markdown>
+
+## Breakpoints
+
+For breakpoints, please use the default Material breakpoints, [the Design Kit provides variables for these breakpoints here](/docs/foundations-material--docs#breakpoints).
+
+For more information, see [Angular Material's Layout CDK](https://material.angular.io/cdk/layout/overview).

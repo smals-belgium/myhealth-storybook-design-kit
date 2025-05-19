@@ -1,0 +1,36 @@
+@use '@angular/material' as mat;
+@use './button' as mh-mat-button;
+@use '../../core/variables' as mh;
+@use '../../core/mixins' as mh-mixins;
+
+@mixin override-mat-card() {
+  @include mat.card-overrides(
+    (
+      elevated-container-color: mh.$color-white,
+      outlined-container-color: mh.$color-white,
+      elevated-container-elevation: mh.$box-shadow-dropdown,
+      outlined-outline-width: mh.$border-width-s,
+      title-text-size: mh.$font-size-l,
+      title-text-line-height: 28px,
+      title-text-weight: mh.$font-weight-bold,
+    )
+  );
+
+  // Extra overrides not possible with base mat.card-overrides
+  mat-card.mat-mdc-card {
+    gap: mh.$spacing-m;
+
+    &[appearance='outlined'] {
+      border-color: mh.$color-gray-4;
+    }
+
+    mat-card-header.mat-mdc-card-header {
+      padding-top: mh.$spacing-l;
+    }
+
+    mat-card-actions.mat-mdc-card-actions {
+      padding: 0 mh.$spacing-m mh.$spacing-l mh.$spacing-m;
+      gap: mh.$spacing-xs;
+    }
+  }
+}

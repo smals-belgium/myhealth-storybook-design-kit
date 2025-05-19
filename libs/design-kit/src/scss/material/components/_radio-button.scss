@@ -1,0 +1,25 @@
+@use '@angular/material' as mat;
+@use '../../core/variables' as mh;
+
+@mixin override-mat-radio-button() {
+  @include mat.radio-overrides(
+    (
+      ripple-color: mh.$surface-brand-primary-medium,
+      checked-ripple-color: mh.$surface-brand-primary-medium,
+
+      // Default label text
+      label-text-size: mh.$font-size-m,
+      label-text-color: mh.$typography-brand-neutral-darker,
+
+      // Unselected
+      unselected-icon-color: mh.$border-brand-neutral-medium,
+
+      // Unselected hover & focus
+      unselected-hover-icon-color: mh.$surface-brand-primary-medium,
+      unselected-focus-icon-color: mh.$surface-brand-primary-medium,
+
+      // Disabled
+      disabled-label-color: mh.$typography-brand-neutral-light,
+    )
+  );
+}

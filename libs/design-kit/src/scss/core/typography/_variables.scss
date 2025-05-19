@@ -1,0 +1,31 @@
+@use '../functions' as fn;
+
+// ================= Typography =================
+
+$font-family-primary: 'Open Sans';
+$font-family-fallback: 'Roboto';
+$font-stack: $font-family-primary, $font-family-fallback, sans-serif;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+$font-size-xs: fn.calculateRem(12px);
+$font-size-s: fn.calculateRem(14px);
+$font-size-m: fn.calculateRem(16px);
+$font-size-l: fn.calculateRem(18px);
+$font-size-xl: fn.calculateRem(20px);
+$font-size-2xl: fn.calculateRem(24px);
+$font-size-3xl: fn.calculateRem(48px);
+
+$letter-spacing-02: 0.02px;
+$letter-spacing-025: 0.025px;
+$letter-spacing-03: 0.03px;
+$letter-spacing-04: 0.04px;
+$letter-spacing-045: 0.045px;
+$letter-spacing-06: 0.06px;
+$letter-spacing-08: 0.08px;
+$letter-spacing-09: 0.09px;

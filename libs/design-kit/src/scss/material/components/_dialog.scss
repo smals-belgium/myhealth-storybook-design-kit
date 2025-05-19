@@ -1,0 +1,56 @@
+@use '@angular/material' as mat;
+@use '../../core/variables' as mh;
+
+@mixin override-mat-dialog {
+  @include mat.dialog-overrides(
+    (
+      subhead-color: mh.$color-primary-text,
+      subhead-weight: mh.$font-weight-semibold,
+      subhead-size: mh.$font-size-xl,
+      container-shape: mh.$border-radius-s,
+      container-max-width: unset,
+      container-min-width:
+        clamp(mh.$media-breakpoint-xs, mh.$container-pref-width-dialog, mh.$container-max-width-dialog),
+      headline-padding: mh.$spacing-2xs,
+      actions-padding: mh.$spacing-2xs,
+      content-padding: mh.$spacing-2xs,
+      with-actions-content-padding: mh.$spacing-2xs,
+    )
+  );
+
+  .cdk-overlay-dark-backdrop {
+    background: rgba(29, 92, 175, 0.6);
+  }
+
+  .mh-dialog-container mat-dialog-container {
+    div.mat-mdc-dialog-surface.mdc-dialog__surface {
+      padding: mh.$spacing-l;
+
+      .mat-mdc-dialog-title {
+        margin-bottom: mh.$spacing-s;
+        border-bottom: mh.$border-width-s solid mh.$color-gray-4;
+      }
+
+      mat-dialog-actions.mat-mdc-dialog-actions {
+        padding-top: mh.$spacing-s;
+        margin-top: mh.$spacing-s;
+        border-top: mh.$border-width-s solid mh.$color-gray-4;
+      }
+    }
+  }
+
+  @media (max-width: (mh.$media-breakpoint-xs - 1)) {
+    @include mat.dialog-overrides(
+      (
+        container-max-width: 100vw,
+        container-min-width: 90vw,
+      )
+    );
+
+    .mh-dialog-container mat-dialog-container {
+      div.mat-mdc-dialog-surface.mdc-dialog__surface {
+        padding: mh.$spacing-l;
+      }
+    }
+  }
+}

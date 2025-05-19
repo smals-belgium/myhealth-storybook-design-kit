@@ -1,0 +1,37 @@
+@use '@angular/material' as mat;
+@use '../../core/variables' as mh;
+
+@mixin override-mat-expansion() {
+  @include mat.expansion-overrides(
+    (
+      header-text-size: mh.$font-size-m,
+      header-text-weight: mh.$font-weight-semibold,
+      header-text-line-height: 28px,
+    )
+  );
+
+  mat-accordion.mat-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: mh.$spacing-m;
+  }
+
+  mat-accordion.mat-accordion mat-expansion-panel.mat-expansion-panel,
+  mat-accordion.mat-accordion mat-expansion-panel.mat-expansion-panel:not(.mat-expanded),
+  mat-accordion.mat-accordion mat-expansion-panel.mat-expansion-panel:first-of-type {
+    border-radius: mh.$border-radius-s;
+  }
+
+  mat-expansion-panel.mat-expansion-panel-spacing {
+    margin: 0;
+  }
+
+  mat-expansion-panel-header.mat-expansion-panel-header {
+    padding: mh.$spacing-xs mh.$spacing-m;
+    height: fit-content;
+
+    &.mat-expanded {
+      height: fit-content;
+    }
+  }
+}

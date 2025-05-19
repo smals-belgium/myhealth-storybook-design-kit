@@ -1,0 +1,23 @@
+<div class="mh-form-field">
+  <label for="autocomplete">Label</label>
+  <mat-form-field appearance="outline" floatLabel="always">
+    <mat-icon matPrefix>search</mat-icon>
+    <input
+      required="true"
+      type="text"
+      id="autocomplete"
+      placeholder="Pick one"
+      aria-label="Options"
+      matInput
+      [formControl]="myControl"
+      [matAutocomplete]="auto"
+    />
+    <mat-icon matSuffix>{{ suffixIcon() }}</mat-icon>
+    <mat-autocomplete #auto="matAutocomplete" (opened)="isOpen.set(true)" (closed)="isOpen.set(false)">
+      @for (option of filteredOptions(); track option) {
+      <mat-option [value]="option">{{ option }}</mat-option>
+      }
+    </mat-autocomplete>
+    <mat-hint>Hint text</mat-hint>
+  </mat-form-field>
+</div>

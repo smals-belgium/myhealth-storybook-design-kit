@@ -1,0 +1,80 @@
+@use '@angular/material' as mat;
+@use '../../core/variables' as mh;
+
+@mixin override-mat-button-icon($dark-theme: false) {
+  @include mat.icon-button-overrides(
+    (
+      state-layer-color: mh.$surface-brand-primary-medium,
+    )
+  );
+
+  a.mat-mdc-icon-button,
+  button.mat-mdc-icon-button {
+    @if $dark-theme {
+      @include dark-mat-icon-button();
+    } @else {
+      @include light-mat-icon-button();
+    }
+  }
+}
+
+@mixin dark-mat-icon-button() {
+  color: mh.$typography-brand-primary-lighter;
+  background-color: mh.$surface-brand-primary-medium;
+  transition: 0.1s background-color ease-in-out;
+
+  &:hover {
+    color: mh.$typography-brand-primary-lighter;
+    background-color: mh.$surface-brand-primary-dark;
+  }
+
+  &:focus,
+  &:active {
+    color: mh.$typography-brand-primary-lighter;
+    background-color: mh.$surface-brand-primary-darker;
+  }
+
+  &:disabled {
+    color: mh.$typography-brand-primary-lighter;
+    background-color: mh.$surface-brand-neutral-medium;
+  }
+}
+
+@mixin light-mat-icon-button() {
+  color: mh.$typography-brand-primary-medium;
+  background-color: mh.$surface-brand-primary-lighter;
+  transition: 0.1s background-color ease-in-out;
+
+  svg {
+    fill: mh.$typography-brand-primary-medium;
+  }
+
+  &:hover {
+    color: mh.$typography-brand-primary-lighter;
+    background-color: mh.$surface-brand-primary-medium;
+
+    svg {
+      fill: mh.$typography-brand-primary-lighter;
+    }
+  }
+
+  &:focus,
+  &:active {
+    color: mh.$typography-brand-primary-lighter;
+    background-color: mh.$surface-brand-primary-dark;
+
+    svg {
+      fill: mh.$typography-brand-primary-lighter;
+    }
+  }
+
+  &:disabled,
+  &.mat-mdc-button-disabled {
+    color: mh.$typography-brand-neutral-medium;
+    background-color: mh.$surface-brand-neutral-light;
+
+    svg {
+      fill: mh.$typography-brand-neutral-medium;
+    }
+  }
+}

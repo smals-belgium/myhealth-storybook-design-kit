@@ -1,0 +1,6 @@
+@use '../../../index' as mh;
+
+.dark {
+  margin-left: 12px;
+  @include mh.dark-mat-icon-button();
+}

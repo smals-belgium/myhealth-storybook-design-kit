@@ -1,0 +1,204 @@
+@use '../color/color-tokens' as tokens;
+@use '../functions' as fn;
+@use '../spacing/mixins' as spacing;
+@use './variables' as fonts;
+
+@forward './mixins-legacy';
+
+// ================= Font mixins =================
+// ========= Titles =========
+@mixin font-large-title {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-bold;
+  color: tokens.$typography-brand-neutral-darker;
+  font-size: fn.calculateRem(48px);
+  line-height: fn.calculateRem(60px);
+  letter-spacing: fn.calculateEm(1.2%);
+}
+
+@mixin font-heading-1 {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-bold;
+  color: tokens.$typography-brand-neutral-darker;
+  font-size: fn.calculateRem(30px);
+  line-height: normal;
+  letter-spacing: fn.calculateEm(0%);
+
+  @include spacing.screen-xs() {
+    font-size: fn.calculateRem(26px);
+  }
+}
+
+@mixin font-heading-2 {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-bold;
+  color: tokens.$typography-brand-neutral-darker;
+  font-size: fn.calculateRem(24px);
+  line-height: normal;
+  letter-spacing: fn.calculateEm(0%);
+
+  @include spacing.screen-xs() {
+    font-size: fn.calculateRem(22px);
+  }
+}
+
+@mixin font-heading-3 {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-bold;
+  color: tokens.$typography-brand-neutral-darker;
+  font-size: fn.calculateRem(22px);
+  line-height: normal;
+  letter-spacing: fn.calculateEm(0%);
+
+  @include spacing.screen-xs() {
+    font-size: fn.calculateRem(20px);
+  }
+}
+
+@mixin font-heading-4 {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-bold;
+  color: tokens.$typography-brand-neutral-darker;
+  font-size: fn.calculateRem(18px);
+  line-height: normal;
+  letter-spacing: fn.calculateEm(0%);
+}
+
+@mixin font-heading-5 {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-bold;
+  color: tokens.$typography-brand-neutral-darker;
+  font-size: fn.calculateRem(16px);
+  line-height: normal;
+  letter-spacing: fn.calculateEm(0%);
+}
+
+@mixin font-heading-6 {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-semibold;
+  color: tokens.$typography-brand-neutral-darker;
+  font-size: fn.calculateRem(16px);
+  line-height: normal;
+  letter-spacing: fn.calculateEm(0%);
+}
+
+// ========= Regular text =========
+@mixin font-large-regular {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-regular;
+  color: tokens.$typography-brand-neutral-darker;
+  font-size: fn.calculateRem(16px);
+  line-height: fn.calculateRem(24px);
+  letter-spacing: fn.calculateEm(0%);
+}
+
+@mixin font-default-bold {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-bold;
+  color: tokens.$typography-brand-neutral-darker;
+  font-size: fn.calculateRem(16px);
+  line-height: fn.calculateRem(22px);
+  letter-spacing: fn.calculateEm(0%);
+}
+
+@mixin font-default-regular {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-regular;
+  color: tokens.$typography-brand-neutral-darker;
+  font-size: fn.calculateRem(16px);
+  line-height: fn.calculateRem(22px);
+  letter-spacing: fn.calculateEm(0%);
+}
+
+@mixin font-default-medium {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-medium;
+  color: tokens.$typography-brand-neutral-darker;
+  font-size: fn.calculateRem(16px);
+  line-height: fn.calculateRem(22px);
+  letter-spacing: fn.calculateEm(-2%);
+}
+
+@mixin font-default-semibold {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-semibold;
+  color: tokens.$typography-brand-neutral-darker;
+  font-size: fn.calculateRem(16px);
+  line-height: fn.calculateRem(22px);
+  letter-spacing: fn.calculateEm(0%);
+}
+
+@mixin font-default-light {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-light;
+  color: tokens.$typography-brand-neutral-darker;
+  font-size: fn.calculateRem(16px);
+  line-height: fn.calculateRem(22px);
+  letter-spacing: fn.calculateEm(0%);
+}
+
+@mixin font-small-regular {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-light;
+  color: tokens.$typography-brand-neutral-darker;
+  font-size: fn.calculateRem(14px);
+  line-height: normal;
+  letter-spacing: fn.calculateEm(0%);
+}
+
+@mixin font-extra-small-regular {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-light;
+  color: tokens.$typography-brand-neutral-darker;
+  font-size: fn.calculateRem(12px);
+  line-height: normal;
+  letter-spacing: fn.calculateEm(-1%);
+}
+
+// ========= Other text =========
+@mixin font-action-link {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-bold;
+  color: tokens.$typography-brand-primary-dark;
+  text-decoration: underline;
+  font-size: fn.calculateRem(16px);
+  line-height: fn.calculateRem(22px);
+  letter-spacing: fn.calculateEm(0.5%);
+
+  &:hover {
+    color: tokens.$typography-brand-primary-darker;
+  }
+}
+
+@mixin font-nav-link {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-regular;
+  color: tokens.$typography-brand-primary-dark;
+  text-decoration: none;
+  font-size: fn.calculateRem(16px);
+  line-height: fn.calculateRem(22px);
+  letter-spacing: fn.calculateEm(0.25%);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@mixin font-label {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-regular;
+  color: tokens.$typography-brand-neutral-dark;
+  font-size: fn.calculateRem(16px);
+  line-height: fn.calculateRem(22px);
+  letter-spacing: fn.calculateEm(0.25%);
+}
+
+@mixin font-label-small {
+  font-family: fonts.$font-stack;
+  font-weight: fonts.$font-weight-regular;
+  color: tokens.$typography-brand-neutral-dark;
+  font-size: fonts.$font-size-xs;
+  font-size: fn.calculateRem(12px);
+  line-height: normal;
+  letter-spacing: fn.calculateEm(0%);
+}

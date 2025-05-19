@@ -1,0 +1,69 @@
+@use '@angular/material' as mat;
+@use '../../core/variables' as mh;
+
+@mixin override-mat-button-fab($dark-theme: false) {
+  @include mat.fab-overrides(
+    (
+      container-shape: mh.$border-radius-s,
+      small-container-shape: mh.$border-radius-s,
+      extended-container-shape: mh.$border-radius-s,
+      state-layer-color: mh.$surface-brand-primary-medium,
+      small-state-layer-color: mh.$surface-brand-primary-medium,
+      ripple-color: mh.$surface-brand-primary-darker,
+      small-ripple-color: mh.$surface-brand-primary-darker,
+    )
+  );
+
+  button.mat-mdc-fab,
+  button.mat-mdc-mini-fab {
+    @if $dark-theme {
+      @include dark-mat-fab-button();
+    } @else {
+      @include light-mat-fab-button();
+    }
+  }
+}
+
+@mixin dark-mat-fab-button() {
+  color: mh.$typography-brand-primary-lighter;
+  background-color: mh.$surface-brand-primary-medium;
+  transition: 0.1s background-color ease-in-out;
+
+  &:hover {
+    color: mh.$typography-brand-primary-lighter;
+    background-color: mh.$surface-brand-primary-dark;
+  }
+
+  &:focus,
+  &:active {
+    color: mh.$typography-brand-primary-lighter;
+    background-color: mh.$surface-brand-primary-darker;
+  }
+
+  &:disabled {
+    color: mh.$typography-brand-primary-lighter;
+    background-color: mh.$surface-brand-neutral-medium;
+  }
+}
+
+@mixin light-mat-fab-button() {
+  color: mh.$typography-brand-primary-medium;
+  background-color: mh.$surface-brand-primary-lighter;
+  transition: 0.1s background-color ease-in-out;
+
+  &:hover {
+    color: mh.$typography-brand-primary-lighter;
+    background-color: mh.$surface-brand-primary-medium;
+  }
+
+  &:focus,
+  &:active {
+    color: mh.$typography-brand-primary-lighter;
+    background-color: mh.$surface-brand-primary-dark;
+  }
+
+  &:disabled {
+    color: mh.$typography-brand-neutral-medium;
+    background-color: mh.$surface-brand-neutral-light;
+  }
+}

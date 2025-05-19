@@ -1,0 +1,49 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Form Field/Autocomplete" />
+
+# Autocomplete
+
+> The autocomplete component is based of Angular Material's [autocomplete](https://material.angular.io/components/autocomplete). Material's core features will remain the same and can be implemented in the same way.
+> The My Health belgium.be Design Kit will simply overrule the component's styling.
+
+## Usage
+
+The autocomplete utilises the [form field component](/docs/components-form-field--docs) for its styling.
+You must therefore also include the form field component in your project.
+Make sure to also include the `mh-form-field` class (described in the [form field component](/docs/components-form-field--docs)) around the autocomplete component, if you want to achieve the desired label.
+
+To use the **autocomplete component** My Health styles, include them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-mat-form-field();
+@include mh.override-mat-autocomplete();
+```
+
+Alternatively, you can use **all component** My Health styles by including them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-all-mat-components();
+```
+
+### Keyboard Arrow icon
+
+The `mat-autocomplete` does not automatically come with an `keyboard_arrow_down` icon in the suffix of the input field.
+
+Here's an example on how you can add it to your code:
+
+```html
+<mat-icon matSuffix>{{ suffixIcon() }}</mat-icon>
+<mat-autocomplete #auto="matAutocomplete" (opened)="isOpen.set(true)" (closed)="isOpen.set(false)"></mat-autocomplete>
+```
+
+And this TypeScript code to make it work:
+
+```ts
+readonly isOpen: WritableSignal<boolean> = signal(false);
+readonly suffixIcon: Signal<string> = computed(() => (this.isOpen() ? 'keyboard_arrow_up' : 'keyboard_arrow_down'));
+```

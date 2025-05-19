@@ -1,0 +1,87 @@
+@use '../variables' as mh;
+@use '../mixins' as mh-mixins;
+
+@mixin use-table() {
+  .mh-table {
+    &__search {
+      width: 33vw;
+
+      // (X)Small screen
+      @media only screen and (max-width: (mh.$media-breakpoint-s - 1)) {
+        width: 100%;
+      }
+    }
+
+    &-detail {
+      &--action button {
+        max-height: 48px; // Default icon button size for Material
+      }
+    }
+
+    &__no-data {
+      color: mh.$color-gray-text;
+      font-style: italic;
+      padding: 0 mh.$spacing-m;
+    }
+
+    &__details {
+      display: flex;
+      word-break: break-word;
+
+      &__data {
+        flex-grow: 1;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr 2fr;
+        gap: mh.$spacing-xs mh.$spacing-l;
+
+        // (X)Small screen
+        @media only screen and (max-width: (mh.$media-breakpoint-s - 1)) {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      &__actions {
+        display: flex;
+        gap: mh.$spacing-xs;
+      }
+    }
+
+    &__heading {
+      &--details {
+        width: 1%;
+        white-space: nowrap;
+
+        > * {
+          display: flex;
+          align-items: center;
+          gap: mh.$spacing-2xs;
+        }
+      }
+    }
+
+    &__row {
+      &__showmore {
+        height: 90%;
+        white-space: nowrap;
+        font-size: mh.$font-size-m;
+        font-weight: mh.$font-weight-semibold;
+      }
+    }
+
+    &-detail {
+      &__label {
+        @include mh-mixins.font-body-2;
+        margin-right: mh.$spacing-xs;
+      }
+
+      &__value {
+        @include mh-mixins.font-body-4;
+        margin-right: mh.$spacing-m;
+      }
+
+      &--action {
+        margin-left: auto;
+      }
+    }
+  }
+}

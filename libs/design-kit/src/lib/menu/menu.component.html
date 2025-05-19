@@ -1,0 +1,16 @@
+<button mat-button [matMenuTriggerFor]="menu">Click to expand menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+    <mat-icon fontIcon="medical_information"></mat-icon>
+    <span>Your information</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon fontIcon="health_and_safety"></mat-icon>
+    <span>Health safety</span>
+  </button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item>
+    <mat-icon fontIcon="emergency"></mat-icon>
+    <span>Report emergency</span>
+  </button>
+</mat-menu>

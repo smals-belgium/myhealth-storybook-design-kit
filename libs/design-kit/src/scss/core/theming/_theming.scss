@@ -1,0 +1,37 @@
+@use '@angular/material' as mat;
+@use './overrides/theme-overrides-colors.scss' as mat-override-colors;
+@use './overrides/theme-overrides-shapes.scss' as mat-override-shapes;
+@use './overrides/theme-overrides-typescale.scss' as mat-override-typescale;
+@use '../../core/typography/variables' as mh-typography;
+@use './palettes' as mh-palette;
+@use 'sass:map';
+
+@mixin mh-material-theme() {
+  $overrides-mergemap: map.merge(
+    map.merge(mat-override-colors.$overrides, mat-override-shapes.$overrides),
+    mat-override-typescale.$overrides
+  );
+
+  html {
+    color-scheme: light;
+
+    @include mat.theme(
+      (
+        color: (
+          primary: mh-palette.$primary-palette,
+          tertiary: mh-palette.$tertiary-palette,
+          theme-type: light,
+        ),
+        typography: (
+          brand-family: mh-typography.$font-stack,
+          plain-family: mh-typography.$font-stack,
+          bold-weight: mh-typography.$font-weight-bold,
+          medium-weight: mh-typography.$font-weight-medium,
+          regular-weight: mh-typography.$font-weight-regular,
+        ),
+        density: 0,
+      ),
+      $overrides: $overrides-mergemap
+    );
+  }
+}

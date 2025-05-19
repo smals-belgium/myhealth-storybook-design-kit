@@ -1,0 +1,26 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Expansion" />
+
+# Expansion
+
+> The expansion component is based of Angular Material's [expansion](https://material.angular.io/components/expansion). Material's core features will remain the same and can be implemented in the same way.
+> The My Health belgium.be Design Kit will simply overrule the component's styling.
+
+## Usage
+
+To use the **expansion component** My Health styles, include them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-mat-expansion();
+```
+
+Alternatively, you can use **all component** My Health styles by including them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-all-mat-components();
+```

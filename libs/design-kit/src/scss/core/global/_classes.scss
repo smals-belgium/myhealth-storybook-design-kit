@@ -1,0 +1,48 @@
+@use '../variables' as mh;
+
+@mixin use-classes() {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .d-none {
+    display: none;
+  }
+
+  .capitalize::first-letter {
+    text-transform: capitalize;
+  }
+
+  .mh-container {
+    max-width: clamp(mh.$media-breakpoint-xs, mh.$container-pref-width, mh.$container-max-width);
+    padding: 0 mh.$spacing-m;
+    margin: 0 auto;
+
+    &--full-width-small {
+      @media (max-width: (mh.$media-breakpoint-s - 1)) {
+        padding: 0;
+        border-radius: 0;
+        min-width: 100%;
+      }
+    }
+
+    &--l {
+      max-width: clamp(mh.$media-breakpoint-xs, mh.$container-pref-width-l, mh.$container-max-width-l);
+    }
+
+    &--s {
+      max-width: clamp(mh.$media-breakpoint-xs, mh.$container-pref-width-s, mh.$container-max-width-s);
+    }
+
+    &--xs {
+      max-width: clamp(mh.$media-breakpoint-xs, mh.$container-pref-width-xs, mh.$container-max-width-xs);
+    }
+  }
+}

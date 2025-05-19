@@ -1,0 +1,108 @@
+import { Meta, Markdown, Typeset } from '@storybook/blocks';
+
+<Meta title="Foundations/Typography" />
+
+# Typography
+
+> Typography can help convey hierarchies, organising information and guiding users throughout a product or experience.
+
+## Typography tokens
+
+My Health uses typography tokens to manage typography. Typography tokens are style configurations of typographic elements such as font size, weight or leading (line-height). These pre-set styles are linked with specific uses in the interface.
+
+## Typeface: Open Sans
+
+My Health uses the open-source typeface Open Sans which is provided by [Google fonts](https://fonts.google.com).
+
+### Use on the web
+
+The **Opens Sans**, **Open Sans Italic**, **Material Icon** and **Material Icon Outlined** fonts have been embedded into the design kit and are installed automatically.
+
+A full guide on how to use Material Icons with Angular Material can be found in their [component documentation](https://material.angular.io/components/icon).
+
+### Open Sans family
+
+Open Sans is My Health's primary typeface. It's used for plain text `<body>`. The Design Kit uses predefined mixins you can use for all headings, body text, links and labels.
+
+<Typeset fontSizes={['16px', '18px', '24px']} fontWeight={[400]} style={{ fontFamily: 'Open Sans' }} />
+
+## Scale
+
+My Health uses some predefined sizes for their fonts:
+
+<Markdown>{`
+| token              | px  |
+| :----------------- | :-- |
+| \`$font-size-xs\`  | 12  |
+| \`$font-size-s\`   | 14  |
+| \`$font-size-m\`   | 16  |
+| \`$font-size-l\`   | 18  |
+| \`$font-size-xl\`  | 20  |
+| \`$font-size-2xl\` | 24  |
+`}</Markdown>
+
+## Presets
+
+My Health has some predefined font `@mixins` ready for use.
+These are automatically applied to some HTML elements; for example `font-heading-1` is automatically applied to `h1`, etc.
+
+Note that all the `px` values are converted to `rem` values for scalability, where `1rem` equals `16px`.
+
+<Markdown>{`
+| mixin                        | font weight | size (px) | line height (px) | letter spacing (%)  |
+| :--------------------------- | :---------- | :-------- | :--------------- | :------------------ |
+| \`font-large-title\`         | 700         | 48        | 60               | 1.2                 |
+| \`font-heading-1\`           | 700         | 30        | default          | 0                   |
+| \`font-heading-2\`           | 700         | 24        | default          | 0                   |
+| \`font-heading-3\`           | 700         | 24        | default          | 0                   |
+| \`font-heading-4\`           | 700         | 20        | default          | 0                   |
+| \`font-heading-5\`           | 700         | 16        | default          | 0                   |
+| \`font-heading-6\`           | 600         | 16        | default          | 0                   |
+| \`font-large-regular\`       | 400         | 18        | 24               | 0                   |
+| \`font-default-bold\`        | 700         | 16        | 22               | 0                   |
+| \`font-default-regular\`     | 400         | 16        | 22               | 0                   |
+| \`font-default-medium\`      | 500         | 16        | 22               | -2                  |
+| \`font-default-semibold\`    | 600         | 16        | 22               | 0                   |
+| \`font-default-light\`       | 300         | 16        | 22               | 0                   |
+| \`font-small-regular\`       | 600         | 14        | default          | 0                   |
+| \`font-extra-small-regular\` | 600         | 12        | default          | 0                   |
+| \`font-action-link\`         | 700         | 16        | 22               | 0.5                 |
+| \`font-nav-link\`            | 400         | 16        | 22               | 0.25                |
+| \`font-label\`               | 400         | 16        | 22               | 0.25                |
+| \`font-label-small\`         | 400         | 12        | default          | 0                   |
+`}</Markdown>
+
+### Usage
+
+To use these mixins, you can simply include them into your SCSS file. Here is an example:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+p {
+  @include mh.font-body-4();
+}
+```
+
+## Style
+
+Typography creates a structure that guides users to reading and understanding the information hierarchy. The right typographic scale and use of type styles helps create clear distinctions, keeping content readable, simple and effective.
+
+### Weights
+
+Font weight is an important typographic variable that can add emphasis and distinguish content hierarchy. Font weight and size of the typeface must be well-balanced. A bold weight will always have more emphasis than a lighter weight font of the equal size. However, a lighter weight font may rank higher than a bold font if the smaller weight type is much larger than the bold font.
+
+<Markdown>{`
+| token                      | weight |
+| :------------------------- | :----- |
+| \`$font-weight-light\`     | 300    |
+| \`$font-weight-regular\`   | 400    |
+| \`$font-weight-medium\`    | 500    |
+| \`$font-weight-semibold\`  | 600    |
+| \`$font-weight-bold\`      | 700    |
+| \`$font-weight-extrabold\` | 800    |
+`}</Markdown>
+
+### Typography color and accessibility
+
+Check out the [accessibility](/story/guidelines-accessibility--page) section for complete guidance on color and accessibility in My Health.

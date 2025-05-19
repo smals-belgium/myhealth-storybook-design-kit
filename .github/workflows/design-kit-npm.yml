@@ -1,0 +1,87 @@
+name: Design kit NPM
+
+on:
+  workflow_call:
+    inputs:
+      release-version:
+        description: The release version number (e.g. 1.2.4)
+        type: string
+        required: true
+  workflow_dispatch:
+    inputs:
+      release-version:
+        description: The release version number (e.g. 1.2.4)
+        type: string
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: app-token
+        id: app-token
+        uses: actions/create-github-app-token@c8f55efbd427e7465d6da1106e7979bc8aaee856 # v1.10.1
+        with:
+          app-id: ${{ vars.ORDINA_GROUP_BOT_APP_ID }}
+          private-key: ${{ secrets.ORDINA_GROUP_BOT_CERT }}
+
+      - name: Checkout
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: true
+
+      - name: Check release version in CHANGELOG
+        run: |
+          if ! grep -q "## ${VERSION//./\\.}" libs/design-kit/src/stories/main/changelog.mdx; then
+          echo "Error: Release version ${{ inputs.release-version }} not found in CHANGELOG.md"
+          exit 1
+            fi
+        env:
+          VERSION: ${{ inputs.release-version }}
+
+      - name: Set git config
+        run: |
+          git config --global user.name '${{ vars.ORDINA_GROUP_BOT_USERNAME }}'
+          git config --global user.email '${{ vars.ORDINA_GROUP_BOT_EMAIL }}'
+
+      - name: Perform release
+        run: |
+          cd libs/design-kit
+          sed -i -E 's/"version": "[^"]+"/"version": "'"${{ inputs.release-version }}"'"/' package.json
+          git add package.json
+          git commit -m "design kit release version: ${{ inputs.release-version }}"
+          git tag -a v${{ inputs.release-version }} -m "design kit version ${{ inputs.release-version }}"
+
+      # Install dependencies & build
+      - name: Setup node
+        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Cache npm dependencies
+        uses: actions/cache@387e18722e6ff315b24a3b8b071feddd27b7bf7e # v3.4.2
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Design Kit
+        run: npm run build:design-kit
+
+      - name: Publish to NPM
+        uses: JS-DevTools/npm-publish@19c28f1ef146469e409470805ea4279d47c3d35c # v3.1.1
+        with:
+          package: ./dist/libs/design-kit
+          token: ${{ secrets.NPM_TOKEN }}
+          access: public
+          dry-run: false
+
+      # Push release to main
+      - name: Push release
+        run: |
+          git push
+          git push --tags
