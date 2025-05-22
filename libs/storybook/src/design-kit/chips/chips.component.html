@@ -94,13 +94,13 @@
 <mat-chip-set>
   <mat-chip [disableRipple]="true">
     Potato
-    <button matChipRemove>
+    <button type="button" matChipRemove>
       <mat-icon>close</mat-icon>
     </button>
   </mat-chip>
   <mat-chip [disableRipple]="true">
     Carrot
-    <button matChipRemove>
+    <button type="button" matChipRemove>
       <mat-icon>close</mat-icon>
     </button>
   </mat-chip>
@@ -118,7 +118,7 @@
         [aria-description]="'press enter to edit ' + fruit.name"
       >
         {{ fruit.name }}
-        <button matChipRemove [attr.aria-label]="'remove ' + fruit.name">
+        <button type="button" matChipRemove [attr.aria-label]="'remove ' + fruit.name">
           <mat-icon>close</mat-icon>
         </button>
       </mat-chip-row>
