@@ -11,12 +11,6 @@
     "../src/**/*.stories.tsx",
     "../src/**/*.stories.mdx",
     "../src/**/*.mdx",
-    "../../design-kit/src/lib/**/*.stories.ts",
-    "../../design-kit/src/lib/**/*.stories.js",
-    "../../design-kit/src/lib/**/*.stories.jsx",
-    "../../design-kit/src/lib/**/*.stories.tsx",
-    "../../design-kit/src/lib/**/*.stories.mdx",
-    "../../design-kit/src/lib/**/*.mdx",
     "*.js",
     "*.ts"
   ]

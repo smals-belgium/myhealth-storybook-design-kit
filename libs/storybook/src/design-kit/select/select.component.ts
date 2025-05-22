@@ -19,7 +19,11 @@ export class SelectComponent {
 
   constructor() {
     effect(() => {
-      this.disabled() ? this.mySelectControl.disable() : this.mySelectControl.enable();
+      if (this.disabled()) {
+        this.mySelectControl.disable();
+      } else {
+        this.mySelectControl.enable();
+      }
     });
   }
 }

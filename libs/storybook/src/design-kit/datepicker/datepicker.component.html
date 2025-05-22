@@ -1,7 +1,7 @@
 <div class="mh-form-field">
-  <label for="field2">Label</label>
+  <label for="field2">Label <span aria-hidden="true" class="mh-label-required">*</span></label>
   <mat-form-field appearance="outline">
-    <input placeholder="MM/DD/YYYY" id="field2" matInput [formControl]="myControl" [matDatepicker]="picker" />
+    <input placeholder="DD/MM/YYYY" id="field2" matInput [formControl]="myControl" [matDatepicker]="picker" />
     <mat-hint>Hint tesxt</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>

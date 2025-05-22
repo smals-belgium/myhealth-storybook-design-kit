@@ -3,13 +3,9 @@ import type { StorybookConfig } from '@storybook/angular';
 const config: StorybookConfig = {
   stories: [
     {
-      directory: '../../design-kit/src/lib',
-      files: '**/*.@(mdx|stories.@(js|jsx|ts|tsx))'
-    },
-    {
       directory: '../src',
-      files: '**/*.@(mdx|stories.@(js|jsx|ts|tsx))'
-    }
+      files: '**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
+    },
   ],
   addons: [
     '@storybook/addon-links',

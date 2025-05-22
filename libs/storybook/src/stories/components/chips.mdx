@@ -38,6 +38,8 @@ Alternatively, you can use **all component** My Health styles by including them 
 
 Not adding a class will resuled in the default color of the `mat-chip` element.
 
+Adding the parameter `--outline` to the class will add a border around the chip, and remove the background color.
+
 ```html
 <mat-chip [disableRipple]="true" class="mh-blue">Blue chip</mat-chip>
 ```
@@ -45,9 +47,9 @@ Not adding a class will resuled in the default color of the `mat-chip` element.
 ### Disabling hover overlay
 
 `mat-chip` have a hover overlay effect by default, that changes the opacity of the chip.
-The hover overlay can be disabled by adding the `mh-no-hover` class to the `mat-chip` element.
+The hover overlay can be disabled by adding the `mh-no-overlay` class to the `mat-chip` element.
 This class can be combined with the color classes.
 
 ```html
-<mat-chip [disableRipple]="true" class="mh-blue mh-no-hover">Blue chip</mat-chip>
+<mat-chip [disableRipple]="true" class="mh-blue mh-no-overlay">Blue chip</mat-chip>
 ```

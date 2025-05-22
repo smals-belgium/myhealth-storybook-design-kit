@@ -2,6 +2,7 @@
 @forward './components/badge' show override-mat-badge;
 @forward './components/button-fab' show override-mat-button-fab, dark-mat-fab-button, light-mat-fab-button;
 @forward './components/button-icon' show override-mat-button-icon, dark-mat-icon-button, light-mat-icon-button;
+@forward './components/button-toggle' show override-mat-button-toggle;
 @forward './components/button' show override-mat-button;
 @forward './components/card' show override-mat-card;
 @forward './components/checkbox' show override-mat-checkbox;
@@ -24,6 +25,7 @@
 @use './components/badge' as mh-mat-badge;
 @use './components/button-fab' as mh-mat-button-fab;
 @use './components/button-icon' as mh-mat-button-icon;
+@use './components/button-toggle' as mh-mat-button-toggle;
 @use './components/button' as mh-mat-button;
 @use './components/card' as mh-mat-card;
 @use './components/checkbox' as mh-mat-checkbox;
@@ -47,6 +49,7 @@
   @include mh-mat-badge.override-mat-badge();
   @include mh-mat-button-fab.override-mat-button-fab();
   @include mh-mat-button-icon.override-mat-button-icon();
+  @include mh-mat-button-toggle.override-mat-button-toggle();
   @include mh-mat-button.override-mat-button();
   @include mh-mat-card.override-mat-card();
   @include mh-mat-checkbox.override-mat-checkbox();

@@ -1,5 +1,5 @@
 <div class="mh-form-field">
-  <label for="field1">Label</label>
+  <label for="field1">Label <span aria-hidden="true" class="mh-label-required">*</span></label>
   <mat-form-field appearance="outline">
     <mat-select id="field1" placeholder="Placeholder" [formControl]="mySelectControl" [multiple]="multiple()">
       @for (option of options; track option) {

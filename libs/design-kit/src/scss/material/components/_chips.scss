@@ -49,6 +49,13 @@
       }
     }
 
+    &.mh-gradient {
+      background: linear-gradient(319deg, rgba(36, 115, 219, 0.4) -37.55%, rgba(118, 225, 177, 0.4) 100%);
+      .mat-mdc-chip-action::before {
+        border-color: transparent;
+      }
+    }
+
     &.mh-blue {
       background-color: mh.$surface-brand-primary-light;
       .mat-mdc-chip-action::before {

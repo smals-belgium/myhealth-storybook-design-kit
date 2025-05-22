@@ -1,11 +1,9 @@
 import { Component, computed, effect, input, InputSignal, signal, Signal, WritableSignal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { map } from 'rxjs';
 
 @Component({
   selector: 'mh-autocomplete',
@@ -21,20 +19,36 @@ export class AutocompleteComponent {
   readonly isOpen: WritableSignal<boolean> = signal(false);
   readonly suffixIcon: Signal<string> = computed(() => (this.isOpen() ? 'keyboard_arrow_up' : 'keyboard_arrow_down'));
 
-  readonly filteredOptions: Signal<string[]> = toSignal(
-    this.myControl.valueChanges.pipe(map((value) => this.#filter(value || ''))),
-    { initialValue: this.options }
-  );
+  readonly filteredOptions: WritableSignal<string[]> = signal(this.options);
 
   constructor() {
     effect(() => {
-      this.disabled() ? this.myControl.disable() : this.myControl.enable();
+      if (this.disabled()) {
+        this.myControl.disable();
+      } else {
+        this.myControl.enable();
+      }
+      this.myControl.valueChanges.subscribe((value) => {
+        this.filteredOptions.set(this.filter(value || ''));
+      });
+    });
+
+    effect(() => {
+      if (this.disabled()) {
+        this.myControl.disable();
+      } else {
+        this.myControl.enable();
+      }
     });
   }
 
-  #filter(value: string): string[] {
+  private filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
     return this.options.filter((option) => option.toLowerCase().includes(filterValue));
+  }
+
+  resetOptions(): void {
+    this.filteredOptions.set(this.options);
   }
 }

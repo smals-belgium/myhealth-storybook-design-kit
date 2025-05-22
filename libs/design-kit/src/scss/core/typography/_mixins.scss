@@ -139,7 +139,7 @@
 
 @mixin font-small-regular {
   font-family: fonts.$font-stack;
-  font-weight: fonts.$font-weight-light;
+  font-weight: fonts.$font-weight-regular;
   color: tokens.$typography-brand-neutral-darker;
   font-size: fn.calculateRem(14px);
   line-height: normal;
@@ -148,7 +148,7 @@
 
 @mixin font-extra-small-regular {
   font-family: fonts.$font-stack;
-  font-weight: fonts.$font-weight-light;
+  font-weight: fonts.$font-weight-regular;
   color: tokens.$typography-brand-neutral-darker;
   font-size: fn.calculateRem(12px);
   line-height: normal;

@@ -18,7 +18,11 @@ export class DatepickerComponent {
 
   constructor() {
     effect(() => {
-      this.disabled() ? this.myControl.disable() : this.myControl.enable();
+      if (this.disabled()) {
+        this.myControl.disable();
+      } else {
+        this.myControl.enable();
+      }
     });
   }
 }

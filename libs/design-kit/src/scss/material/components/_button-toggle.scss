@@ -1,0 +1,55 @@
+@use '@angular/material' as mat;
+@use '../../core/variables' as mh;
+
+@mixin override-mat-button-toggle {
+  mat-button-toggle-group.mat-button-toggle-group {
+    border-color: mh.$border-brand-primary-medium;
+
+    &:hover {
+      border-color: mh.$border-brand-primary-dark;
+    }
+    &:focus {
+      border-color: mh.$border-brand-primary-darker;
+    }
+    &[aria-disabled='true'] {
+      border-color: mh.$border-brand-neutral-medium;
+    }
+
+    mat-button-toggle.mat-button-toggle {
+      &:hover:not(.mat-button-toggle-checked) {
+        color: mh.$typography-brand-primary-dark;
+        background-color: mh.$surface-brand-primary-lighter;
+      }
+
+      & + mat-button-toggle.mat-button-toggle {
+        border-color: mh.$border-brand-primary-medium;
+
+        &:hover {
+          border-color: mh.$border-brand-primary-dark;
+        }
+        &:focus {
+          border-color: mh.$border-brand-primary-darker;
+        }
+        &.mat-button-toggle-disabled {
+          border-color: mh.$border-brand-neutral-medium;
+        }
+      }
+    }
+  }
+
+  @include mat.button-toggle-overrides(
+    (
+      label-text-weight: mh.$font-weight-semibold,
+      text-color: mh.$typography-brand-primary-medium,
+      // Hover
+      hover-state-layer-opacity: 0,
+      // Selected
+      selected-state-background-color: mh.$surface-brand-primary-light,
+      selected-state-text-color: mh.$typography-brand-primary-darker,
+      // Disabled
+      disabled-state-text-color: mh.$typography-brand-neutral-medium,
+      disabled-selected-state-text-color: mh.$typography-brand-neutral-medium,
+      disabled-selected-state-background-color: mh.$surface-brand-neutral-light,
+    )
+  );
+}

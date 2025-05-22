@@ -50,6 +50,16 @@
     .mh-dialog-container mat-dialog-container {
       div.mat-mdc-dialog-surface.mdc-dialog__surface {
         padding: mh.$spacing-l;
+
+        mat-dialog-actions.mat-mdc-dialog-actions {
+          flex-direction: column;
+          gap: mh.$spacing-xs;
+
+          > button {
+            width: 100%;
+            margin: 0;
+          }
+        }
       }
     }
   }

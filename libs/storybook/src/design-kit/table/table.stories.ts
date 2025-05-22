@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/angular';
+import { applicationConfig, type Meta, type StoryObj } from '@storybook/angular';
 import { TableComponent } from './table.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 const meta: Meta<TableComponent> = {
   title: 'Components/Table',
@@ -12,6 +13,11 @@ const meta: Meta<TableComponent> = {
       control: { type: 'boolean' },
     },
   },
+  decorators: [
+    applicationConfig({
+      providers: [provideAnimations()],
+    }),
+  ],
 };
 
 export default meta;

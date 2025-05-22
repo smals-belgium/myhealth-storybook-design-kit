@@ -1,6 +1,7 @@
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { applicationConfig, type Meta, type StoryObj } from '@storybook/angular';
 import { DatepickerComponent } from './datepicker.component';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 const meta: Meta<DatepickerComponent> = {
   title: 'Components/Form field/Datepicker',
@@ -12,7 +13,7 @@ const meta: Meta<DatepickerComponent> = {
   },
   decorators: [
     applicationConfig({
-      providers: [provideAnimations()],
+      providers: [provideAnimations(), { provide: MAT_DATE_LOCALE, useValue: 'nl-BE' }],
     }),
   ],
 };

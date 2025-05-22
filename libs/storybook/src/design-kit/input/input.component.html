@@ -1,5 +1,5 @@
 <div class="mh-form-field">
-  <label for="field1">Label</label>
+  <label for="field1">Label <span aria-hidden="true" class="mh-label-required">*</span></label>
   <mat-form-field appearance="outline">
     <input id="field1" matInput placeholder="Placeholder" [formControl]="myInputControl" />
     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
@@ -7,7 +7,7 @@
   </mat-form-field>
 </div>
 <div class="mh-form-field">
-  <label for="field2">Label</label>
+  <label for="field2">Label <span aria-hidden="true" class="mh-label-required">*</span></label>
   <mat-form-field appearance="outline">
     <textarea id="field2" matInput placeholder="Placeholder" [formControl]="myTextareaControl"></textarea>
     <mat-hint>Hint text</mat-hint>
