@@ -1,0 +1,39 @@
+@use '../variables' as mh;
+
+@mixin use-option-button() {
+  .mh-option-buttons {
+    display: flex;
+    gap: mh.$spacing-l;
+
+    button[mat-flat-button].mh-option-buttons__button {
+      border-radius: mh.$border-radius-m;
+      height: 294px;
+      max-width: 400px;
+      text-align: start;
+
+      h3,
+      p {
+        color: mh.$color-white;
+      }
+
+      h3 {
+        margin-bottom: 0;
+      }
+
+      p {
+        margin-top: mh.$spacing-2xs;
+      }
+    }
+
+    // XSmall Screen
+    @media only screen and (max-width: (mh.$media-breakpoint-xs - 1)) {
+      flex-direction: column;
+      gap: mh.$spacing-xs;
+
+      button[mat-flat-button].mh-option-buttons__button {
+        height: 180px;
+        max-width: 100%;
+      }
+    }
+  }
+}

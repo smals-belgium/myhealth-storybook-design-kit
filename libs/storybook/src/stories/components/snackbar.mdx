@@ -1,0 +1,42 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Snackbar" />
+
+# Snackbar
+
+> The snackbar component is based of Angular Material's [snackbar](https://material.angular.io/components/snack-bar). Material's core features will remain the same and can be implemented in the same way.
+> The My Health belgium.be Design Kit will simply overrule the component's styling.
+
+## Snackbar best practices
+
+You can pass some standardized properties to the Angular Material snackbar.
+My Health chose to always show a `Close` **button**, as well as to **automatically close** the snackbar after `5000ms`.
+
+## Usage
+
+To use the **snackbar component** My Health styles, include them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-mat-snackbar();
+```
+
+Alternatively, you can use **all component** My Health styles by including them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-all-mat-components();
+```
+
+When calling the `snackbar.open()` method, pass the **custom class** `mh-snackbar--success` from My Health into the `panelClass` option to use My Health styling:
+
+```ts
+openSnackbar(): void {
+  this.snackbar.open('I am a snackbar!', 'Close', {
+    panelClass: 'mh-snackbar--success',
+    duration: 5000,
+  });
+}
+```

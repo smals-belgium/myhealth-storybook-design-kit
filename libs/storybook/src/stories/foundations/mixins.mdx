@@ -1,0 +1,122 @@
+import { Meta, ColorItem, ColorPalette } from '@storybook/blocks';
+
+<Meta title="Foundations/Mixins & optimization" />
+
+# Mixins & optimization
+
+> To optimize the Design Kit and make packages as small as possible, you can choose to include a select amount of mixins to suit your application's needs.
+> Instead of calling `core()`, you can handpick the mixins that are relevant for your application.
+
+## core
+
+The `core($use-material, $use-local-fonts)` mixin is the base of the design kit.
+
+This mixin allows the following variables to be passed: `$use-material: boolean`, `$use-local-fonts: boolean`.
+
+- `$use-material` is a boolean that dictates if `core()` **includes Angular Material** theme in the design kit or not.
+- `$use-local-fonts` is a boolean that dictates if `core()` includes the **local fonts or** gets them from the **Google Fonts CDN**.
+
+This mixin in turn calls following mixins:
+
+- [use-font-open-sans($use-local-fonts)](#use-font-open-sans)
+- [use-font-material-symbols($use-local-fonts)](#use-font-material-symbols)
+- [use-globals()](#use-globals)
+- [use-classes()](#use-classes)
+- [use-all-components()](#use-all-components)
+
+Optional:
+
+- [mh-material-theme()](#mh-material-theme)
+
+### use-font-open-sans
+
+The `use-font-open-sans($use-material, $use-local-fonts)` includes the Open Sans font into SCSS `@font-face`.
+
+This mixin allows the following variables to be passed: `$use-local-fonts: boolean`.
+
+- `$use-local-fonts` is a boolean that dictates if `use-font-open-sans()` includes the **local fonts or** gets them from the **Google Fonts CDN**.
+
+### use-font-material-symbols
+
+The `use-font-material-symbols($use-material, $use-local-fonts)` includes the Open Sans font into SCSS `@font-face`.
+
+This mixin allows the following variables to be passed: `$use-local-fonts: boolean`.
+
+- `$use-local-fonts` is a boolean that dictates if `use-font-open-sans()` includes the **local fonts or** gets them from the **Google Fonts CDN**.
+
+#### Optimization
+
+By default, the Material icons included with the design kit contain **all variable Material Symbols**.
+This package is naturally quite large, and can be reduced significantly by only including the symbols that are actually used in the application.
+
+You can do so by selecting the symbols you need directly in the [Google Fonts CDN](https://fonts.google.com/icons?icon.style=Rounded),
+and importing them in your project instead of calling `use-font-material-symbols()`.
+
+### use-globals
+
+The `use-globals()` mixin includes global styles onto HTML elements. It utilizes the MyHealth default fonts and colors to do so.
+The following HTML elements are styled:
+
+- `body` (Remove margins, add default font, add background-color and color)
+- `h1`-`h6`
+- `p`
+- `a`
+
+### use-classes
+
+The `use-classes()` mixin instantiates various classes used throughout the MyHealth application.
+
+- `sr-only`: Hides an element visually, but keeps it accessible for screen readers.
+- `d-none`: Sets the display of an element to hidden.
+- `mh-container`: Similar to Bootstrap's container, a scalable container to center content on the page.
+
+### use-all-components
+
+Specifies specific CSS classes that utilized by specific components in MyHealth.
+
+- `table`: Used for styling tables.
+- `option-button`: Used to style large option buttons.
+
+### mh-material-theme
+
+The `mh-material-theme()` mixin is used to instantiate the Angular Material theme.
+The mixin implements Angular's base theming mixins declared in [their theming documentation](https://material.angular.io/guide/theming).
+
+This mixin in turn uses the [MyHealth Material palette](/docs/foundations-material--docs). Which's variables are available in the design kit.
+
+## Utilities
+
+The following mixins are standalone utilities and can be used without calling `core()`:
+
+- `icon-size($size)`: Sets the size of a Material icon.
+
+## Material overrides
+
+Material overrides are used to change the default Material component styling to fit MyHealth's style.
+
+You can override all Material components at once with this SCSS mixin, provided Angular Material has been instantiated:
+
+```scss
+mh.override-all-mat-components();
+```
+
+Material components can be overridden **individually** as well, to do this, view the documentaiton provided with each specific component.
+
+### override-mat-select-arrow
+
+The `override-mat-select-arrow($icon, $font-family)` mixin is used to override the default Material dropdown arrow in a select.
+
+This mixin allows the following variables to be passed: `$icon: string`, `$font-family: string`.
+
+- `$icon` dictates the icon to be used as the dropdown arrow.
+- `$font-family` dictates the font family to be used for the icon.
+
+By default, the Material dropdown arrow is replaced with the Material icon `'keyboard_arrow_down'`, using font `'Material Symbols Rounded'`.
+
+## Typography
+
+The Design Kit specifies mixins for all font types, these are consumed by f.e. the [use-globals](#use-globals) mixin.
+You can find a list of all available mixins in our [Typography docs](/docs/foundations-typography--docs#presets).
+
+To find out what exactly is defined for these mixins, view the `scss/core/typography/mixins.scss` file in the package.
+These mixins may be subject to change and/or rename in the future.

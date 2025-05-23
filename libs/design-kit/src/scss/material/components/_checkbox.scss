@@ -1,0 +1,39 @@
+@use '@angular/material' as mat;
+@use '../../core/variables' as mh;
+
+$_checkbox-border-radius: 4px;
+
+@mixin override-mat-checkbox() {
+  mat-checkbox.mat-mdc-checkbox {
+    .mdc-checkbox .mdc-checkbox__background {
+      border-radius: $_checkbox-border-radius;
+    }
+  }
+
+  mat-pseudo-checkbox.mat-pseudo-checkbox {
+    border-radius: $_checkbox-border-radius;
+  }
+
+  @include mat.checkbox-overrides(
+    (
+      // Default label text
+      label-text-size: mh.$font-size-m,
+      label-text-color: mh.$typography-brand-neutral-darker,
+
+      // Unselected
+      unselected-icon-color: mh.$border-brand-neutral-medium,
+
+      // Unselected hover & focus
+      unselected-hover-icon-color: mh.$surface-brand-primary-medium,
+      unselected-hover-state-layer-color: mh.$surface-brand-primary-medium,
+      unselected-focus-icon-color: mh.$surface-brand-primary-medium,
+      unselected-focus-state-layer-color: mh.$surface-brand-primary-medium,
+
+      // Disabled
+      disabled-label-color: mh.$typography-brand-neutral-light,
+      disabled-selected-checkmark-color: mh.$surface-brand-neutral-medium,
+      disabled-selected-icon-color: mh.$surface-brand-neutral-light,
+      disabled-unselected-icon-color: mh.$border-brand-neutral-light
+    )
+  );
+}

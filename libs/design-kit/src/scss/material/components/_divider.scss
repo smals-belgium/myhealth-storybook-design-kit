@@ -1,0 +1,10 @@
+@use '@angular/material' as mat;
+@use '../../core/variables' as mh;
+
+@mixin override-mat-divider {
+  @include mat.divider-overrides(
+    (
+      color: mh.$color-gray-4,
+    )
+  );
+}

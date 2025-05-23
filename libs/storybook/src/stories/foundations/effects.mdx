@@ -1,0 +1,33 @@
+import { Markdown, Meta, ColorItem, ColorPalette } from '@storybook/blocks';
+
+<Meta title="Foundations/Effects" />
+
+# Effects
+
+> Effects are a way to add visual interest to your design. They can be subtle or bold, but they should always be intentional.
+> Effects are mostly animations, but can also include shadows, gradients, and other visual enhancements.
+
+## Shadows
+
+Shadows are a way to add depth to your design. They can be used to create a sense of hierarchy, or to make elements appear to float above the page.
+Use shadows in CSS like so: `box-shadow: $<shadow-variable>`.
+
+An overview of all values used for `box-shadow`:
+
+<Markdown>{`
+| token                    | value                                 |
+| :----------------------- | :------------------------------------ |
+| \`$box-shadow-dropdown\` | 0px 1px 9px 0px rgba(0, 0, 0, 0.15) |
+`}</Markdown>
+
+## Gradients
+
+Gradients are a way to add color and visual interest to your design. They can be used to create depth, or to draw attention to a specific element.
+
+You can use the following SCSS function to add a gradient with MyHealth's primary colors to an element: `gradient-light($rotation, $positionPrimary, $positionAccent)`.
+
+For example:
+
+```scss
+background: mh.gradient-light(315deg, 0%, 100%);
+```

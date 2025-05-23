@@ -1,0 +1,277 @@
+import { Meta, ColorItem, ColorPalette } from '@storybook/blocks';
+
+<Meta title="Foundations/Color tokens" />
+
+# Color tokens
+
+> Color tokens are a set of named colors that are used throughout the design system. They are defined in the `colors` directory in `core`, and utilise the Material 3 colors.
+
+## Main colors
+
+> Main colors are used to represent the My Health Belgium brand.
+
+<ColorPalette>
+  <ColorItem title="$color-primary" subtitle="Primary color blue ($primary-40)" colors={['#2473db']} />
+  <ColorItem title="$color-secondary" subtitle="Secondary color green ($secondary-40)" colors={['#3fd591']} />
+  <ColorItem title="$color-black" subtitle="Primary black swatch" colors={['#0d0d0d']} />
+  <ColorItem title="$color-white" subtitle="Primary white swatch" colors={['#ffffff']} />
+</ColorPalette>
+
+## Typography colors
+
+> Surface colors refer to the **font colors** of the application.
+
+### Brand
+
+The most frequently used colors for typography.
+
+<ColorPalette>
+  <ColorItem
+    title="$typography-brand-primary-x"
+    subtitle="Primary color swatches for brand typography, where `x` is the specified swatch"
+    colors={{
+      darker: '#164583',
+      dark: '#1d5caf',
+      medium: '#2473db',
+      light: '#3e84df',
+      lighter: '#ffffff',
+    }}
+  />
+  <ColorItem
+    title="$typography-brand-neutral-x"
+    subtitle="Neutral color swatches for brand typography, where `x` is the specified swatch"
+    colors={{
+      darker: '#000000',
+      dark: '#424242',
+      medium: '#808080',
+      light: '#8f8f8f',
+      lighter: '#ffffff',
+    }}
+  />
+</ColorPalette>
+
+### Semantic
+
+Semantic colors should be used scarcely, and only when the context requires it.
+
+<ColorPalette>
+  <ColorItem
+    title="$typography-semantic-success"
+    subtitle="Success typography color ($success-30)"
+    colors={['#1d8657']}
+  />
+  <ColorItem
+    title="$typography-semantic-warning"
+    subtitle="Warning typography color ($warning-25)"
+    colors={['#662e00']}
+  />
+  <ColorItem
+    title="$typography-semantic-error-darker"
+    subtitle="Error typography color ($error-20)"
+    colors={['#470600']}
+  />
+  <ColorItem
+    title="$typography-semantic-error-dark"
+    subtitle="Error typography color ($error-25)"
+    colors={['#8f0c00']}
+  />
+  <ColorItem
+    title="$typography-semantic-error-x"
+    subtitle="Error color swatches for semantic surfaces, where `x` is the specified swatch"
+    colors={{
+      darker: '#470600',
+      dark: '#8f0c00',
+      medium: '#d11100',
+    }}
+  />
+</ColorPalette>
+
+## Surface
+
+> Surface colors refer to the **background colors** of the application.
+
+### Brand
+
+The most frequently used colors for surfaces.
+
+<ColorPalette>
+  <ColorItem
+    title="$surface-brand-primary-x"
+    subtitle="Primary color swatches for brand surfaces, where `x` is the specified swatch"
+    colors={{
+      darker: '#164583',
+      dark: '#1d5caf',
+      medium: '#2473db',
+      light: '#caddf6',
+      lighter: '#f2f7fd',
+    }}
+  />
+  <ColorItem
+    title="$surface-brand-secondary-x"
+    subtitle="Secondary color swatches for brand surfaces, where `x` is the specified swatch"
+    colors={{
+      darker: '#0a2e1e',
+      dark: '#145c3c',
+      medium: '#1d8657',
+      light: '#b8efd6',
+      lighter: '#f2fcf8',
+    }}
+  />
+  <ColorItem
+    title="$surface-brand-tertiary-x"
+    subtitle="Tertiary color swatches for brand surfaces, where `x` is the specified swatch"
+    colors={{
+      darker: '#665700',
+      dark: '#998200',
+      medium: '#ccad00',
+      light: '#ffe761',
+      lighter: '#fffdf0',
+    }}
+  />
+  <ColorItem
+    title="$surface-brand-neutral-x"
+    subtitle="Neutral color swatches for brand surfaces, where `x` is the specified swatch"
+    colors={{
+      darker: '#000000',
+      dark: '#696969',
+      medium: '#808080',
+      light: '#ebebeb',
+      lighter: '#f5f5f5',
+    }}
+  />
+</ColorPalette>
+
+### Semantic
+
+Semantic colors should be used scarcely, and only when the context requires it.
+
+<ColorPalette>
+  <ColorItem
+    title="$surface-semantic-success-x"
+    subtitle="Success color swatches for semantic surfaces, where `x` is the specified swatch"
+    colors={{
+      darker: '#0a2e1e',
+      dark: '#145c3c',
+      medium: '#1d8657',
+      light: '#b8efd6',
+      lighter: '#f2fcf8',
+    }}
+  />
+  <ColorItem
+    title="$surface-semantic-warning-x"
+    subtitle="Warning color swatches for semantic surfaces, where `x` is the specified swatch"
+    colors={{
+      darker: '#331700',
+      dark: '#662e00',
+      medium: '#994500',
+      light: '#ffca9e',
+      lighter: '#ffeee0',
+    }}
+  />
+  <ColorItem
+    title="$surface-semantic-error-x"
+    subtitle="Error color swatches for semantic surfaces, where `x` is the specified swatch"
+    colors={{
+      darker: '#470600',
+      dark: '#8f0c00',
+      medium: '#c41C0d',
+      light: '#ffdad6',
+      lighter: '#fff6f5',
+    }}
+  />
+</ColorPalette>
+
+## Border colors
+
+> Border colors refer to the **border colors** of the application.
+
+### Brand
+
+The most frequently used colors for borders.
+
+<ColorPalette>
+  <ColorItem
+    title="$border-brand-primary-x"
+    subtitle="Primary color swatches for brand borders, where `x` is the specified swatch"
+    colors={{
+      darker: '#164583',
+      dark: '#1d5caf',
+      medium: '#2473db',
+      light: '#caddf6',
+      lighter: '#f2f7fd',
+    }}
+  />
+  <ColorItem
+    title="$border-brand-secondary-x"
+    subtitle="Secondary color swatches for brand borders, where `x` is the specified swatch"
+    colors={{
+      darker: '#0a2e1e',
+      dark: '#145c3c',
+      medium: '#1d8657',
+      light: '#b8efd6',
+      lighter: '#f2fcf8',
+    }}
+  />
+  <ColorItem
+    title="$border-brand-tertiary-x"
+    subtitle="Tertiary color swatches for brand borders, where `x` is the specified swatch"
+    colors={{
+      darker: '#332b00',
+      dark: '#665700',
+      medium: '#ccad00',
+      light: '#ffe761',
+      lighter: '#fffdf0',
+    }}
+  />
+  <ColorItem
+    title="$border-brand-neutral-x"
+    subtitle="Neutral color swatches for brand borders, where `x` is the specified swatch"
+    colors={{
+      darker: '#000000',
+      dark: '#696969',
+      medium: '#808080',
+      light: '#ebebeb',
+      lighter: '#D1D1D1',
+    }}
+  />
+</ColorPalette>
+
+### Semantic
+
+Semantic colors should be used scarcely, and only when the context requires it.
+
+<ColorPalette>
+  <ColorItem
+    title="$border-semantic-success-x"
+    subtitle="Success color swatches for semantic borders, where `x` is the specified swatch"
+    colors={{
+      darker: '#0a2e1e',
+      dark: '#145c3c',
+      medium: '#1d8657',
+      light: '#b8efd6',
+      lighter: '#f2fcf8',
+    }}
+  />
+  <ColorItem
+    title="$border-semantic-warning-x"
+    subtitle="Warning color swatches for semantic borders, where `x` is the specified swatch"
+    colors={{
+      darker: '#331700',
+      dark: '#662e00',
+      medium: '#994500',
+      light: '#ffca9e',
+      lighter: '#ffeee0',
+    }}
+  />
+  <ColorItem
+    title="$border-semantic-error-x"
+    subtitle="Error color swatches for semantic borders, where `x` is the specified swatch"
+    colors={{
+      darker: '#000000',
+      dark: '#8f0c00',
+      medium: '#C41C0D',
+      light: '#ffdad6',
+      lighter: '#fff6f5',
+    }}
+  />
+</ColorPalette>

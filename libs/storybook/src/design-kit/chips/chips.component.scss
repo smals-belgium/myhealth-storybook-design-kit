@@ -1,0 +1,11 @@
+table {
+  td:not(:first-of-type),
+  th:not(:first-of-type) {
+    text-align: left;
+    padding: 0 1rem;
+  }
+}
+
+mat-form-field {
+  width: 100%;
+}

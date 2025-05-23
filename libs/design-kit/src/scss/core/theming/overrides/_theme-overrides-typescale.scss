@@ -1,0 +1,93 @@
+@use '../../../core/typography/variables' as mh-typography;
+
+// These typescales are used to ovverride the base typescale in the M3 design system.
+
+$overrides: (
+  label-large-size: mh-typography.$font-size-m,
+  label-large-weight: mh-typography.$font-weight-semibold,
+  label-large-line-height: 28px,
+  label-large-tracking: 0.04px,
+);
+
+/*
+=== This is the list of possible variables, exported from [Figma's Material 3 Design Kit](https://www.figma.com/community/file/1035203688168086460) ===
+:root {
+    --display-large-font: var(--brand);
+    --display-large-weight: var(--weight-regular);
+    --display-large-size: 57px;
+    --display-large-line-height: 64px;
+    --display-large-tracking: -0.25px;
+    --display-medium-font: var(--brand);
+    --display-medium-weight: var(--weight-regular);
+    --display-medium-size: 45px;
+    --display-medium-line-height: 52px;
+    --display-medium-tracking: 0px;
+    --display-small-font: var(--brand);
+    --display-small-weight: var(--weight-regular);
+    --display-small-size: 36px;
+    --display-small-line-height: 44px;
+    --display-small-tracking: 0px;
+    --headline-large-font: var(--brand);
+    --headline-large-weight: var(--weight-regular);
+    --headline-large-size: 32px;
+    --headline-large-line-height: 40px;
+    --headline-large-tracking: 0px;
+    --headline-medium-font: var(--brand);
+    --headline-medium-weight: var(--weight-regular);
+    --headline-small-font: var(--brand);
+    --headline-medium-size: 28px;
+    --headline-small-weight: var(--weight-regular);
+    --headline-small-size: 24px;
+    --headline-medium-line-height: 36px;
+    --headline-medium-tracking: 0px;
+    --headline-small-line-height: 32px;
+    --headline-small-tracking: 0px;
+    --title-large-font: var(--brand);
+    --title-large-weight: var(--weight-regular);
+    --title-large-size: 22px;
+    --title-large-line-height: 28px;
+    --title-large-tracking: 0px;
+    --title-medium-font: var(--plain);
+    --title-medium-weight: var(--weight-medium);
+    --title-medium-size: 16px;
+    --title-medium-line-height: 24px;
+    --title-medium-tracking: 0.15000000596046448px;
+    --title-small-font: var(--plain);
+    --title-small-weight: var(--weight-medium);
+    --title-small-size: 14px;
+    --title-small-line-height: 20px;
+    --title-small-tracking: 0.10000000149011612px;
+    --label-large-font: var(--plain);
+    --label-large-weight: var(--weight-medium);
+    --label-large-weight-prominent: var(--weight-bold);
+    --label-large-size: 14px;
+    --label-large-line-height: 20px;
+    --label-large-tracking: 0.10000000149011612px;
+    --label-medium-font: var(--plain);
+    --label-medium-weight: var(--weight-medium);
+    --label-medium-weight-prominent: var(--weight-bold);
+    --label-medium-size: 12px;
+    --label-medium-line-height: 16px;
+    --label-medium-tracking: 0.5px;
+    --label-small-font: var(--plain);
+    --label-small-weight: var(--weight-medium);
+    --label-small-size: 11px;
+    --label-small-line-height: 16px;
+    --label-small-tracking: 0.5px;
+    --body-large-font: var(--plain);
+    --body-large-weight: var(--weight-regular);
+    --body-large-size: 16px;
+    --body-large-line-height: 24px;
+    --body-large-tracking: 0.5px;
+    --body-medium-font: var(--plain);
+    --body-medium-weight: var(--weight-regular);
+    --body-medium-size: 14px;
+    --body-medium-line-height: 20px;
+    --body-medium-tracking: 0.25px;
+    --body-small-font: var(--plain);
+    --body-small-weight: var(--weight-regular);
+    --body-small-size: 12px;
+    --body-small-line-height: 16px;
+    --body-small-tracking: 0.4000000059604645px;
+  }
+*/

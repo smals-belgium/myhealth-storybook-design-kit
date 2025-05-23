@@ -1,0 +1,130 @@
+// These are the colors used in the design kit. They are used to define the color palette of the application.
+// The colors are defined in the following format: `$color-name-<shade>: <color>;`, to adhere to Material Design's color naming conventions.
+
+// All these colors are taken directly from the MyHealth Global Design System.
+
+// === PRIMARY ===
+$primary-0: #000000;
+$primary-10: #040c16;
+$primary-20: #07172c;
+$primary-25: #0e2e58;
+$primary-30: #164583;
+$primary-35: #1d5caf;
+$primary-40: #2473db;
+$primary-50: #3e84df;
+$primary-60: #5d98e4;
+$primary-70: #77a8e9;
+$primary-80: #91b9ed;
+$primary-90: #accaf1;
+$primary-95: #caddf6;
+$primary-98: #e5eefb;
+$primary-99: #f2f7fd;
+$primary-100: #ffffff;
+
+// === SECONDARY ===
+$secondary-0: #000000;
+$secondary-10: #05150e;
+$secondary-20: #0a2e1e;
+$secondary-25: #145c3c;
+$secondary-30: #1d8657;
+$secondary-35: #27b475;
+$secondary-40: #3fd591;
+$secondary-50: #58daa0;
+$secondary-60: #71e0ae;
+$secondary-70: #86e4ba;
+$secondary-80: #9feac8;
+$secondary-90: #b8efd6;
+$secondary-95: #d1f5e5;
+$secondary-98: #e6faf1;
+$secondary-99: #f2fcf8;
+$secondary-100: #ffffff;
+
+// === TERTIARY ===
+$tertiary-0: #000000;
+$tertiary-10: #191600;
+$tertiary-20: #332b00;
+$tertiary-25: #665700;
+$tertiary-30: #998200;
+$tertiary-35: #ccad00;
+$tertiary-40: #ffd700;
+$tertiary-50: #ffdd1f;
+$tertiary-60: #ffe342;
+$tertiary-70: #ffe761;
+$tertiary-80: #ffec80;
+$tertiary-90: #fff09e;
+$tertiary-95: #fff6c2;
+$tertiary-98: #fffae0;
+$tertiary-99: #fffdf0;
+$tertiary-100: #ffffff;
+
+// === NEUTRAL ===
+$neutral-0: #000000;
+$neutral-10: #1f1f1f;
+$neutral-20: #424242;
+$neutral-25: #696969;
+$neutral-30: #737373;
+$neutral-35: #7a7a7a;
+$neutral-40: #7a7a7a;
+$neutral-50: #808080;
+$neutral-60: #8f8f8f;
+$neutral-70: #9c9c9c;
+$neutral-80: #a8a8a8;
+$neutral-90: #c4c4c4;
+$neutral-95: #ebebeb;
+$neutral-98: #f5f5f5;
+$neutral-99: #fafafa;
+$neutral-100: #ffffff;
+
+// === SUCCESS ===
+$success-0: #000000;
+$success-10: #05150e;
+$success-20: #0a2e1e;
+$success-25: #145c3c;
+$success-30: #1d8657;
+$success-35: #27b475;
+$success-40: #3fd591;
+$success-50: #58daa0;
+$success-60: #71e0ae;
+$success-70: #86e4ba;
+$success-80: #9feac8;
+$success-90: #b8efd6;
+$success-95: #d1f5e5;
+$success-98: #e6faf1;
+$success-99: #f2fcf8;
+$success-100: #ffffff;
+
+// === ERROR ===
+$error-0: #000000;
+$error-10: #240300;
+$error-20: #470600;
+$error-25: #8f0c00;
+$error-30: #c41c0d;
+$error-35: #f13828;
+$error-40: #ff6f61;
+$error-50: #ff8175;
+$error-60: #ff938a;
+$error-70: #ffa69e;
+$error-80: #ffb9b3;
+$error-90: #ffc7c2;
+$error-95: #ffdad6;
+$error-98: #ffeceb;
+$error-99: #fff6f5;
+$error-100: #ffffff;
+
+// === WARNING ===
+$warning-0: #000000;
+$warning-10: #190b00;
+$warning-20: #331700;
+$warning-25: #662e00;
+$warning-30: #994500;
+$warning-35: #cc5c00;
+$warning-40: #ff7300;
+$warning-50: #ff841f;
+$warning-60: #ff9742;
+$warning-70: #ffa861;
+$warning-80: #ffb980;
+$warning-90: #ffca9e;
+$warning-95: #ffddc2;
+$warning-98: #ffeee0;
+$warning-99: #fff7f0;
+$warning-100: #ffffff;

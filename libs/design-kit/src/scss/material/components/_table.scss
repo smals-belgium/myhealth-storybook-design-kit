@@ -1,0 +1,108 @@
+@use '../../core/variables' as mh;
+
+@mixin override-mat-table() {
+  table.mat-mdc-table,
+  mat-table.mat-mdc-table {
+    margin-bottom: mh.$spacing-xs;
+  }
+
+  tr.mat-mdc-header-row {
+    color: mh.$color-black;
+    font-size: mh.$font-size-m;
+    font-weight: mh.$font-weight-bold;
+
+    th.mat-mdc-header-cell {
+      border-bottom: mh.$border-width-m solid mh.$color-accent;
+    }
+  }
+
+  tr.mat-mdc-row {
+    color: mh.$color-black;
+    font-size: mh.$font-size-m;
+    background-color: mh.$color-gray-1;
+
+    &:not(tr.mh-detail-row) {
+      &:nth-child(even) {
+        background-color: mh.$color-gray-3;
+      }
+    }
+
+    td.mat-mdc-cell {
+      border-bottom: mh.$border-width-s solid mh.$color-gray-4;
+    }
+  }
+
+  tr.mat-mdc-row + tr.mh-detail-row {
+    &:nth-child(4n - 1),
+    &:nth-child(4n) {
+      background-color: mh.$color-gray-3;
+    }
+  }
+
+  tr.mh-detail-row + tr.mat-mdc-row {
+    &:nth-child(4n - 1),
+    &:nth-child(4n) {
+      background-color: mh.$color-gray-3;
+    }
+  }
+
+  // Selector of the row on which the expand button is pressed
+  tr.mat-mdc-row:has(+ tr.mh-detail-row > td.mh-detail-row--expanded) {
+    td.mat-mdc-cell {
+      border-bottom: none;
+
+      &:first-child {
+        border-left: mh.$border-width-s solid mh.$color-gray-5;
+      }
+
+      &:last-child {
+        border-right: mh.$border-width-s solid mh.$color-gray-5;
+      }
+    }
+
+    &:not(:first-child) {
+      td.mat-mdc-cell {
+        border-top: mh.$border-width-s solid mh.$color-gray-5;
+      }
+    }
+  }
+
+  tr.mh-detail-row {
+    height: 0;
+
+    td.mat-mdc-cell {
+      border-bottom: none;
+
+      * {
+        // Hide everything when the detail row is not expanded
+        height: 0;
+      }
+    }
+
+    td.mh-detail-row--expanded {
+      border: mh.$border-width-s solid mh.$color-gray-5;
+      border-top: none;
+      padding: mh.$spacing-l mh.$spacing-m;
+      background-color: mh.$color-white;
+      animation: detailExpandAnimation 0.2s;
+
+      * {
+        // Show everything when the detail row is expanded
+        height: auto;
+      }
+    }
+  }
+
+  tr.mdc-data-table__row:last-child td.mat-mdc-cell.mh-detail-row--expanded {
+    border-bottom: mh.$border-width-s solid mh.$color-gray-5;
+  }
+
+  @keyframes detailExpandAnimation {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: auto;
+    }
+  }
+}

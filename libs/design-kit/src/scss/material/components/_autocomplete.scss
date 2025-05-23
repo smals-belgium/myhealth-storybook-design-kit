@@ -1,0 +1,28 @@
+@use '../../core/variables' as mh;
+@use '@angular/material' as mat;
+
+@mixin override-mat-autocomplete() {
+  div.mat-mdc-autocomplete-panel.mat-mdc-autocomplete-visible {
+    mat-option.mat-mdc-option:focus.mdc-list-item,
+    .mat-mdc-option.mat-mdc-option-active.mdc-list-item {
+      background-color: mh.$surface-brand-primary-light;
+    }
+
+    mat-option.mat-mdc-option.mdc-list-item {
+      &--selected {
+        background-color: mh.$surface-brand-primary-lighter;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: mh.$surface-brand-primary-light;
+      }
+    }
+  }
+
+  @include mat.autocomplete-overrides(
+    (
+      container-shape: mh.$border-radius-s,
+    )
+  );
+}

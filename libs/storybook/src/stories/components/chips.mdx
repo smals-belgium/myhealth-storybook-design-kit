@@ -1,0 +1,55 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Chips" />
+
+# Chips
+
+> The chips component is based of Angular Material's [chips](https://material.angular.io/components/chips). Material's core features will remain the same and can be implemented in the same way.
+> The My Health belgium.be Design Kit will simply overrule the component's styling.
+
+## Usage
+
+To use the **chips component** My Health styles, include them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-mat-chips();
+```
+
+Alternatively, you can use **all component** My Health styles by including them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-all-mat-components();
+```
+
+### Colored chips
+
+`mat-chip` elements can be colored by adding one of the following classes to the `mat-chip` element:
+
+- `mh-blue`
+- `mh-green`
+- `mh-red`
+- `mh-yellow`
+- `mh-orange`
+- `mh-black`
+
+Not adding a class will resuled in the default color of the `mat-chip` element.
+
+Adding the parameter `--outline` to the class will add a border around the chip, and remove the background color.
+
+```html
+<mat-chip [disableRipple]="true" class="mh-blue">Blue chip</mat-chip>
+```
+
+### Disabling hover overlay
+
+`mat-chip` have a hover overlay effect by default, that changes the opacity of the chip.
+The hover overlay can be disabled by adding the `mh-no-overlay` class to the `mat-chip` element.
+This class can be combined with the color classes.
+
+```html
+<mat-chip [disableRipple]="true" class="mh-blue mh-no-overlay">Blue chip</mat-chip>
+```

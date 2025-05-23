@@ -1,0 +1,26 @@
+name: Release design kit
+
+on:
+  workflow_dispatch:
+    inputs:
+      release-version:
+        description: The release version number (e.g. 1.2.4)
+        type: string
+        required: true
+permissions:
+  pages: write
+  actions: write
+  id-token: write
+  contents: read
+
+jobs:
+  design-kit-npm:
+    uses: ./.github/workflows/design-kit-npm.yml
+    secrets: inherit
+    with:
+      release-version: ${{ github.event.inputs.release-version }}
+
+  design-kit-storybook:
+    needs: design-kit-npm
+    uses: ./.github/workflows/design-kit-storybook.yml
+    secrets: inherit

@@ -1,0 +1,8 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/libs/design-kit",
+  "lib": {
+    "entryFile": "src/index.ts"
+  },
+  "assets": ["_index.scss", "src/scss", "src/assets"]
+}

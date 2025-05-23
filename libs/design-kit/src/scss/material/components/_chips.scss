@@ -1,0 +1,137 @@
+@use '@angular/material' as mat;
+@use '../../core/variables' as mh;
+@use '../../core/functions' as fn;
+
+@mixin override-mat-chips() {
+  @include mat.chips-overrides(
+    (
+      container-shape-radius: mh.$border-radius-s,
+      label-text-color: mh.$typography-brand-neutral-darker,
+      label-text-weight: mh.$font-weight-medium,
+      label-text-line-height: fn.calculateRem(24px),
+      label-text-tracking: fn.calculateEm(-2%),
+      selected-label-text-color: mh.$typography-brand-neutral-darker,
+      outline-color: mh.$border-brand-neutral-medium,
+      with-icon-icon-color: mh.$typography-brand-neutral-darker,
+      with-icon-selected-icon-color: mh.$typography-brand-primary-medium,
+      elevated-selected-container-color: mh.$surface-brand-primary-light,
+    )
+  );
+
+  mat-chip-option.mat-mdc-chip {
+    transition: 0.1s background-color, color;
+
+    &.mdc-evolution-chip--selected {
+      &:hover {
+        .mat-mdc-chip-graphic .mdc-evolution-chip__checkmark,
+        .mdc-evolution-chip__text-label {
+          color: mh.$typography-brand-neutral-lighter;
+        }
+        background-color: mh.$surface-brand-primary-medium;
+      }
+
+      &.cdk-focused,
+      &:focus,
+      &:active {
+        .mat-mdc-chip-graphic .mdc-evolution-chip__checkmark,
+        .mdc-evolution-chip__text-label {
+          color: mh.$typography-brand-neutral-lighter;
+        }
+        background-color: mh.$surface-brand-primary-dark;
+      }
+    }
+  }
+
+  mat-chip.mat-mdc-chip {
+    &.mh-no-overlay {
+      .mat-mdc-chip-focus-overlay {
+        opacity: 0;
+      }
+    }
+
+    &.mh-gradient {
+      background: linear-gradient(319deg, rgba(36, 115, 219, 0.4) -37.55%, rgba(118, 225, 177, 0.4) 100%);
+      .mat-mdc-chip-action::before {
+        border-color: transparent;
+      }
+    }
+
+    &.mh-blue {
+      background-color: mh.$surface-brand-primary-light;
+      .mat-mdc-chip-action::before {
+        border-color: mh.$surface-brand-primary-light;
+      }
+
+      &--outline {
+        .mat-mdc-chip-action::before {
+          border-color: mh.$border-brand-primary-light;
+        }
+      }
+    }
+
+    &.mh-green {
+      background: mh.$surface-semantic-success-light;
+      .mat-mdc-chip-action::before {
+        border-color: mh.$surface-semantic-success-light;
+      }
+
+      &--outline {
+        .mat-mdc-chip-action::before {
+          border-color: mh.$border-semantic-success-light;
+        }
+      }
+    }
+
+    &.mh-red {
+      background: mh.$surface-semantic-error-light;
+      .mat-mdc-chip-action::before {
+        border-color: mh.$surface-semantic-error-light;
+      }
+
+      &--outline {
+        .mat-mdc-chip-action::before {
+          border-color: mh.$border-semantic-error-medium;
+        }
+      }
+    }
+
+    &.mh-yellow {
+      background: mh.$surface-brand-tertiary-light;
+      .mat-mdc-chip-action::before {
+        border-color: mh.$surface-brand-tertiary-light;
+      }
+
+      &--outline {
+        .mat-mdc-chip-action::before {
+          border-color: mh.$border-brand-tertiary-light;
+        }
+      }
+    }
+
+    &.mh-orange {
+      background: mh.$surface-semantic-warning-light;
+      .mat-mdc-chip-action::before {
+        border-color: mh.$surface-semantic-warning-light;
+      }
+
+      &--outline {
+        .mat-mdc-chip-action::before {
+          border-color: mh.$border-semantic-warning-medium;
+        }
+      }
+    }
+
+    &.mh-black {
+      background: mh.$surface-brand-neutral-light;
+      .mat-mdc-chip-action::before {
+        border-color: mh.$surface-brand-neutral-light;
+      }
+
+      &--outline {
+        .mat-mdc-chip-action::before {
+          border-color: mh.$border-brand-neutral-light;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+import { Meta, ColorItem, ColorPalette } from '@storybook/blocks';
+
+<Meta title="Legacy/Color (Legacy)" />
+
+> **Although still supported, these colors are deprecated and will be removed in a future version.** > **Please use [Color Tokens](/docs/foundations-color-tokens--docs) instead.**
+
+# Color (Legacy)
+
+> Colors are designed to communicate actions, state and direction within the interface.
+> Blue and green are My Health's main colors, supplemented with black for extra oomph.
+> In addition, there are sub-colors for a more personal and warmer palette, which fits in well with the core values.
+
+## Color tokens
+
+Our color palette is recored as global tokens. These can be directly used, and are inherited by all other token types.
+
+### Primary brand colors
+
+Primary brand colors are the main and most important colors. They are the colors of the logo, and therefore the recognizable color of MyHealth.
+
+<ColorPalette>
+  <ColorItem
+    title="$color-primary"
+    subtitle="Primary color blue (900 - 50)"
+    colors={['#1f43A9', '#2262C9', '#2473DB', '#42A3FF', '#63B4FE', '#90C9FF', '#BDF', '#E3F2FF', '#F0F7FF']}
+  />
+</ColorPalette>
+
+### Secondary brand colors
+
+Secondary brand colors act as a complimentary color pallet to the primary brand colors.
+
+<ColorPalette>
+  <ColorItem
+    title="$color-secondary"
+    subtitle="Accent color green (900 - 50)"
+    colors={[
+      '#00692d',
+      '#008943',
+      '#009b4f',
+      '#00ad5d',
+      '#00bd68',
+      '#00c97d',
+      '#1dd493',
+      '#76e1b1',
+      '#b1edcf',
+      '#dff8ec',
+    ]}
+  />
+</ColorPalette>
+
+### Neutral colors
+
+Neutral colors are colors that can always be used.
+
+<ColorPalette>
+  <ColorItem title="$color-white" colors={['#ffffff']} />
+
+{' '}
+
+<ColorItem title="$color-gray-1" colors={['#fafafa']} />
+
+{' '}
+
+<ColorItem title="$color-gray-2" colors={['#f6f6f6']} />
+
+{' '}
+
+<ColorItem title="$color-gray-3" colors={['#eeeeee']} />
+
+{' '}
+
+<ColorItem title="$color-gray-4" colors={['#d9d9d9']} />
+
+{' '}
+
+<ColorItem title="$color-gray-5" colors={['#aaaaaa']} />
+
+  <ColorItem title="$color-gray-6" colors={['#888888']} />
+</ColorPalette>
+
+### Semantic colors
+
+Semantic colors denote standard value states (such as update, success, error or warning). Each color has the same basic meaning in all contexts.
+
+<ColorPalette>
+  <ColorItem title="$color-error" colors={['#f44336']} />
+
+{' '}
+
+{' '}
+
+<ColorItem title="$color-warning" colors={['#E68619']} />
+
+{' '}
+
+{' '}
+
+<ColorItem title="$color-success" colors={['#00AD5D']} />
+
+  <ColorItem title="$color-update" colors={['#245BB4']} />
+</ColorPalette>
+
+### Color and accessibility
+
+Check out the [accessibility](/docs/foundations-accessibility--docs) section for complete guidance on color and accessibility in Bold.

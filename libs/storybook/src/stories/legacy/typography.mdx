@@ -1,0 +1,21 @@
+import { Meta, Markdown } from '@storybook/blocks';
+
+<Meta title="Legacy/Typography (Legacy)" />
+
+> **Although still supported, these typography mixins are deprecated and will be removed in a future version.** > **Please use [Typography](/docs/foundations-typography--docs) instead.**
+
+# Typography (Legacy)
+
+These font mixins are deprecated and will not be supported in future versions:
+
+<Markdown>{`
+| mixin                | font weight | size (px) | line height (px) | letter spacing (em) |
+| :------------------- | :---------- | :-------- | :--------------- | :------------------ |
+| \`font-body-1\`      | 400         | 18        | 28               | 0.025               |
+| \`font-body-2\`      | 700         | 16        | 24               | 0.025               |
+| \`font-body-3\`      | 600         | 16        | 24               | 0.025               |
+| \`font-body-4\`      | 400         | 16        | 24               | 0                   |
+| \`font-body-5\`      | 300         | 16        | 24               | 0                   |
+`}</Markdown>
+
+Please use `font-default-regular`, `font-default-bold` and other variants instead.

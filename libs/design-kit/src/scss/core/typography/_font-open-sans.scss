@@ -1,0 +1,50 @@
+@use './variables' as fonts;
+
+@mixin use-font-open-sans($use-local-fonts: false) {
+  @if ($use-local-fonts) {
+    @font-face {
+      font-family: 'Open Sans';
+      font-weight: fonts.$font-weight-light;
+      src: url('../../../assets/fonts/OpenSans-Light.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      font-weight: fonts.$font-weight-regular;
+      src: url('../../../assets/fonts/OpenSans-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      font-weight: fonts.$font-weight-medium;
+      src: url('../../../assets/fonts/OpenSans-Medium.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      font-weight: fonts.$font-weight-semibold;
+      src: url('../../../assets/fonts/OpenSans-SemiBold.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      font-weight: fonts.$font-weight-bold;
+      src: url('../../../assets/fonts/OpenSans-Bold.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      font-weight: fonts.$font-weight-extrabold;
+      src: url('../../../assets/fonts/OpenSans-ExtraBold.ttf') format('truetype');
+    }
+
+    // For italic text, we use a variable font as using italic text is discouraged in our design system.
+    @font-face {
+      font-family: 'Open Sans';
+      font-style: italic;
+      src: url('../../../assets/fonts/OpenSans-Italic.ttf') format('truetype');
+    }
+  } @else {
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+  }
+}

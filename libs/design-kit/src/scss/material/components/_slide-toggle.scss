@@ -1,0 +1,36 @@
+@use '../../core/variables' as mh;
+@use '@angular/material' as mat;
+
+@mixin override-mat-slide-toggle() {
+  @include mat.slide-toggle-overrides(
+    (
+      // Label
+      label-text-color: mh.$color-black,
+      label-text-size: mh.$font-size-m,
+
+      // Unselected state
+      unselected-icon-color: mh.$typography-brand-neutral-medium,
+      track-outline-color: mh.$surface-brand-neutral-medium,
+      unselected-track-color: mh.$surface-brand-neutral-medium,
+      unselected-handle-color: mh.$color-white,
+      // Hover, focus & pressed
+      unselected-hover-handle-color: mh.$color-white,
+      unselected-hover-track-color: mh.$surface-brand-neutral-dark,
+      unselected-focus-handle-color: mh.$color-white,
+      unselected-focus-track-color: mh.$surface-brand-neutral-dark,
+      unselected-pressed-handle-color: mh.$color-white,
+      unselected-pressed-track-color: mh.$surface-brand-neutral-dark,
+      // Selected state
+      selected-icon-color: mh.$typography-brand-primary-medium,
+      selected-track-color: mh.$surface-brand-primary-medium,
+      selected-handle-color: mh.$color-white,
+      // Hover, focus & pressed
+      selected-hover-handle-color: mh.$color-white,
+      selected-hover-track-color: mh.$surface-brand-primary-dark,
+      selected-focus-handle-color: mh.$color-white,
+      selected-focus-track-color: mh.$surface-brand-primary-dark,
+      selected-pressed-handle-color: mh.$color-white,
+      selected-pressed-track-color: mh.$surface-brand-primary-dark
+    )
+  );
+}
