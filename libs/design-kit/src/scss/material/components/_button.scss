@@ -1,0 +1,89 @@
+@use '@angular/material' as mat;
+@use '../../core/variables' as mh;
+@use '../../core/mixins' as mh-mixins;
+
+@mixin override-mat-button {
+  @include mat.button-overrides(
+    (
+      outlined-horizontal-padding: mh.$spacing-l,
+      filled-horizontal-padding: mh.$spacing-l,
+      text-horizontal-padding: mh.$spacing-l,
+      protected-horizontal-padding: mh.$spacing-l,
+      outlined-outline-width: mh.$border-width-m,
+      outlined-outline-color: mh.$color-primary,
+    )
+  );
+
+  button[mat-flat-button] {
+    background-color: mh.$surface-brand-primary-medium;
+    min-height: 46px;
+    height: unset;
+
+    &:hover {
+      background-color: mh.$surface-brand-primary-dark;
+    }
+
+    &:focus,
+    &:active {
+      background-color: mh.$surface-brand-primary-darker;
+    }
+  }
+
+  button[mat-stroked-button] {
+    color: mh.$typography-brand-primary-medium;
+    border-color: mh.$border-brand-primary-medium;
+    min-height: 46px;
+    height: unset;
+
+    &:disabled {
+      border-color: mh.$border-brand-neutral-medium;
+    }
+
+    &:hover {
+      border-color: mh.$border-brand-primary-dark;
+      color: mh.$typography-brand-primary-dark;
+    }
+
+    &:focus,
+    &:active {
+      border-color: mh.$border-brand-primary-darker;
+      color: mh.$typography-brand-primary-darker;
+    }
+  }
+
+  button[mat-button],
+  button[mat-raised-button] {
+    color: mh.$typography-brand-primary-medium;
+    min-height: 46px;
+    height: unset;
+
+    &:hover {
+      color: mh.$typography-brand-primary-dark;
+    }
+
+    &:focus,
+    &:active {
+      color: mh.$typography-brand-primary-darker;
+    }
+  }
+
+  button[mat-flat-button],
+  button[mat-raised-button] {
+    &:disabled {
+      background-color: mh.$surface-brand-neutral-light;
+    }
+  }
+
+  button.mat-unthemed,
+  button[mat-stroked-button],
+  button[mat-flat-button],
+  button[mat-raised-button] {
+    &:disabled {
+      color: mh.$typography-brand-neutral-medium;
+    }
+
+    mat-icon {
+      overflow: unset;
+    }
+  }
+}

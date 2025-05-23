@@ -1,0 +1,49 @@
+@use '@angular/material' as mat;
+@use '../../core/variables' as mh;
+@use 'sass:color';
+
+@mixin override-mat-snackbar() {
+  .mh-snackbar {
+    max-width: mh.$container-max-width;
+
+    @include mat.snack-bar-overrides(
+      (
+        container-color: mh.$mat-primary-50,
+        supporting-text-color: mh.$mat-primary-900,
+        container-shape: mh.$border-radius-m,
+        supporting-text-line-height: 24px,
+        supporting-text-size: mh.$font-size-m,
+        supporting-text-weight: mh.$font-weight-semibold,
+        button-color: mh.$color-dark-gray-text,
+      )
+    );
+
+    @include mat.button-overrides(
+      (
+        text-container-shape: mh.$border-radius-m,
+        text-horizontal-padding: 8px,
+        text-container-height: 75%,
+      )
+    );
+
+    &--success {
+      @extend .mh-snackbar;
+      @include mat.snack-bar-overrides(
+        (
+          container-color: mh.$mat-accent-50,
+          supporting-text-color: mh.$mat-accent-900,
+        )
+      );
+    }
+
+    &--error {
+      @extend .mh-snackbar;
+      @include mat.snack-bar-overrides(
+        (
+          container-color: color.adjust(mh.$color-error, $lightness: 33%),
+          supporting-text-color: color.adjust(mh.$color-error, $lightness: -30%),
+        )
+      );
+    }
+  }
+}

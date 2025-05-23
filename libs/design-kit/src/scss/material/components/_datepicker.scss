@@ -1,0 +1,39 @@
+@use '../../core/variables' as mh;
+@use '../../core/mixins' as mh-mixins;
+@use './button-icon' as button-icon;
+@use '@angular/material' as mat;
+
+@mixin override-mat-datepicker() {
+  // Toggle button color
+  mat-datepicker-toggle {
+    margin: 0 2px;
+
+    button.mat-mdc-icon-button {
+      background-color: transparent;
+    }
+  }
+
+  // Buttons inside calendar
+  mat-datepicker-content {
+    mat-calendar-header {
+      .mat-calendar-controls {
+        gap: mh.$spacing-xs;
+
+        button.mat-mdc-icon-button {
+          @include button-icon.light-mat-icon-button();
+        }
+      }
+    }
+  }
+
+  @include mat.datepicker-overrides(
+    (
+      calendar-period-button-icon-color: mh.$typography-brand-primary-medium,
+      calendar-navigation-button-icon-color: mh.$typography-brand-primary-medium,
+      calendar-container-shape: mh.$border-radius-m,
+      calendar-container-elevation-shadow: mh.$box-shadow-dropdown,
+      calendar-date-hover-state-background-color: mh.$surface-brand-primary-light,
+      calendar-date-focus-state-background-color: mh.$surface-brand-primary-light,
+    )
+  );
+}

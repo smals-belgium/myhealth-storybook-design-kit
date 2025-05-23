@@ -1,0 +1,10 @@
+<mat-paginator
+  #paginator
+  [length]="length()"
+  [pageSize]="pageSize()"
+  [disabled]="disabled()"
+  [showFirstLastButtons]="showFirstLastButtons()"
+  [pageSizeOptions]="showPageSizeOptions() ? pageSizeOptions : []"
+  [hidePageSize]="hidePageSize()"
+  aria-label="Select page"
+/>

@@ -1,0 +1,134 @@
+@use '@angular/material' as mat;
+@use '../../core/variables' as mh;
+
+@mixin override-mat-form-field() {
+  // Provide a custom class as a wrapper
+  .mh-form-field {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin: 4px 0;
+
+      .mh-label-required {
+        color: mh.$typography-semantic-error-medium;
+      }
+
+      &:has(+ .mat-mdc-form-field.mat-form-field-invalid) {
+        color: mh.$typography-semantic-error-medium;
+      }
+
+      &:has(+ .mat-mdc-form-field.mat-form-field-disabled) {
+        color: mh.$typography-brand-neutral-medium;
+      }
+    }
+  }
+
+  .mat-mdc-form-field {
+    .mat-mdc-form-field-hint-wrapper,
+    .mat-mdc-form-field-error-wrapper {
+      padding: 0;
+    }
+
+    .mat-mdc-form-field-infix {
+      z-index: 1;
+    }
+
+    .mat-mdc-notch-piece {
+      background-color: mh.$color-white;
+    }
+
+    // Disabled state
+    &.mat-form-field-disabled {
+      // Hint
+      .mat-mdc-form-field-hint-wrapper,
+      .mat-mdc-form-field-error-wrapper {
+        color: mh.$typography-brand-neutral-medium;
+      }
+
+      @include mat.icon-overrides(
+        (
+          color: mh.$typography-brand-neutral-medium,
+        )
+      );
+    }
+
+    // Error state
+    &.mat-form-field-invalid {
+      // Background color
+      .mat-mdc-notch-piece {
+        background-color: mh.$surface-semantic-error-lighter;
+      }
+
+      .mat-mdc-form-field-icon-suffix,
+      .mat-mdc-form-field-icon-prefix {
+        button.mat-mdc-icon-button:not(:focus, :hover, :active) {
+          color: mh.$typography-semantic-error-medium;
+        }
+      }
+
+      // Input
+      .mat-mdc-input-element {
+        color: mh.$typography-semantic-error-medium;
+
+        &.mdc-text-field__input::placeholder {
+          color: mh.$typography-semantic-error-medium;
+        }
+      }
+
+      // Hint
+      .mat-mdc-form-field-hint-wrapper,
+      .mat-mdc-form-field-error-wrapper {
+        color: mh.$typography-semantic-error-medium;
+      }
+
+      @include mat.icon-overrides(
+        (
+          color: mh.$typography-semantic-error-medium,
+        )
+      );
+    }
+  }
+
+  @include mat.form-field-overrides(
+    (
+      // Container shape
+      outlined-container-shape: mh.$border-radius-s,
+      // Spacing
+      container-vertical-padding: 11px,
+      container-height: 46px,
+
+      // Untouched
+      outlined-label-text-color: mh.$typography-brand-neutral-darker,
+      outlined-input-text-color: mh.$typography-brand-neutral-darker,
+      outlined-outline-width: mh.$border-width-s,
+      outlined-outline-color: mh.$border-brand-neutral-medium,
+
+      // Hover
+      outlined-hover-outline-color: mh.$border-brand-primary-medium,
+
+      // Focus
+      outlined-focus-outline-width: mh.$border-width-m,
+      outlined-focus-outline-color: mh.$border-brand-primary-medium,
+
+      // Active
+      trailing-icon-color: mh.$typography-brand-primary-medium,
+      enabled-select-arrow-color: mh.$typography-brand-primary-medium,
+
+      // Error
+      outlined-error-label-text-color: mh.$typography-semantic-error-medium,
+      outlined-error-outline-color: mh.$border-semantic-error-medium,
+      // Error hover
+      outlined-error-hover-label-text-color: mh.$typography-semantic-error-medium,
+      outlined-error-hover-outline-color: mh.$border-semantic-error-medium,
+      // Error focus
+      outlined-error-focus-label-text-color: mh.$typography-semantic-error-medium,
+      outlined-error-focus-outline-color: mh.$border-semantic-error-medium,
+
+      // Disabled
+      outlined-disabled-label-text-color: mh.$typography-brand-neutral-medium,
+      outlined-disabled-input-text-color: mh.$typography-brand-neutral-medium,
+      outlined-disabled-outline-color: mh.$border-brand-neutral-medium
+    )
+  );
+}

@@ -1,0 +1,8 @@
+// ================= Gradients =================
+@function gradient-light($rotation, $positionPrimary, $positionAccent) {
+  @return linear-gradient(
+    $rotation,
+    rgba(0, 133, 229, 0.25) $positionPrimary,
+    rgba(64, 228, 173, 0.25) $positionAccent
+  );
+}

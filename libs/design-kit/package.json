@@ -1,0 +1,24 @@
+{
+  "name": "@myhealth-belgium/design-kit",
+  "version": "2.4.1",
+  "description": "The MyHealth belgium.be design kit is used for developing web components to integrate with MyHealth.belgium.be.",
+  "author": "My Health",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/material": "^19.0.0",
+    "ngx-skeleton-loader": "^10.0.0 || ^11.0.0"
+  },
+  "sideEffects": false,
+  "exports": {
+    "./styles.scss": {
+      "style": "./_index.scss"
+    }
+  },
+  "files": [
+    "README.md",
+    "./_index.scss",
+    "./src/scss",
+    "./src/assets"
+  ],
+  "type": "module"
+}

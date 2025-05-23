@@ -1,0 +1,125 @@
+@use './color-m3' as m3;
+
+// === MH Brand colors ===
+$color-primary: m3.$primary-40;
+$color-secondary: m3.$secondary-40;
+$color-white: m3.$neutral-100;
+$color-black: #0d0d0d;
+
+$color-accent: $color-secondary; /// @deprecated Use $color-secondary instead
+
+// === Typography ===
+// === Typography colors refer to the text colors of the application ===
+// Primary
+$typography-brand-primary-darker: m3.$primary-30;
+$typography-brand-primary-dark: m3.$primary-35;
+$typography-brand-primary-medium: m3.$primary-40;
+$typography-brand-primary-light: m3.$primary-50;
+$typography-brand-primary-lighter: m3.$primary-100;
+// Neutral
+$typography-brand-neutral-darker: $color-black;
+$typography-brand-neutral-dark: #5c5c5c;
+$typography-brand-neutral-medium: m3.$neutral-50;
+$typography-brand-neutral-light: m3.$neutral-60;
+$typography-brand-neutral-lighter: m3.$neutral-100;
+// Semantic
+$typography-semantic-success: m3.$success-30;
+$typography-semantic-warning: m3.$warning-25;
+// Error
+$typography-semantic-error-darker: m3.$error-20;
+$typography-semantic-error-dark: m3.$error-25;
+$typography-semantic-error-medium: m3.$error-30;
+
+// === Surface ===
+// === Surface colors refer to the background colors of the application ===
+// == Brand colors
+// Primary
+$surface-brand-primary-darker: m3.$primary-30;
+$surface-brand-primary-dark: m3.$primary-35;
+$surface-brand-primary-medium: m3.$primary-40;
+$surface-brand-primary-light: m3.$primary-95;
+$surface-brand-primary-lighter: m3.$primary-99;
+// Secondary
+$surface-brand-secondary-darker: m3.$secondary-20;
+$surface-brand-secondary-dark: m3.$secondary-25;
+$surface-brand-secondary-medium: m3.$secondary-30;
+$surface-brand-secondary-light: m3.$secondary-90;
+$surface-brand-secondary-lighter: m3.$secondary-99;
+// Tertiary
+$surface-brand-tertiary-darker: m3.$tertiary-25;
+$surface-brand-tertiary-dark: m3.$tertiary-30;
+$surface-brand-tertiary-medium: m3.$tertiary-35;
+$surface-brand-tertiary-light: m3.$tertiary-70;
+$surface-brand-tertiary-lighter: m3.$tertiary-99;
+// Neutral
+$surface-brand-neutral-darker: $color-black;
+$surface-brand-neutral-dark: m3.$neutral-25;
+$surface-brand-neutral-medium: m3.$neutral-50;
+$surface-brand-neutral-light: m3.$neutral-95;
+$surface-brand-neutral-lighter: m3.$neutral-98;
+// == Semantic colors
+// Success
+$surface-semantic-success-darker: m3.$success-20;
+$surface-semantic-success-dark: m3.$success-25;
+$surface-semantic-success-medium: m3.$success-30;
+$surface-semantic-success-light: m3.$success-90;
+$surface-semantic-success-lighter: m3.$success-99;
+// Warning
+$surface-semantic-warning-darker: m3.$warning-20;
+$surface-semantic-warning-dark: m3.$warning-25;
+$surface-semantic-warning-medium: m3.$warning-30;
+$surface-semantic-warning-light: m3.$warning-90;
+$surface-semantic-warning-lighter: m3.$warning-98;
+// Error
+$surface-semantic-error-darker: m3.$error-20;
+$surface-semantic-error-dark: m3.$error-25;
+$surface-semantic-error-medium: m3.$error-30;
+$surface-semantic-error-light: m3.$error-95;
+$surface-semantic-error-lighter: m3.$error-99;
+
+// === Border ===
+// === Border colors refer to the border colors used by elements in the application ===
+// == Brand colors
+// Primary
+$border-brand-primary-darker: m3.$primary-30;
+$border-brand-primary-dark: m3.$primary-35;
+$border-brand-primary-medium: m3.$primary-40;
+$border-brand-primary-light: m3.$primary-95;
+$border-brand-primary-lighter: m3.$primary-98;
+// Secondary
+$border-brand-secondary-darker: m3.$secondary-20;
+$border-brand-secondary-dark: m3.$secondary-25;
+$border-brand-secondary-medium: m3.$secondary-30;
+$border-brand-secondary-light: m3.$secondary-70;
+$border-brand-secondary-lighter: m3.$secondary-98;
+// Tertiary
+$border-brand-tertiary-darker: m3.$tertiary-10;
+$border-brand-tertiary-dark: m3.$tertiary-25;
+$border-brand-tertiary-medium: m3.$tertiary-35;
+$border-brand-tertiary-light: m3.$tertiary-70;
+$border-brand-tertiary-lighter: m3.$tertiary-99;
+// Neutral
+$border-brand-neutral-darker: $color-black;
+$border-brand-neutral-dark: m3.$neutral-25;
+$border-brand-neutral-medium: m3.$neutral-50;
+$border-brand-neutral-light: m3.$neutral-70;
+$border-brand-neutral-lighter: #d1d1d1;
+// == Semantic colors
+// Success
+$border-semantic-success-darker: m3.$success-20;
+$border-semantic-success-dark: m3.$success-25;
+$border-semantic-success-medium: m3.$success-30;
+$border-semantic-success-light: m3.$success-70;
+$border-semantic-success-lighter: m3.$success-98;
+// Warning
+$border-semantic-warning-darker: m3.$warning-20;
+$border-semantic-warning-dark: m3.$warning-25;
+$border-semantic-warning-medium: m3.$warning-30;
+$border-semantic-warning-light: m3.$warning-90;
+$border-semantic-warning-lighter: m3.$warning-95;
+// Error
+$border-semantic-error-darker: m3.$error-20;
+$border-semantic-error-dark: m3.$error-25;
+$border-semantic-error-medium: m3.$error-30;
+$border-semantic-error-light: m3.$error-95;
+$border-semantic-error-lighter: m3.$error-98;

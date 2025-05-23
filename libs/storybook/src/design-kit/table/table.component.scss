@@ -1,0 +1,18 @@
+th {
+  text-transform: capitalize;
+}
+
+.align-right {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.show-more {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  &-button {
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,57 @@
+@use '../functions' as fn;
+
+// ================= Spacing =================
+$spacing-2xs: 6px;
+$spacing-xs: 8px;
+$spacing-s: 10px;
+$spacing-m: 16px;
+$spacing-l: 20px;
+$spacing-xl: 30px;
+$spacing-2xl: 40px;
+$spacing-3xl: 80px;
+$spacing-4xl: 120px;
+$spacing-5xl: 160px;
+
+$spacing-rem-2xs: fn.calculateRem(6px);
+$spacing-rem-xs: fn.calculateRem(8px);
+$spacing-rem-s: fn.calculateRem(10px);
+$spacing-rem-m: fn.calculateRem(16px);
+$spacing-rem-l: fn.calculateRem(20px);
+$spacing-rem-xl: fn.calculateRem(30px);
+$spacing-rem-2xl: fn.calculateRem(40px);
+$spacing-rem-3xl: fn.calculateRem(80px);
+$spacing-rem-4xl: fn.calculateRem(120px);
+$spacing-rem-5xl: fn.calculateRem(160px);
+
+// ================= Border Radius =================
+$border-radius-round: 9999px;
+$border-radius-s: 6px;
+$border-radius-m: 12px;
+$border-radius-l: 24px;
+$border-radius-xl: 32px;
+
+// ================= Border =================
+$border-width-s: 1px;
+$border-width-m: 2px;
+
+// ================= Container =================
+$container-pref-width-l: 95vw;
+$container-max-width-l: 1600px;
+
+$container-pref-width: 90vw;
+$container-max-width: 1300px;
+
+$container-pref-width-s: 85vw;
+$container-max-width-s: 820px;
+
+$container-pref-width-xs: 80vw;
+$container-max-width-xs: 730px;
+
+$container-pref-width-dialog: 85vw;
+$container-max-width-dialog: 1000px;
+
+// ================= Material Breakpoints =================
+$media-breakpoint-xs: 600px;
+$media-breakpoint-s: 960px;
+$media-breakpoint-m: 1280px;
+$media-breakpoint-l: 1920px;

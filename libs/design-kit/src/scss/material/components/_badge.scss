@@ -1,0 +1,15 @@
+@use '../../core/variables' as mh;
+@use '../../core/functions' as fn;
+@use '@angular/material' as mat;
+
+@mixin override-mat-badge() {
+  @include mat.badge-overrides(
+    (
+      background-color: mh.$surface-semantic-error-medium,
+      text-color: mh.$color-white,
+      text-size: fn.calculateRem(12px),
+      text-weight: mh.$font-weight-semibold,
+      container-padding: 1px 6px,
+    )
+  );
+}

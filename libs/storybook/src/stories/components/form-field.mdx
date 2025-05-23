@@ -1,0 +1,53 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Form field" />
+
+# Form field
+
+> The form field component is based of Angular Material's [form field](https://material.angular.io/components/form-field). Material's core features will remain the same and can be implemented in the same way.
+> The My Health belgium.be Design Kit will simply overrule the component's styling.
+
+## Usage
+
+To use the **form field component** My Health styles, include them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-mat-form-field();
+```
+
+Alternatively, you can use **all component** My Health styles by including them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-all-mat-components();
+```
+
+### Class for labels
+
+The MyHealth Design System requires labels to be outside of the input field. To achieve this, use the following class: `mh-form-field` on a div around the form field.
+Make sure the label is linked to the input field by using the `for` attribute on the label and the `id` attribute on the input field.
+
+An example on how to use this class:
+
+```html
+<div class="mh-form-field">
+  <label for="field1">Label <span aria-hidden class="mh-label-required">*</span></label>
+  <mat-form-field appearance="outline">
+    <input id="field1" matInput placeholder="Placeholder" [formControl]="myInputControl" />
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint text</mat-hint>
+  </mat-form-field>
+</div>
+```
+
+#### Required class
+
+The class `mh-label-required` is used to indicate that a field is required. This class will add a **red asterisk** to the label.
+The class should be added to a span element inside the label, as shown in the example below.
+
+```html
+<label for="field1">Label <span aria-hidden class="mh-label-required">*</span></label>
+```

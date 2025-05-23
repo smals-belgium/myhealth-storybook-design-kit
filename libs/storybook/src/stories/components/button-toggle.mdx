@@ -1,0 +1,28 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Buttons/Toggle" />
+
+# Button toggle
+
+> The button toggle component is based of Angular Material's [button toggle](https://material.angular.io/components/button-toggle). Material's core features will remain the same and can be implemented in the same way.
+> The My Health belgium.be Design Kit will simply overrule the component's styling.
+>
+> It should be noted that the Material buttons in the button toggle use a slightly resized version of the MH button style, this is to better fit the button toggle.
+
+## Usage
+
+To use the **button toggle component** My Health styles, include them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-mat-button-toggle();
+```
+
+Alternatively, you can use **all component** My Health styles by including them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-all-mat-components();
+```

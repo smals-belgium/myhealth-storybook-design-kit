@@ -1,0 +1,272 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="My Health belgium.be/Changelog" />
+
+# Changelog
+
+## 2.5.0 (16 May 2025)
+
+**Fixed bugs:**
+
+- Changed icon font to `Material Symbols Rounded` in tyopgoraphy documentation.
+- Added missing small screen font sizes to typography documentation.
+- Fixed typography mixins `font-small-regular` and `font-extra-small-regular` having the wrong font weight.
+- Added `$color-white` and `$color-black` to the [color tokens documentation](/docs/foundations-color-tokens--docs) under main colors.
+- Dialog buttons are now full width on mobile.
+- Form field hover now changes the border color to fit design system.
+- Moved global Form Fields docs from `Input` folder to `Form Field` folder.
+- Fixed documentation issues for the chips component.
+
+**New features:**
+
+- Added `$spacing-rem-X` variables for all spacing values, and included them in the [spacings documentation](/docs/foundations-spacing--docs).
+- Added sorting & filtering to Table Storybook example.
+- Added resetting options after select to Autocomplete Storybook example.
+- Added [documentation](/docs/components-form-field--docs) and example implementation for the `mh-label-required` class,
+  which can be used to give color to an asterisk inside labels of required fields.
+- Added the [button toggle](/story/components-buttons-toggle--default) component to the design kit,
+  which can be used to display a group of buttons that can be toggled on and off.
+- Added the gradient background to the chips component (outline only version not possible).
+
+## 2.4.1 (5 May 2025)
+
+**Fixed bugs:**
+
+- Fixed issue with the Material button height not scaling correctly with larger content.
+- Removed mixin `change-mat-button-dimensions`, as it is no longer needed and no accessible.
+- Fixed issue with link typography not having the correct line height.
+- Fixed issue with Typography (legacy) page.
+
+## 2.4.0 (5 May 2025)
+
+**Fixed bugs:**
+
+- Typography line-height is no longer set to hard-coded pixels, but `%` and `rem` values.
+- Reverted back to using `$use-local-fonts: true` as default, as this significantly increases performance (at the cost of package size).
+  Optimization of the font file will be added at a later stage.
+- Minor fixes to class specificiation for several component overrides.
+- Minor fixes to the documentation.
+
+**New features:**
+
+- Changed some of the color tokens to correspond with changes in the design system.
+- Updated the typography mixins to be in line with the design system.
+- Made small changes to various components to fit the design system.
+- Added a `capitalize` class to the design kit, which can be used to capitalize the first letter of an element.
+- Added the [Badge](/story/components-badge--default) component to the design kit, which can be used to display a small number or label next to an element.
+- Added the [FAB Button](/story/components-buttons-fab--default) component to the design kit, which can be used to display a floating action button.
+- Added the [Icon Button](/story/components-buttons-icon--default) component to the design kit, which can be used to display an icon button.
+- Updated the [Chips](/story/components-chips--default) component in the design kit according to the new design system.
+- Updated spacings to match design system.
+
+**Suggested manual changes for upgrade:**
+
+- We have deprecated the `font-body-x` mixins in favor for the new mixins seen in [Typography](/docs/foundations-typography--docs), change your code accordingly.
+
+## 2.3.4 (1 April 2025)
+
+- Technical release. No new features or bug fixes.
+
+## 2.3.3 (1 April 2025)
+
+- Technical release. No new features or bug fixes.
+
+## 2.3.2 (1 April 2025)
+
+- Technical release. No new features or bug fixes.
+
+## 2.3.1 (1 April 2025)
+
+- Technical release. No new features or bug fixes.
+
+## 2.3.0 (21 March 2025)
+
+**Fixed bugs:**
+
+- Fixed inconsistencies in `border` color-tokens, to match design system.
+- Changed `$color-black` from `#000` to `#0D0D0D` to match design system.
+- Added `word-break: break-word;` to `table__details` in custom table class to prevent long words from overflowing.
+
+**New features:**
+
+- Changed the default dropdown icon to the `keyboard_arrow_down` icon to match new design system, and provided mixin documentation & autocomplete for this.
+- Updated styling of checkbox to match new design system.
+- Updated styling of progress bar to match new design system.
+- Updated styling of radio button to match new design system.
+- Updated styling of radio button to match new design system.
+- Updated styling of slide toggle to match new design system.
+
+## 2.2.0 (20 March 2025)
+
+**Fixed bugs:**
+
+- Removed `@angular/core` peerDependency, as its not exported (only used for Storybook).
+- Changed default Material Symbol weight from `300` to `400` to fit Design system.
+- Removed MyHealth-website-specific (unique Searchbar component) autocomplete overrides from Design Kit.
+- Removed unused `mh-selection-button` class from Material components overrides.
+
+**New features:**
+
+- Changed `@angular/material` dependency from `"~19.0.0"` to `"^19.0.0"`.
+- Added a larger border radius: `$border-radius-xl: 32px`.
+- Added a effects page to match the new design system, which includes drop-shadows and gradients.
+- Updated styling of form fields to match new design system.
+- Updated styling of autocomplete to match new design system.
+- Updated styling of datepicker to match new design system.
+- Updated styling of select (dropdown) to match new design system.
+- Updated styling of cards to match new design system.
+- Updated styling of paginator to match new design system.
+- Updated styling of buttons to match new design system.
+
+## 2.1.0 (17 March 2025)
+
+**Fixed bugs:**
+
+- Fixed broken tables in Storybook documentation.
+
+**New features:**
+
+- Re-added fonts, and gave the option to load them from the Google Fonts CDN or locally.
+- Updated color values for the primary, secondary, tertiary and neutral colors to adhere to new design system.
+- Added in-depth color values for semantic colors (error, success, warning).
+- Added color tokens.
+- Changed internal SCSS structure of the design kit to be more modular and scalable.
+- Updated the `core()` mixin to include options with default values: `@mixin core($use-material: true, $use-local-fonts: false)`.
+- Greatly improved the documentation for the design kit, including Mixins & optimization and in-depth color variables.
+- Added documentation on deprecation of features (deprecated features will be removed in later version!).
+
+**Suggested manual changes for upgrade:**
+
+- Remove all colors listed in [Color (Legacy)](/docs/foundations-color-legacy--docs) documentation.
+- Start using [Color Tokens](/docs/foundations-color-tokens--docs) isntead of legacy colors.
+
+## 2.0.1 (10 February 2025)
+
+**Fixed bugs:**
+
+- Removed fonts and icons assets from the package. These are now loaded from the Google Fonts and Material Icons CDN.
+
+## 2.0.0 (23 January 2025)
+
+**Fixed bugs:**
+
+- Fixed issue with variable sizes (width/height) for different Material buttons.
+- Fixed wrongful classnames `mh-snackbar__success` and `mh-snackbar__failure` to `mh-snackbar--success` and `mh-snackbar--failure` respectively.
+
+**New features:**
+
+- Upgraded to Angular 19.
+- Upgraded from Angular Material 2 to Angular Material 3 (M3).
+- Updated styling for [chips](/docs/components-chips--docs).
+- Updated styilng for [dialog](/docs/components-dialog--docs).
+- Remvoed old override for `mat-form-field` styling and added rounded border-radius to Material's base `mat-form-field` component.
+- Added SCSS overrides for [Material's Form fields](https://material.angular.io/components/form-field), added [documentation for this component](/docs/components-form-field--docs).
+- Added gray color override for Material's `mat-divider` component.
+
+**Removed features:**
+
+- Removed OptionButton Storybook component & CSS class, as this is specific to MyHealth and not Material.
+- Removed `.info-link a` & `<mark>` overrides.
+
+**Required manual changes for upgrade to M3:**
+
+- Add `appearance="outlined"` to `mat-card` elements to maintain the same look and feel. The default behavior of cards is `raised`.
+- Change classnames `mh-snackbar__success` and `mh-snackbar__failure` to `mh-snackbar--success` and `mh-snackbar--failure` respectively if used anywhere.
+
+## 1.1.0 (12 September 2024)
+
+**New features:**
+
+- Added success and failure snackbars.
+- Added storybook component for option buttons.
+- Added styling to the Material [Form field](https://material.angular.io/components/form-field/overview) component.
+
+**Fixed bugs:**
+
+- Fixed error in documentation of the table.
+
+## 1.0.0 (01 May 2024)
+
+**Fixed bugs:**
+
+- Added different font faces for all font-weights, instead of a variable font. This is done to improve font readability on non-chromium browsers.
+- Renamed font weight variables to be consistent with [Google Fonts](https://fonts.google.com) naming conventions.
+
+**New features:**
+
+- Added `medium` (500) and `extrabold` (800) font weights.
+
+## 0.0.5 (22 Apr 2024)
+
+**Fixed bugs:**
+
+- Fixed sizing issue for Material icons.
+- Fixed color contrast for label font styles.
+
+**New features:**
+
+- Added styling for Angular Material [Snackbar](https://material.angular.io/components/snack-bar) component and added the component to Storybook.
+- Updated styling for cards.
+- Updated primary colors.
+- Added `8px` border-radius to regular `mat-button`.
+- Increased font weight of `action link` font.
+- Updated sizing for expansion panels.
+- Added styling for `mat-chip-option` in `mat-chip-listbox`.
+- Added storybook component for Chips.
+
+## 0.0.4 (13 Mar 2024)
+
+**New features:**
+
+- Added peer dependency for [ngx-skeleton-loader ^9.0.0](https://www.npmjs.com/package/ngx-skeleton-loader).
+- Updated @angular/core and @angular/material peer dependencies to ^17.1.2.
+- Added documentation for [ngx-skeleton-loader usage](/docs/components-skeleton-loader--docs).
+- Added documentation for [table skeleton loader](/docs/components-skeleton-loader--docs#table).
+
+## 0.0.3 (29 Feb 2024)
+
+**New features:**
+
+- Got rid of all `spacing` and `border-radius` @functions, which have now been replaced by consistent `spacing` and `border-radius` variables.
+  - These variables can be found in [Spacing](/docs/foundations-spacing--docs).
+- Added styling for Angular Material [Menu](https://material.angular.io/components/menu) component and added the component to Storybook.
+- Added styling for Angular Material [Dialog](https://material.angular.io/components/dialog) component and added the component to Storybook.
+- Updated [colors](/docs/foundations-color--docs) (neutral, text & semantic colors).
+- Made some minor changes to global tag CSS.
+- Added fonts.
+
+## 0.0.2 (9 Jan 2024)
+
+The second version of the design kit provides more extensive usage options for the design kit, as well as a more thorough documentation for the design kit.
+
+**Fixed bugs:**
+
+- Minor fixes in the Material Button styling overrides.
+- Material standard: `$toolbar-height` variable changes according to the screen width now.
+
+**New features:**
+
+- Material Card override styling.
+- Material Expansion override styling.
+- Material Table override styling - Included styling to create a custom expandable row.
+- Added Material Icons and OpenSans.ttf as a SCSS import, so this does not need to be done manually in `index.html`.
+- Added the Dutch MyHealth logo in assets.
+- Expanded the `.mh-container` with `--l`, `--s` & `--xs` options to support different sizes. These options should be used in combination with `.mh-container`. Example:
+  `<div class="mh-container mh-container--xs"></div>`.
+- Added the option to include only MH's global classes.
+- Added the option to include only MH's custom classes.
+- Added the option to include all material component overrides seperately (or all at once).
+- Expanded Storybook documentation including component examples.
+
+## 0.0.1 (1 Dec 2023)
+
+This is the first version of the design kit. It includes basic documentation on how to install and use the design kit.
+
+**New features:**
+
+- Material theme override with MyHealth colors and typography.
+- Material Button override styling.
+- Global styling and classes: - `.mh-container` is a class to dynamically keep a horizontal margin on both ends of the screne, justifying your content and enhancing user readability.
+  It is similar to the populer CSS framework Bootstrap's `.container` class.
+- Added basic variables and functions, these are documented in the [Foundations](/docs/foundations-accessibility--docs).
+- Added basic Storybook documentation.

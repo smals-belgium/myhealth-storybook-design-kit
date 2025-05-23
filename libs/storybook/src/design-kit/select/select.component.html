@@ -1,0 +1,11 @@
+<div class="mh-form-field">
+  <label for="field1">Label <span aria-hidden="true" class="mh-label-required">*</span></label>
+  <mat-form-field appearance="outline">
+    <mat-select id="field1" placeholder="Placeholder" [formControl]="mySelectControl" [multiple]="multiple()">
+      @for (option of options; track option) {
+      <mat-option [value]="option">{{ option }}</mat-option>
+      }
+    </mat-select>
+    <mat-hint>Hint text</mat-hint>
+  </mat-form-field>
+</div>

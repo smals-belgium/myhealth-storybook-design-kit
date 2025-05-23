@@ -1,0 +1,15 @@
+@use '@angular/material' as mat;
+@use '../../core/variables' as mh;
+@use './button-icon' as button-icon;
+
+@mixin override-mat-paginator() {
+  mat-paginator.mat-mdc-paginator {
+    .mat-mdc-paginator-range-actions {
+      gap: mh.$spacing-xs;
+
+      button.mat-mdc-icon-button {
+        @include button-icon.light-mat-icon-button();
+      }
+    }
+  }
+}

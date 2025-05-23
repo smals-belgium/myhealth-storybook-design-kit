@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Form Field/Select" />
+
+# Select
+
+> The select component is based of Angular Material's [select](https://material.angular.io/components/select). Material's core features will remain the same and can be implemented in the same way.
+> The My Health belgium.be Design Kit will simply overrule the component's styling.
+
+## Usage
+
+The select utilises the [form field component](/docs/components-form-field--docs) for its styling.
+You must therefore also include the form field component in your project.
+Make sure to also include the `mh-form-field` class (described in the [form field component](/docs/components-form-field--docs)) around the select component, if you want to achieve the desired label.
+
+To use the **select component** My Health styles, include them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-mat-form-field();
+@include mh.override-mat-select();
+```
+
+Alternatively, you can use **all component** My Health styles by including them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-all-mat-components();
+```

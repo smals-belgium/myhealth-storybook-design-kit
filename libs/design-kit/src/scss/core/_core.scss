@@ -1,0 +1,23 @@
+@forward './components';
+@forward './global';
+@forward './functions';
+@forward './mixins';
+@forward './typography/font-material-symbols';
+@forward './typography/font-open-sans';
+
+@use './theming/theming' as mh-theming;
+@use './global' as mh-global;
+@use './components' as mh-components;
+@use './typography' as mh-fonts;
+
+@mixin core($use-material: true, $use-local-fonts: true) {
+  @include mh-fonts.use-font-open-sans($use-local-fonts);
+  @include mh-fonts.use-font-material-symbols($use-local-fonts);
+  @include mh-global.use-globals();
+  @include mh-global.use-classes();
+  @include mh-components.use-all-components();
+
+  @if ($use-material) {
+    @include mh-theming.mh-material-theme();
+  }
+}

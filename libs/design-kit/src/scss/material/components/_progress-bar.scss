@@ -1,0 +1,15 @@
+@use '@angular/material' as mat;
+@use '../../core/variables' as mh;
+
+@mixin override-mat-progress-bar() {
+  mat-progress-bar.mat-mdc-progress-bar .mdc-linear-progress__bar-inner {
+    border-radius: mh.$border-radius-m;
+  }
+
+  @include mat.progress-bar-overrides(
+    (
+      track-shape: mh.$border-radius-m,
+      track-color: mh.$surface-brand-neutral-light,
+    )
+  );
+}

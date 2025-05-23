@@ -1,0 +1,218 @@
+@use '../../../core/color/variables' as mh-colors;
+
+// These colors are used to ovverride the base colors in the M3 design system.
+
+$overrides: (
+  primary: mh-colors.$color-primary,
+  secondary: mh-colors.$color-accent,
+  background: mh-colors.$color-white,
+  on-background: mh-colors.$color-black,
+  surface: mh-colors.$color-white,
+  on-surfce: mh-colors.$color-black,
+  surface-container: mh-colors.$color-white,
+  on-surface-container: mh-colors.$color-black,
+  surface-container-high: mh-colors.$color-white,
+  on-surface-container-hihg: mh-colors.$color-black,
+);
+
+/*
+=== This is the list of possible variables, exported from [Figma's Material 3 Design Kit](https://www.figma.com/community/file/1035203688168086460) ===
+:root {
+  --schemes-primary: rgba(101, 85, 143, 1);
+  --schemes-on-primary: rgba(255, 255, 255, 1);
+  --schemes-primary-container: rgba(234, 221, 255, 1);
+  --schemes-on-primary-container: rgba(79, 55, 138, 1);
+  --schemes-secondary: rgba(98, 91, 113, 1);
+  --schemes-on-secondary: rgba(255, 255, 255, 1);
+  --schemes-secondary-container: rgba(232, 222, 248, 1);
+  --schemes-on-secondary-container: rgba(74, 68, 89, 1);
+  --schemes-tertiary: rgba(125, 82, 96, 1);
+  --schemes-on-tertiary: rgba(255, 255, 255, 1);
+  --schemes-tertiary-container: rgba(255, 216, 228, 1);
+  --schemes-on-tertiary-container: rgba(99, 59, 72, 1);
+  --schemes-error: rgba(179, 38, 30, 1);
+  --schemes-on-error: rgba(255, 255, 255, 1);
+  --schemes-error-container: rgba(249, 222, 220, 1);
+  --schemes-on-error-container: rgba(133, 34, 33, 1);
+  --schemes-background: rgba(254, 247, 255, 1);
+  --schemes-on-background: rgba(29, 27, 32, 1);
+  --schemes-surface: rgba(254, 247, 255, 1);
+  --schemes-on-surface: rgba(29, 27, 32, 1);
+  --schemes-surface-variant: rgba(231, 224, 236, 1);
+  --schemes-on-surface-variant: rgba(73, 69, 79, 1);
+  --schemes-outline: rgba(121, 116, 126, 1);
+  --schemes-outline-variant: rgba(202, 196, 208, 1);
+  --schemes-surface-tint: rgba(103, 80, 164, 1);
+  --schemes-shadow: rgba(0, 0, 0, 1);
+  --schemes-scrim: rgba(0, 0, 0, 1);
+  --schemes-inverse-surface: rgba(50, 47, 53, 1);
+  --schemes-inverse-on-surface: rgba(245, 239, 247, 1);
+  --schemes-inverse-primary: rgba(208, 188, 255, 1);
+  --schemes-primary-fixed: rgba(234, 221, 255, 1);
+  --schemes-on-primary-fixed: rgba(33, 0, 93, 1);
+  --schemes-primary-fixed-dim: rgba(208, 188, 255, 1);
+  --schemes-on-primary-fixed-variant: rgba(79, 55, 139, 1);
+  --schemes-secondary-fixed: rgba(232, 222, 248, 1);
+  --schemes-on-secondary-fixed: rgba(29, 25, 43, 1);
+  --schemes-secondary-fixed-dim: rgba(204, 194, 220, 1);
+  --schemes-on-secondary-fixed-variant: rgba(74, 68, 88, 1);
+  --schemes-tertiary-fixed: rgba(255, 216, 228, 1);
+  --schemes-on-tertiary-fixed: rgba(49, 17, 29, 1);
+  --schemes-tertiary-fixed-dim: rgba(239, 184, 200, 1);
+  --schemes-on-tertiary-fixed-variant: rgba(99, 59, 72, 1);
+  --schemes-surface-dim: rgba(222, 216, 225, 1);
+  --schemes-surface-bright: rgba(254, 247, 255, 1);
+  --schemes-surface-container-lowest: rgba(255, 255, 255, 1);
+  --schemes-surface-container-low: rgba(247, 242, 250, 1);
+  --schemes-surface-container: rgba(243, 237, 247, 1);
+  --schemes-surface-container-high: rgba(236, 230, 240, 1);
+  --schemes-surface-container-highest: rgba(230, 224, 233, 1);
+  --state-layers-primary-opacity-08: rgba(101, 85, 143, 0.07999999821186066);
+  --state-layers-primary-opacity-12: rgba(101, 85, 143, 0.11999999731779099);
+  --state-layers-primary-opacity-16: rgba(101, 85, 143, 0.1599999964237213);
+  --state-layers-on-primary-opacity-08: rgba(255, 255, 255, 0.07999999821186066);
+  --state-layers-on-primary-opacity-12: rgba(255, 255, 255, 0.11999999731779099);
+  --state-layers-on-primary-opacity-16: rgba(255, 255, 255, 0.1599999964237213);
+  --state-layers-primary-container-opacity-08: rgba(234, 221, 255, 0.07999999821186066);
+  --state-layers-primary-container-opacity-12: rgba(234, 221, 255, 0.11999999731779099);
+  --state-layers-primary-container-opacity-16: rgba(234, 221, 255, 0.1599999964237213);
+  --state-layers-on-primary-container-opacity-08: rgba(79, 55, 138, 0.07999999821186066);
+  --state-layers-on-primary-container-opacity-12: rgba(79, 55, 138, 0.11999999731779099);
+  --state-layers-on-primary-container-opacity-16: rgba(79, 55, 138, 0.1599999964237213);
+  --state-layers-secondary-opacity-08: rgba(98, 91, 113, 0.07999999821186066);
+  --state-layers-secondary-opacity-12: rgba(98, 91, 113, 0.11999999731779099);
+  --state-layers-secondary-opacity-16: rgba(98, 91, 113, 0.1599999964237213);
+  --state-layers-on-secondary-opacity-08: rgba(255, 255, 255, 0.07999999821186066);
+  --state-layers-on-secondary-opacity-12: rgba(255, 255, 255, 0.11999999731779099);
+  --state-layers-on-secondary-opacity-16: rgba(255, 255, 255, 0.1599999964237213);
+  --state-layers-secondary-container-opacity-08: rgba(232, 222, 248, 0.07999999821186066);
+  --state-layers-secondary-container-opacity-12: rgba(232, 222, 248, 0.11999999731779099);
+  --state-layers-secondary-container-opacity-16: rgba(232, 222, 248, 0.1599999964237213);
+  --state-layers-on-secondary-container-opacity-08: rgba(74, 68, 89, 0.07999999821186066);
+  --state-layers-on-secondary-container-opacity-12: rgba(74, 68, 89, 0.11999999731779099);
+  --state-layers-on-secondary-container-opacity-16: rgba(74, 68, 89, 0.1599999964237213);
+  --state-layers-tertiary-opacity-08: rgba(125, 82, 96, 0.07999999821186066);
+  --state-layers-tertiary-opacity-12: rgba(125, 82, 96, 0.11999999731779099);
+  --state-layers-tertiary-opacity-16: rgba(125, 82, 96, 0.1599999964237213);
+  --state-layers-on-tertiary-opacity-08: rgba(255, 255, 255, 0.07999999821186066);
+  --state-layers-on-tertiary-opacity-12: rgba(255, 255, 255, 0.11999999731779099);
+  --state-layers-on-tertiary-opacity-16: rgba(255, 255, 255, 0.1599999964237213);
+  --state-layers-tertiary-container-opacity-08: rgba(255, 216, 228, 0.07999999821186066);
+  --state-layers-tertiary-container-opacity-12: rgba(255, 216, 228, 0.11999999731779099);
+  --state-layers-tertiary-container-opacity-16: rgba(255, 216, 228, 0.1599999964237213);
+  --state-layers-on-tertiary-container-opacity-08: rgba(99, 59, 72, 0.07999999821186066);
+  --state-layers-on-tertiary-container-opacity-12: rgba(99, 59, 72, 0.11999999731779099);
+  --state-layers-on-tertiary-container-opacity-16: rgba(99, 59, 72, 0.1599999964237213);
+  --state-layers-error-opacity-08: rgba(179, 38, 30, 0.07999999821186066);
+  --state-layers-error-opacity-12: rgba(179, 38, 30, 0.11999999731779099);
+  --state-layers-error-opacity-16: rgba(179, 38, 30, 0.1599999964237213);
+  --state-layers-on-error-opacity-08: rgba(255, 255, 255, 0.07999999821186066);
+  --state-layers-on-error-opacity-12: rgba(255, 255, 255, 0.11999999731779099);
+  --state-layers-on-error-opacity-16: rgba(255, 255, 255, 0.1599999964237213);
+  --state-layers-error-container-opacity-08: rgba(249, 222, 220, 0.07999999821186066);
+  --state-layers-error-container-opacity-12: rgba(249, 222, 220, 0.11999999731779099);
+  --state-layers-error-container-opacity-16: rgba(249, 222, 220, 0.1599999964237213);
+  --state-layers-on-error-container-opacity-08: rgba(133, 34, 33, 0.07999999821186066);
+  --state-layers-on-error-container-opacity-12: rgba(133, 34, 33, 0.11999999731779099);
+  --state-layers-on-error-container-opacity-16: rgba(133, 34, 33, 0.1599999964237213);
+  --state-layers-background-opacity-08: rgba(254, 247, 255, 0.07999999821186066);
+  --state-layers-background-opacity-12: rgba(254, 247, 255, 0.11999999731779099);
+  --state-layers-background-opacity-16: rgba(254, 247, 255, 0.1599999964237213);
+  --state-layers-on-background-opacity-08: rgba(29, 27, 32, 0.07999999821186066);
+  --state-layers-on-background-opacity-12: rgba(29, 27, 32, 0.11999999731779099);
+  --state-layers-on-background-opacity-16: rgba(29, 27, 32, 0.1599999964237213);
+  --state-layers-surface-opacity-08: rgba(254, 247, 255, 0.07999999821186066);
+  --state-layers-surface-opacity-12: rgba(254, 247, 255, 0.11999999731779099);
+  --state-layers-surface-opacity-16: rgba(254, 247, 255, 0.1599999964237213);
+  --state-layers-on-surface-opacity-08: rgba(29, 27, 32, 0.07999999821186066);
+  --state-layers-on-surface-opacity-12: rgba(29, 27, 32, 0.11999999731779099);
+  --state-layers-on-surface-opacity-16: rgba(29, 27, 32, 0.1599999964237213);
+  --state-layers-surface-variant-opacity-08: rgba(231, 224, 236, 0.07999999821186066);
+  --state-layers-surface-variant-opacity-12: rgba(231, 224, 236, 0.11999999731779099);
+  --state-layers-surface-variant-opacity-16: rgba(231, 224, 236, 0.1599999964237213);
+  --state-layers-on-surface-variant-opacity-08: rgba(73, 69, 79, 0.07999999821186066);
+  --state-layers-on-surface-variant-opacity-12: rgba(73, 69, 79, 0.11999999731779099);
+  --state-layers-on-surface-variant-opacity-16: rgba(73, 69, 79, 0.1599999964237213);
+  --state-layers-outline-opacity-08: rgba(121, 116, 126, 0.07999999821186066);
+  --state-layers-outline-opacity-12: rgba(121, 116, 126, 0.11999999731779099);
+  --state-layers-outline-opacity-16: rgba(121, 116, 126, 0.1599999964237213);
+  --state-layers-outline-variant-opacity-08: rgba(202, 196, 208, 0.07999999821186066);
+  --state-layers-surface-tint-opacity-08: rgba(103, 80, 164, 0.07999999821186066);
+  --state-layers-surface-tint-opacity-12: rgba(103, 80, 164, 0.11999999731779099);
+  --state-layers-surface-tint-opacity-16: rgba(103, 80, 164, 0.1599999964237213);
+  --state-layers-shadow-opacity-08: rgba(0, 0, 0, 0.07999999821186066);
+  --state-layers-shadow-opacity-12: rgba(0, 0, 0, 0.11999999731779099);
+  --state-layers-shadow-opacity-16: rgba(0, 0, 0, 0.1599999964237213);
+  --state-layers-outline-variant-opacity-12: rgba(202, 196, 208, 0.11999999731779099);
+  --state-layers-outline-variant-opacity-16: rgba(202, 196, 208, 0.1599999964237213);
+  --state-layers-scrim-opacity-08: rgba(0, 0, 0, 0.07999999821186066);
+  --state-layers-inverse-surface-opacity-08: rgba(50, 47, 53, 0.07999999821186066);
+  --state-layers-inverse-surface-opacity-12: rgba(50, 47, 53, 0.11999999731779099);
+  --state-layers-inverse-surface-opacity-16: rgba(50, 47, 53, 0.1599999964237213);
+  --state-layers-inverse-on-surface-opacity-08: rgba(245, 239, 247, 0.07999999821186066);
+  --state-layers-inverse-on-surface-opacity-12: rgba(245, 239, 247, 0.11999999731779099);
+  --state-layers-inverse-on-surface-opacity-16: rgba(245, 239, 247, 0.1599999964237213);
+  --state-layers-inverse-primary-opacity-08: rgba(208, 188, 255, 0.07999999821186066);
+  --state-layers-inverse-primary-opacity-12: rgba(208, 188, 255, 0.11999999731779099);
+  --state-layers-inverse-primary-opacity-16: rgba(208, 188, 255, 0.1599999964237213);
+  --state-layers-primary-fixed-opacity-08: rgba(234, 221, 255, 0.07999999821186066);
+  --state-layers-primary-fixed-opacity-12: rgba(234, 221, 255, 0.11999999731779099);
+  --state-layers-primary-fixed-opacity-16: rgba(234, 221, 255, 0.1599999964237213);
+  --state-layers-on-primary-fixed-opacity-08: rgba(33, 0, 93, 0.07999999821186066);
+  --state-layers-on-primary-fixed-opacity-12: rgba(33, 0, 93, 0.11999999731779099);
+  --state-layers-on-primary-fixed-opacity-16: rgba(33, 0, 93, 0.1599999964237213);
+  --state-layers-primary-fixed-dim-opacity-08: rgba(208, 188, 255, 0.07999999821186066);
+  --state-layers-primary-fixed-dim-opacity-12: rgba(208, 188, 255, 0.11999999731779099);
+  --state-layers-primary-fixed-dim-opacity-16: rgba(208, 188, 255, 0.1599999964237213);
+  --state-layers-on-primary-fixed-variant-opacity-08: rgba(79, 55, 139, 0.07999999821186066);
+  --state-layers-on-primary-fixed-variant-opacity-12: rgba(79, 55, 139, 0.11999999731779099);
+  --state-layers-on-primary-fixed-variant-opacity-16: rgba(79, 55, 139, 0.1599999964237213);
+  --state-layers-secondary-fixed-opacity-08: rgba(232, 222, 248, 0.07999999821186066);
+  --state-layers-secondary-fixed-opacity-12: rgba(232, 222, 248, 0.11999999731779099);
+  --state-layers-secondary-fixed-opacity-16: rgba(232, 222, 248, 0.1599999964237213);
+  --state-layers-on-secondary-fixed-opacity-08: rgba(29, 25, 43, 0.07999999821186066);
+  --state-layers-on-secondary-fixed-opacity-12: rgba(29, 25, 43, 0.11999999731779099);
+  --state-layers-on-secondary-fixed-opacity-16: rgba(29, 25, 43, 0.1599999964237213);
+  --state-layers-secondary-fixed-dim-opacity-08: rgba(204, 194, 220, 0.07999999821186066);
+  --state-layers-secondary-fixed-dim-opacity-12: rgba(204, 194, 220, 0.11999999731779099);
+  --state-layers-secondary-fixed-dim-opacity-16: rgba(204, 194, 220, 0.1599999964237213);
+  --state-layers-on-secondary-fixed-variant-opacity-08: rgba(74, 68, 88, 0.07999999821186066);
+  --state-layers-on-secondary-fixed-variant-opacity-12: rgba(74, 68, 88, 0.11999999731779099);
+  --state-layers-on-secondary-fixed-variant-opacity-16: rgba(74, 68, 88, 0.1599999964237213);
+  --state-layers-tertiary-fixed-opacity-08: rgba(255, 216, 228, 0.07999999821186066);
+  --state-layers-tertiary-fixed-opacity-12: rgba(255, 216, 228, 0.11999999731779099);
+  --state-layers-tertiary-fixed-opacity-16: rgba(255, 216, 228, 0.1599999964237213);
+  --state-layers-on-tertiary-fixed-opacity-08: rgba(49, 17, 29, 0.07999999821186066);
+  --state-layers-on-tertiary-fixed-opacity-12: rgba(49, 17, 29, 0.11999999731779099);
+  --state-layers-on-tertiary-fixed-opacity-16: rgba(49, 17, 29, 0.1599999964237213);
+  --state-layers-tertiary-fixed-dim-opacity-08: rgba(239, 184, 200, 0.07999999821186066);
+  --state-layers-tertiary-fixed-dim-opacity-12: rgba(239, 184, 200, 0.11999999731779099);
+  --state-layers-tertiary-fixed-dim-opacity-16: rgba(239, 184, 200, 0.1599999964237213);
+  --state-layers-on-tertiary-fixed-variant-opacity-08: rgba(99, 59, 72, 0.07999999821186066);
+  --state-layers-on-tertiary-fixed-variant-opacity-12: rgba(99, 59, 72, 0.11999999731779099);
+  --state-layers-on-tertiary-fixed-variant-opacity-16: rgba(99, 59, 72, 0.1599999964237213);
+  --state-layers-surface-dim-opacity-08: rgba(222, 216, 225, 0.07999999821186066);
+  --state-layers-surface-dim-opacity-12: rgba(222, 216, 225, 0.11999999731779099);
+  --state-layers-surface-dim-opacity-16: rgba(222, 216, 225, 0.1599999964237213);
+  --state-layers-surface-bright-opacity-08: rgba(254, 247, 255, 0.07999999821186066);
+  --state-layers-surface-bright-opacity-12: rgba(254, 247, 255, 0.11999999731779099);
+  --state-layers-surface-bright-opacity-16: rgba(254, 247, 255, 0.1599999964237213);
+  --state-layers-surface-container-lowest-opacity-08: rgba(255, 255, 255, 0.07999999821186066);
+  --state-layers-surface-container-lowest-opacity-12: rgba(255, 255, 255, 0.11999999731779099);
+  --state-layers-surface-container-lowest-opacity-16: rgba(255, 255, 255, 0.1599999964237213);
+  --state-layers-surface-container-low-opacity-08: rgba(247, 242, 250, 0.07999999821186066);
+  --state-layers-surface-container-low-opacity-12: rgba(247, 242, 250, 0.11999999731779099);
+  --state-layers-surface-container-low-opacity-16: rgba(247, 242, 250, 0.1599999964237213);
+  --state-layers-scrim-opacity-12: rgba(0, 0, 0, 0.11999999731779099);
+  --state-layers-scrim-opacity-16: rgba(0, 0, 0, 0.1599999964237213);
+  --state-layers-surface-container-opacity-08: rgba(243, 237, 247, 0.07999999821186066);
+  --state-layers-surface-container-high-opacity-08: rgba(236, 230, 240, 0.07999999821186066);
+  --state-layers-surface-container-high-opacity-12: rgba(236, 230, 240, 0.11999999731779099);
+  --state-layers-surface-container-high-opacity-16: rgba(236, 230, 240, 0.1599999964237213);
+  --state-layers-surface-container-opacity-12: rgba(243, 237, 247, 0.11999999731779099);
+  --state-layers-surface-container-opacity-16: rgba(243, 237, 247, 0.1599999964237213);
+  --state-layers-surface-container-highest-opacity-08: rgba(230, 224, 233, 0.07999999821186066);
+  --state-layers-surface-container-highest-opacity-12: rgba(230, 224, 233, 0.11999999731779099);
+  --state-layers-surface-container-highest-opacity-16: rgba(230, 224, 233, 0.1599999964237213);
+}
+*/

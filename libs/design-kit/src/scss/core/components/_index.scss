@@ -1,0 +1,10 @@
+@forward './option-button' show use-option-button;
+@forward './table' show use-table;
+
+@use './option-button' as mh-option-button;
+@use './table' as mh-table;
+
+@mixin use-all-components() {
+  @include mh-option-button.use-option-button();
+  @include mh-table.use-table();
+}

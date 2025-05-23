@@ -1,0 +1,45 @@
+@use '../variables' as mh;
+@use '../typography/mixins' as mh-mixins;
+
+@mixin use-globals() {
+  html,
+  body {
+    height: 100%;
+    scroll-behavior: smooth;
+
+    @media (prefers-reduced-motion) {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    margin: 0;
+    font-family: mh.$font-stack;
+    color: mh.$color-black;
+    background-color: mh.$color-white;
+  }
+
+  h1 {
+    @include mh-mixins.font-heading-1;
+  }
+  h2 {
+    @include mh-mixins.font-heading-2;
+  }
+  h3 {
+    @include mh-mixins.font-heading-3;
+  }
+  h4 {
+    @include mh-mixins.font-heading-4;
+  }
+  h5 {
+    @include mh-mixins.font-heading-5;
+  }
+  h6 {
+    @include mh-mixins.font-heading-6;
+  }
+  p {
+    @include mh-mixins.font-default-regular;
+  }
+  a {
+    @include mh-mixins.font-nav-link;
+  }
+}

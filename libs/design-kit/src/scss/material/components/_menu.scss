@@ -1,0 +1,54 @@
+@use '@angular/material' as mat;
+@use '../../core/variables' as mh;
+
+@mixin override-mat-menu() {
+  @include mat.menu-overrides(
+    (
+      container-shape: mh.$border-radius-s,
+      container-elevation-shadow: (
+        0px 2px 6px 0px rgba(0, 0, 0, 0.15),
+        0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+      ),
+      divider-top-spacing: mh.$spacing-s,
+      divider-bottom-spacing: mh.$spacing-s,
+      item-icon-color: mh.$color-primary,
+      item-hover-state-layer-color: mh.$surface-brand-primary-lighter,
+    )
+  );
+
+  // Used to make the menu popup go full width on mobile devices
+  div.cdk-overlay-connected-position-bounding-box {
+    @media (max-width: (mh.$media-breakpoint-xs - 1)) {
+      left: 0;
+      right: 0;
+      width: auto;
+    }
+  }
+
+  div.mat-mdc-menu-panel {
+    min-width: 350px;
+    max-width: 500px;
+    margin-top: mh.$spacing-xs;
+
+    // Used to make the menu popup go full width on mobile devices
+    @media (max-width: (mh.$media-breakpoint-xs - 1)) {
+      margin-left: mh.$spacing-m;
+      margin-right: mh.$spacing-m;
+      width: 100vw;
+    }
+
+    div.mat-mdc-menu-content {
+      padding: mh.$spacing-s;
+
+      button.mat-mdc-menu-item,
+      a.mat-mdc-menu-item {
+        padding: mh.$spacing-s;
+        border-radius: mh.$border-radius-s;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

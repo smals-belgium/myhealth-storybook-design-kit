@@ -1,0 +1,44 @@
+/// @deprecated Legacy Material 2 colors
+$mat-primary-50: #f0f7ff;
+$mat-primary-100: #e3f2ff;
+$mat-primary-200: #bdf;
+$mat-primary-300: #90c9ff;
+$mat-primary-400: #63b4fe;
+$mat-primary-500: #42a3ff;
+$mat-primary-700: #2473db;
+$mat-primary-800: #2262c9;
+$mat-primary-900: #1f43a9;
+
+$mat-accent-warn: #fb9b458a;
+
+$mat-accent-50: #dff8ec;
+$mat-accent-100: #b1edcf;
+$mat-accent-200: #76e1b1;
+$mat-accent-300: #1dd493;
+$mat-accent-400: #00c97d;
+$mat-accent-500: #00bd68;
+$mat-accent-600: #00ad5d;
+$mat-accent-700: #009b4f;
+$mat-accent-800: #008943;
+$mat-accent-900: #00692d;
+
+/// === Legacy color tokens ===
+/// @deprecated Legacy Semantic Colors (Use `$semantic-x`) instead
+$color-error: #f44336;
+$color-warn: #e68619;
+$color-success: #00ad5d;
+$color-info: #245bb4;
+
+/// @deprecated Legacy typescale colors (Use `$typography-brand-x`) instead
+$color-primary-text: $mat-primary-900;
+$color-accent-text: $mat-accent-900;
+$color-dark-gray-text: #2e404c;
+$color-gray-text: #545f66;
+
+/// @deprecated Legacy Grayscale Colors (Use `$neutral-x`) instead
+$color-gray-1: #fafafa;
+$color-gray-2: #f6f6f6;
+$color-gray-3: #eeeeee;
+$color-gray-4: #d9d9d9;
+$color-gray-5: #aaaaaa;
+$color-gray-6: #888888;
