@@ -13,6 +13,7 @@ const preview = {
     },
     options: {
       storySort: {
+        method: 'alphabetical',
         order: ['My Health belgium.be', 'Foundations', 'Legacy', 'Components', ['Readme', '*']]
       },
     },
