@@ -1,5 +1,5 @@
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
-import { ChangeDetectionStrategy, Component, computed, input, InputSignal, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, InputSignal, ViewChild, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
@@ -7,6 +7,7 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import {MatCard, MatCardContent} from "@angular/material/card";
 
 @Component({
   selector: 'mh-table',
@@ -20,12 +21,16 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatIconModule,
     MatTableModule,
+    MatCard,
+    MatCardContent,
   ],
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableComponent {
+  @Input() isMobile = false;
+
   readonly expandEnabled: InputSignal<boolean> = input.required();
   readonly isLoading: InputSignal<boolean> = input.required();
 

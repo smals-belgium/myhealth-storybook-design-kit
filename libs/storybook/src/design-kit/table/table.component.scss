@@ -1,3 +1,5 @@
+@use '../../../../design-kit' as mh;
+
 th {
   text-transform: capitalize;
 }
@@ -15,4 +17,9 @@ th {
   &-button {
     white-space: nowrap;
   }
+}
+
+.info-card{
+  background-color: mh.$surface-brand-primary-lighter;
+  margin-top: 48px;
 }

@@ -27,5 +27,20 @@ export const Default: Story = {
   args: {
     expandEnabled: true,
     isLoading: false,
-  },
+    isMobile: false,
+  }
 };
+
+export const Mobile: Story = {
+  args: {
+    expandEnabled: true,
+    isLoading: false,
+    isMobile: true,
+  }
+};
+
+Mobile.parameters = {
+  viewport: {
+    defaultViewport: 'mobile',
+  },
+}
