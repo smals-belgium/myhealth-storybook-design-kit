@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { ButtonToggleComponent } from './button-toggle.component';
 
 const meta: Meta<ButtonToggleComponent> = {
-  title: 'Components/Buttons/Toggle',
+  title: 'Components/Buttons (cta)/Toggle',
   component: ButtonToggleComponent,
   argTypes: {
     disabled: {

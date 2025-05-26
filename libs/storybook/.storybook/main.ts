@@ -11,7 +11,7 @@ const config: StorybookConfig = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@storybook/preset-scss',
+    '@storybook/preset-scss'
   ],
   framework: {
     name: '@storybook/angular',

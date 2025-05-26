@@ -1,9 +1,11 @@
-import { Meta } from '@storybook/blocks';
+import { Meta, Canvas, Story, Source } from '@storybook/blocks';
+import * as ButtonStories from './../../design-kit/button/button.stories';
 
-<Meta title="Components/Buttons/Button" />
+<Meta title="Components/Buttons (cta)/Button" of={ButtonStories} />
 
 # Button
 
+> Calls to action are interactive elements of the user interface that prompt the user to take action. The size, alignment and location of these elements not only show users what they can interact with but also indicate the level of importance of the interaction.
 > The button component is based of Angular Material's [button](https://material.angular.io/components/button). Material's core features will remain the same and can be implemented in the same way.
 > The My Health belgium.be Design Kit will simply overrule the component's styling.
 
@@ -24,3 +26,30 @@ Alternatively, you can use **all component** My Health styles by including them 
 
 @include mh.override-all-mat-components();
 ```
+
+## Usage guidelines
+
+### Mobile app (360×800, 390×844, 393×873, 412×915)
+ * Main action first
+ * Secundary action below with a spacing of at least 16px
+ * Give the same size for the 2 buttons
+ * Minimum 44 x44 px
+ * Place actions in line with form fields, respecting their order of importance.
+ * Give all buttons the same size.
+ * Spacing between buttons is minimum 16px
+
+## Content guidelines
+### Label
+The button label should describe what will happen once it is tapped.  E.g. « reserve medication »
+
+## Component variations
+### Variants
+<Canvas of={ButtonStories.AllVariants} sourceState="none" />
+
+Call-to-action elements are categorized by priority to guide users toward the most important interaction. :
+ * The <a href="?path=/story/components-buttons-cta-button--flat">**Primary button**</a> is the main task a user should take on a given screen—such as "Submit," "Next," or "Save." There should only be **one primary action per view** to avoid confusion. It uses the strongest visual styling to stand out.
+ * <a href="?path=/story/components-buttons-cta-button--stroked">**Secondary actions**</a> support the primary task—such as "Cancel" or "Go Back." These are still important, but they are visually less dominant.
+ * <a href="?path=/story/components-buttons-cta-link--default">**Tertiary actions**</a> are optional or contextual, like "Learn more" or "Edit later." These use the least visual emphasis.
+
+Using this hierarchy ensures consistency and helps users understand which actions are most important, reducing friction and decision fatigue.
+

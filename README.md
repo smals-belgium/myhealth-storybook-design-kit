@@ -8,16 +8,25 @@
 
 ## Run tasks
 
-To run the dev server for your app, use:
+To run the dev server for storybook, use:
 
+#### Storybook
 ```sh
-npx nx serve tempapp
+npx nx storybook storybook
 ```
 
 To create a production bundle:
 
+#### Storybook
+
 ```sh
-npx nx build tempapp
+npx nx build storybook
+```
+
+#### Design-kit
+
+```sh
+npx nx build design-kit
 ```
 
 To see all available targets to run for a project, run:
