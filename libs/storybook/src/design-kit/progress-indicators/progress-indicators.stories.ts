@@ -5,6 +5,18 @@ import { ProgressIndicatorsComponent } from './progress-indicators.component';
 const meta: Meta<ProgressIndicatorsComponent> = {
   title: 'Components/Progress Indicators',
   component: ProgressIndicatorsComponent,
+  argTypes: {
+    type: {
+      options: ['bar', 'spinner', 'skeleton'],
+      control: { type: 'radio' },
+    },
+    percentage: {
+      control: { type: 'number' },
+    },
+    items: {
+      control: { type: 'number' },
+    },
+  },
   decorators: [
     applicationConfig({
       providers: [provideAnimations()],

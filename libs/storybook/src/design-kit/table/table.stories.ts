@@ -12,6 +12,9 @@ const meta: Meta<TableComponent> = {
     isLoading: {
       control: { type: 'boolean' },
     },
+    isMobile: {
+      control: { type: 'boolean' },
+    },
   },
   decorators: [
     applicationConfig({
@@ -30,6 +33,12 @@ export const Default: Story = {
     isMobile: false,
   }
 };
+
+Default.parameters = {
+  viewport: {
+    defaultViewport: 'desktop',
+  },
+}
 
 export const Mobile: Story = {
   args: {

@@ -5,6 +5,10 @@ const meta: Meta<ButtonComponent> = {
   title: 'Components/Buttons (cta)/Button',
   component: ButtonComponent,
   argTypes: {
+    type: {
+      options: ['flat', 'stroked', 'link'],
+      control: { type: 'radio' },
+    },
     disabled: {
       control: { type: 'boolean' },
     },

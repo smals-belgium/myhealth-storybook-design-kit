@@ -7,9 +7,20 @@ import { Meta, Canvas, Story, Source } from '@storybook/blocks';
 > A default accordion is a vertically stacked list of headers that reveal or hide associated sections of content.
 > Accordion let users see the skeleton of the page, while also allowing them to expand sections of interest in situ.
 
+> The accordion is based of Angular Material's [expansion](https://material.angular.io/components/expansion). Material's core features will remain the same and can be implemented in the same way.
+> The My Health belgium.be Design Kit will simply overrule the component's styling.
+
 ## Usage
 
-To use the **accordion component** My Health styles, include them in your root SCSS file:
+To use the **expansion component** My Health styles, include them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-mat-expansion();
+```
+
+Alternatively, you can use **all component** My Health styles by including them in your root SCSS file:
 
 ```css
 @use '@myhealth-belgium/design-kit' as mh;
