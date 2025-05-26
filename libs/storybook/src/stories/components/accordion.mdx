@@ -1,0 +1,57 @@
+import { Meta, Canvas, Story, Source } from '@storybook/blocks';
+
+<Meta title="Components/Accordion" />
+
+# Accordion
+
+> A default accordion is a vertically stacked list of headers that reveal or hide associated sections of content.
+> Accordion let users see the skeleton of the page, while also allowing them to expand sections of interest in situ.
+
+## Usage
+
+To use the **accordion component** My Health styles, include them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-all-mat-components();
+```
+
+## Usage guidelines
+
+### When?
+ * When users need only a few pieces of information on the page, they will likely skip most of the content. Hiding most of the content on the page helps users spend their time more efficiently by focusing on the few topics that matter.
+ * When the main task is a logical, step-by-step process, accordions can guide users through the process by presenting information relevant to the current step and hiding irrelevant details that can distract or overwhelm users. This approach is commonly used to simplify multistep flows, making the experience more manageable for users.
+
+The label of an accordion should be descriptive enough so that people can guess whether they want to expand it.
+
+### States
+* <b>Collapsed state:</b>
+ Basic state of a branch, displaying only its label and a chevron pointing to the bottom.
+
+* <b>Hover state:</b>
+State visible when the cursor hovers the label and chevron. They are displayed in another color. Cursor becomes a pointer.
+
+* <b>Opened state:</b>
+State visible when clicked. The branch opens, allowing the content inside to be displayed. The look of the label changes for the user to clearly identify which item in the list is openned. Also, the chevron changes of direction, pointing to the top.
+
+* <b>Disabled state:</b>
+State visible if the branch is not clickable. All elements are displayed but they are greyed out to signify the change of state.
+
+### Anatomy
+Accordions begin by default in the collapsed state with all content closed. Starting in a collapsed state gives the user a high-level overview of the available information.  If the accordions start open, users will have to scroll down to hunt for new material.
+* By default, the user can open one branch at a time. When a new branch is opened, the previous one is closed.
+* If needed, you can parameter the accordion to allow the user to expand multiple branch at once.
+
+#### Clickable zone
+* Make the entire header selectable. Allow users to click anywhere in the header area to expand or collapse the content; a larger target is easier to manipulate.
+* Give interactive elements enough space. Make sure interactive elements within the collapsible region are far enough from the headers that users don’t accidentally trigger a collapse. (The exact distance depends on the device.)
+
+### Accessibility
+* Code header areas in the accordion as buttons. Using a `<button type="button">` assures accordions are usable with both screen readers and keyboards.
+* Use aria-controls to associate an accordion button with its related content. Connect an accordion button control with its appropriate content region by referencing the controlled element’s id in the button’s aria-controls attribute.
+* Use unique ids. Each button has a unique name, aria-controls="[id]", that associates the control with the appropriate region by referencing the controlled element’s id.
+* Accordions use javascript to set the hidden values of their content areas. Each content area will have its hidden attribute set by the component, depending on its corresponding button’s aria-expanded attribute. To ensure your content is accessible if the JavaScript does not load or is disabled, you should not manually set hidden on any of your content areas.
+* You do not need to add text alternatives for the collapsed and expanded accordion states. These states are set programmatically with JavaScript.
+
+
