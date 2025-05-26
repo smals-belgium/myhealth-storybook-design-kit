@@ -1,4 +1,4 @@
-import {Component, Input, signal} from '@angular/core';
+import {Component, input, InputSignal, signal} from '@angular/core';
 import {MatExpansionModule} from "@angular/material/expansion";
 
 
@@ -9,6 +9,6 @@ import {MatExpansionModule} from "@angular/material/expansion";
   styleUrl: './accordion.component.scss',
 })
 export class AccordionComponent {
-  @Input() disabled: boolean = false;
+  readonly disabled: InputSignal<boolean> = input.required();
   readonly panelOpenState = signal(false);
 }

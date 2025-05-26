@@ -1,0 +1,107 @@
+@switch (type()) {
+  @case ('bar') {
+    <div class="progress-wrapper">
+      <div>
+        <h2>Indeterminate</h2>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </div>
+      <div>
+        <h2>Determinate</h2>
+        <mat-progress-bar mode="determinate" [value]="percentage()"></mat-progress-bar>
+      </div>
+    </div>
+
+  }
+  @case ('spinner') {
+
+    <div class="progress-wrapper">
+      <div>
+        <h2>Indeterminate</h2>
+        <mat-spinner></mat-spinner>
+      </div>
+      <div>
+        <h2>Determinate</h2>
+        <mat-spinner mode="determinate" [value]="percentage()"></mat-spinner>
+      </div>
+    </div>
+
+  }
+  @case ('skeleton') {
+
+    <div class="progress-wrapper">
+      <div>
+        <h2>Line skeletons</h2>
+        <ngx-skeleton-loader
+          [count]="items()"
+          appearance="line"
+          [theme]="{
+      height: '47px',
+      margin: '0'
+    }"
+        />
+      </div>
+      <div>
+        <h2>Circle skeletons</h2>
+        <ngx-skeleton-loader
+          [count]="items()"
+          appearance="circle"
+          [theme]="{
+      width: '70px',
+      height: '70px'
+    }"
+        />
+      </div>
+
+      <div>
+        <h2>Item skeleton</h2>
+
+        <div class="card-item">
+          <div>
+            <div></div>
+            <ngx-skeleton-loader
+              appearance="circle"
+              [theme]="{ width: '80px', height: '80px' }"
+            >
+            </ngx-skeleton-loader>
+          </div>
+          <div>
+            <div>
+              <ngx-skeleton-loader
+                [theme]="{
+            width: '200px',
+            'border-radius': '0',
+            height: '32px',
+            'margin-bottom': '10px'
+          }"
+              ></ngx-skeleton-loader>
+            </div>
+            <div>
+              <ngx-skeleton-loader
+                [theme]="{ width: '300px', 'border-radius': '0', height: '24px' }"
+              >
+              </ngx-skeleton-loader>
+            </div>
+            <div>
+              <ngx-skeleton-loader
+                [theme]="{ width: '100%', 'border-radius': '0', height: '16px' }"
+              >
+              </ngx-skeleton-loader>
+            </div>
+            <div>
+              <ngx-skeleton-loader
+                [theme]="{ width: '100%', 'border-radius': '0', height: '16px' }"
+              >
+              </ngx-skeleton-loader>
+            </div>
+            <div>
+              <ngx-skeleton-loader
+                [theme]="{ width: '80%', 'border-radius': '0', height: '16px' }"
+              >
+              </ngx-skeleton-loader>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+}
