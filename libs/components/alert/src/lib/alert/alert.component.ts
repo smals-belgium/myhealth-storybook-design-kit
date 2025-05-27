@@ -10,17 +10,17 @@ import { MatButton } from '@angular/material/button';
   styleUrls: ['./alert.component.scss'],
 })
 export class AlertComponent {
-  readonly usage = input<'info' | 'success' | 'warning' | 'error' | 'notification'>("info");
-  readonly backgroundColor = input<'white' | 'color'>("color");
+  usage = input<'info' | 'success' | 'warning' | 'error' | 'notification'>("info");
+  backgroundColor = input<'white' | 'color'>("color");
   title = input.required<string>();
-  readonly details = input<string>();
-  readonly closeButton = input<boolean>(false);
-  readonly actionButton = input<boolean>(false);
-  readonly buttonDisabled = input<boolean>(false);
-  readonly buttonLoading = input<boolean>(false);
-  readonly buttonLabel = input<string>();
-  readonly buttonLoadingLabel = input<string>("");
-  readonly closeButtonAriaLabel = input<string>("");
+  details = input<string>();
+  actionButton = input<boolean>(false);
+  buttonDisabled = input<boolean>(false);
+  buttonLoading = input<boolean>(false);
+  buttonLabel = input<string>();
+  buttonLoadingLabel = input<string>("");
+  closeButton = input<boolean>(false);
+  closeButtonAriaLabel = input<string>("");
 
   closeAlert  = output<void>()
   buttonClicked = output<void>()
