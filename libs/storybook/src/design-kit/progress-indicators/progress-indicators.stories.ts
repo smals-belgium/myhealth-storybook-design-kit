@@ -7,8 +7,9 @@ const meta: Meta<ProgressIndicatorsComponent> = {
   component: ProgressIndicatorsComponent,
   argTypes: {
     type: {
-      options: ['bar', 'spinner', 'skeleton'],
-      control: { type: 'radio' },
+      table: {
+        disable: true
+      }
     },
     percentage: {
       control: { type: 'number' },
@@ -32,13 +33,28 @@ export const Bar: Story = {
     type: 'bar',
     percentage: 40
   },
+  argTypes: {
+    items: {
+      table: {
+        disable: true
+      }
+    }
+  }
 };
+
 
 export const Spinner: Story = {
   args: {
     type: 'spinner',
     percentage: 40
   },
+  argTypes: {
+    items: {
+      table: {
+        disable: true
+      }
+    }
+  }
 };
 
 export const Skeleton: Story = {
@@ -46,4 +62,11 @@ export const Skeleton: Story = {
     type: 'skeleton',
     items: 3
   },
+  argTypes: {
+    percentage: {
+      table: {
+        disable: true
+      }
+    }
+  }
 };

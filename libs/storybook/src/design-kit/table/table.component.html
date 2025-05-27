@@ -15,16 +15,28 @@
   </mat-form-field>
   <table mat-table [dataSource]="dataSource()" [multiTemplateDataRows]="true" matSort>
     <!-- All columns, defined by the column definitions -->
-    @for (column of columns(); track column) { @if (column !== 'expand') {
+    @for (column of columns(); track column) {
+      @if (column !== 'expand') {
       <ng-container [matColumnDef]="column">
         <th mat-header-cell mat-sort-header *matHeaderCellDef>
           {{ column }}
         </th>
         <td mat-cell *matCellDef="let element">
-          {{ !element[column] || element[column] === '' ? '-' : element[column] }}
+          @if(column === 'select'){
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(element) : null"
+                          [checked]="selection.isSelected(element)"
+                          [aria-label]="selection.isSelected(element) ?  ('Deselected row ' +  element.index) : ('Selected row ' + element.index)">
+            </mat-checkbox>
+          } @else {
+            {{ !element[column] || element[column] === '' ? '-' : element[column] }}
+          }
         </td>
       </ng-container>
-    } }
+    }
+    }
+
+
 
     <!-- Expand column -->
     @if (expandEnabled()) {
@@ -41,7 +53,7 @@
                   class="show-more-button"
                   aria-label="expand row"
                   color="primary"
-                  (click)="expandedElement = expandedElement === element ? undefined : element"
+                  (click)="$event.stopPropagation(); (expandedElement = expandedElement === element ? undefined : element)"
           >
             <span>Show more</span>
             @if (expandedElement === element) {
@@ -73,7 +85,7 @@
     <!-- Header row -->
     <tr mat-header-row *matHeaderRowDef="columns()"></tr>
     <!-- Data row -->
-    <tr [hidden]="isLoading()" mat-row *matRowDef="let row; columns: columns()"></tr>
+    <tr [hidden]="isLoading()" mat-row *matRowDef="let row; columns: columns()"  (click)="clickRow(row)" [class]="isSelectable() ? 'mh-cursor-pointer': ''"></tr>
 
     @if (expandEnabled()) {
       <!-- Detail row -->

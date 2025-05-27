@@ -6,8 +6,9 @@ const meta: Meta<ButtonComponent> = {
   component: ButtonComponent,
   argTypes: {
     type: {
-      options: ['flat', 'stroked', 'link'],
-      control: { type: 'radio' },
+      table: {
+        disable: true
+      }
     },
     disabled: {
       control: { type: 'boolean' },

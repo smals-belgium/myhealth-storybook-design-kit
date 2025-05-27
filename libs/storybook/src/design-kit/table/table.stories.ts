@@ -9,6 +9,9 @@ const meta: Meta<TableComponent> = {
     expandEnabled: {
       control: { type: 'boolean' },
     },
+    isSelectable: {
+      control: { type: 'boolean' },
+    },
     isLoading: {
       control: { type: 'boolean' },
     },
@@ -29,6 +32,7 @@ type Story = StoryObj<TableComponent>;
 export const Default: Story = {
   args: {
     expandEnabled: true,
+    isSelectable: false,
     isLoading: false,
     isMobile: false,
   }
@@ -43,6 +47,7 @@ Default.parameters = {
 export const Mobile: Story = {
   args: {
     expandEnabled: true,
+    isSelectable: false,
     isLoading: false,
     isMobile: true,
   }
