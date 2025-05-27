@@ -1,0 +1,107 @@
+@use '../../../../../design-kit' as mh;
+@use '@angular/material' as mat;
+
+.container {
+  display: flex;
+  padding: mh.$spacing-s;
+  gap: mh.$spacing-s;
+  border-radius: var(--Radius-Small, 6px);
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.13);
+
+  h2 {
+    @include mh.font-default-semibold;
+    margin: 0;
+  }
+
+  p {
+    @include mh.font-small-regular;
+    margin: 0;
+  }
+
+  .flex-grow {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: mh.$spacing-s;
+  }
+
+  mat-icon.close {
+    margin-left: mh.$spacing-s;
+  }
+
+  mat-icon.loading {
+    color: mh.$color-white
+  }
+
+  /* Default usage: Info */
+  background: mh.$surface-brand-primary-lighter;
+  color: mh.$surface-brand-primary-dark;
+
+  mat-icon {
+    color: mh.$typography-brand-primary-dark;
+  }
+
+  @include mat.button-overrides((
+    filled-container-color: mh.$surface-brand-primary-medium,
+  ));
+}
+
+/* Usage (colored background) classes */
+
+.success {
+  background: mh.$surface-semantic-success-lighter;
+  color: mh.$typography-semantic-success;
+
+  mat-icon {
+    color: mh.$typography-semantic-success;
+  }
+
+  @include mat.button-overrides((
+    filled-container-color: mh.$surface-semantic-success-medium,
+  ));
+}
+
+.warning {
+  background: mh.$surface-semantic-warning-lighter;
+  color: mh.$typography-semantic-warning;
+
+  mat-icon {
+    color: mh.$typography-semantic-warning;
+  }
+
+  @include mat.button-overrides((
+    filled-container-color: mh.$surface-semantic-warning-medium,
+  ));
+}
+
+.error {
+  background: mh.$surface-semantic-error-lighter;
+  color: mh.$typography-semantic-error-medium;
+
+  mat-icon {
+    color: mh.$typography-semantic-error-medium;
+  }
+
+  @include mat.button-overrides((
+    filled-container-color: mh.$surface-semantic-error-medium,
+  ));
+}
+
+.notification {
+  background: mh.$surface-brand-neutral-lighter;
+  color: mh.$typography-brand-neutral-darker;
+
+  mat-icon {
+    color: mh.$typography-semantic-error-medium;
+  }
+
+  mat-icon.close {
+    color: mh.$typography-brand-neutral-darker;
+  }
+}
+
+.white {
+  background: mh.$color-white;
+  color: mh.$typography-brand-neutral-darker;
+}
+
