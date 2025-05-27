@@ -1,0 +1,50 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Scroll to" />
+
+# Scroll To
+> This component demonstrates how to implement smooth, programmatic scrolling inside a custom Angular web component that uses the Shadow DOM.
+> Since CSS-only solutions like scroll-behavior: smooth often fail in encapsulated environments — especially on mobile phones —
+> this example shows how to use JavaScript-based scrollIntoView() to ensure reliable, cross-platform scroll behavior.
+
+## Why Not Use CSS `scroll-behavior`?
+
+CSS scroll behavior:
+
+```css
+.scroll-wrapper {
+  scroll-behavior: smooth;
+}
+```
+
+Works **only** in some desktop browsers.
+
+Fails in:
+- Shadow DOM encapsulated components
+- Mobile browsers (especially Safari, WebViews)
+- Angular custom elements (via `ViewEncapsulation.ShadowDom`)
+
+## Use JavaScript Instead
+
+```ts
+element.scrollIntoView({ behavior: 'smooth' });
+```
+
+This guarantees mobile and encapsulation compatibility.
+
+## Component Structure
+
+```ts
+@Component({
+  selector: 'app-scroll-to',
+  templateUrl: './scroll-to.component.html',
+  styleUrls: ['./scroll-to.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom,
+})
+export class ScrollToComponent {
+  scrollTo(target: HTMLElement | ElementRef): void {
+    const el = target instanceof ElementRef ? target.nativeElement : target;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+```
