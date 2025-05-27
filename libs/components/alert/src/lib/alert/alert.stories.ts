@@ -6,8 +6,12 @@ const meta: Meta<AlertComponent> = {
   component: AlertComponent,
   argTypes: {
     usage: {
-      control: { type: 'select' },
+      control: { type: 'radio' },
       options: ['info', 'success', 'warning', 'error', 'notification'],
+    },
+    backgroundColor: {
+      control: { type: 'radio' },
+      options: ['white', 'color'],
     },
     closeButton: { control: 'boolean' },
     actionButton: { control: 'boolean' },
