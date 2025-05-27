@@ -3,7 +3,7 @@ import { BadgeComponent } from './badge.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 const meta: Meta<BadgeComponent> = {
-  title: 'Components/Badge',
+  title: 'Angular Components/Badge',
   component: BadgeComponent,
   decorators: [
     applicationConfig({

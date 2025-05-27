@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { SlideToggleComponent } from './slide-toggle.component';
 
 const meta: Meta<SlideToggleComponent> = {
-  title: 'Components/Slide Toggle',
+  title: 'Angular Components/Slide Toggle',
   component: SlideToggleComponent,
   argTypes: {
     disabled: {

@@ -3,7 +3,7 @@ import { PaginatorComponent } from './paginator.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 const meta: Meta<PaginatorComponent> = {
-  title: 'Components/Paginator',
+  title: 'Angular Components/Paginator',
   component: PaginatorComponent,
   argTypes: {
     length: {

@@ -3,7 +3,7 @@ import { applicationConfig, type Meta, type StoryObj } from '@storybook/angular'
 import { ProgressBarComponent } from './progress-bar.component';
 
 const meta: Meta<ProgressBarComponent> = {
-  title: 'Components/Progress Bar',
+  title: 'Angular Components/Progress Bar',
   component: ProgressBarComponent,
   decorators: [
     applicationConfig({

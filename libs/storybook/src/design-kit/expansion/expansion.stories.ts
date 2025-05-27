@@ -3,7 +3,7 @@ import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
 import { ExpansionComponent } from './expansion.component';
 
 const meta: Meta<ExpansionComponent> = {
-  title: 'Components/Expansion',
+  title: 'Angular Components/Expansion',
   component: ExpansionComponent,
   decorators: [
     moduleMetadata({

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { DialogWrapperComponent } from './dialog.component';
 
 const meta: Meta<DialogWrapperComponent> = {
-  title: 'Components/Dialog',
+  title: 'Angular Components/Dialog',
   component: DialogWrapperComponent,
 };
 
