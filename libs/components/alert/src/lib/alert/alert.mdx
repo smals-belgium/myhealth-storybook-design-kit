@@ -22,8 +22,6 @@ Here is an example:
   [closeButtonAriaLabel]="'Close alert'"
   [actionButton]="true"
   [buttonLabel]="'Retry Connection'"
-  [buttonLoading]="false"
-  [buttonLoadingLabel]="'Retrying...'"
   [buttonDisabled]="false"
   (closeAlert)="onAlertClosed()"
   (buttonClicked)="onActionButtonClicked()"
@@ -93,7 +91,7 @@ Otherwise default colored alert should be used.
     <tr>
       <td><code>actionButton</code></td>
       <td><code>boolean</code></td>
-      <td>If true, shows an action button with optional loading and disabled states.</td>
+      <td>If true, shows an action button with optional disabled state.</td>
       <td><code>false</code></td>
       <td>No</td>
     </tr>
@@ -105,33 +103,19 @@ Otherwise default colored alert should be used.
       <td>No</td>
     </tr>
     <tr>
-      <td><code>buttonLoading</code></td>
-      <td><code>boolean</code></td>
-      <td>If true, changes the label of the button to buttonLoadingLabel() and displays a loading icon inside the action button.</td>
-      <td><code>false</code></td>
-      <td>No</td>
-    </tr>
-    <tr>
       <td><code>buttonLabel</code></td>
       <td><code>string</code></td>
-      <td>Label text for the action button when not loading.</td>
+      <td>Label text for the action button.</td>
       <td>—</td>
       <td>No</td>
     </tr>
     <tr>
-      <td><code>buttonLoadingLabel</code></td>
+      <td><code>closeButtonAriaLabel</code></td>
       <td><code>string</code></td>
-      <td>Label text displayed inside the action button when in loading state.</td>
-      <td><code>'Loading'</code></td>
+      <td>Aria-label for the close icon</td>
+      <td><code>""</code></td>
       <td>No</td>
     </tr>
-    <tr>
-          <td><code>closeButtonAriaLabel</code></td>
-          <td><code>string</code></td>
-          <td>Aria-label for the close icon</td>
-          <td><code>""</code></td>
-          <td>No</td>
-        </tr>
   </tbody>
 </table>
 
