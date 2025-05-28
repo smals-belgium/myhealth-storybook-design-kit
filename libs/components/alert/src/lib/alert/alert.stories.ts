@@ -16,9 +16,7 @@ const meta: Meta<AlertComponent> = {
     closeButton: { control: 'boolean' },
     actionButton: { control: 'boolean' },
     buttonDisabled: { control: 'boolean' },
-    buttonLoading: { control: 'boolean' },
     buttonLabel: { control: 'text' },
-    buttonLoadingLabel: { control: 'text' },
     closeButtonAriaLabel: { control: 'text' },
     title: { control: 'text' },
     details: { control: 'text' },
@@ -35,9 +33,7 @@ const defaultArgs = {
   closeButton: true,
   actionButton: true,
   buttonLabel: 'Button',
-  buttonLoadingLabel: 'Loading',
   buttonDisabled: false,
-  buttonLoading: false,
   closeButtonAriaLabel: 'Close alert',
 };
 

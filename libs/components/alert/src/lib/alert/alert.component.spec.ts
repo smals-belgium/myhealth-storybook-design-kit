@@ -36,37 +36,4 @@ describe('AlertComponent', () => {
     component.onCloseClick();
     expect(component.closeAlert.emit).toHaveBeenCalled();
   });
-
-  it('should emit closeAlert and prevent default when Enter key is pressed in onCloseKeydown', () => {
-    jest.spyOn(component.closeAlert, 'emit');
-    const event = new KeyboardEvent('keydown', { key: 'Enter' });
-    jest.spyOn(event, 'preventDefault');
-
-    component.onCloseKeydown(event);
-
-    expect(event.preventDefault).toHaveBeenCalled();
-    expect(component.closeAlert.emit).toHaveBeenCalled();
-  });
-
-  it('should emit closeAlert and prevent default when Space key is pressed in onCloseKeydown', () => {
-    jest.spyOn(component.closeAlert, 'emit');
-    const event = new KeyboardEvent('keydown', { key: ' ' });
-    jest.spyOn(event, 'preventDefault');
-
-    component.onCloseKeydown(event);
-
-    expect(event.preventDefault).toHaveBeenCalled();
-    expect(component.closeAlert.emit).toHaveBeenCalled();
-  });
-
-  it('should not emit closeAlert or prevent default when other key is pressed in onCloseKeydown', () => {
-    jest.spyOn(component.closeAlert, 'emit');
-    const event = new KeyboardEvent('keydown', { key: 'a' });
-    jest.spyOn(event, 'preventDefault');
-
-    component.onCloseKeydown(event);
-
-    expect(event.preventDefault).not.toHaveBeenCalled();
-    expect(component.closeAlert.emit).not.toHaveBeenCalled();
-  });
 });

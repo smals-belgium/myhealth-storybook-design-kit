@@ -7,7 +7,7 @@
   [class.notification]="usage() === 'notification'"
   [class.white]="backgroundColor() === 'white'">
   <div>
-    <mat-icon [attr.data-icon]="'alert-icon'" class="material-symbols-outlined" [fontIcon]="fontIcon()" />
+    <mat-icon [attr.data-icon]="'alert-icon'" [fontIcon]="fontIcon()" />
   </div>
   <div class="flex-grow">
     <div>
@@ -24,16 +24,7 @@
       <div>
         <button (click)="onButtonClicked()" [disabled]="buttonDisabled()" mat-flat-button [attr.data-action]="'alert-action-button'"
         >
-          @if (buttonLoading()) {
-            <mat-icon class="material-symbols-outlined loading" fontIcon="refresh" />
-          }
-          @if (buttonLoading()) {
-            <span>
-              {{ buttonLoadingLabel() }}
-            </span>
-          } @else {
-            {{ buttonLabel() }}
-          }
+          {{ buttonLabel() }}
         </button>
       </div>
     }
@@ -41,17 +32,12 @@
   @if (closeButton()) {
     <div
     >
-      <mat-icon
-        role="button"
-        tabindex="0"
-        aria-hidden="false"
-        (click)="onCloseClick()"
-        (keydown)="onCloseKeydown($event)"
-        [attr.aria-label]="closeButtonAriaLabel()"
-        [attr.data-icon]="'close-alert-icon'"
-        class="material-symbols-outlined close"
-        fontIcon="close"
-      />
+      <button [attr.data-action]="'close-alert-button'" (click)="onCloseClick()" mat-icon-button [attr.aria-label]="closeButtonAriaLabel()">
+        <mat-icon
+          class="close"
+          fontIcon="close"
+        />
+      </button>
     </div>
   }
 </div>
