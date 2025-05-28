@@ -22,7 +22,11 @@
     </div>
     @if (actionButton()) {
       <div>
-        <button (click)="onButtonClicked()" [disabled]="buttonDisabled()" mat-flat-button [attr.data-action]="'alert-action-button'"
+        <button
+          (click)="onButtonClicked()"
+          [disabled]="buttonDisabled()"
+          mat-flat-button
+          [attr.data-action]="'alert-action-button'"
         >
           {{ buttonLabel() }}
         </button>
@@ -32,11 +36,12 @@
   @if (closeButton()) {
     <div
     >
-      <button [attr.data-action]="'close-alert-button'" (click)="onCloseClick()" mat-icon-button [attr.aria-label]="closeButtonAriaLabel()">
-        <mat-icon
-          class="close"
-          fontIcon="close"
-        />
+      <button
+        [attr.data-action]="'close-alert-button'"
+        (click)="onCloseClick()"
+        mat-icon-button
+        [attr.aria-label]="closeButtonAriaLabel()">
+        <mat-icon class="close" fontIcon="close"/>
       </button>
     </div>
   }
