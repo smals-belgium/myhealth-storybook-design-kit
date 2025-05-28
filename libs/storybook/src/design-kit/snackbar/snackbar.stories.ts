@@ -3,7 +3,7 @@ import { applicationConfig, type Meta, type StoryObj } from '@storybook/angular'
 import { SnackbarComponent } from './snackbar.component';
 
 const meta: Meta<SnackbarComponent> = {
-  title: 'Components/Snackbar',
+  title: 'Angular Components/Snackbar',
   component: SnackbarComponent,
   decorators: [
     applicationConfig({

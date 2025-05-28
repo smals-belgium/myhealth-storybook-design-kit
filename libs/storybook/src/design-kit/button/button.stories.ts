@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { ButtonComponent } from './button.component';
 
 const meta: Meta<ButtonComponent> = {
-  title: 'Components/Buttons/Button',
+  title: 'Angular Components/Buttons/Button',
   component: ButtonComponent,
   argTypes: {
     disabled: {

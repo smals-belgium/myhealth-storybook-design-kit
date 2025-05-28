@@ -4,7 +4,7 @@ import { DatepickerComponent } from './datepicker.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 const meta: Meta<DatepickerComponent> = {
-  title: 'Components/Form field/Datepicker',
+  title: 'Angular Components/Form field/Datepicker',
   component: DatepickerComponent,
   argTypes: {
     disabled: {
