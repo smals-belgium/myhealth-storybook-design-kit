@@ -1,0 +1,8 @@
+mat-button-toggle {
+  padding-inline: 0;
+  transition: padding-inline 150ms 45ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+mat-button-toggle:not(.mat-button-toggle-checked) {
+  padding-inline: 15px;
+}
