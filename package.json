@@ -2,8 +2,17 @@
   "name": "@myhealth-storybook-design-kit/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
   "private": true,
+  "scripts": {
+    "prepare": "husky",
+    "start:storybook": "nx run storybook:start-storybook",
+    "build:storybook": "nx run storybook:build-storybook",
+    "build:design-kit": "nx build design-kit",
+    "build:all": "nx run-many -t build",
+    "test:all": "nx run-many -t test --configuration=ci --coverage",
+    "format": "nx format:write",
+    "lint:all": "nx run-many -t lint"
+  },
   "dependencies": {
     "@angular/common": "~19.2.0",
     "@angular/compiler": "~19.2.0",

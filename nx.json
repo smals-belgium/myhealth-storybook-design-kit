@@ -64,7 +64,7 @@
       "style": "css"
     }
   },
-  "defaultBase": "dev",
+  "defaultBase": "main",
   "release": {
     "version": {
       "preVersionCommand": "npx nx run-many -t build"
