@@ -1,6 +1,6 @@
 import { applicationConfig, type Meta, type StoryObj } from '@storybook/angular';
 import { AutocompleteComponent } from './autocomplete.component';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import {provideAnimations} from "@angular/platform-browser/animations";
 
 const meta: Meta<AutocompleteComponent> = {
   title: 'Components/Form field/Autocomplete',

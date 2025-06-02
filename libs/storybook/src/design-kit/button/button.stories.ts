@@ -37,15 +37,6 @@ export const Stroked: Story = {
 
 Stroked.storyName = 'Secondary';
 
-export const Link: Story = {
-  args: {
-    type: 'link',
-    disabled: false,
-  },
-};
-
-Link.storyName = 'Tertiary';
-
 export const Raised: Story = {
   args: {
     type: 'raised',
