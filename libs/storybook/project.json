@@ -25,7 +25,7 @@
     "lint": {
       "executor": "@nx/eslint:lint"
     },
-    "storybook": {
+    "start-storybook": {
       "executor": "@storybook/angular:start-storybook",
       "options": {
         "port": 4400,
