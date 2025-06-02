@@ -4,11 +4,22 @@ import { Meta } from '@storybook/blocks';
 
 # Changelog
 
-## 2.5.1 (28 May 2025)
+## 2.6.0 (3 June 2025)
+
+**New features:**
+
+- Added reworked [documentation on how to use Material Symbols](/docs/foundations-symbols--docs).
+- Updated `mh.core()` and `mh.use-font-material-symbols()` to have the new `$symbols-font-path` parameter, which allows you to specify the path to the Material Symbols font file.
 
 **Fixed bugs:**
 
+- **Removed the Material Symbols font** from the design kit and replaced it with a small subset of the icons used in this Storybook.
 - Customized the button toggle to prevent it from scaling when an option is selected.
+
+**Suggested manual changes for upgrade:**
+
+- Read through and implement the [documentation on how to initialize Material Symbols](/docs/foundations-symbols--docs#initializing-material-symbols) for your application.
+  This involves going through your app and listing all your used symbols in a comma-seperated list.
 
 ## 2.5.0 (16 May 2025)
 

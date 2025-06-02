@@ -1,6 +1,6 @@
 {
   "name": "@myhealth-belgium/design-kit",
-  "version": "2.4.1",
+  "version": "2.5.0",
   "description": "The MyHealth belgium.be design kit is used for developing web components to integrate with MyHealth.belgium.be.",
   "author": "My Health",
   "license": "MIT",
@@ -17,6 +17,7 @@
   "files": [
     "README.md",
     "./_index.scss",
+    "./scripts",
     "./src/scss",
     "./src/assets"
   ],

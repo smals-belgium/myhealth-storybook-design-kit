@@ -10,9 +10,13 @@
 @use './components' as mh-components;
 @use './typography' as mh-fonts;
 
-@mixin core($use-material: true, $use-local-fonts: true) {
+@mixin core(
+  $use-material: true,
+  $use-local-fonts: true,
+  $symbols-font-path: '../../../assets/fonts/MatSymbols-Rounded.ttf'
+) {
   @include mh-fonts.use-font-open-sans($use-local-fonts);
-  @include mh-fonts.use-font-material-symbols($use-local-fonts);
+  @include mh-fonts.use-font-material-symbols($use-local-fonts, $symbols-font-path);
   @include mh-global.use-globals();
   @include mh-global.use-classes();
   @include mh-components.use-all-components();
