@@ -2,7 +2,9 @@
   "name": "@myhealth-storybook-design-kit/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky"
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "~19.2.0",
@@ -26,6 +28,7 @@
     "@angular/cli": "~19.2.0",
     "@angular/compiler-cli": "~19.2.0",
     "@angular/language-service": "~19.2.0",
+    "@commitlint/config-conventional": "^19.8.1",
     "@eslint/js": "^9.8.0",
     "@nx/angular": "21.0.3",
     "@nx/eslint": "21.0.3",
@@ -53,6 +56,7 @@
     "@vitest/ui": "^3.0.0",
     "angular-eslint": "^19.2.0",
     "autoprefixer": "^10.4.0",
+    "commitlint": "^19.8.1",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^10.0.0",
     "husky": "^9.1.7",

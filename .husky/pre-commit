@@ -1,12 +1,9 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 # To uninstall husky use npm uninstall husky && git config --unset core.hooksPath
 
 added_files=$(git diff --name-only --cached --diff-filter=d)
 
-npx nx affected:lint --uncommitted --parallel
-npx nx format:write --uncommitted
-npx nx affected -t test
+npx --no-install nx affected:lint --uncommitted --parallel
+npx --no-install nx format:write --uncommitted
+npx --no-install nx affected -t test
 
 git add ${added_files}
