@@ -14,22 +14,17 @@ on:
         type: string
         required: true
 
+permissions:
+  contents: write # to push changes to the repository
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: app-token
-        id: app-token
-        uses: actions/create-github-app-token@c8f55efbd427e7465d6da1106e7979bc8aaee856 # v1.10.1
-        with:
-          app-id: ${{ vars.ORDINA_GROUP_BOT_APP_ID }}
-          private-key: ${{ secrets.ORDINA_GROUP_BOT_CERT }}
-
       - name: Checkout
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@v4
         with:
-          token: ${{ steps.app-token.outputs.token }}
-          persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check release version in CHANGELOG
         run: |
@@ -42,8 +37,8 @@ jobs:
 
       - name: Set git config
         run: |
-          git config --global user.name '${{ vars.ORDINA_GROUP_BOT_USERNAME }}'
-          git config --global user.email '${{ vars.ORDINA_GROUP_BOT_EMAIL }}'
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
 
       - name: Perform release
         run: |
