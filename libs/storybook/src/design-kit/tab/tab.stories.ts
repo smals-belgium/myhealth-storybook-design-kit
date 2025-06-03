@@ -6,8 +6,10 @@ const meta: Meta<TabComponent> = {
   title: 'Angular Components/Tabs',
   component: TabComponent,
   argTypes: {
-    disabled: {
+    thirdTabDisabled: {
       control: { type: 'boolean' },
+      description: "Disable the third tab",
+      name: "Disable third tab",
     },
   },
   decorators: [
@@ -23,6 +25,6 @@ type Story = StoryObj<TabComponent>;
 
 export const Default: Story = {
   args: {
-    disabled: false,
+    thirdTabDisabled: false,
   },
 };

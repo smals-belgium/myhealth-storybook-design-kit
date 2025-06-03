@@ -9,5 +9,5 @@ import {MatTabsModule} from "@angular/material/tabs";
   styleUrl: './tab.component.scss',
 })
 export class TabComponent {
-  readonly disabled: InputSignal<boolean> = input.required();
+  readonly thirdTabDisabled: InputSignal<boolean> = input.required();
 }
