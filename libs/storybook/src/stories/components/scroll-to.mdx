@@ -15,6 +15,10 @@ CSS scroll behavior:
 .scroll-wrapper {
   scroll-behavior: smooth;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  scroll-behavior: auto;
+}
 ```
 
 Works **only** in some desktop browsers.
@@ -44,9 +48,11 @@ This guarantees mobile and encapsulation compatibility.
   encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class ScrollToComponent {
+  behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+
   scrollTo(target: HTMLElement | ElementRef): void {
-    const el = target instanceof ElementRef ? target.nativeElement : target;
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+     const el = target instanceof ElementRef ? target.nativeElement : target;
+     el.scrollIntoView({ behavior: this.behavior, block: 'start' });
   }
 }
 ```
