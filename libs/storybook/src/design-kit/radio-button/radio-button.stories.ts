@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { RadioButtonComponent } from './radio-button.component';
 
 const meta: Meta<RadioButtonComponent> = {
-  title: 'Components/Radio Button',
+  title: 'Angular Components/Radio Button',
   component: RadioButtonComponent,
   argTypes: {
     disabled: {

@@ -3,7 +3,7 @@ import { TabComponent } from './tab.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 const meta: Meta<TabComponent> = {
-  title: 'Components/Tabs',
+  title: 'Angular Components/Tabs',
   component: TabComponent,
   argTypes: {
     disabled: {

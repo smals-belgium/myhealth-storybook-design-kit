@@ -3,7 +3,7 @@ import { applicationConfig, type Meta, type StoryObj } from '@storybook/angular'
 import { ProgressIndicatorsSpinnerComponent } from './progress-indicators-spinner.component';
 
 const meta: Meta<ProgressIndicatorsSpinnerComponent> = {
-  title: 'Components/Progress Indicators/Spinner',
+  title: 'Angular Components/Progress Indicators/Spinner',
   component: ProgressIndicatorsSpinnerComponent,
   argTypes: {
     percentage: {

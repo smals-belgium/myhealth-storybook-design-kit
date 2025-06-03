@@ -3,7 +3,7 @@ import { ChipsComponent } from './chips.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 const meta: Meta<ChipsComponent> = {
-  title: 'Components/Chips',
+  title: 'Angular Components/Chips',
   component: ChipsComponent,
   decorators: [
     applicationConfig({

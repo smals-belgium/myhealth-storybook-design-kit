@@ -3,7 +3,7 @@ import { applicationConfig, type Meta, type StoryObj } from '@storybook/angular'
 import { SelectComponent } from './select.component';
 
 const meta: Meta<SelectComponent> = {
-  title: 'Components/Form field/Select',
+  title: 'Angular Components/Form field/Select',
   component: SelectComponent,
   argTypes: {
     multiple: {

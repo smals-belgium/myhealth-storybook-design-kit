@@ -3,7 +3,7 @@ import { ExpansionComponent } from './expansion.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 const meta: Meta<ExpansionComponent> = {
-  title: 'Components/Expansion',
+  title: 'Angular Components/Expansion',
   component: ExpansionComponent,
   argTypes: {
     disabled: {

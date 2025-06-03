@@ -3,7 +3,7 @@ import { TableComponent } from './table.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 const meta: Meta<TableComponent> = {
-  title: 'Components/Table',
+  title: 'Angular Components/Table',
   component: TableComponent,
   argTypes: {
     search: {
