@@ -1,0 +1,55 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as ProgressStories from './../../design-kit/progress-indicators-skeleton/progress-indicators-skeleton.stories';
+
+
+<Meta title="Components/Progress Indicators/Skeleton" />
+
+# Skeleton
+> Skeleton loaders are, in simplest terms, a static / animated placeholder for the information that is still loading. It mimic the structure and look of the entire view.
+> It gives an idea regarding what kind of content is loading in each block like image, text, long text etc.
+
+<Canvas of={ProgressStories.Skeleton} sourceState="none" />
+
+### Usage
+My Health uses the [ngx-skeleton-loader](https://www.npmjs.com/package/ngx-skeleton-loader) package for its skeleton loaders.
+Documentation on how to use this skeleton loader can be found here as well.
+
+### Usage guidelines
+Show a skeleton screen first for pages that will take longer to load.
+Skeleton screens show users the main components of a page with no content yet loaded.
+Skeleton screens are helpful because users get to do something while waiting for the page load.
+
+#### Table
+
+In a [table](/docs/components-table--docs), we use the skeleton loader whenever data is being loaded, and the component thus comes into a **loading state**.
+
+To make sure there are **no jumps** in our page when switching between states, we calculate the `count` of skeleton loader lines that should be shown,
+as well as change the `height` of the lines to whatever fits for your table.
+
+When `isLoading` is set to `true`, we want to make sure all data rows are hidden and the skeleton loader is visible.
+
+In this example, `dataSource` is our Material DataSource variable, and `pageSize` is the maximum page size of our MatPaginator.
+
+```ts
+dataSource: MatTableDataSource<any> = new MatTableDataSource<any>([]);
+pageSize: number = 10;
+isLoading: boolean = false;
+```
+
+```html
+  ...
+  <!-- Data row -->
+  <tr [hidden]="isLoading" mat-row *matRowDef="let row; columns: columns"></tr>
+</table>
+
+@if (isLoading) {
+  <ngx-skeleton-loader
+    [count]="dataSource.data.length <= 0 ? 3 : dataSource.data.length > pageSize ? pageSize : dataSource.data.length"
+    appearance="line"
+    [theme]="{
+      height: '47px',
+      margin: '0'
+    }"
+  />
+}
+```

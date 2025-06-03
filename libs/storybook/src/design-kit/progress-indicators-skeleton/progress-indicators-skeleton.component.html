@@ -1,32 +1,3 @@
-@switch (type()) {
-  @case ('bar') {
-    <div class="progress-wrapper">
-      <div>
-        <h2>Indeterminate</h2>
-        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-      </div>
-      <div>
-        <h2>Determinate</h2>
-        <mat-progress-bar mode="determinate" [value]="percentage()"></mat-progress-bar>
-      </div>
-    </div>
-
-  }
-  @case ('spinner') {
-
-    <div class="progress-wrapper">
-      <div>
-        <h2>Indeterminate</h2>
-        <mat-spinner></mat-spinner>
-      </div>
-      <div>
-        <h2>Determinate</h2>
-        <mat-spinner mode="determinate" [value]="percentage()"></mat-spinner>
-      </div>
-    </div>
-
-  }
-  @case ('skeleton') {
 
     <div class="progress-wrapper">
       <div>
@@ -103,5 +74,4 @@
         </div>
       </div>
     </div>
-  }
-}
+

@@ -1,0 +1,25 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as ProgressStories from './../../design-kit/progress-indicators-spinner/progress-indicators-spinner.stories';
+
+
+<Meta title="Components/Progress Indicators/Spinner" />
+
+## Progress spinner
+> The progress spinner component is based of Angular Material's [progress spinner](https://material.angular.io/components/progress-spinner). Material's core features will remain the same and can be implemented in the same way.
+> The My Health belgium.be Design Kit will simply overrule the component's styling.
+
+<Canvas of={ProgressStories.Spinner} sourceState="none" />
+
+### Usage
+
+To use the **progress spinner component** My Health styles, include them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-all-mat-components();
+```
+
+### Usage guidelines
+Whenever the action will take **less than 3 seconds**, use a progress spinning.
+
