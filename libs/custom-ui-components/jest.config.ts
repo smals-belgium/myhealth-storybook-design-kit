@@ -1,8 +1,8 @@
 export default {
-  displayName: 'alert',
-  preset: '../../../jest.preset.js',
+  displayName: 'custom-ui-components',
+  preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../coverage/libs/components/alert',
+  coverageDirectory: '../../coverage/libs/custom-ui-components',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

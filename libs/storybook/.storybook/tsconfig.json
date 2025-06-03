@@ -6,7 +6,7 @@
   "exclude": ["../**/*.spec.ts"],
   "include": [
     "../src/**/*.stories.ts",
-    "../../components/**/*.stories.ts",
+    "../../custom-ui-components/**/*.stories.ts",
     "../src/**/*.stories.js",
     "../src/**/*.stories.jsx",
     "../src/**/*.stories.tsx",

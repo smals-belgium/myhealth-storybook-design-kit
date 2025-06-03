@@ -7,7 +7,7 @@ const config: StorybookConfig = {
       files: '**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
     },
     {
-      directory: '../../components',
+      directory: '../../custom-ui-components',
       files: '**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
     },
   ],
