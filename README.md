@@ -1,111 +1,102 @@
-# MyhealthStorybookDesignKit
+# Shared NPM Package Repository
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+This repository hosts a shared NPM package collaboratively developed and maintained by multiple organizations. It uses a clean Git workflow, semantic versioning, and Nx for managing code and builds.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+## 🧱 Project Structure
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/tutorials/3-angular-monorepo/1a-introduction/1-welcome?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+- **Nx Monorepo**: Manages multiple libraries or apps (if needed).
+- **Tests**: Written with Jest, colocated with source files.
+- **CI/CD**: GitHub Actions pipelines for testing, building, and publishing.
 
-## Run tasks
+---
 
-To run the dev server for storybook, use:
+## 🔁 Git Workflow
 
-#### Storybook
-```sh
-npx nx storybook storybook
-```
+We follow a structured Git flow:
 
-To create a production bundle:
+### 🔹 Branch Types
 
-#### Storybook
+| Branch      | Purpose                          |
+| ----------- | -------------------------------- |
+| `main`      | Production-ready, latest release |
+| `feature/*` | New features                     |
+| `bug/*`     | Bug fixes                        |
+| `chore/*`   | Small tasks                      |
 
-```sh
-npx nx build storybook
-```
+### 🔐 Protected Branch Rules
 
-#### Design-kit
+- Require pull requests and code review.
+- Require successful CI checks (tests, linting, build).
 
-```sh
-npx nx build design-kit
-```
+### 💬 Commit messages
 
-To see all available targets to run for a project, run:
+Commit messages must adhere to [Conventional Commits guidelines](https://www.conventionalcommits.org/).
 
-```sh
-npx nx show project tempapp
-```
+`<type>(<scope>): <short summary>`
+│ │ │
+│ │ └─⫸ Summary in present tense. Not capitalized. No period at the end.
+│ │
+│ └─⫸ Commit Scope: core-updates | docker-config | ...
+│
+└─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|test
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+---
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## 🧾 Versioning & Releases
 
-## Add new projects
+### 🔢 Semantic Versioning (SemVer)
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+We follow [Semantic Versioning](https://semver.org/): MAJOR.MINOR.PATCH
 
-Use the plugin's generator to create new projects.
+- `MAJOR`: Breaking changes
+- `MINOR`: Backward-compatible features
+- `PATCH`: Bug fixes
 
-To generate a new application, use:
+### 🔖 Releasing
 
-```sh
-npx nx g @nx/angular:app demo
-```
+1. Merge into `main` via PR.
+2. Run the desired release workflow with the desired version number (e.g. 1.2.0)
 
-To generate a new library, use:
+---
 
-```sh
-npx nx g @nx/angular:lib mylib
-```
+## 👥 Roles & Permissions
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+| Role            | Capabilities                              |
+| --------------- | ----------------------------------------- |
+| **Maintainer**  | Approve/review PRs, publish releases      |
+| **Contributor** | Create branches, open PRs, request review |
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+> 🔒 Use GitHub/GitLab role-based permissions to enforce access.
 
-## Set up CI!
+---
 
-### Step 1
+## ⚙️ Nx Usage
 
-To connect to Nx Cloud, run the following command:
+We use [Nx](https://nx.dev) as our monorepo tool for managing libraries and apps.
 
-```sh
-npx nx connect
-```
+### 🚀 Common Commands
 
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
+| Command                  | Description                    |
+| ------------------------ | ------------------------------ |
+| `npx nx build <project>` | Build a package                |
+| `npx nx test <project>`  | Run unit tests                 |
+| `npx nx lint <project>`  | Lint code with ESLint          |
+| `npx nx affected:build`  | Build only changed projects    |
+| `npx nx affected:test`   | Test only changed projects     |
+| `npx nx graph`           | Visualize the dependency graph |
 
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+---
 
-### Step 2
+## 🧩 Recommended Editor Extensions
 
-Use the following command to configure a CI workflow for your workspace:
+### VSCode
 
-```sh
-npx nx g ci-workflow
-```
+- [Nx Console (by Nx)](https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+### JetBrains (WebStorm/IntelliJ)
 
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/tutorials/3-angular-monorepo/1a-introduction/1-welcome?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [Nx Plugin](https://plugins.jetbrains.com/plugin/21081-nx-console)
+- [ESLint](https://plugins.jetbrains.com/plugin/7494-eslint)
+- [Prettier](https://plugins.jetbrains.com/plugin/10456-prettier)

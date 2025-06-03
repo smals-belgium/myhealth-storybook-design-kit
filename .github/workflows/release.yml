@@ -11,16 +11,16 @@ permissions:
   pages: write
   actions: write
   id-token: write
-  contents: read
+  contents: write
 
 jobs:
-  design-kit-npm:
-    uses: ./.github/workflows/design-kit-npm.yml
+  build-and-release-design-kit-to-npm:
+    uses: ./.github/workflows/build-and-release-design-kit-to-npm.yml
     secrets: inherit
     with:
       release-version: ${{ github.event.inputs.release-version }}
 
-  design-kit-storybook:
-    needs: design-kit-npm
-    uses: ./.github/workflows/design-kit-storybook.yml
+  build-and-deploy-storybook:
+    needs: build-and-release-design-kit-to-npm
+    uses: ./.github/workflows/build-and-deploy-storybook.yml
     secrets: inherit
