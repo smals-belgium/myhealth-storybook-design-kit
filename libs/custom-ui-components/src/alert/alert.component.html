@@ -7,17 +7,17 @@
   [class.notification]="usage() === 'notification'"
   [class.white]="backgroundColor() === 'white'">
   <div>
-    <mat-icon [attr.data-icon]="'alert-icon'" [fontIcon]="fontIcon()" />
+    <mat-icon [fontIcon]="fontIcon()" />
   </div>
   <div class="flex-grow">
     <div>
       @if (title()) {
-        <h2 [attr.data-title]="'alert-title'">
+        <h2>
           {{ title() }}
         </h2>
       }
       @if (details()) {
-        <p [attr.data-details]="'alert-details'">{{ details() }}</p>
+        <p>{{ details() }}</p>
       }
     </div>
     @if (actionButton()) {
@@ -26,7 +26,6 @@
           (click)="onButtonClicked()"
           [disabled]="buttonDisabled()"
           mat-flat-button
-          [attr.data-action]="'alert-action-button'"
         >
           {{ buttonLabel() }}
         </button>
@@ -37,7 +36,6 @@
     <div
     >
       <button
-        [attr.data-action]="'close-alert-button'"
         (click)="onCloseClick()"
         mat-icon-button
         [attr.aria-label]="closeButtonAriaLabel()">
