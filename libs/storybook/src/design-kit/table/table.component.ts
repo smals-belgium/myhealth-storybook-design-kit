@@ -32,6 +32,7 @@ import {SelectionModel} from '@angular/cdk/collections';
 export class TableComponent {
   @Input() isMobile = false;
 
+  readonly search: InputSignal<boolean> = input.required();
   readonly expandEnabled: InputSignal<boolean> = input.required();
   readonly isLoading: InputSignal<boolean> = input.required();
   readonly isSelectable: InputSignal<boolean> = input.required();
@@ -93,7 +94,7 @@ export class TableComponent {
     return columns
   });
 
-  search(searchValue?: string) {
+  onSearch(searchValue?: string) {
     if (searchValue) this.searchValue = searchValue;
 
     this.dataSource().filter = this.searchValue.trim().toLowerCase();

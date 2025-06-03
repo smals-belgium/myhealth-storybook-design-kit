@@ -1,6 +1,7 @@
 @if(isMobile){
   Mobile view
 } @else {
+  @if(search()){
   <mat-form-field appearance="outline" class="mh-table__search">
     <mat-icon matPrefix fontIcon="search" aria-hidden="true" />
     <input
@@ -10,9 +11,10 @@
       name="search"
       placeholder="Search ..."
       [(ngModel)]="searchValue"
-      (keyup)="search()"
+      (keyup)="onSearch()"
     />
   </mat-form-field>
+  }
   <table mat-table [dataSource]="dataSource()" [multiTemplateDataRows]="true" matSort>
     <!-- All columns, defined by the column definitions -->
     @for (column of columns(); track column) {

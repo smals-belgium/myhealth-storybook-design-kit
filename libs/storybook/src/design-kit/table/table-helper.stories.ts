@@ -1,9 +1,8 @@
 import { applicationConfig, type Meta, type StoryObj } from '@storybook/angular';
 import { TableComponent } from './table.component';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import {provideAnimations} from "@angular/platform-browser/animations";
 
 const meta: Meta<TableComponent> = {
-  title: 'Components/Table',
   component: TableComponent,
   argTypes: {
     search: {
@@ -32,34 +31,50 @@ const meta: Meta<TableComponent> = {
 export default meta;
 type Story = StoryObj<TableComponent>;
 
-export const Desktop: Story = {
+export const Default: Story = {
   args: {
     search: false,
     expandEnabled: false,
     isSelectable: false,
     isLoading: false,
     isMobile: false,
+  },
+};
+
+Default.parameters = {
+  viewport: {
+    defaultViewport: 'desktop',
   }
 };
 
-Desktop.parameters = {
-  viewport: {
-    defaultViewport: 'desktop',
-  },
-}
-
-export const Mobile: Story = {
+export const Filter: Story = {
   args: {
-    search: false,
+    search: true,
     expandEnabled: false,
     isSelectable: false,
     isLoading: false,
-    isMobile: true,
+    isMobile: false,
+  },
+};
+
+Filter.parameters = {
+  viewport: {
+    defaultViewport: 'desktop',
   }
 };
 
-Mobile.parameters = {
-  viewport: {
-    defaultViewport: 'mobile',
+export const Selection: Story = {
+  args: {
+    search: false,
+    expandEnabled: false,
+    isSelectable: true,
+    isLoading: false,
+    isMobile: false,
   },
-}
+};
+
+Selection.parameters = {
+  viewport: {
+    defaultViewport: 'desktop',
+  }
+};
