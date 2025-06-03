@@ -1,10 +1,10 @@
 import { applicationConfig, type Meta, type StoryObj } from '@storybook/angular';
-import { AccordionComponent } from './accordion.component';
+import { ExpansionComponent } from './expansion.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
-const meta: Meta<AccordionComponent> = {
-  title: 'Components/Accordion',
-  component: AccordionComponent,
+const meta: Meta<ExpansionComponent> = {
+  title: 'Components/Expansion',
+  component: ExpansionComponent,
   argTypes: {
     disabled: {
       control: { type: 'boolean' },
@@ -19,7 +19,7 @@ const meta: Meta<AccordionComponent> = {
 
 export default meta;
 
-type Story = StoryObj<AccordionComponent>;
+type Story = StoryObj<ExpansionComponent>;
 
 export const Default: Story = {
   args: {

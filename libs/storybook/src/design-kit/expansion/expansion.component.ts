@@ -3,12 +3,12 @@ import {MatExpansionModule} from "@angular/material/expansion";
 
 
 @Component({
-  selector: 'mh-accordion',
+  selector: 'mh-expansion',
   imports: [MatExpansionModule],
-  templateUrl: './accordion.component.html',
-  styleUrl: './accordion.component.scss',
+  templateUrl: './expansion.component.html',
+  styleUrl: './expansion.component.scss',
 })
-export class AccordionComponent {
+export class ExpansionComponent {
   readonly disabled: InputSignal<boolean> = input.required();
   readonly panelOpenState = signal(false);
 }
