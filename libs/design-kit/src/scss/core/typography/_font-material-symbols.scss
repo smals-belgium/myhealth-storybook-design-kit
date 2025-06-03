@@ -1,10 +1,10 @@
-@mixin use-font-material-symbols($use-local-fonts: false) {
+@mixin use-font-material-symbols($use-local-fonts: true, $symbols-font-path: '') {
   @if ($use-local-fonts) {
     @font-face {
       font-family: 'Material Symbols Rounded';
       font-style: normal;
       font-weight: 100 700;
-      src: url('../../../assets/fonts/MatSymbols-Rounded.woff2') format('woff2');
+      src: url($symbols-font-path) format('truetype');
     }
   } @else {
     @font-face {
