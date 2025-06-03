@@ -1,8 +1,10 @@
 import { applicationConfig, type Meta, type StoryObj } from '@storybook/angular';
 import { TableComponent } from './table.component';
-import {provideAnimations} from "@angular/platform-browser/animations";
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 const meta: Meta<TableComponent> = {
+  title: 'myh_internal/Table',
+  tags: ['hideInSidebar'],
   component: TableComponent,
   argTypes: {
     search: {
@@ -44,7 +46,7 @@ export const Default: Story = {
 Default.parameters = {
   viewport: {
     defaultViewport: 'desktop',
-  }
+  },
 };
 
 export const Filter: Story = {
@@ -60,7 +62,7 @@ export const Filter: Story = {
 Filter.parameters = {
   viewport: {
     defaultViewport: 'desktop',
-  }
+  },
 };
 
 export const Selection: Story = {
@@ -76,5 +78,5 @@ export const Selection: Story = {
 Selection.parameters = {
   viewport: {
     defaultViewport: 'desktop',
-  }
+  },
 };
