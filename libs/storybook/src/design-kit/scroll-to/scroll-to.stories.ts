@@ -3,7 +3,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import {ScrollToComponent} from "./scroll-to.component";
 
 const meta: Meta<ScrollToComponent> = {
-  title: 'Angular Components/Scroll to',
+  title: 'Angular Components/Animations/Scroll to',
   component: ScrollToComponent,
   decorators: [
     applicationConfig({
