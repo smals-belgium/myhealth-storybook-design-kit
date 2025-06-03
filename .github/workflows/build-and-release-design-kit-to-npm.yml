@@ -28,7 +28,7 @@ jobs:
 
       - name: Check release version in CHANGELOG
         run: |
-          if ! grep -q "## ${VERSION//./\\.}" libs/design-kit/src/stories/main/changelog.mdx; then
+          if ! grep -q "## ${VERSION//./\\.}" libs/storybook/src/stories/main/changelog.mdx; then
           echo "Error: Release version ${{ inputs.release-version }} not found in CHANGELOG.md"
           exit 1
             fi
