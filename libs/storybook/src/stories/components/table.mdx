@@ -62,29 +62,43 @@ In your `expandDetail` column's definition, add the class `mh-detail-row--expand
 </ng-container>
 ```
 
+Avoid repeating data from the collapsed panel. When users expand a row, they should be presented with new content only—don’t make them work to find what’s changed or added.
+
+#### Table with selection
+The Design Kit also supports tables with selection, as seen in Angular Material's [example](https://material.angular.dev/components/table/examples#table-selection).
+The implementation remains largely the same; it's simply a matter of adding the appropriate class for the pointer cursor.
+
+The data row in your table needs the class `mh-cursor-pointer`:
+
+```html
+<!-- Data row -->
+<tr mat-row *matRowDef="let row; columns: columns()"  (click)="clickRow(row)" class="mh-cursor-pointer"></tr>
+```
+
 #### Loading state
 
 For documentation on how to style the loading state of the table, see the [Skeleton loader docs](/docs/components-skeleton-loader--docs#table).
 
 ### Mobile view
 > On mobile devices, tables should transform into cards to preserve readability and avoid horizontal scrolling.
-> Each row becomes a card
+> Each row becomes a card.
 <div class="image-wrapper">
 <img src="/images/default-card.png" alt="Card on mobile view" />
 </div>
 
 #### With labels
-Put the label and value one above each other
+Display the label and value stacked vertically, one above the other.
 
 #### Without labels
-When the values are self-explanatory, the labels may not be mentioned to limit the size of the cards. This is the case, for example, within the drugs prescription list.
+When values are self-explanatory, labels may be omitted to reduce the size of the cards. This is the case, for example, in the drug prescription list.
 
-For both variants, text should be left-aligned.
+In both variants, text should be left-aligned. <br />
+Left-aligned text is easier to read because the eye doesn't need to search for the start of each line—it's always in the same place.
 
 ## Component variations
 ### With toolbars
-> Searching, filtering and other global actions for the whole table
-> In a long list, allow users to type the first letters of the desired item; this allows users to quickly navigate to the item of interest instead of having to scroll to it.
+> Use toolbars for searching, filtering, and other global actions that apply to the entire table.
+> In long lists, allow users to type the first letters of the desired item to quickly navigate to it, instead of requiring them to scroll.
 
 <b>Desktop view</b>
 <div class="image-wrapper">
@@ -99,14 +113,20 @@ For both variants, text should be left-aligned.
 </div>
 
 #### Types of actions
-* Icon-button: Use when multiple actions are possible in a row, or if there isn’t enough space for the label (make sure the icon is well-known and add an aria label)
-* Overflow menu: use when you have more than 3 actions or there isn’t enough space to show the actions as icon-buttons
+* **Icon Button**: Use when multiple actions are possible in a row, or when there isn’t enough space for labels. Ensure the icon is well-known and include an ARIA label.
+* **Overflow Menu**: Use when there are more than three actions, or when there isn’t enough space to display all actions as icon buttons.
 <div class="image-wrapper">
 <img src="/images/card-with-actions.png" alt="Card on mobile view with more then 3 actions" />
 </div>
 
 ### With Selection
-> The selection variant enables users to select individual rows in a data table. Selection options include a single-select radio button option and a multi-select checkbox option. Users can perform a single action or batch actions against selected items.<br />
+> The selection variant enables users to select individual rows in a data table. Selection options include:
+>
+> * Single-select: Radio buttons
+> * Multi-select: Checkboxes
+>
+> Users can perform individual or batch actions on the selected items.
+
 <b>Desktop view</b>
 <div class="image-wrapper">
 <img src="/images/table-with-select.png" alt="Table on desktop view with checkboxes" />
@@ -117,13 +137,13 @@ For both variants, text should be left-aligned.
 </div>
 
 ### Decks of cards
-> The so-called “deck of cards” mimics the arrangement of pages in a book.  Each element of the list is displayed on a “card” and each such card is a page in a stack of pages. The deck-of-cards is a carousel in which each item occupies the whole screen.
-decks of cards do not work well for lists longer than 4–6 elements because they force sequential access: users must inspect each page one by one, before reaching the page of interest.
-* Used for the bundle
-* Left aligned text
-  * Left-aligned text is simply easier to read: the eye doesn’t have to find a start point for each new line, but instead, the start point is predictable and always the same.
-* Collapse-expand row
-  * Don’t repeat the data from the collapsed panel : when users have expanded a row, they shouldn’t have to work to get to new content;
+> The so-called “deck of cards” mimics the arrangement of pages in a book. Each list element is displayed on a “card,” and each card represents a page in a stack. This layout functions as a carousel, where each item occupies the entire screen.
+>
+> Decks of cards are not ideal for lists longer than 4–6 elements, as they require sequential access—users must inspect each page one by one before reaching the desired content.
+>
+> Use case: The Bundle
+
+
 
 
 
