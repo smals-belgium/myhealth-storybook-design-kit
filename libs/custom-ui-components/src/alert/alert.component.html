@@ -1,46 +1,40 @@
 <div
-  class="container" role="alert" aria-live="assertive"
+  class="container"
+  role="alert"
+  aria-live="assertive"
   [class.info]="usage() === 'info'"
   [class.success]="usage() === 'success'"
   [class.warning]="usage() === 'warning'"
   [class.error]="usage() === 'error'"
   [class.notification]="usage() === 'notification'"
-  [class.white]="backgroundColor() === 'white'">
+  [class.white]="backgroundColor() === 'white'"
+>
   <div>
     <mat-icon [fontIcon]="fontIcon()" />
   </div>
   <div class="flex-grow">
     <div>
       @if (title()) {
-        <h2>
-          {{ title() }}
-        </h2>
-      }
-      @if (details()) {
-        <p>{{ details() }}</p>
+      <h2>
+        {{ title() }}
+      </h2>
+      } @if (details()) {
+      <p>{{ details() }}</p>
       }
     </div>
     @if (actionButton()) {
-      <div>
-        <button
-          (click)="onButtonClicked()"
-          [disabled]="buttonDisabled()"
-          mat-flat-button
-        >
-          {{ buttonLabel() }}
-        </button>
-      </div>
+    <div>
+      <button type="button" (click)="onButtonClicked()" [disabled]="buttonDisabled()" mat-flat-button>
+        {{ buttonLabel() }}
+      </button>
+    </div>
     }
   </div>
   @if (closeButton()) {
-    <div
-    >
-      <button
-        (click)="onCloseClick()"
-        mat-icon-button
-        [attr.aria-label]="closeButtonAriaLabel()">
-        <mat-icon class="close" fontIcon="close"/>
-      </button>
-    </div>
+  <div>
+    <button type="button" (click)="onCloseClick()" mat-icon-button [attr.aria-label]="closeButtonAriaLabel()">
+      <mat-icon class="close" fontIcon="close" />
+    </button>
+  </div>
   }
 </div>
