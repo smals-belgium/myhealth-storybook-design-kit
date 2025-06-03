@@ -16,6 +16,7 @@ on:
 
 permissions:
   contents: write # to push changes to the repository
+  actions: write # to create a release
 
 jobs:
   build:
