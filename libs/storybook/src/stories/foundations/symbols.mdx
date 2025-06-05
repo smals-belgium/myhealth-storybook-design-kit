@@ -1,0 +1,49 @@
+import { Meta, IconGallery, IconItem } from '@storybook/blocks';
+
+<Meta title="Foundations/Symbols" />
+
+# Material Symbols
+
+> My Health uses Material Symbols for icons. Material Symbols are a set of icons designed by Google that can be used in web applications and mobile apps.
+
+> A full guide on how to use Material Symbols with Angular Material can be found in their [component documentation](https://material.angular.io/components/icon).
+
+## Initializing Material Symbols
+
+In order to save on load time amd improve performance, we use a subset of Material Symbols that are relevant to our application. By default, **only icons used in Storybook are included with the design kit**.
+
+Because you will need more icons than just the ones in Storybook, we will guide you through the steps to include Material Symbols in your application:
+
+1. You will want to create a TrueType Font (TTF) file with the icons you use in your application. This can be done by using Google's [Material Symbols Builder](https://fonts.google.com/icons?selected=Material+Symbols+Rounded) or by using the **script provided below** (recommended).
+2. Download the TTF file and include it in your application.
+3. Include the downloaded file in your SCSS by passing it to the `mh.core()` mixin :
+
+   ```css
+   @use '@myhealth-belgium/design-kit' as mh;
+
+   @include mh.core($use-material: true, $use-local-fonts: true, $symbols-font-path: 'assets/symbols.ttf');
+   ```
+
+   Make sure `$use-local-fonts` is set to `true` and `$symbols-font-path` points to the location of the TTF file in your application.
+
+   Alternatively, you can also pass it directly to the symbols mixin if you're not using the `mh.core()` mixin:
+
+   ```css
+   @include mh-fonts.use-font-material-symbols($use-local-fonts: true, $symbols-font-path: 'assets/symbols.ttf');
+   ```
+
+### Symbols download script
+
+We have provided a script: `@myhealth-belgium/design-kit/scripts/generate-symbols-font-url.js` that generates a download URL for the Material Symbols font based on the icons you specify.
+This script will create a URL that you can use to download the TTF file containing only the icons you need.
+
+The script runs on **Node.js**, so you will need to have it installed on your machine. To use the script, **run the following command** in your terminal:
+
+> _Replace `home,search,settings` with a comma-seperated list of the icons you want to include in the font.
+> We recommend saving the comma-seperated list in a .txt or .csv file for later use._
+
+```bash
+node @myhealth-belgium/design-kit/scripts/generate-symbols-font-url.js home,search,settings
+```
+
+After running the command, you will receive a URL that you can use to download the TTF file containing the specified icons.
