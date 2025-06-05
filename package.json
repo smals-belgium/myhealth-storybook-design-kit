@@ -14,6 +14,7 @@
     "lint:all": "nx run-many -t lint"
   },
   "dependencies": {
+    "@angular/animations": "^19.2.14",
     "@angular/common": "~19.2.0",
     "@angular/compiler": "~19.2.0",
     "@angular/core": "~19.2.0",
@@ -21,6 +22,7 @@
     "@angular/material": "~19.2.0",
     "@angular/platform-browser": "~19.2.0",
     "@angular/router": "~19.2.0",
+    "@storybook/types": "^8.6.14",
     "ngx-skeleton-loader": "^11.0.0",
     "rxjs": "~7.8.0",
     "zone.js": "~0.15.0"

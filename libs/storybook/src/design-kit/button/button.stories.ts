@@ -2,9 +2,14 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { ButtonComponent } from './button.component';
 
 const meta: Meta<ButtonComponent> = {
-  title: 'Components/Buttons/Button',
+  title: 'Angular Components/Buttons (cta)/Button',
   component: ButtonComponent,
   argTypes: {
+    type: {
+      table: {
+        disable: true
+      }
+    },
     disabled: {
       control: { type: 'boolean' },
     },
@@ -14,12 +19,23 @@ const meta: Meta<ButtonComponent> = {
 export default meta;
 type Story = StoryObj<ButtonComponent>;
 
+export const Flat: Story = {
+  args: {
+    type: 'flat',
+    disabled: false,
+  },
+};
+
+Flat.storyName = 'Primary';
+
 export const Stroked: Story = {
   args: {
     type: 'stroked',
     disabled: false,
   },
 };
+
+Stroked.storyName = 'Secondary';
 
 export const Raised: Story = {
   args: {
@@ -28,9 +44,11 @@ export const Raised: Story = {
   },
 };
 
-export const Flat: Story = {
+export const AllVariants: Story = {
   args: {
-    type: 'flat',
+    type: 'allVariants',
     disabled: false,
   },
 };
+
+AllVariants.storyName = 'All Button Variants';

@@ -10,6 +10,6 @@ import { MatButtonModule } from '@angular/material/button';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
-  readonly type: InputSignal<'basic' | 'raised' | 'stroked' | 'flat'> = input.required();
+  readonly type: InputSignal<'basic' | 'raised' | 'stroked' | 'flat' | 'allVariants'> = input.required();
   readonly disabled: InputSignal<boolean> = input.required();
 }

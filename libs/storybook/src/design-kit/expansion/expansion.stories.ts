@@ -1,18 +1,28 @@
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
+import { applicationConfig, type Meta, type StoryObj } from '@storybook/angular';
 import { ExpansionComponent } from './expansion.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 const meta: Meta<ExpansionComponent> = {
-  title: 'Components/Expansion',
+  title: 'Angular Components/Expansion',
   component: ExpansionComponent,
+  argTypes: {
+    disabled: {
+      control: { type: 'boolean' },
+    },
+  },
   decorators: [
-    moduleMetadata({
-      imports: [BrowserAnimationsModule],
+    applicationConfig({
+      providers: [provideAnimations()],
     }),
   ],
 };
 
 export default meta;
+
 type Story = StoryObj<ExpansionComponent>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    disabled: false,
+  },
+};

@@ -45,4 +45,8 @@
       max-width: clamp(mh.$media-breakpoint-xs, mh.$container-pref-width-xs, mh.$container-max-width-xs);
     }
   }
+
+  .mh-cursor-pointer{
+    cursor: pointer;
+  }
 }

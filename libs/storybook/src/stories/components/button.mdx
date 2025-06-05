@@ -1,10 +1,12 @@
-import { Meta } from '@storybook/blocks';
+import { Meta, Canvas, Story, Source } from '@storybook/blocks';
+import * as ButtonStories from './../../design-kit/button/button.stories';
 
-<Meta title="Components/Buttons/Button" />
+<Meta title="Angular Components/Buttons (cta)/Button" of={ButtonStories} />
 
 # Button
 
-> The button component is based of Angular Material's [button](https://material.angular.io/components/button). Material's core features will remain the same and can be implemented in the same way.
+> Calls to action are interactive elements of the user interface that prompt the user to take action. The size, alignment and location of these elements not only show users what they can interact with but also indicate the level of importance of the interaction.<br />
+> The button component is based of Angular Material's [button](https://material.angular.io/components/button). Material's core features will remain the same and can be implemented in the same way.<br />
 > The My Health belgium.be Design Kit will simply overrule the component's styling.
 
 ## Usage
@@ -24,3 +26,27 @@ Alternatively, you can use **all component** My Health styles by including them 
 
 @include mh.override-all-mat-components();
 ```
+
+## Usage guidelines
+### Label
+The button label should describe what will happen once it is tapped and should always start with a verb.<br />
+In French use the infinitive form, the active form in dutch, e.g. “Réserver le médicament” , « reserve medication ».  «Reserveer geneesmiddel”
+
+### Placement and size
+
+#### Mobile
+Main action first, Secundary action below with a spacing of at least 16px.<br />
+Give the same size for the 2 buttons with at least 44L x 46H px and a spacing of 6px.
+
+## Component variations
+### Variants
+<Canvas of={ButtonStories.AllVariants} sourceState="none" />
+
+Call-to-action elements are categorized by priority to guide users toward the most important interaction. :
+ * The <a href="?path=/story/components-buttons-cta-button--flat">**Primary button**</a> is the main task a user should take on a given screen—such as “Submit form”, “Reserve my medication”, “Add diary note”. There should only be **one primary action per view** to avoid confusion. It uses the strongest visual styling to stand out.
+ * <a href="?path=/story/components-buttons-cta-button--stroked">**Secondary actions**</a> support the primary task—such as "Cancel" or "Go Back." These are still important, but they are visually less dominant.
+
+Using this hierarchy ensures consistency and helps users understand which actions are most important, reducing friction and decision fatigue.
+
+When there are more than two possible actions, use the **dropdown button**.
+

@@ -1,0 +1,32 @@
+import { Meta, Canvas, Story, Source } from '@storybook/blocks';
+
+<Meta title="Angular Components/Tabs" />
+
+# Tabs
+
+> Allows the user to alternate between related views while remaining in the same context.
+> Horizontally stacked, each tab should contain content that is distinct from other tabs in a set.
+> Tab labels should be concise, scannable, and descriptive of their contents. Never use icons. To reduce cognitive load and a cluttered UI, avoid using more than 3 tabs.
+
+## Usage
+
+To use the **tab component** My Health styles, include them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-all-mat-components();
+```
+
+## Usage guidelines
+
+### States
+* <b>Active  state:</b>
+State visible when the tab is "opened" and reveals its content. By changing the color it is easy for the user to identify which tabs is opened.
+There is always one tab active.
+
+* <b>Inactive state:</b>
+State visible before click. Only one tabs can be opened at the time, so the rest of the tablist are in an inactive state waiting to be opened. This state is a greyed out version with a clear space between the tab and the content underneath.
+
+* <b>Hover and focused state  state:</b>
+State visible when the cursor hovers a tab and when users tab on the tabs to indicate the user where he is in the tablist.

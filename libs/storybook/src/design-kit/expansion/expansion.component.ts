@@ -1,14 +1,14 @@
-import { MatExpansionModule } from '@angular/material/expansion';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {Component, input, InputSignal, signal} from '@angular/core';
+import {MatExpansionModule} from "@angular/material/expansion";
+
 
 @Component({
   selector: 'mh-expansion',
-  standalone: true,
   imports: [MatExpansionModule],
   templateUrl: './expansion.component.html',
   styleUrl: './expansion.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExpansionComponent {
-  panelOpenState = false;
+  readonly disabled: InputSignal<boolean> = input.required();
+  readonly panelOpenState = signal(false);
 }

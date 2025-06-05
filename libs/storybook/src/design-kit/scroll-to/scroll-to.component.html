@@ -1,0 +1,10 @@
+<section class="content-section">
+  <button type="button" mat-button (click)="scrollTo(section1)">Scroll to Section 1</button>
+  <button type="button" mat-button (click)="scrollTo(section2)">Scroll to Section 2</button>
+</section>
+
+<div class="scroll-wrapper">
+  <section #section1 class="content-section">Section 1</section>
+  <section #section2 class="content-section">Section 2</section>
+</div>
+

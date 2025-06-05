@@ -10,8 +10,9 @@
     "../src/**/*.stories.jsx",
     "../src/**/*.stories.tsx",
     "../src/**/*.stories.mdx",
+    "../src/**/*.story-helper.ts",
     "../src/**/*.mdx",
     "*.js",
-    "*.ts"
+    "*.ts",
   ]
 }

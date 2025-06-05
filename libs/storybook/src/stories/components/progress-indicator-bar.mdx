@@ -1,0 +1,34 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as ProgressStories from './../../design-kit/progress-indicators-bar/progress-indicators-bar.stories';
+
+
+<Meta title="Angular Components/Progress Indicators/Bar" />
+
+# Progress bar
+> The progress bar component is based of Angular Material's [progress bar](https://material.angular.io/components/progress-bar). Material's core features will remain the same and can be implemented in the same way.
+> The My Health belgium.be Design Kit will simply overrule the component's styling.
+
+<Canvas of={ProgressStories.Bar} sourceState="none" />
+
+### Usage
+
+To use the **progress bar component** My Health styles, include them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-mat-progress-bar();
+```
+
+Alternatively, you can use **all component** My Health styles by including them in your root SCSS file:
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+@include mh.override-all-mat-components();
+```
+
+### Usage guidelines
+Whenever the action might take more than 3 seconds, use a progress bar instead of a spinning gear.
+Unlike spinning gears progress bars also give a sense of the progress made and of how much more work needs to be done.
+Their downside is that they demand more user attention and are more disruptive, so that’s why they are generally not needed for quick actions that take around less than 3 seconds.
