@@ -4,6 +4,9 @@ import { Meta } from '@storybook/blocks';
 
 # Menu
 
+> Menu's or Dropdown buttons are button elements that allow users to select an item or action from a list by clicking on a button and revealing a dropdown.
+> Clicking on one of the exposed options triggers the action.
+>
 > The menu component is based of Angular Material's [menu](https://material.angular.io/components/menu). Material's core features will remain the same and can be implemented in the same way.
 > The My Health belgium.be Design Kit will simply overrule the component's styling.
 
@@ -24,3 +27,16 @@ Alternatively, you can use **all component** My Health styles by including them 
 
 @include mh.override-all-mat-components();
 ```
+
+## Usage guidelines
+
+Use it as a menu or use it as dropdown buttons when no default action is available and more than 2 actions need to be offered.
+
+### Disable state
+
+- When an item in the list becomes inactive, don't change the order but make sure the disable ones are grayed out.
+
+### Hierarchy when used as dropdown button
+
+- Start with main actions
+- Destructive actions should be separated from the other actions by a divider (last option of the list)
