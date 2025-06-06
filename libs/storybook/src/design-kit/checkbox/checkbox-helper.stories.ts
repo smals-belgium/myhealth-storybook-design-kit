@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { CheckboxComponent } from './checkbox.component';
 
 const meta: Meta<CheckboxComponent> = {
-  title: 'Angular Components/Selectors/Checkbox',
+  title: 'myh_internal/Checkbox',
+  tags: ['hideInSidebar'],
   component: CheckboxComponent,
   argTypes: {
     disabled: {
@@ -21,5 +22,12 @@ export const Default: Story = {
   args: {
     disabled: false,
     checked: false,
+  },
+};
+
+export const Checked: Story = {
+  args: {
+    disabled: false,
+    checked: true,
   },
 };
