@@ -57,6 +57,10 @@
   button[mat-flat-button] {
     background-color: $surface-medium;
 
+    &:disabled {
+      background-color: mh.$surface-brand-neutral-light;
+    }
+
     &:hover {
       background-color: $surface-dark;
     }
@@ -68,68 +72,67 @@
   }
 }
 
-
 .info {
   @include alert-theme(
-      mh.$surface-brand-primary-lighter,
-      mh.$surface-brand-primary-light,
-      mh.$surface-brand-primary-medium,
-      mh.$surface-brand-primary-dark,
-      mh.$surface-brand-primary-dark,
-      mh.$typography-brand-primary-dark,
-      mh.$typography-brand-primary-dark
+    mh.$surface-brand-primary-lighter,
+    mh.$surface-brand-primary-light,
+    mh.$surface-brand-primary-medium,
+    mh.$surface-brand-primary-dark,
+    mh.$surface-brand-primary-dark,
+    mh.$typography-brand-primary-dark,
+    mh.$typography-brand-primary-dark
   );
 }
 
 .success {
   @include alert-theme(
-      mh.$surface-semantic-success-lighter,
-      mh.$surface-semantic-success-light,
-      mh.$surface-semantic-success-medium,
-      mh.$surface-semantic-success-dark,
-      mh.$surface-semantic-success-dark,
-      mh.$typography-semantic-success,
-      mh.$typography-semantic-success
+    mh.$surface-semantic-success-lighter,
+    mh.$surface-semantic-success-light,
+    mh.$surface-semantic-success-medium,
+    mh.$surface-semantic-success-dark,
+    mh.$surface-semantic-success-dark,
+    mh.$typography-semantic-success,
+    mh.$typography-semantic-success
   );
 }
 
 .warning {
   @include alert-theme(
-      mh.$surface-semantic-warning-lighter,
-      mh.$surface-semantic-warning-light,
-      mh.$surface-semantic-warning-medium,
-      mh.$surface-semantic-warning-dark,
-      mh.$surface-semantic-warning-dark,
-      mh.$typography-semantic-warning,
-      mh.$typography-semantic-warning
+    mh.$surface-semantic-warning-lighter,
+    mh.$surface-semantic-warning-light,
+    mh.$surface-semantic-warning-medium,
+    mh.$surface-semantic-warning-dark,
+    mh.$surface-semantic-warning-dark,
+    mh.$typography-semantic-warning,
+    mh.$typography-semantic-warning
   );
 }
 
 .error {
   @include alert-theme(
-      mh.$surface-semantic-error-lighter,
-      mh.$surface-semantic-error-light,
-      mh.$surface-semantic-error-medium,
-      mh.$surface-semantic-error-dark,
-      mh.$surface-semantic-error-dark,
-      mh.$typography-semantic-error-medium,
-      mh.$typography-semantic-error-medium
+    mh.$surface-semantic-error-lighter,
+    mh.$surface-semantic-error-light,
+    mh.$surface-semantic-error-medium,
+    mh.$surface-semantic-error-dark,
+    mh.$surface-semantic-error-dark,
+    mh.$typography-semantic-error-medium,
+    mh.$typography-semantic-error-medium
   );
 }
 
 .notification {
   @include alert-theme(
-      mh.$surface-brand-neutral-lighter,
-      mh.$surface-brand-primary-light,
-      mh.$surface-brand-primary-medium,
-      mh.$surface-brand-primary-dark,
-      mh.$surface-brand-primary-dark,
-      mh.$typography-brand-neutral-darker,
-      mh.$typography-semantic-error-medium,
+    mh.$surface-brand-neutral-lighter,
+    mh.$surface-brand-primary-light,
+    mh.$surface-brand-primary-medium,
+    mh.$surface-brand-primary-dark,
+    mh.$surface-brand-primary-dark,
+    mh.$typography-brand-neutral-darker,
+    mh.$typography-semantic-error-medium
   );
 
   mat-icon.close {
-    color: mh.$typography-brand-neutral-darker
+    color: mh.$typography-brand-neutral-darker;
   }
 }
 
@@ -144,4 +147,3 @@
     color: mh.$typography-brand-neutral-darker;
   }
 }
-

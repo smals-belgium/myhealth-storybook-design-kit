@@ -1,6 +1,10 @@
 {
   "name": "@smals-belgium/custom-ui-components",
   "version": "0.0.1",
-  "peerDependencies": {},
+  "peerDependencies": {
+    "@angular/core": "^19.0.0",
+    "@angular/common": "^19.0.0",
+    "@angular/material": "^19.0.0"
+  },
   "sideEffects": false
 }
