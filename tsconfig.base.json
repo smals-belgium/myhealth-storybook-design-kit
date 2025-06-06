@@ -15,8 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@myhealth-belgium/component-alert": ["libs/components/alert/src/index.ts"],
       "@myhealth-belgium/design-kit": ["libs/design-kit/src/index.ts"],
-      "@myhealth-storybook-design-kit/storybook": ["libs/storybook/src/index.ts"]
+      "@myhealth-storybook-design-kit/storybook": ["libs/storybook/src/index.ts"],
+      "@smals-belgium/custom-ui-components": ["libs/custom-ui-components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
