@@ -1,4 +1,5 @@
-import { Meta } from '@storybook/blocks';
+import { Meta, Canvas, Story } from '@storybook/blocks';
+import * as AlertStories from './alert-helper.stories';
 
 <Meta title="Custom Components/Alert" />
 
@@ -6,7 +7,8 @@ import { Meta } from '@storybook/blocks';
 
 ## Description
 
-The `Alert` is a custom component that displays a contextual message with an icon, a title, an optional details, action button and close button. It supports multiple usage types which influence the styling and iconography to convey different alert semantics such as info, success, warning, error, and notification.
+> The `Alert` is a custom component that displays a contextual message with an icon, a title, an optional details, action button and close button.
+> It supports multiple usage types which influence the styling and iconography to convey different alert semantics such as info, success, warning, error, and notification.
 
 ## Usage
 
@@ -31,15 +33,80 @@ Here is an example:
 White alert should be used on colored background.
 
 ```html
-<mh-alert white="true"/>
+<mh-alert white="true" />
 ```
+
 Otherwise default colored alert should be used.
 
- ```html
- <mh-alert/>
- ```
+```html
+<mh-alert />
+```
 
 ---
+
+## Usage Guidelines
+
+Alerts are intended to inform users about events in the pages. Depending on the type of message, there are 2 categories of messages:
+
+### Informative messages
+
+#### Default message
+
+**Info**
+
+<Canvas of={AlertStories.Info} sourceState="none" />
+**Info with White background**
+<Canvas of={AlertStories.InfoWhiteBackground} sourceState="none" />
+
+Gives short additional informations about a topic within the page.<br />
+_Variant_: collapse-expand
+
+#### Success message
+
+<a href="/?path=/docs/angular-components-snackbar--docs">**Snackbars**</a> inform users of successful outcomes or actions.
+
+### Status messages
+
+#### Error messages
+
+Prompted when user input is incorrect, forbidden, or the system fails to operate a task. The error message helps the user by giving him the feedback about what error the encountered.
+
+**Error**
+
+<Canvas of={AlertStories.Error} sourceState="none" />
+**Error with White background**
+<Canvas of={AlertStories.ErrorWhiteBackground} sourceState="none" />
+
+_Behaviour_
+
+- **Inline alerts** show up in task flows, to notify users of the status of an action. They usually appear on the same screen at the top of the concerned content.<br />
+  Typical example: notifying an error or an incomplete field in a form
+
+#### Warning messages
+
+To alert users to important information or critical actions that require their immediate attention.
+
+**Warning**
+
+<Canvas of={AlertStories.Warning} sourceState="none" />
+**Warning with White background**
+<Canvas of={AlertStories.WarningWhiteBackground} sourceState="none" />
+
+_Behaviour_
+
+- **Inline alerts** are used for brief and non-critical information that can be quickly acknowledged by the user without interrupting their workflow.<br />
+  Typical example: No internet connection: still possible to check stored data
+
+- When a **dialog** is used for alert, then it appears in front of web page content to provide information or ask for a decision. Dialog disable all page functionality when they appear, and remain on screen until confirmed, dismissed, or a required action has been taken.
+  Typical example: before prescription’s deletion
+
+### When to use it
+
+- **Severity of the warning**: For critical issues, a dialog is generally preferred.
+- **User flow**: A line-based warning is often suitable for situations where the user can easily correct the issue or acknowledge the warning without interrupting their workflow.
+- **Information needed**: Dialogs can provide more detailed information and context than line-based warnings. <br />
+  For example, a warning about an invalid input field might be displayed as a line-based message alongside the field, while a warning about a potential data loss might be displayed in a dialog box.
+
 ## Inputs
 
 <table>
@@ -54,66 +121,116 @@ Otherwise default colored alert should be used.
   </thead>
   <tbody>
     <tr>
-      <td><code>usage</code></td>
-      <td><code>'info' | 'success' | 'warning' | 'error' | 'notification'</code></td>
+      <td>
+        <code>usage</code>
+      </td>
+      <td>
+        <code>'info' | 'success' | 'warning' | 'error' | 'notification'</code>
+      </td>
       <td>Defines the alert type which controls colors and icon.</td>
-      <td><code>'info'</code></td>
+      <td>
+        <code>'info'</code>
+      </td>
       <td>Yes</td>
     </tr>
     <tr>
-      <td><code>backgroundColor</code></td>
-      <td><code>'white' | 'color'</code></td>
-      <td>Determines if the background is white or colored according to the usage type. If white, the text becomes black.</td>
-      <td><code>'color'</code></td>
+      <td>
+        <code>backgroundColor</code>
+      </td>
+      <td>
+        <code>'white' | 'color'</code>
+      </td>
+      <td>
+        Determines if the background is white or colored according to the usage type. If white, the text becomes black.
+      </td>
+      <td>
+        <code>'color'</code>
+      </td>
       <td>No</td>
     </tr>
     <tr>
-      <td><code>title</code></td>
-      <td><code>string</code></td>
+      <td>
+        <code>title</code>
+      </td>
+      <td>
+        <code>string</code>
+      </td>
       <td>The alert title.</td>
       <td>—</td>
       <td>Yes</td>
     </tr>
     <tr>
-      <td><code>details</code></td>
-      <td><code>string</code></td>
+      <td>
+        <code>details</code>
+      </td>
+      <td>
+        <code>string</code>
+      </td>
       <td>Additional descriptive text below the title.</td>
       <td>—</td>
       <td>No</td>
     </tr>
     <tr>
-      <td><code>closeButton</code></td>
-      <td><code>boolean</code></td>
+      <td>
+        <code>closeButton</code>
+      </td>
+      <td>
+        <code>boolean</code>
+      </td>
       <td>If true, shows a close icon button on the right side of the alert.</td>
-      <td><code>false</code></td>
+      <td>
+        <code>false</code>
+      </td>
       <td>No</td>
     </tr>
     <tr>
-      <td><code>actionButton</code></td>
-      <td><code>boolean</code></td>
+      <td>
+        <code>actionButton</code>
+      </td>
+      <td>
+        <code>boolean</code>
+      </td>
       <td>If true, shows an action button with optional disabled state.</td>
-      <td><code>false</code></td>
+      <td>
+        <code>false</code>
+      </td>
       <td>No</td>
     </tr>
     <tr>
-      <td><code>buttonDisabled</code></td>
-      <td><code>boolean</code></td>
+      <td>
+        <code>buttonDisabled</code>
+      </td>
+      <td>
+        <code>boolean</code>
+      </td>
       <td>Disables the action button if true.</td>
-      <td><code>false</code></td>
+      <td>
+        <code>false</code>
+      </td>
       <td>No</td>
     </tr>
     <tr>
-      <td><code>buttonLabel</code></td>
-      <td><code>string</code></td>
+      <td>
+        <code>buttonLabel</code>
+      </td>
+      <td>
+        <code>string</code>
+      </td>
       <td>Label text for the action button.</td>
       <td>—</td>
       <td>No</td>
     </tr>
     <tr>
-      <td><code>closeButtonAriaLabel</code></td>
-      <td><code>string</code></td>
+      <td>
+        <code>closeButtonAriaLabel</code>
+      </td>
+      <td>
+        <code>string</code>
+      </td>
       <td>Aria-label for the close icon</td>
-      <td><code>""</code></td>
+      <td>
+        <code>""</code>
+      </td>
       <td>No</td>
     </tr>
   </tbody>
@@ -131,13 +248,21 @@ Otherwise default colored alert should be used.
   </thead>
   <tbody>
     <tr>
-      <td><code>closeAlert</code></td>
-      <td><code>Event&lt;void&gt;</code></td>
+      <td>
+        <code>closeAlert</code>
+      </td>
+      <td>
+        <code>Event&lt;void&gt;</code>
+      </td>
       <td>Emitted when the close button is clicked or activated via keyboard.</td>
     </tr>
     <tr>
-      <td><code>buttonClicked</code></td>
-      <td><code>Event&lt;void&gt;</code></td>
+      <td>
+        <code>buttonClicked</code>
+      </td>
+      <td>
+        <code>Event&lt;void&gt;</code>
+      </td>
       <td>Emitted when the action button is clicked or activated via keyboard.</td>
     </tr>
   </tbody>
