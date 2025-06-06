@@ -9,4 +9,9 @@ import { MatRadioModule } from '@angular/material/radio';
 })
 export class RadioButtonComponent {
   readonly disabled: InputSignal<boolean> = input.required();
+  readonly items: InputSignal<number> = input.required();
+  readonly layout: InputSignal<'vertical' | 'horizontal'> = input.required();
+  readonly selectedItem: InputSignal<number | undefined> = input<number | undefined>(undefined);
+
+  protected readonly Array = Array;
 }

@@ -1,0 +1,131 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as ToggleStory from './../../design-kit/slide-toggle/slide-toggle-helper.stories';
+import * as CheckboxStory from './../../design-kit/checkbox/checkbox-helper.stories';
+import * as RadioStory from './../../design-kit/radio-button/radio-button-helper.stories';
+import * as SegmentedButtonStory from './../../design-kit/button-toggle/button-toggle.stories';
+import * as SelectStory from './../../design-kit/select/select.stories';
+import * as AutocompleteStory from './../../design-kit/autocomplete/autocomplete.stories';
+
+<Meta title="Angular Components/Selectors" />
+<style>
+  {`
+  table.table-top-align td, table th {
+    vertical-align: top;
+  }
+`}
+</style>
+
+# Selectors
+
+## Mutually exclusive values
+
+### 2 options
+
+<table class="table-top-align">
+  <thead>
+    <tr>
+      <th>Toggle</th>
+      <th>Single checkbox</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <Canvas of={ToggleStory.Default} sourceState="none" />
+      </td>
+      <td>
+        <Canvas of={CheckboxStory.Default} sourceState="none" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        When selected
+        <Canvas of={ToggleStory.Checked} sourceState="none" />
+      </td>
+      <td>
+        When selected
+        <Canvas of={CheckboxStory.Checked} sourceState="none" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Use toggles when **selection will immediately take effect** <br />
+        Means ON / OFF
+      </td>
+      <td>
+        Use checkbox when **selection will take effect after submit** <br />
+        Means yes / no <br />
+        Consider using single checkbox for explicit agreement
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### More than 2 options
+
+<table class="table-top-align">
+  <thead>
+    <tr>
+      <th>Radio buttons</th>
+      <th>Segmented buttons</th>
+      <th>Single select</th>
+      <th>Autocomplete selection</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <Canvas of={RadioStory.Default} sourceState="none" />
+      </td>
+      <td>
+         <Canvas of={SegmentedButtonStory.Default} sourceState="none" />
+      </td>
+       <td>
+          <Canvas of={SelectStory.Default} sourceState="none" />
+       </td>
+       <td>
+          <Canvas of={AutocompleteStory.Default} sourceState="none" />
+       </td>
+    </tr>
+    <tr>
+      <td>
+        Selection with a list of **values vertically presented** in a alphabetically or logically order <br />
+        <br />
+        **Characteristics**
+        - Users can see all their choices right away
+        - Can take up valuable space
+        - Most of the time **with a default option** (Exception: Gender)
+        - Always mandatory field
+        - If more than 7 options consider using simple select or autocomplete
+      </td>
+      <td>
+        Selection with a list of **values vertically presented** in a alphabetically or logically order <br />
+        <br />
+        **Characteristics**
+        - Users can see all their choices right away
+        - Can take up valuable space
+        - Most of the time **with a default option** (Exception: Gender)
+        - Always mandatory field
+        - If more than 7 options consider using simple select or autocomplete
+      </td>
+      <td>
+        Segmented buttons is a **horizontal set of related choices** <br />
+        <br />
+        **Characteristics**
+        - Easier for **touch interfaces**
+        - Users can see all their choices right away
+        - Can contain text and / or icons
+        - Takes less space than radio
+        - For a very limited list of options (3-4)
+      </td>
+      <td>
+        Selection within very long list of values <br />
+        <br />
+        **Characteristics**
+        - Autocomplete speeds up from completion by **filtering out the list while typing**
+        - works well when the **user is familiar with the context** (e.g. list of cities or countries works well for everyone, a list of body areas works fine for caregivers)
+      </td>
+    </tr>
+
+  </tbody>
+</table>
