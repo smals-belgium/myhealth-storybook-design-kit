@@ -1,4 +1,5 @@
-import { Meta } from '@storybook/blocks';
+import { Meta, Canvas } from '@storybook/blocks';
+import * as ToggleStories from './../../design-kit/slide-toggle/slide-toggle.stories';
 
 <Meta title="Angular Components/Slide Toggle" />
 
@@ -24,3 +25,26 @@ Alternatively, you can use **all component** My Health styles by including them 
 
 @include mh.override-all-mat-components();
 ```
+
+<Canvas of={ToggleStories.Default} sourceState="none" />
+
+1. **Label**:
+   A label is always present to clarify on the action the switch will perform. It is preferably placed on the left side. Vérifier si on a besoin du label right
+
+2. **Thumb**:
+   The thumb indicator has 2 possible positions: at the left or the right in the container.
+
+3. **State indicator**:
+   The state indicator confirm the state of the switch toggle it's a check sign when status “ON” is selected.
+
+4. **Container**:
+   A container is displayed around the thumb and the state indicator with a solid color. The color is set depending of the switch's state.
+
+Slide toggle are the preferred way to adjust settings on mobile. They should be used instead of radio buttons if each item in a set can be independently controlled.
+
+## When to use
+
+- Toggle a single item on or off, on mobile and tablet
+- Immediately activate or deactivate something (Show / Hide history)
+- A slide toggle is successfully toggled when the switch thumb slides to the other side of the track upon user interaction. The inline label should clearly show the option that the switch controls, as well as the current state it's in.
+- Users can interact with the switch by tapping anywhere on the switch, this will slide the thumb to the other side of the track and automatically updates the state.
