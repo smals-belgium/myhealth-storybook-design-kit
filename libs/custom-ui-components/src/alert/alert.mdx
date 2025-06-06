@@ -1,0 +1,154 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Custom Components/Alert" />
+
+# Alert
+
+## Description
+
+The `Alert` is a custom component that displays a contextual message with an icon, a title, an optional details, action button and close button. It supports multiple usage types which influence the styling and iconography to convey different alert semantics such as info, success, warning, error, and notification.
+
+## Usage
+
+Here is an example:
+
+```html
+<mh-alert
+  [usage]="'warning'"
+  [backgroundColor]="'white'"
+  [title]="'Network Issue Detected'"
+  [details]="'Your connection is unstable. Please check your network settings.'"
+  [closeButton]="true"
+  [closeButtonAriaLabel]="'Close alert'"
+  [actionButton]="true"
+  [buttonLabel]="'Retry Connection'"
+  [buttonDisabled]="false"
+  (closeAlert)="onAlertClosed()"
+  (buttonClicked)="onActionButtonClicked()"
+/>
+```
+
+White alert should be used on colored background.
+
+```html
+<mh-alert white="true"/>
+```
+Otherwise default colored alert should be used.
+
+ ```html
+ <mh-alert/>
+ ```
+
+---
+## Inputs
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+      <th>Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>usage</code></td>
+      <td><code>'info' | 'success' | 'warning' | 'error' | 'notification'</code></td>
+      <td>Defines the alert type which controls colors and icon.</td>
+      <td><code>'info'</code></td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><code>backgroundColor</code></td>
+      <td><code>'white' | 'color'</code></td>
+      <td>Determines if the background is white or colored according to the usage type. If white, the text becomes black.</td>
+      <td><code>'color'</code></td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code>title</code></td>
+      <td><code>string</code></td>
+      <td>The alert title.</td>
+      <td>—</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><code>details</code></td>
+      <td><code>string</code></td>
+      <td>Additional descriptive text below the title.</td>
+      <td>—</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code>closeButton</code></td>
+      <td><code>boolean</code></td>
+      <td>If true, shows a close icon button on the right side of the alert.</td>
+      <td><code>false</code></td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code>actionButton</code></td>
+      <td><code>boolean</code></td>
+      <td>If true, shows an action button with optional disabled state.</td>
+      <td><code>false</code></td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code>buttonDisabled</code></td>
+      <td><code>boolean</code></td>
+      <td>Disables the action button if true.</td>
+      <td><code>false</code></td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code>buttonLabel</code></td>
+      <td><code>string</code></td>
+      <td>Label text for the action button.</td>
+      <td>—</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code>closeButtonAriaLabel</code></td>
+      <td><code>string</code></td>
+      <td>Aria-label for the close icon</td>
+      <td><code>""</code></td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+
+## Outputs
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>closeAlert</code></td>
+      <td><code>Event&lt;void&gt;</code></td>
+      <td>Emitted when the close button is clicked or activated via keyboard.</td>
+    </tr>
+    <tr>
+      <td><code>buttonClicked</code></td>
+      <td><code>Event&lt;void&gt;</code></td>
+      <td>Emitted when the action button is clicked or activated via keyboard.</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## Accessibility
+
+- The alert container uses `role="alert"` to announce messages assertively.
+- `aria-live="assertive"` ensures screen readers notify users immediately on alert content changes.
+- Action and close buttons are focusable and operable via keyboard.
+
+---

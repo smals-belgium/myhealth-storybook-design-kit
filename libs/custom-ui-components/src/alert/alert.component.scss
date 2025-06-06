@@ -1,0 +1,149 @@
+@use '../../../design-kit' as mh;
+@use '@angular/material' as mat;
+
+@mixin alert-theme(
+  $surface-lighter,
+  $surface-light,
+  $surface-medium,
+  $surface-dark,
+  $surface-darker,
+  $typography-color,
+  $icon-color
+) {
+  display: flex;
+  padding: mh.$spacing-s;
+  gap: mh.$spacing-s;
+  border-radius: var(--Radius-Small, 6px);
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.13);
+
+  .flex-grow {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: mh.$spacing-s;
+  }
+
+  background: $surface-lighter;
+
+  h2 {
+    @include mh.font-default-semibold;
+    color: $typography-color;
+    margin: 0;
+  }
+
+  p {
+    @include mh.font-small-regular;
+    color: $typography-color;
+    margin: 0;
+  }
+
+  mat-icon {
+    color: $icon-color;
+  }
+
+  button[mat-icon-button] {
+    background-color: transparent;
+
+    &:hover {
+      background-color: $surface-lighter;
+    }
+
+    &:focus,
+    &:active {
+      background-color: $surface-light;
+    }
+  }
+
+  button[mat-flat-button] {
+    background-color: $surface-medium;
+
+    &:disabled {
+      background-color: mh.$surface-brand-neutral-light;
+    }
+
+    &:hover {
+      background-color: $surface-dark;
+    }
+
+    &:focus,
+    &:active {
+      background-color: $surface-darker;
+    }
+  }
+}
+
+.info {
+  @include alert-theme(
+    mh.$surface-brand-primary-lighter,
+    mh.$surface-brand-primary-light,
+    mh.$surface-brand-primary-medium,
+    mh.$surface-brand-primary-dark,
+    mh.$surface-brand-primary-dark,
+    mh.$typography-brand-primary-dark,
+    mh.$typography-brand-primary-dark
+  );
+}
+
+.success {
+  @include alert-theme(
+    mh.$surface-semantic-success-lighter,
+    mh.$surface-semantic-success-light,
+    mh.$surface-semantic-success-medium,
+    mh.$surface-semantic-success-dark,
+    mh.$surface-semantic-success-dark,
+    mh.$typography-semantic-success,
+    mh.$typography-semantic-success
+  );
+}
+
+.warning {
+  @include alert-theme(
+    mh.$surface-semantic-warning-lighter,
+    mh.$surface-semantic-warning-light,
+    mh.$surface-semantic-warning-medium,
+    mh.$surface-semantic-warning-dark,
+    mh.$surface-semantic-warning-dark,
+    mh.$typography-semantic-warning,
+    mh.$typography-semantic-warning
+  );
+}
+
+.error {
+  @include alert-theme(
+    mh.$surface-semantic-error-lighter,
+    mh.$surface-semantic-error-light,
+    mh.$surface-semantic-error-medium,
+    mh.$surface-semantic-error-dark,
+    mh.$surface-semantic-error-dark,
+    mh.$typography-semantic-error-medium,
+    mh.$typography-semantic-error-medium
+  );
+}
+
+.notification {
+  @include alert-theme(
+    mh.$surface-brand-neutral-lighter,
+    mh.$surface-brand-primary-light,
+    mh.$surface-brand-primary-medium,
+    mh.$surface-brand-primary-dark,
+    mh.$surface-brand-primary-dark,
+    mh.$typography-brand-neutral-darker,
+    mh.$typography-semantic-error-medium
+  );
+
+  mat-icon.close {
+    color: mh.$typography-brand-neutral-darker;
+  }
+}
+
+.white {
+  background: mh.$color-white;
+
+  h2 {
+    color: mh.$typography-brand-neutral-darker;
+  }
+
+  p {
+    color: mh.$typography-brand-neutral-darker;
+  }
+}

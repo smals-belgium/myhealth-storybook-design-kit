@@ -6,6 +6,10 @@ const config: StorybookConfig = {
       directory: '../src',
       files: '**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
     },
+    {
+      directory: '../../custom-ui-components',
+      files: '**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
+    },
   ],
   addons: [
     '@storybook/addon-links',
