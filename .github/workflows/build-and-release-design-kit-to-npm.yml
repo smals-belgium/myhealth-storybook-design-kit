@@ -17,6 +17,7 @@ on:
 permissions:
   contents: write # to push changes to the repository
   actions: write # to create a release
+  pull-requests: write # to create pull requests
 
 jobs:
   build:
@@ -45,7 +46,7 @@ jobs:
         run: |
           cd libs/design-kit
           sed -i -E 's/"version": "[^"]+"/"version": "'"${{ inputs.release-version }}"'"/' package.json
-          git checkout -b design-kit-auto-update
+          git checkout -b release/design-kit-${{ inputs.release-version }}
           git add package.json
           git commit -m "design kit release version: ${{ inputs.release-version }}"
           git tag -a v${{ inputs.release-version }} -m "design kit version ${{ inputs.release-version }}"
@@ -80,7 +81,7 @@ jobs:
       # Push release to main
       - name: Push release
         run: |
-          git push origin design-kit-auto-update
+          git push origin release/design-kit-${{ inputs.release-version }}
           git push --tags
 
       - name: Create Pull Request
@@ -92,7 +93,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: "Automated Update Design Kit package update",
-              head: "design-kit-auto-update",
+              head: "release/design-kit-${{ inputs.release-version }}",
               base: "main",
               body: "Created by GitHub Action"
             });
