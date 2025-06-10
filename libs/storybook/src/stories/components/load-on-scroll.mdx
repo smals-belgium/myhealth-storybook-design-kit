@@ -1,0 +1,56 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Animations/Load on Scroll" />
+
+# Load on Scroll
+
+> Infinite scrolling implementation that loads more items when user scrolls near the bottom.
+
+## Core Logic
+
+```typescript
+onScroll(event: any) {
+  const element = event.target;
+  if (element.scrollTop + element.clientHeight >= element.scrollHeight - 20) {
+    this.loadMore();
+  }
+}
+```
+
+**Scroll Detection**: Triggers when within 20px of bottom using `scrollTop + clientHeight >= scrollHeight - threshold`.
+
+## Loading Function
+
+```typescript
+
+items: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
+loading = false;
+
+loadMore() {
+  if (this.loading) return;  // Prevent multiple calls
+  this.loading = true;
+
+   // To be replaced by an actual request
+  setTimeout(() => {
+    const start = this.items.length + 1;
+    for (let i = start; i < start + 5; i++) {
+      this.items.push(i);
+    }
+    this.loading = false;
+  }, 750);
+}
+```
+
+## Usage
+
+Bind scroll event to container and show a <a href="?path=/story/angular-components-progress-indicators--docs">**skeleton loader**</a> during loading state:
+
+```html
+<div (scroll)="onScroll($event)">
+  @for (item of items; track item) {
+  <div>Item {{ item }}</div>
+  } @if (loading) {
+  <ngx-skeleton-loader />
+  }
+</div>
+```
