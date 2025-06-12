@@ -1,0 +1,9 @@
+<div class="container" (scroll)="onScroll($event)">
+  @for (item of items; track item) {
+  <div class="item">Item {{ item }}</div>
+  } @if (loading) {
+  <div class="item">
+    <ngx-skeleton-loader [count]="1" appearance="line" [theme]="{ height: '47px', margin: '0' }" />
+  </div>
+  }
+</div>

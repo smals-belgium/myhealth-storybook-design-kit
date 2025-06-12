@@ -1,10 +1,10 @@
 import { applicationConfig, type Meta, type StoryObj } from '@storybook/angular';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { ScrollToComponent } from './scroll-to.component';
+import { LoadOnScrollComponent } from './load-on-scroll';
 
-const meta: Meta<ScrollToComponent> = {
-  title: 'Animations/Scroll to',
-  component: ScrollToComponent,
+const meta: Meta<LoadOnScrollComponent> = {
+  title: 'Animations/Load on Scroll',
+  component: LoadOnScrollComponent,
   decorators: [
     applicationConfig({
       providers: [provideAnimations()],
@@ -14,6 +14,6 @@ const meta: Meta<ScrollToComponent> = {
 
 export default meta;
 
-type Story = StoryObj<ScrollToComponent>;
+type Story = StoryObj<LoadOnScrollComponent>;
 
 export const Default: Story = {};
