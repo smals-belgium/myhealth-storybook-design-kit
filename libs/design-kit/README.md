@@ -31,7 +31,7 @@ If you add `$use-local-fonts: true`, the theme will use the woff2 font files pro
 
 To optimize the Design Kit and make packages as small as possible, you can choose to include a select amount of mixins to suit your application's needs.
 
-For a full description on all the utilized mixins, please visit our [Storybook mixins & optimization page](https://ordina-group.github.io/mijn-gezondheid-web/?path=/docs/foundations-mixins-optimization--docs).
+For a full description on all the utilized mixins, please visit our [Storybook mixins & optimization page](https://smals-belgium.github.io/myhealth-storybook-design-kit/?path=/docs/foundations-mixins-optimization--docs).
 
 ### MyHealth component overrides
 
@@ -43,8 +43,8 @@ You can override each component with MyHealth's styling individually. Or you can
 @include mh.override-all-mat-components();
 ```
 
-For a full guide on how to add these components individually, please visit our [Storybook components page](https://ordina-group.github.io/mijn-gezondheid-web/?path=/docs/components).
+For a full guide on how to add these components individually, please visit our [Storybook components page](https://smals-belgium.github.io/myhealth-storybook-design-kit/?path=/docs/angular-components).
 
 ### MyHealth variables
 
-For more information about how to use the MH design kit, please visit our [Storybook](https://ordina-group.github.io/mijn-gezondheid-web/).
+For more information about how to use the MH design kit, please visit our [Storybook](https://smals-belgium.github.io/myhealth-storybook-design-kit/).

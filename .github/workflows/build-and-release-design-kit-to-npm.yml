@@ -15,7 +15,6 @@ on:
         required: true
 
 permissions:
-  contents: write # to push changes to the repository
   actions: write # to create a release
 
 jobs:
@@ -27,6 +26,15 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Check release version in package.json
+        run: |
+          if ! grep -q "  \"version\": \"${VERSION}\"" libs/design-kit/package.json; then
+            echo "Error: Release version ${{ inputs.release-version }} not found in package.json"
+            exit 1
+          fi
+        env:
+          VERSION: ${{ inputs.release-version }}
+
       - name: Check release version in CHANGELOG
         run: |
           if ! grep -q "## ${VERSION//./\\.}" libs/storybook/src/stories/main/changelog.mdx; then
@@ -35,19 +43,6 @@ jobs:
             fi
         env:
           VERSION: ${{ inputs.release-version }}
-
-      - name: Set git config
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-
-      - name: Perform release
-        run: |
-          cd libs/design-kit
-          sed -i -E 's/"version": "[^"]+"/"version": "'"${{ inputs.release-version }}"'"/' package.json
-          git add package.json
-          git commit -m "design kit release version: ${{ inputs.release-version }}"
-          git tag -a v${{ inputs.release-version }} -m "design kit version ${{ inputs.release-version }}"
 
       # Install dependencies & build
       - name: Setup node
@@ -75,9 +70,3 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           access: public
           dry-run: false
-
-      # Push release to main
-      - name: Push release
-        run: |
-          git push
-          git push --tags
