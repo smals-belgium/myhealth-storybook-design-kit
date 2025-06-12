@@ -39,27 +39,27 @@ export const Desktop: Story = {
     isSelectable: false,
     isLoading: false,
     isMobile: false,
-  }
+  },
 };
 
 Desktop.parameters = {
   viewport: {
     defaultViewport: 'desktop',
   },
-}
-
-export const Mobile: Story = {
-  args: {
-    search: false,
-    expandEnabled: false,
-    isSelectable: false,
-    isLoading: false,
-    isMobile: true,
-  }
 };
 
-Mobile.parameters = {
-  viewport: {
-    defaultViewport: 'mobile',
-  },
-}
+// export const Mobile: Story = {
+//   args: {
+//     search: false,
+//     expandEnabled: false,
+//     isSelectable: false,
+//     isLoading: false,
+//     isMobile: true,
+//   }
+// };
+//
+// Mobile.parameters = {
+//   viewport: {
+//     defaultViewport: 'mobile',
+//   },
+// }
