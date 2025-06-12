@@ -29,6 +29,7 @@ Alternatively, you can use **all component** My Health styles by including them 
 ## Usage guidelines
 
 ### Desktop view
+
 <Canvas of={TableStories.Default} sourceState="none" />
 
 #### Expandable Table
@@ -64,6 +65,7 @@ In your `expandDetail` column's definition, add the class `mh-detail-row--expand
 Avoid repeating data from the collapsed panel. When users expand a row, they should be presented with new content only—don’t make them work to find what’s changed or added.
 
 #### Table with selection
+
 The Design Kit also supports tables with selection, as seen in Angular Material's [example](https://material.angular.dev/components/table/examples#table-selection).
 The implementation remains largely the same; it's simply a matter of adding the appropriate class for the pointer cursor.
 
@@ -71,10 +73,11 @@ The data row in your table needs the class `mh-cursor-pointer`:
 
 ```html
 <!-- Data row -->
-<tr mat-row *matRowDef="let row; columns: columns()"  (click)="clickRow(row)" class="mh-cursor-pointer"></tr>
+<tr mat-row *matRowDef="let row; columns: columns()" (click)="clickRow(row)" class="mh-cursor-pointer"></tr>
 ```
 
 #### Table with filtering
+
 The Design Kit also supports tables with filter, as seen in Angular Material's [example](https://material.angular.dev/components/table/examples#table-filtering).
 The implementation remains largely the same; only the input field changes to a search input with icon and the the appropriate class.
 
@@ -84,8 +87,16 @@ the input needs the class `mh-table__search__input`
 ```html
 <!-- input -->
 <mat-form-field appearance="outline" class="mh-table__search">
-    <mat-icon matPrefix fontIcon="search" aria-hidden="true" />
-    <input matInput type="text" class="mh-table__search__input" name="search" (keyup)="applyFilter($event)" placeholder="Search ..." #input>
+  <mat-icon matPrefix fontIcon="search" aria-hidden="true" />
+  <input
+    matInput
+    type="text"
+    class="mh-table__search__input"
+    name="search"
+    (keyup)="applyFilter($event)"
+    placeholder="Search ..."
+    #input
+  />
 </mat-form-field>
 ```
 
@@ -93,93 +104,24 @@ the input needs the class `mh-table__search__input`
 
 For documentation on how to style the loading state of the table, see the [Skeleton loader docs](/docs/components-skeleton-loader--docs#table).
 
-### Mobile view
-> On mobile devices, tables should transform into cards to preserve readability and avoid horizontal scrolling.<br />
-> Each row becomes a card.
->
-> Implement a device-based switch in your HTML that shows the table layout on desktop and automatically switches to the card layout on mobile devices to ensure optimal display.
-
-```javascript
-<!-- input -->
- isMobileNative = false;
-
-  ngOnInit() {
-    // Use isMobileNative to determine initial view mode
-    this.isMobileNative = isMobileNative();
-  }
-```
-
-```html
-<!-- input -->
- @if(isMobileNative) {
-  <Card />
- } @else {
-  <Table />
- }
-```
-
-<div class="image-wrapper">
-<img src="/images/default-card.png" alt="Card on mobile view" />
-</div>
-
-#### With labels
-Display the label and value stacked vertically, one above the other.
-
-#### Without labels
-When values are self-explanatory, labels may be omitted to reduce the size of the cards. This is the case, for example, in the drug prescription list.
-
-In both variants, text should be left-aligned. <br />
-Left-aligned text is easier to read because the eye doesn't need to search for the start of each line—it's always in the same place.
-
 ## Component variations
+
 ### With toolbars
+
 > Use toolbars for searching, filtering, and other global actions that apply to the entire table.
 > In long lists, allow users to type the first letters of the desired item to quickly navigate to it, instead of requiring them to scroll.
 
 <b>Desktop view</b>
 <Canvas of={TableStories.Filter} sourceState="none" />
 
-<b>Mobile view</b>
-<div class="image-wrapper">
-<img src="/images/card-with-filters.png" alt="Card on mobile view with toolbars" />
-<img src="/images/card-filters-open.png" alt="Card on mobile view with filter open" />
-</div>
-
-#### Types of actions
-* **Icon Button**: Use when multiple actions are possible in a row, or when there isn’t enough space for labels. Ensure the icon is well-known and include an ARIA label.
-* **Overflow Menu**: Use when there are more than three actions, or when there isn’t enough space to display all actions as icon buttons.
-<div class="image-wrapper">
-<img src="/images/card-with-actions.png" alt="Card on mobile view with more then 3 actions" />
-</div>
-
 ### With Selection
+
 > The selection variant enables users to select individual rows in a data table. Selection options include:
 >
-> * Single-select: Radio buttons
-> * Multi-select: Checkboxes
+> - Single-select: Radio buttons
+> - Multi-select: Checkboxes
 >
 > Users can perform individual or batch actions on the selected items.
 
 <b>Desktop view</b>
 <Canvas of={TableStories.Selection} sourceState="none" />
-
-<b>Mobile view</b>
-<div class="image-wrapper">
-<img src="/images/card-with-select.png" alt="Card on mobile view with checkbox" />
-</div>
-
-{/*
-### Decks of cards
-> The so-called “deck of cards” mimics the arrangement of pages in a book. Each list element is displayed on a “card,” and each card represents a page in a stack. This layout functions as a carousel, where each item occupies the entire screen.
->
-> Decks of cards are not ideal for lists longer than 4–6 elements, as they require sequential access—users must inspect each page one by one before reaching the desired content.
->
-> Use case: The Bundle
-
- */}
-
-
-
-
-
-
