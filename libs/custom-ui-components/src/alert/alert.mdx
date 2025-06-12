@@ -56,18 +56,19 @@ Alerts are intended to inform users about events in the pages. Depending on the 
 **Info with White background**
 <Canvas of={AlertStories.InfoWhiteBackground} sourceState="none" />
 
-Gives short additional informations about a topic within the page.<br />
-_Variant_: collapse-expand
+Gives short additional information about a topic within the page.<br />
 
 #### Success message
 
 <a href="/?path=/docs/angular-components-snackbar--docs">**Snackbars**</a> inform users of successful outcomes or actions.
+They provide lightweight feedback without interrupting the user's flow and disappear after a short duration or when the user
+interacts with the screen.
 
 ### Status messages
 
 #### Error messages
 
-Prompted when user input is incorrect, forbidden, or the system fails to operate a task. The error message helps the user by giving him the feedback about what error the encountered.
+Prompted when user input is incorrect, forbidden, or the system fails to operate a task. The error message helps the user by giving him the feedback about what error he encountered.
 
 **Error**
 
@@ -95,7 +96,7 @@ _Behaviour_
 - **Inline alerts** are used for brief and non-critical information that can be quickly acknowledged by the user without interrupting their workflow.<br />
   Typical example: No internet connection: still possible to check stored data
 
-- When a **dialog** is used for alert, then it appears in front of web page content to provide information or ask for a decision. Dialog disable all page functionality when they appear, and remain on screen until confirmed, dismissed, or a required action has been taken.
+- When a **dialog** is used for alert, it appears in front of web page content to provide information or ask for a decision. Dialogs disable all page functionality when they appear, and remain on screen until confirmed, dismissed, or a required action has been taken.
   Typical example: before prescription’s deletion
 
 ### When to use it
