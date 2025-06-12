@@ -9,4 +9,5 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 })
 export class CheckboxComponent {
   readonly disabled: InputSignal<boolean> = input.required();
+  readonly checked: InputSignal<boolean> = input.required();
 }

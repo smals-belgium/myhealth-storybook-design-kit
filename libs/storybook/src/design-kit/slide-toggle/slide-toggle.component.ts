@@ -9,4 +9,5 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 })
 export class SlideToggleComponent {
   readonly disabled: InputSignal<boolean> = input.required();
+  readonly checked: InputSignal<boolean> = input.required();
 }

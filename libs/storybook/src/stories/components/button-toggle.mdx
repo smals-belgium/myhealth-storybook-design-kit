@@ -4,6 +4,8 @@ import { Meta } from '@storybook/blocks';
 
 # Button toggle
 
+> Segmented button lets users choose from a set of options, side-by-side.
+>
 > The button toggle component is based of Angular Material's [button toggle](https://material.angular.io/components/button-toggle). Material's core features will remain the same and can be implemented in the same way.
 > The My Health belgium.be Design Kit will simply overrule the component's styling.
 >
@@ -26,3 +28,23 @@ Alternatively, you can use **all component** My Health styles by including them 
 
 @include mh.override-all-mat-components();
 ```
+
+## Usage guidelines
+
+- Use a segmented button when there are **two to five available options**.
+- When an option is selected, **highlight it with a different color and a checkmark** to clearly show its selected status.
+- Ensure each segment contains **content of similar size** whenever possible, to maintain a balanced appearance.
+- This component should use **labels only, not icons**, since icons (such as a checkmark) are already used to indicate selection.
+- Because segmented buttons serve as alternatives to radio buttons and checkboxes, be consistent in your UI — **avoid using them together on the same screen**.
+
+Depending on the type of selection, there are 2 categories segmented buttons:
+
+- **Single-select buttons** are an alternative to radio buttons. They present mutually exclusive options arranged horizontally.
+
+  - Only one option can be selected at a time.
+  - Selecting a new option automatically deselects the previous one.
+  - Example: Switching between calendar views such as Day, Week, or Month using a segmented control.
+  - See also <a href="/?path=/docs/angular-components-selectors--docs">Selectors</a>
+
+- **Multi-select buttons** are an alternative to checkboxes, allowing users to select multiple options simultaneously.
+  - Always **communicate clearly** that multiple selections are allowed (e.g., “Select one or more options”).
