@@ -1,31 +1,53 @@
 @use '../../../../design-kit' as mh;
 
-mat-card-content {
-  mat-checkbox {
-    position: relative;
-    top: -5px;
-    left: -5px;
-    margin-bottom: -10px;
-  }
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: mh.$spacing-s;
+.label-example-card {
+  mat-card-content {
+    mat-checkbox {
+      position: relative;
+      top: -5px;
+      left: -5px;
+      margin-bottom: -10px;
+    }
 
-  ul,
-  li {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: mh.$spacing-s;
+
+    ul,
+    li {
+      margin: 0;
+    }
+  }
+
+  mat-card-content.labelled {
+    gap: mh.$spacing-2xs;
+  }
+
+  p {
     margin: 0;
   }
+
+  .label {
+    font-weight: 700;
+  }
 }
 
-mat-card-content.labelled {
-  gap: mh.$spacing-2xs;
-}
+.appearance-example-card {
+  max-width: 400px;
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
 
-p {
-  margin: 0;
-}
+  .exmaple-content {
+    font-family: 'Open Sans', sans-serif;
+  }
 
-.label {
-  font-weight: 700;
+  .example-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding: 8px 16px;
+  }
 }

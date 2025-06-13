@@ -8,6 +8,13 @@ const meta: Meta<CardComponent> = {
     labelled: {
       control: { type: 'boolean' },
     },
+    appearanceCard: {
+      control: { type: 'boolean' },
+    },
+    appearance: {
+      options: ['raised', 'outlined'],
+      control: { type: 'select' },
+    },
   },
 };
 
@@ -17,11 +24,27 @@ type Story = StoryObj<CardComponent>;
 export const Not_Labelled: Story = {
   args: {
     labelled: false,
+    appearanceCard: false,
   },
 };
 
 export const Labelled: Story = {
   args: {
     labelled: true,
+    appearanceCard: false,
+  },
+};
+
+export const Outlined: Story = {
+  args: {
+    appearanceCard: true,
+    appearance: 'outlined',
+  },
+};
+
+export const Raised: Story = {
+  args: {
+    appearanceCard: true,
+    appearance: 'raised',
   },
 };

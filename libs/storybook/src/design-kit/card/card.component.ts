@@ -14,5 +14,7 @@ import { MatChip } from '@angular/material/chips';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardComponent {
-  readonly labelled: InputSignal<boolean> = input.required();
+  readonly labelled: InputSignal<boolean> = input(true);
+  readonly appearanceCard: InputSignal<boolean> = input(true);
+  readonly appearance: InputSignal<'raised' | 'outlined'> = input.required();
 }
