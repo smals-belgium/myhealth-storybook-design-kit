@@ -5,9 +5,8 @@ const meta: Meta<CardComponent> = {
   title: 'Angular Components/Card',
   component: CardComponent,
   argTypes: {
-    appearance: {
-      options: ['raised', 'outlined'],
-      control: { type: 'select' },
+    labelled: {
+      control: { type: 'boolean' },
     },
   },
 };
@@ -15,14 +14,14 @@ const meta: Meta<CardComponent> = {
 export default meta;
 type Story = StoryObj<CardComponent>;
 
-export const Outlined: Story = {
+export const Not_Labelled: Story = {
   args: {
-    appearance: 'outlined',
+    labelled: false,
   },
 };
 
-export const Raised: Story = {
+export const Labelled: Story = {
   args: {
-    appearance: 'raised',
+    labelled: true,
   },
 };
