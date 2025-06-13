@@ -44,11 +44,13 @@ Otherwise default colored alert should be used.
 
 ## Usage Guidelines
 
-Alerts are intended to inform users about events in the pages. Depending on the type of message, there are 2 categories of messages:
+Alerts are used to inform users about events on a page. Depending on their purpose, these alerts fall into two categories:
 
 ### Informative messages
 
 #### Default message
+
+Default messages provide brief, additional details about a topic within the page.
 
 **Info**
 
@@ -56,13 +58,10 @@ Alerts are intended to inform users about events in the pages. Depending on the 
 **Info with White background**
 <Canvas of={AlertStories.InfoWhiteBackground} sourceState="none" />
 
-Gives short additional information about a topic within the page.<br />
-
 #### Success message
 
-<a href="/?path=/docs/angular-components-snackbar--docs">**Snackbars**</a> inform users of successful outcomes or actions.
-They provide lightweight feedback without interrupting the user's flow and disappear after a short duration or when the user
-interacts with the screen.
+Success messages, typically displayed as <a href="/?path=/docs/angular-components-snackbar--docs">**snackbars**</a>,
+inform users of successful actions. They offer lightweight, non-intrusive feedback and automatically disappear after a short time or user interaction.
 
 ### Status messages
 
@@ -104,7 +103,8 @@ _Behaviour_
 - **Severity of the warning**: For critical issues, a dialog is generally preferred.
 - **User flow**: A line-based warning is often suitable for situations where the user can easily correct the issue or acknowledge the warning without interrupting their workflow.
 - **Information needed**: Dialogs can provide more detailed information and context than line-based warnings. <br />
-  For example, a warning about an invalid input field might be displayed as a line-based message alongside the field, while a warning about a potential data loss might be displayed in a dialog box.
+
+For example, a warning about an invalid input field might be displayed as a line-based message alongside the field, while a warning about a potential data loss might be displayed in a dialog box.
 
 ## Inputs
 

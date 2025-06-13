@@ -1,5 +1,6 @@
 import { Meta, Canvas } from '@storybook/blocks';
 import * as TableStories from './../../design-kit/table/table-helper.stories';
+import * as CardStories from './../../design-kit/card/card.stories';
 
 <Meta title="Angular Components/Table" />
 
@@ -30,7 +31,53 @@ Alternatively, you can use **all component** My Health styles by including them 
 
 ### Desktop view
 
+> A table displays data in rows and columns, making it easy to compare and analyze information in a structured format.
+
 <Canvas of={TableStories.Default} sourceState="none" />
+
+### Mobile view
+
+> On mobile devices, tables should transform into cards to preserve readability and avoid horizontal scrolling.<br />
+> Each row becomes a **card of the same size**.<br />
+> Cards are use as entry points to a full page with further details.<br/>
+>
+> Don't use the layout of a card to group together a set of non-clickable information (use a single line to separate the various items, or a different background color).
+
+Implement breakpoints to display a table layout on desktop and automatically switch to a card layout on mobile devices for optimal display.
+
+```css
+@use '@myhealth-belgium/design-kit' as mh;
+
+/* By default (mobile): show cards, hide table */
+.desktop-table {
+  display: none;
+}
+
+.mobile-cards {
+  display: block; /* or flex/grid/... */
+}
+
+/* From 600px and up (tablet and desktop): show table, hide cards */
+@media (min-width: mh.$media-breakpoint-xs) {
+  table {
+    display: table; /* show the table */
+  }
+
+  .card {
+    display: none; /* hide the cards */
+  }
+}
+```
+
+```html
+<!-- input -->
+<Card class="mobile-cards" />
+<table class="desktop-table" />
+```
+
+## Component variations
+
+### Desktop
 
 #### Expandable Table
 
@@ -64,6 +111,8 @@ In your `expandDetail` column's definition, add the class `mh-detail-row--expand
 
 Avoid repeating data from the collapsed panel. When users expand a row, they should be presented with new content only—don’t make them work to find what’s changed or added.
 
+<Canvas of={TableStories.Expandable} sourceState="none" />
+
 #### Table with selection
 
 The Design Kit also supports tables with selection, as seen in Angular Material's [example](https://material.angular.dev/components/table/examples#table-selection).
@@ -75,6 +124,11 @@ The data row in your table needs the class `mh-cursor-pointer`:
 <!-- Data row -->
 <tr mat-row *matRowDef="let row; columns: columns()" (click)="clickRow(row)" class="mh-cursor-pointer"></tr>
 ```
+
+The selection variant enables users to select individual rows in a data table.
+Users can perform individual or batch actions on the selected items.
+
+<Canvas of={TableStories.Selection} sourceState="none" />
 
 #### Table with filtering
 
@@ -100,28 +154,38 @@ the input needs the class `mh-table__search__input`
 </mat-form-field>
 ```
 
+Allow users to type the first letters of the desired item to quickly navigate to the item of interest instead of having to scroll to it.
+Place the search field at the top of the list.
+
+<Canvas of={TableStories.Filter} sourceState="none" />
+
 #### Loading state
 
 For documentation on how to style the loading state of the table, see the [Skeleton loader docs](/docs/components-skeleton-loader--docs#table).
 
-## Component variations
+### Mobile
 
-### With toolbars
+#### Without labels
 
-> Use toolbars for searching, filtering, and other global actions that apply to the entire table.
-> In long lists, allow users to type the first letters of the desired item to quickly navigate to it, instead of requiring them to scroll.
+When values are self-explanatory, labels may be omitted to reduce the size of the cards. This is the case, for example, in the drug prescription list.
 
-<b>Desktop view</b>
-<Canvas of={TableStories.Filter} sourceState="none" />
+<Canvas of={CardStories.Not_Labelled} sourceState="none" />
 
-### With Selection
+- Use mainly Body default regular for content
+- Use Body default bold sparingly (only for key information)
+- Text should be left-aligned
+- Use blue only for information (info alert)
 
-> The selection variant enables users to select individual rows in a data table. Selection options include:
->
-> - Single-select: Radio buttons
-> - Multi-select: Checkboxes
->
-> Users can perform individual or batch actions on the selected items.
+##### With labels
 
-<b>Desktop view</b>
-<Canvas of={TableStories.Selection} sourceState="none" />
+Display the label and value stacked vertically, one above the other.
+
+<Canvas of={CardStories.Labelled} sourceState="none" />
+
+- Put the label and value one above each other
+- Use Body default bold for the label
+- Use Body default regular for the values
+- For cards containing a tag, the presence of a label is mandatory when the meaning of it isn’t self-explanatory (e.g. expiration date).
+
+In both variants, text should be left-aligned. <br />
+Left-aligned text is easier to read because the eye doesn't need to search for the start of each line—it's always in the same place.
