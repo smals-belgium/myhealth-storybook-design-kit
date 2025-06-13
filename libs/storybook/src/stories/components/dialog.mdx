@@ -4,6 +4,10 @@ import { Meta } from '@storybook/blocks';
 
 # Dialog
 
+> A modal dialog displays content that requires user interaction, in a layer above the page.
+>
+> It appears in front of page content to provide information or ask for a decision. Modal dialogs disable all page functionality when they appear, and remain on screen until confirmed, dismissed, or a required action has been taken.
+>
 > The dialog component is based of Angular Material's [dialog](https://material.angular.io/components/dialog). Material's core features will remain the same and can be implemented in the same way.
 > The My Health belgium.be Design Kit will simply overrule the component's styling.
 
@@ -34,3 +38,28 @@ openDialog(): void {
   });
 }
 ```
+
+## Usage guidelines
+
+### When to use it
+
+Dialogs are purposefully interruptive, so they should be used sparingly.
+
+- **Grab the user's attention**: Use when you want to interrupt a user's current task to catch the user's full attention to something more important.
+- **Need user input**: Use when you want to get information from the user.
+- **Show additional information in context**: Use when you want to show additional information without losing the context of the parent page.
+
+### Anatomy
+
+- **Header area**:
+  This part contains the title and/or the subtitle of the overlayer.
+
+- **Content area**:
+  It contains the main content of your overlayer. You are free to compose your own content with simple components from the library, avoid complex components.
+
+- **Footer area (optional)**:
+  The footer should contain only button(s).
+
+- **Close button**:
+  There should always be a way to dismiss the overlayer.
+  Usually it will be a close button. When a cancel button is available you don’t have to display a close button.
