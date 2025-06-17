@@ -15,7 +15,7 @@ This mixin allows the following variables to be passed: `$use-material: boolean`
 
 - `$use-material` is a boolean that dictates if `core()` **includes Angular Material** theme in the design kit or not.
 - `$use-local-fonts` is a boolean that dictates if `core()` includes the **local fonts or** gets them from the **Google Fonts CDN**.
-- `$symbols-font-path` is a string that specifies the path to the Material Symbols font file. This is only used if `$use-local-fonts` is set to `true`.
+- `$symbols-font-url` is an `url()` that specifies the path to the Material Symbols font file. This is only used if `$use-local-fonts` is set to `true`.
 
 This mixin in turn calls following mixins:
 
@@ -44,7 +44,7 @@ The `use-font-material-symbols($use-material, $use-local-fonts)` includes the Op
 This mixin allows the following variables to be passed: `$use-local-fonts: boolean`.
 
 - `$use-local-fonts` is a boolean that dictates if `use-font-open-sans()` includes the **local fonts or** gets them from the **Google Fonts CDN**.
-- `$symbols-font-path` is a string that specifies the path to the Material Symbols font file. This is only used if `$use-local-fonts` is set to `true`.
+- `$symbols-font-url` is an `url()` that specifies the path to the Material Symbols font file. This is only used if `$use-local-fonts` is set to `true`.
 
 #### Optimization
 
