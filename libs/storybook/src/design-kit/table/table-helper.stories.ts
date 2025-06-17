@@ -80,3 +80,19 @@ Selection.parameters = {
     defaultViewport: 'desktop',
   },
 };
+
+export const Expandable: Story = {
+  args: {
+    search: false,
+    expandEnabled: true,
+    isSelectable: false,
+    isLoading: false,
+    isMobile: false,
+  },
+};
+
+Default.parameters = {
+  viewport: {
+    defaultViewport: 'desktop',
+  },
+};
