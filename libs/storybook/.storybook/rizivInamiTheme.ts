@@ -4,6 +4,6 @@ export default theming.create({
   base: 'light',
   brandTitle: 'Riziv / Inami Storybook',
   brandUrl: '',
-  brandImage: '/assets/riziv-inami.png',
+  brandImage: '/myhealth-storybook-design-kit/assets/riziv-inami.png',
   brandTarget: '_blank',
 });
