@@ -1,10 +1,10 @@
 /** @type { import('@storybook/html').Preview } */
 import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
-
+import { DocsPage, DocsContainer } from '@storybook/addon-docs';
 
 const preview = {
   parameters: {
-    actions: {argTypesRegex: '^on[A-Z].*'},
+    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -14,7 +14,7 @@ const preview = {
     options: {
       storySort: {
         method: 'alphabetical',
-        order: ['My Health belgium.be', 'Foundations', 'Legacy', 'Components', ['Readme', '*']]
+        order: ['My Health belgium.be', 'Foundations', 'Legacy', 'Components', ['Readme', '*']],
       },
     },
     viewport: {
@@ -23,7 +23,11 @@ const preview = {
       },
       viewport: { defaultViewport: 'mobile' },
     },
-  }
+    docs: {
+      container: DocsContainer,
+      page: DocsPage, // You can create your own component to replace DocsPage
+    },
+  },
 };
 
 export default preview;
