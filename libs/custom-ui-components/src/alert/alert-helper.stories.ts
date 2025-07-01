@@ -14,11 +14,16 @@ const meta: Meta<AlertComponent> = {
       control: { type: 'radio' },
       options: ['white', 'color'],
     },
-    closeButton: { control: 'boolean' },
+    dismissMode: {
+      control: { type: 'radio' },
+      options: ['closable', 'expandable', 'pinned'],
+    },
     actionButton: { control: 'boolean' },
     buttonDisabled: { control: 'boolean' },
     buttonLabel: { control: 'text' },
     closeButtonAriaLabel: { control: 'text' },
+    expandedButtonAriaLabel: { control: 'text' },
+    collapsedButtonAriaLabel: { control: 'text' },
     title: { control: 'text' },
     details: { control: 'text' },
   },
@@ -30,16 +35,18 @@ type Story = StoryObj<AlertComponent>;
 const defaultArgs = {
   title: 'This is a title',
   details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  closeButton: true,
   actionButton: true,
   buttonLabel: 'Button',
   buttonDisabled: false,
   closeButtonAriaLabel: 'Close alert',
+  expandedButtonAriaLabel: 'Collapse alert',
+  collapsedButtonAriaLabel: 'Expand alert',
 };
 
 export const Info: Story = {
   args: {
     ...defaultArgs,
+    dismissMode: 'closable',
     usage: 'info',
     backgroundColor: 'color',
   },
@@ -48,6 +55,7 @@ export const Info: Story = {
 export const InfoWhiteBackground: Story = {
   args: {
     ...defaultArgs,
+    dismissMode: 'closable',
     usage: 'info',
     backgroundColor: 'white',
   },

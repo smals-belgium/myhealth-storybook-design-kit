@@ -4,7 +4,7 @@ import { ComponentRef } from '@angular/core';
 
 describe('AlertComponent', () => {
   let component: AlertComponent;
-  let componentRef: ComponentRef<AlertComponent>
+  let componentRef: ComponentRef<AlertComponent>;
   let fixture: ComponentFixture<AlertComponent>;
 
   beforeEach(async () => {
@@ -15,8 +15,8 @@ describe('AlertComponent', () => {
     fixture = TestBed.createComponent(AlertComponent);
     component = fixture.componentInstance;
 
-    componentRef = fixture.componentRef
-    componentRef.setInput('title', 'title')
+    componentRef = fixture.componentRef;
+    componentRef.setInput('title', 'title');
 
     fixture.detectChanges();
   });
@@ -25,15 +25,15 @@ describe('AlertComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should emit buttonClicked when onButtonClicked is called', () => {
-    jest.spyOn(component.buttonClicked, 'emit');
-    component.onButtonClicked();
-    expect(component.buttonClicked.emit).toHaveBeenCalled();
+  it('should emit actionbuttonClicked when onActionButtonClicked is called', () => {
+    jest.spyOn(component.actionButtonClicked, 'emit');
+    component.onActionButtonClicked();
+    expect(component.actionButtonClicked.emit).toHaveBeenCalled();
   });
 
-  it('should emit closeAlert when onCloseClick is called', () => {
-    jest.spyOn(component.closeAlert, 'emit');
-    component.onCloseClick();
-    expect(component.closeAlert.emit).toHaveBeenCalled();
+  it('should emit closeButtonClicked when onCloseButtonClick is called', () => {
+    jest.spyOn(component.closeButtonClicked, 'emit');
+    component.onCloseButtonClick();
+    expect(component.closeButtonClicked.emit).toHaveBeenCalled();
   });
 });

@@ -20,13 +20,13 @@ Here is an example:
   [backgroundColor]="'white'"
   [title]="'Network Issue Detected'"
   [details]="'Your connection is unstable. Please check your network settings.'"
-  [closeButton]="true"
+  [dismissMode]="'closable'"
   [closeButtonAriaLabel]="'Close alert'"
   [actionButton]="true"
   [buttonLabel]="'Retry Connection'"
   [buttonDisabled]="false"
-  (closeAlert)="onAlertClosed()"
-  (buttonClicked)="onActionButtonClicked()"
+  (actionButtonClicked)="onActionButtonClicked()"
+  (closeButtonClicked)="onCloseButtonClicked()"
 />
 ```
 
@@ -41,6 +41,34 @@ Otherwise default colored alert should be used.
 ```html
 <mh-alert />
 ```
+
+### Dismissing the alert
+
+Pinned alert (non-dismissable) is the default:
+
+```html
+<mh-alert [title]="'Pinned Alert'" [details]="'This alert cannot be dismissed.'" />
+```
+
+Expandable alert usage example:
+
+```html
+<mh-alert
+  [title]="'Expandable Alert'"
+  [dismissMode]="'expandable'"
+  [startExpanded]="true"
+  [expandedButtonAriaLabel]="'Collapse alert'"
+  [collapsedButtonAriaLabel]="'Expand alert'"
+/>
+```
+
+Closable alert usage example:
+
+```html
+<mh-alert [title]="'Closable Alert'" [dismissMode]="'closable'" [closeButtonAriaLabel]="'Close alert'" />
+```
+
+Note: the actual implementation of hiding the alert when closed needs to be implemented
 
 ## Usage Guidelines
 
@@ -171,19 +199,6 @@ For example, a warning about an invalid input field might be displayed as a line
     </tr>
     <tr>
       <td>
-        <code>closeButton</code>
-      </td>
-      <td>
-        <code>boolean</code>
-      </td>
-      <td>If true, shows a close icon button on the right side of the alert.</td>
-      <td>
-        <code>false</code>
-      </td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>
         <code>actionButton</code>
       </td>
       <td>
@@ -221,15 +236,66 @@ For example, a warning about an invalid input field might be displayed as a line
     </tr>
     <tr>
       <td>
+        <code>dismissMode</code>
+      </td>
+      <td>
+        <code>'closable' | 'expandable' | 'pinned'</code>
+      </td>
+      <td>
+        Controls dismiss behavior: closable (via close button), expandable (can collapse/expand), or pinned
+        (persistent).
+      </td>
+      <td>
+        <code>'pinned'</code>
+      </td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>
         <code>closeButtonAriaLabel</code>
       </td>
       <td>
         <code>string</code>
       </td>
-      <td>Aria-label for the close icon</td>
+      <td>Aria-label for the close button.</td>
       <td>
         <code>""</code>
       </td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>
+        <code>startExpanded</code>
+      </td>
+      <td>
+        <code>boolean</code>
+      </td>
+      <td>Sets the initial expanded state of the alert when dismiss mode is expandable.</td>
+      <td>
+        <code>false</code>
+      </td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>
+        <code>expandedButtonAriaLabel</code>
+      </td>
+      <td>
+        <code>string</code>
+      </td>
+      <td>Aria-label for the button when the alert is expanded.</td>
+      <td>—</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>
+        <code>collapsedButtonAriaLabel</code>
+      </td>
+      <td>
+        <code>string</code>
+      </td>
+      <td>Aria-label for the button when the alert is collapsed.</td>
+      <td>—</td>
       <td>No</td>
     </tr>
   </tbody>
@@ -248,7 +314,7 @@ For example, a warning about an invalid input field might be displayed as a line
   <tbody>
     <tr>
       <td>
-        <code>closeAlert</code>
+        <code>closeButtonClicked</code>
       </td>
       <td>
         <code>Event&lt;void&gt;</code>
@@ -257,7 +323,7 @@ For example, a warning about an invalid input field might be displayed as a line
     </tr>
     <tr>
       <td>
-        <code>buttonClicked</code>
+        <code>actionButtonClicked</code>
       </td>
       <td>
         <code>Event&lt;void&gt;</code>

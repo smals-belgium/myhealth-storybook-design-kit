@@ -41,21 +41,13 @@
     color: $icon-color;
   }
 
-  button[mat-icon-button] {
-    background-color: transparent;
-
-    &:hover {
-      background-color: $surface-lighter;
-    }
-
-    &:focus,
-    &:active {
-      background-color: $surface-light;
-    }
+  mat-icon.top-right-icon {
+    cursor: pointer;
   }
 
   button[mat-flat-button] {
     background-color: $surface-medium;
+    width: max-content;
 
     &:disabled {
       background-color: mh.$surface-brand-neutral-light;
