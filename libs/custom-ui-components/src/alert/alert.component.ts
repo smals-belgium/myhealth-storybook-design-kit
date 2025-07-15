@@ -1,16 +1,15 @@
-import { Component, input, computed, output, signal, OnInit } from '@angular/core';
+import { Component, input, computed, output, linkedSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'mh-alert',
-  standalone: true,
   imports: [CommonModule, MatIcon, MatButton],
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss'],
 })
-export class AlertComponent implements OnInit {
+export class AlertComponent {
   usage = input<'info' | 'success' | 'warning' | 'error' | 'notification'>('info');
   backgroundColor = input<'white' | 'color'>('color');
   title = input.required<string>();
@@ -27,11 +26,7 @@ export class AlertComponent implements OnInit {
   closeButtonClicked = output<void>();
   actionButtonClicked = output<void>();
 
-  expanded = signal(true);
-
-  ngOnInit() {
-    this.expanded.set(this.startExpanded());
-  }
+  expanded = linkedSignal(() => this.startExpanded());
 
   currentExpandIconAriaLabel = computed(() =>
     this.expanded() ? this.expandedButtonAriaLabel() : this.collapsedButtonAriaLabel()
