@@ -2,39 +2,43 @@
   class="container"
   role="alert"
   aria-live="assertive"
-  [class.info]="usage() === 'info'"
-  [class.success]="usage() === 'success'"
-  [class.warning]="usage() === 'warning'"
-  [class.error]="usage() === 'error'"
-  [class.notification]="usage() === 'notification'"
+  [class]="usage()"
   [class.white]="backgroundColor() === 'white'"
 >
-  <div>
-    <mat-icon [fontIcon]="fontIcon()" />
-  </div>
+  <mat-icon [fontIcon]="fontIcon()" />
   <div class="flex-grow">
-    <div>
-      @if (title()) {
-      <h2>
-        {{ title() }}
-      </h2>
-      } @if (details()) {
-      <p>{{ details() }}</p>
-      }
-    </div>
-    @if (actionButton()) {
-    <div>
-      <button type="button" (click)="onButtonClicked()" [disabled]="buttonDisabled()" mat-flat-button>
-        {{ buttonLabel() }}
-      </button>
-    </div>
-    }
-  </div>
-  @if (closeButton()) {
-  <div>
-    <button type="button" (click)="onCloseClick()" mat-icon-button [attr.aria-label]="closeButtonAriaLabel()">
-      <mat-icon class="close" fontIcon="close" />
+    <h2>
+      {{ title() }}
+    </h2>
+    @if (this.dismissMode() !== 'expandable' || this.expanded()) { @if (details()) {
+    <p>{{ details() }}</p>
+    } @if (actionButton()) {
+    <button type="button" (click)="onActionButtonClicked()" [disabled]="buttonDisabled()" mat-flat-button>
+      {{ buttonLabel() }}
     </button>
+    } }
   </div>
+  @if (dismissMode() === 'closable') {
+  <mat-icon
+    type="button"
+    tabindex="0"
+    class="top-right-icon"
+    fontIcon="close"
+    (click)="onCloseButtonClick()"
+    (keydown.enter)="onCloseButtonClick()"
+    (keydown.space)="onCloseButtonClick()"
+    [attr.aria-label]="closeButtonAriaLabel()"
+  />
+  } @else if (dismissMode() === 'expandable') {
+  <mat-icon
+    type="button"
+    tabindex="0"
+    class="top-right-icon"
+    [fontIcon]="expanded() ? 'remove' : 'add'"
+    (click)="toggleExpanded()"
+    (keydown.enter)="toggleExpanded()"
+    (keydown.space)="toggleExpanded()"
+    [attr.aria-label]="currentExpandIconAriaLabel"
+  />
   }
 </div>

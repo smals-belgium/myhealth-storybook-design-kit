@@ -1,5 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/angular';
 import { AlertComponent } from './alert.component';
+import { input } from '@angular/core';
 
 const meta: Meta<AlertComponent> = {
   title: 'Custom Components/Alert',
@@ -13,11 +14,17 @@ const meta: Meta<AlertComponent> = {
       control: { type: 'radio' },
       options: ['white', 'color'],
     },
-    closeButton: { control: 'boolean' },
+    dismissMode: {
+      control: { type: 'radio' },
+      options: ['closable', 'expandable', 'pinned'],
+    },
+    startExpanded: { control: 'boolean' },
     actionButton: { control: 'boolean' },
     buttonDisabled: { control: 'boolean' },
     buttonLabel: { control: 'text' },
     closeButtonAriaLabel: { control: 'text' },
+    expandedButtonAriaLabel: { control: 'text' },
+    collapsedButtonAriaLabel: { control: 'text' },
     title: { control: 'text' },
     details: { control: 'text' },
   },
@@ -30,25 +37,47 @@ type Story = StoryObj<AlertComponent>;
 const defaultArgs = {
   title: 'This is a title',
   details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  closeButton: true,
   actionButton: true,
   buttonLabel: 'Button',
   buttonDisabled: false,
   closeButtonAriaLabel: 'Close alert',
+  expandedButtonAriaLabel: 'Collapse alert',
+  collapsedButtonAriaLabel: 'Expand alert',
 };
 
-export const Default: Story = {
+export const PinnedDefault: Story = {
   args: {
     ...defaultArgs,
+    dismissMode: 'pinned',
     usage: 'info',
     backgroundColor: 'color',
   },
 };
 
-export const WhiteBackground: Story = {
+export const PinnedWhiteBackground: Story = {
   args: {
     ...defaultArgs,
+    dismissMode: 'pinned',
     usage: 'info',
     backgroundColor: 'white',
+  },
+};
+
+export const Expandable: Story = {
+  args: {
+    ...defaultArgs,
+    dismissMode: 'expandable',
+    usage: 'info',
+    backgroundColor: 'color',
+    startExpanded: false,
+  },
+};
+
+export const Closable: Story = {
+  args: {
+    ...defaultArgs,
+    dismissMode: 'closable',
+    usage: 'info',
+    backgroundColor: 'color',
   },
 };
