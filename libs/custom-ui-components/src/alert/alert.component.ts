@@ -12,7 +12,7 @@ import { MatButton } from '@angular/material/button';
 export class AlertComponent {
   usage = input<'info' | 'success' | 'warning' | 'error' | 'notification'>('info');
   backgroundColor = input<'white' | 'color'>('color');
-  title = input.required<string>();
+  alertTitle = input.required<string>();
   details = input<string>();
   actionButton = input<boolean>(false);
   buttonDisabled = input<boolean>(false);

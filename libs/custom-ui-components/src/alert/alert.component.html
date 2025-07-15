@@ -1,14 +1,8 @@
-<div
-  class="container"
-  role="alert"
-  aria-live="assertive"
-  [class]="usage()"
-  [class.white]="backgroundColor() === 'white'"
->
+<div role="alert" aria-live="assertive" [class]="usage()" [class.white]="backgroundColor() === 'white'">
   <mat-icon [fontIcon]="fontIcon()" />
   <div class="flex-grow">
     <h2>
-      {{ title() }}
+      {{ alertTitle() }}
     </h2>
     @if (this.dismissMode() !== 'expandable' || this.expanded()) { @if (details()) {
     <p>{{ details() }}</p>

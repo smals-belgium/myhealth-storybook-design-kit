@@ -25,7 +25,7 @@ const meta: Meta<AlertComponent> = {
     closeButtonAriaLabel: { control: 'text' },
     expandedButtonAriaLabel: { control: 'text' },
     collapsedButtonAriaLabel: { control: 'text' },
-    title: { control: 'text' },
+    alertTitle: { control: 'text' },
     details: { control: 'text' },
   },
 };
@@ -35,7 +35,7 @@ export default meta;
 type Story = StoryObj<AlertComponent>;
 
 const defaultArgs = {
-  title: 'This is a title',
+  alertTitle: 'This is a alertTitle',
   details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   actionButton: true,
   buttonLabel: 'Button',

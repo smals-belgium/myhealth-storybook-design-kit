@@ -7,7 +7,7 @@ import * as AlertStories from './alert-helper.stories';
 
 ## Description
 
-> The `Alert` is a additional ui component that displays a contextual message with an icon, a title, an optional details, action button and close button.
+> The `Alert` is a additional ui component that displays a contextual message with an icon, a alertTitle, an optional details, action button and close button.
 > It supports multiple usage types which influence the styling and iconography to convey different alert semantics such as info, success, warning, error, and notification.
 
 ## Usage
@@ -18,7 +18,7 @@ Here is an example:
 <mh-alert
   [usage]="'warning'"
   [backgroundColor]="'white'"
-  [title]="'Network Issue Detected'"
+  [alertTitle]="'Network Issue Detected'"
   [details]="'Your connection is unstable. Please check your network settings.'"
   [dismissMode]="'closable'"
   [closeButtonAriaLabel]="'Close alert'"
@@ -47,14 +47,14 @@ Otherwise default colored alert should be used.
 Pinned alert (non-dismissable) is the default:
 
 ```html
-<mh-alert [title]="'Pinned Alert'" [details]="'This alert cannot be dismissed.'" />
+<mh-alert [alertTitle]="'Pinned Alert'" [details]="'This alert cannot be dismissed.'" />
 ```
 
 Expandable alert usage example:
 
 ```html
 <mh-alert
-  [title]="'Expandable Alert'"
+  [alertTitle]="'Expandable Alert'"
   [dismissMode]="'expandable'"
   [startExpanded]="true"
   [expandedButtonAriaLabel]="'Collapse alert'"
@@ -65,7 +65,7 @@ Expandable alert usage example:
 Closable alert usage example:
 
 ```html
-<mh-alert [title]="'Closable Alert'" [dismissMode]="'closable'" [closeButtonAriaLabel]="'Close alert'" />
+<mh-alert [alertTitle]="'Closable Alert'" [dismissMode]="'closable'" [closeButtonAriaLabel]="'Close alert'" />
 ```
 
 Note: the actual implementation of hiding the alert when closed needs to be implemented
@@ -177,12 +177,12 @@ For example, a warning about an invalid input field might be displayed as a line
     </tr>
     <tr>
       <td>
-        <code>title</code>
+        <code>alertTitle</code>
       </td>
       <td>
         <code>string</code>
       </td>
-      <td>The alert title.</td>
+      <td>The alert alertTitle.</td>
       <td>—</td>
       <td>Yes</td>
     </tr>
@@ -193,7 +193,7 @@ For example, a warning about an invalid input field might be displayed as a line
       <td>
         <code>string</code>
       </td>
-      <td>Additional descriptive text below the title.</td>
+      <td>Additional descriptive text below the alertTitle.</td>
       <td>—</td>
       <td>No</td>
     </tr>
