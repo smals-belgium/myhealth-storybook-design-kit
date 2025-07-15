@@ -3,7 +3,7 @@ import { AlertComponent } from './alert.component';
 import { input } from '@angular/core';
 
 const meta: Meta<AlertComponent> = {
-  title: 'Custom Components/Alert',
+  title: 'Additional UI Components/Alert',
   component: AlertComponent,
   argTypes: {
     usage: {

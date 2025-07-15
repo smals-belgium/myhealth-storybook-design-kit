@@ -8,6 +8,7 @@
     "start:storybook": "nx run storybook:start-storybook",
     "build:storybook": "nx run storybook:build-storybook",
     "build:design-kit": "nx build design-kit",
+    "build:additional-ui-components": "nx build custom-ui-components",
     "build:all": "nx run-many -t build",
     "test:all": "nx run-many -t test --configuration=ci --coverage",
     "format": "nx format:write",
