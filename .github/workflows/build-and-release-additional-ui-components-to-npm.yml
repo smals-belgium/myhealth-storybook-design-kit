@@ -1,4 +1,4 @@
-name: Design kit NPM
+name: Additional UI Components NPM
 
 on:
   workflow_call:
@@ -28,7 +28,7 @@ jobs:
 
       - name: Check release version in package.json
         run: |
-          if ! grep -q "  \"version\": \"${VERSION}\"" libs/design-kit/package.json; then
+          if ! grep -q "  \"version\": \"${VERSION}\"" libs/custom-ui-components/package.json; then
             echo "Error: Release version ${{ inputs.release-version }} not found in package.json"
             exit 1
           fi
@@ -37,8 +37,8 @@ jobs:
 
       - name: Check release version in CHANGELOG
         run: |
-          if ! grep -q "## ${VERSION//./\\.}" libs/storybook/src/stories/main/changelog-design-kit.mdx; then
-          echo "Error: Release version ${{ inputs.release-version }} not found in changelog-design-kit.mdx"
+          if ! grep -q "## ${VERSION//./\\.}" libs/storybook/src/stories/main/changelog-additional-ui-components.mdx; then
+          echo "Error: Release version ${{ inputs.release-version }} not found in changelog-additional-ui-components.mdx"
           exit 1
             fi
         env:
@@ -60,13 +60,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Design Kit
-        run: npm run build:design-kit
+      - name: Build Additional UI Components
+        run: npm run build:additional-ui-components
 
       - name: Publish to NPM
         uses: JS-DevTools/npm-publish@19c28f1ef146469e409470805ea4279d47c3d35c # v3.1.1
         with:
-          package: ./dist/libs/design-kit
+          package: ./dist/libs/custom-ui-components
           token: ${{ secrets.NPM_TOKEN }}
           access: public
           dry-run: false
