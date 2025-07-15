@@ -2,11 +2,7 @@
   class="container"
   role="alert"
   aria-live="assertive"
-  [class.info]="usage() === 'info'"
-  [class.success]="usage() === 'success'"
-  [class.warning]="usage() === 'warning'"
-  [class.error]="usage() === 'error'"
-  [class.notification]="usage() === 'notification'"
+  [class]="usage()"
   [class.white]="backgroundColor() === 'white'"
 >
   <mat-icon [fontIcon]="fontIcon()" />
