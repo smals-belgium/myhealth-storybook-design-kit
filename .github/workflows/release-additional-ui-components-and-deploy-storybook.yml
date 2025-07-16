@@ -21,6 +21,6 @@ jobs:
       release-version: ${{ github.event.inputs.release-version }}
 
   build-and-deploy-storybook:
-    needs: build-and-release-design-kit-to-npm
+    needs: build-and-release-additional-ui-components-to-npm
     uses: ./.github/workflows/build-and-deploy-storybook.yml
     secrets: inherit
