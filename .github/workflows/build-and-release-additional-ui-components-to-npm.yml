@@ -45,18 +45,11 @@ jobs:
         env:
           VERSION: ${{ inputs.release-version }}
 
-      # Install dependencies & build
-      - name: Setup node
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
+      - name: Setup npm authentication
+        uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
-
-      - name: Cache npm dependencies
-        uses: actions/cache@387e18722e6ff315b24a3b8b071feddd27b7bf7e # v3.4.2
-        with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: npm-
+          registry-url: 'https://registry.npmjs.org/'
 
       - name: Install dependencies
         run: npm ci
