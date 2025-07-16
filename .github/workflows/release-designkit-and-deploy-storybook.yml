@@ -1,4 +1,4 @@
-name: Release design kit
+name: Release design kit and deploy Storybook
 
 on:
   workflow_dispatch:

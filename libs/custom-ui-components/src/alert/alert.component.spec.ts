@@ -16,7 +16,7 @@ describe('AlertComponent', () => {
     component = fixture.componentInstance;
 
     componentRef = fixture.componentRef;
-    componentRef.setInput('title', 'title');
+    componentRef.setInput('alertTitle', 'alertTitle');
 
     fixture.detectChanges();
   });

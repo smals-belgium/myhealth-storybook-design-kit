@@ -1,0 +1,26 @@
+name: Release additional UI components and deploy Storybook
+
+on:
+  workflow_dispatch:
+    inputs:
+      release-version:
+        description: The release version number (e.g. 1.2.4)
+        type: string
+        required: true
+permissions:
+  pages: write
+  actions: write
+  id-token: write
+  contents: write
+
+jobs:
+  build-and-release-design-kit-to-npm:
+    uses: ./.github/workflows/build-and-release-additional-ui-components-to-npm.yml
+    secrets: inherit
+    with:
+      release-version: ${{ github.event.inputs.release-version }}
+
+  build-and-deploy-storybook:
+    needs: build-and-release-design-kit-to-npm
+    uses: ./.github/workflows/build-and-deploy-storybook.yml
+    secrets: inherit
