@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 jobs:
-  build-and-release-design-kit-to-npm:
+  build-and-release-additional-ui-components-to-npm:
     uses: ./.github/workflows/build-and-release-additional-ui-components-to-npm.yml
     secrets: inherit
     with:
