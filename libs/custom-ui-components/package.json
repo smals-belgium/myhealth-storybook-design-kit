@@ -1,5 +1,5 @@
 {
-  "name": "@smals-belgium-shared/myhealth-additional-ui-components",
+  "name": "@myhealth-belgium/myhealth-additional-ui-components",
   "version": "1.0.0",
   "peerDependencies": {
     "@angular/core": "^19.0.0",
