@@ -1,10 +1,11 @@
 <div role="alert" aria-live="assertive" [class]="usage()" [class.white]="backgroundColor() === 'white'">
   <mat-icon [fontIcon]="fontIcon()" />
   <div class="flex-grow">
+    @if (alertTitle()) {
     <h2>
       {{ alertTitle() }}
     </h2>
-    @if (this.dismissMode() !== 'expandable' || this.expanded()) { @if (details()) {
+    } @if (this.dismissMode() !== 'expandable' || this.expanded()) { @if (details()) {
     <p>{{ details() }}</p>
     } @if (actionButton()) {
     <button type="button" (click)="onActionButtonClicked()" [disabled]="buttonDisabled()" mat-flat-button>
