@@ -31,7 +31,7 @@
     margin: 0;
   }
 
-  p {
+  .alert-details {
     @include mh.font-small-regular;
     color: $typography-color;
     margin: 0;
@@ -135,7 +135,7 @@
     color: mh.$typography-brand-neutral-darker;
   }
 
-  p {
+  .alert-details {
     color: mh.$typography-brand-neutral-darker;
   }
 }

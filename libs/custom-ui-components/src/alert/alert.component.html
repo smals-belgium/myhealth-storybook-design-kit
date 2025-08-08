@@ -6,7 +6,9 @@
       {{ alertTitle() }}
     </h2>
     } @if (this.dismissMode() !== 'expandable' || this.expanded()) {
-    <ng-content select="[alert-details]"></ng-content>
+    <span class="alert-details">
+      <ng-content select="[alert-details]"></ng-content>
+    </span>
     @if (actionButton()) {
     <button type="button" (click)="onActionButtonClicked()" [disabled]="buttonDisabled()" mat-flat-button>
       {{ buttonLabel() }}
