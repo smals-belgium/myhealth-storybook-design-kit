@@ -19,7 +19,6 @@ Here is an example:
   [usage]="'warning'"
   [backgroundColor]="'white'"
   [alertTitle]="'Network Issue Detected'"
-  [details]="'Your connection is unstable. Please check your network settings.'"
   [dismissMode]="'closable'"
   [closeButtonAriaLabel]="'Close alert'"
   [actionButton]="true"
@@ -27,13 +26,15 @@ Here is an example:
   [buttonDisabled]="false"
   (actionButtonClicked)="onActionButtonClicked()"
   (closeButtonClicked)="onCloseButtonClicked()"
-/>
+>
+  <div alert-details>Your connection is unstable. Please check your network settings.</div>
+</mh-alert>
 ```
 
 White alert should be used on colored background.
 
 ```html
-<mh-alert white="true" />
+<mh-alert [backgroundColor]="'white'" />
 ```
 
 Otherwise default colored alert should be used.
@@ -47,7 +48,7 @@ Otherwise default colored alert should be used.
 Pinned alert (non-dismissable) is the default:
 
 ```html
-<mh-alert [alertTitle]="'Pinned Alert'" [details]="'This alert cannot be dismissed.'" />
+<mh-alert [alertTitle]="'Pinned Alert'" />
 ```
 
 Expandable alert usage example:
@@ -59,7 +60,8 @@ Expandable alert usage example:
   [startExpanded]="true"
   [expandedButtonAriaLabel]="'Collapse alert'"
   [collapsedButtonAriaLabel]="'Expand alert'"
-/>
+>
+</mh-alert>
 ```
 
 Closable alert usage example:
@@ -183,17 +185,6 @@ For example, a warning about an invalid input field might be displayed as a line
         <code>string</code>
       </td>
       <td>The alert alertTitle.</td>
-      <td>—</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>
-        <code>details</code>
-      </td>
-      <td>
-        <code>string</code>
-      </td>
-      <td>Additional descriptive text below the alertTitle.</td>
       <td>—</td>
       <td>No</td>
     </tr>

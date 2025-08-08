@@ -25,7 +25,6 @@ const meta: Meta<AlertComponent> = {
     expandedButtonAriaLabel: { control: 'text' },
     collapsedButtonAriaLabel: { control: 'text' },
     alertTitle: { control: 'text' },
-    details: { control: 'text' },
   },
 };
 
@@ -33,8 +32,7 @@ export default meta;
 type Story = StoryObj<AlertComponent>;
 
 const defaultArgs = {
-  alertTitle: 'This is a alertTitle',
-  details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  alertTitle: 'This is an alert title',
   actionButton: true,
   buttonLabel: 'Button',
   buttonDisabled: false,
@@ -43,6 +41,28 @@ const defaultArgs = {
   collapsedButtonAriaLabel: 'Expand alert',
 };
 
+const defaultRender = (args: any) => ({
+  props: args,
+  template: `
+    <mh-alert
+      [usage]="usage"
+      [backgroundColor]="backgroundColor"
+      [dismissMode]="dismissMode"
+      [alertTitle]="alertTitle"
+      [actionButton]="actionButton"
+      [buttonLabel]="buttonLabel"
+      [buttonDisabled]="buttonDisabled"
+      [closeButtonAriaLabel]="closeButtonAriaLabel"
+      [expandedButtonAriaLabel]="expandedButtonAriaLabel"
+      [collapsedButtonAriaLabel]="collapsedButtonAriaLabel"
+    >
+      <div alert-details>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </div>
+    </mh-alert>
+  `,
+});
+
 export const Info: Story = {
   args: {
     ...defaultArgs,
@@ -50,6 +70,7 @@ export const Info: Story = {
     usage: 'info',
     backgroundColor: 'color',
   },
+  render: defaultRender,
 };
 
 export const InfoWhiteBackground: Story = {
@@ -59,6 +80,7 @@ export const InfoWhiteBackground: Story = {
     usage: 'info',
     backgroundColor: 'white',
   },
+  render: defaultRender,
 };
 
 export const Error: Story = {
@@ -67,6 +89,7 @@ export const Error: Story = {
     usage: 'error',
     backgroundColor: 'color',
   },
+  render: defaultRender,
 };
 
 export const ErrorWhiteBackground: Story = {
@@ -75,6 +98,7 @@ export const ErrorWhiteBackground: Story = {
     usage: 'error',
     backgroundColor: 'white',
   },
+  render: defaultRender,
 };
 
 export const Warning: Story = {
@@ -83,6 +107,7 @@ export const Warning: Story = {
     usage: 'warning',
     backgroundColor: 'color',
   },
+  render: defaultRender,
 };
 
 export const WarningWhiteBackground: Story = {
@@ -91,4 +116,5 @@ export const WarningWhiteBackground: Story = {
     usage: 'warning',
     backgroundColor: 'white',
   },
+  render: defaultRender,
 };
