@@ -13,7 +13,6 @@ export class AlertComponent {
   usage = input<'info' | 'success' | 'warning' | 'error' | 'notification'>('info');
   backgroundColor = input<'white' | 'color'>('color');
   alertTitle = input<string>();
-  details = input<string>();
   actionButton = input<boolean>(false);
   buttonDisabled = input<boolean>(false);
   buttonLabel = input<string>();

@@ -1,10 +1,16 @@
 import { type Meta, type StoryObj } from '@storybook/angular';
 import { AlertComponent } from './alert.component';
-import { input } from '@angular/core';
+import { moduleMetadata } from '@storybook/angular';
 
 const meta: Meta<AlertComponent> = {
   title: 'Additional UI Components/Alert',
   component: AlertComponent,
+  decorators: [
+    moduleMetadata({
+      declarations: [],
+      imports: [],
+    }),
+  ],
   argTypes: {
     usage: {
       control: { type: 'radio' },
@@ -26,7 +32,6 @@ const meta: Meta<AlertComponent> = {
     expandedButtonAriaLabel: { control: 'text' },
     collapsedButtonAriaLabel: { control: 'text' },
     alertTitle: { control: 'text' },
-    details: { control: 'text' },
   },
 };
 
@@ -35,8 +40,7 @@ export default meta;
 type Story = StoryObj<AlertComponent>;
 
 const defaultArgs = {
-  alertTitle: 'This is a alertTitle',
-  details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  alertTitle: 'This is an alert title',
   actionButton: true,
   buttonLabel: 'Button',
   buttonDisabled: false,
@@ -52,6 +56,27 @@ export const PinnedDefault: Story = {
     usage: 'info',
     backgroundColor: 'color',
   },
+  render: (args) => ({
+    props: args,
+    template: `
+      <mh-alert
+        [usage]="usage"
+        [backgroundColor]="backgroundColor"
+        [dismissMode]="dismissMode"
+        [alertTitle]="alertTitle"
+        [actionButton]="actionButton"
+        [buttonLabel]="buttonLabel"
+        [buttonDisabled]="buttonDisabled"
+        [closeButtonAriaLabel]="closeButtonAriaLabel"
+        [expandedButtonAriaLabel]="expandedButtonAriaLabel"
+        [collapsedButtonAriaLabel]="collapsedButtonAriaLabel"
+      >
+        <div alert-details>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+      </mh-alert>
+    `,
+  }),
 };
 
 export const PinnedWhiteBackground: Story = {
@@ -61,6 +86,7 @@ export const PinnedWhiteBackground: Story = {
     usage: 'info',
     backgroundColor: 'white',
   },
+  render: PinnedDefault.render,
 };
 
 export const Expandable: Story = {
@@ -71,6 +97,7 @@ export const Expandable: Story = {
     backgroundColor: 'color',
     startExpanded: false,
   },
+  render: PinnedDefault.render,
 };
 
 export const Closable: Story = {
@@ -80,4 +107,5 @@ export const Closable: Story = {
     usage: 'info',
     backgroundColor: 'color',
   },
+  render: PinnedDefault.render,
 };
