@@ -1,7 +1,3 @@
-# custom-ui-components
+# myhealth-additional-ui-components
 
-This library was generated with [Nx](https://nx.dev).
-
-## Running unit tests
-
-Run `nx test custom-ui-components` to execute the unit tests.
+This library hosts all the reusable components used in the context of the My Health web Portal and mobile application, which are not a simple overrides of Angular Material components.
