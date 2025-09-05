@@ -18,6 +18,10 @@
 
   .flex-grow {
     flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     display: flex;
     flex-direction: column;
     gap: mh.$spacing-s;
@@ -39,6 +43,7 @@
 
   mat-icon {
     color: $icon-color;
+    flex-shrink: 0;
   }
 
   mat-icon.top-right-icon {
