@@ -165,8 +165,10 @@
   line-height: fn.calculateRem(22px);
   letter-spacing: fn.calculateEm(0.5%);
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: tokens.$typography-brand-primary-darker;
+    text-decoration-thickness: 2px;
   }
 }
 
@@ -174,13 +176,15 @@
   font-family: fonts.$font-stack;
   font-weight: fonts.$font-weight-regular;
   color: tokens.$typography-brand-primary-dark;
-  text-decoration: none;
+  text-decoration: underline;
   font-size: fn.calculateRem(16px);
   line-height: fn.calculateRem(22px);
   letter-spacing: fn.calculateEm(0.25%);
 
-  &:hover {
-    text-decoration: underline;
+  &:hover,
+  &:focus {
+    color: tokens.$typography-brand-primary-darker;
+    text-decoration-thickness: 2px;
   }
 }
 
