@@ -4,7 +4,20 @@ import { Meta } from '@storybook/blocks';
 
 # Changelog Design Kit
 
-## 3.0.3 (24 June 2025)
+## 3.1.0 (3 October 2025)
+
+**Added features:**
+
+- Added optional parameters to the `mh.core()` mixin called `$symbols-font-family` & `$symbols-font-classes`.
+  This change is required for the development of webcomponents, to include an icon asset font with an unique name that does not get
+  overruled by other CSS classes and font-faces with the same name.
+  By default, these parameters are set to `'Material Symbols Rounded'` and `('material-icons', 'material-symbols')` respectively,
+  this ensure behavior remains the same if no changes are made.
+- Added the font-face for `Material Symbols Rounded Chevrons` to the design kit, as this is used in the select component.
+  This removes the option to pass a custom font-family to the `mh.override-mat-select-arrow()` mixin, as this is now always
+  set to `Material Symbols Rounded Chevrons` for consistency.
+
+## 3.0.3 (31 September 2025)
 
 **Documentation updated:**
 

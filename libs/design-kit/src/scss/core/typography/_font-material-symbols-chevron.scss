@@ -1,0 +1,8 @@
+@mixin use-font-material-symbols-chevrons() {
+  @font-face {
+    font-family: 'Material Symbols Rounded Chevrons';
+    font-style: normal;
+    font-weight: 100 700;
+    src: url('../../../assets/fonts/MatSymbols-Rounded-Chevrons.ttf') format('truetype');
+  }
+}
