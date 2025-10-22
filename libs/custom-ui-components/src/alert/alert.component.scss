@@ -10,11 +10,19 @@
   $typography-color,
   $icon-color
 ) {
-  display: flex;
-  padding: mh.$spacing-s;
-  gap: mh.$spacing-s;
-  border-radius: var(--Radius-Small, 6px);
+  background: $surface-lighter;
+  border-radius: mh.$border-radius-s;
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.13);
+  padding: mh.$spacing-s;
+
+  display: flex;
+  flex-direction: column;
+  gap: mh.$spacing-s;
+
+  .display-flex {
+    display: flex;
+    gap: mh.$spacing-s;
+  }
 
   .flex-grow {
     flex-grow: 1;
@@ -27,26 +35,34 @@
     gap: mh.$spacing-s;
   }
 
-  background: $surface-lighter;
-
   h2 {
     @include mh.font-default-semibold;
-    color: $typography-color;
-    margin: 0;
   }
 
+  p,
   .alert-details {
     @include mh.font-small-regular;
+  }
+
+  h2,
+  p,
+  .alert-details {
     color: $typography-color;
     margin: 0;
   }
 
+  @include mat.icon-overrides(
+    (
+      color: $icon-color,
+    )
+  );
+
   mat-icon {
-    color: $icon-color;
     flex-shrink: 0;
   }
 
-  mat-icon.top-right-icon {
+  mat-icon.top-right-icon,
+  .pointer {
     cursor: pointer;
   }
 
@@ -128,18 +144,20 @@
     mh.$typography-semantic-error-medium
   );
 
-  mat-icon.close {
-    color: mh.$typography-brand-neutral-darker;
+  .top-right-icon {
+    @include mat.icon-overrides(
+      (
+        color: mh.$typography-brand-neutral-darker,
+      )
+    );
   }
 }
 
 .white {
   background: mh.$color-white;
 
-  h2 {
-    color: mh.$typography-brand-neutral-darker;
-  }
-
+  h2,
+  p,
   .alert-details {
     color: mh.$typography-brand-neutral-darker;
   }

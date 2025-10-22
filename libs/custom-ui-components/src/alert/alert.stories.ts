@@ -41,6 +41,7 @@ type Story = StoryObj<AlertComponent>;
 
 const defaultArgs = {
   alertTitle: 'This is an alert title',
+  alertSubtitle: 'This is an alert subtitle',
   actionButton: true,
   buttonLabel: 'Button',
   buttonDisabled: false,
@@ -64,6 +65,7 @@ export const PinnedDefault: Story = {
         [backgroundColor]="backgroundColor"
         [dismissMode]="dismissMode"
         [alertTitle]="alertTitle"
+        [alertSubtitle]="alertSubtitle"
         [actionButton]="actionButton"
         [buttonLabel]="buttonLabel"
         [buttonDisabled]="buttonDisabled"
@@ -71,9 +73,7 @@ export const PinnedDefault: Story = {
         [expandedButtonAriaLabel]="expandedButtonAriaLabel"
         [collapsedButtonAriaLabel]="collapsedButtonAriaLabel"
       >
-        <div alert-details>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </mh-alert>
     `,
   }),

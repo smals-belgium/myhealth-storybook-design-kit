@@ -33,6 +33,7 @@ type Story = StoryObj<AlertComponent>;
 
 const defaultArgs = {
   alertTitle: 'This is an alert title',
+  alertSubtitle: 'This is an alert subtitle',
   actionButton: true,
   buttonLabel: 'Button',
   buttonDisabled: false,
@@ -49,6 +50,7 @@ const defaultRender = (args: any) => ({
       [backgroundColor]="backgroundColor"
       [dismissMode]="dismissMode"
       [alertTitle]="alertTitle"
+      [alertSubtitle]="alertSubtitle"
       [actionButton]="actionButton"
       [buttonLabel]="buttonLabel"
       [buttonDisabled]="buttonDisabled"
@@ -56,9 +58,7 @@ const defaultRender = (args: any) => ({
       [expandedButtonAriaLabel]="expandedButtonAriaLabel"
       [collapsedButtonAriaLabel]="collapsedButtonAriaLabel"
     >
-      <div alert-details>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </div>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </mh-alert>
   `,
 });

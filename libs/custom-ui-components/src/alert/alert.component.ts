@@ -13,6 +13,7 @@ export class AlertComponent {
   usage = input<'info' | 'success' | 'warning' | 'error' | 'notification'>('info');
   backgroundColor = input<'white' | 'color'>('color');
   alertTitle = input<string>();
+  alertSubtitle = input<string>();
   actionButton = input<boolean>(false);
   buttonDisabled = input<boolean>(false);
   buttonLabel = input<string>();
@@ -29,6 +30,12 @@ export class AlertComponent {
 
   currentExpandIconAriaLabel = computed(() =>
     this.expanded() ? this.expandedButtonAriaLabel() : this.collapsedButtonAriaLabel()
+  );
+
+  readonly expandableExpanded = computed(() => this.dismissMode() === 'expandable' && this.expanded());
+
+  readonly notExpandableMissingTitleAndSubtitle = computed(
+    () => this.dismissMode() !== 'expandable' && (this.alertTitle() || this.alertSubtitle())
   );
 
   toggleExpanded = () => {
