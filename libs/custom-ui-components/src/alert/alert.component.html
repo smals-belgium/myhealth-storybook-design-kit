@@ -1,19 +1,39 @@
 <div role="alert" aria-live="assertive" [class]="usage()" [class.white]="backgroundColor() === 'white'">
+  @if (dismissMode() !== 'expandable') {
+  <div class="display-flex">
+    <ng-container *ngTemplateOutlet="header" />
+  </div>
+  } @else {
+  <div
+    class="display-flex pointer"
+    type="button"
+    tabindex="0"
+    (click)="toggleExpanded()"
+    (keydown.enter)="toggleExpanded()"
+    (keydown.space)="toggleExpanded()"
+    [attr.aria-label]="currentExpandIconAriaLabel()"
+  >
+    <ng-container *ngTemplateOutlet="header" />
+  </div>
+  } @if (notExpandableMissingTitleAndSubtitle() || expandableExpanded()) {
+  <ng-container *ngTemplateOutlet="details" />
+  }
+</div>
+
+<ng-template #header>
   <mat-icon [fontIcon]="fontIcon()" />
   <div class="flex-grow">
-    @if (alertTitle()) {
-    <h2>
-      {{ alertTitle() }}
-    </h2>
-    } @if (this.dismissMode() !== 'expandable' || this.expanded()) {
-    <span class="alert-details">
-      <ng-content select="[alert-details]"></ng-content>
-    </span>
-    @if (actionButton()) {
-    <button type="button" (click)="onActionButtonClicked()" [disabled]="buttonDisabled()" mat-flat-button>
-      {{ buttonLabel() }}
-    </button>
-    } }
+    @if (alertTitle() || alertSubtitle()) {
+    <div>
+      @if (alertTitle()) {
+      <h2>{{ alertTitle() }}</h2>
+      } @if (alertSubtitle()) {
+      <p>{{ alertSubtitle() }}</p>
+      }
+    </div>
+    } @else if (dismissMode() !== 'expandable') {
+    <ng-container *ngTemplateOutlet="details" />
+    }
   </div>
   @if (dismissMode() === 'closable') {
   <mat-icon
@@ -27,15 +47,17 @@
     [attr.aria-label]="closeButtonAriaLabel()"
   />
   } @else if (dismissMode() === 'expandable') {
-  <mat-icon
-    type="button"
-    tabindex="0"
-    class="top-right-icon"
-    [fontIcon]="expanded() ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-    (click)="toggleExpanded()"
-    (keydown.enter)="toggleExpanded()"
-    (keydown.space)="toggleExpanded()"
-    [attr.aria-label]="currentExpandIconAriaLabel"
-  />
+  <mat-icon class="top-right-icon" [fontIcon]="expanded() ? 'keyboard_arrow_up' : 'keyboard_arrow_down'" />
   }
-</div>
+</ng-template>
+
+<ng-template #details>
+  <span class="alert-details">
+    <ng-content />
+  </span>
+  @if (actionButton()) {
+  <button type="button" (click)="onActionButtonClicked()" [disabled]="buttonDisabled()" mat-flat-button>
+    {{ buttonLabel() }}
+  </button>
+  }
+</ng-template>

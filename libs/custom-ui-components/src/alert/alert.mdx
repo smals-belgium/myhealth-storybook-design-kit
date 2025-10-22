@@ -7,7 +7,7 @@ import * as AlertStories from './alert-helper.stories';
 
 ## Description
 
-> The `Alert` is a additional ui component that displays a contextual message with an icon, a alertTitle, an optional details, action button and close button.
+> The `Alert` is a additional ui component that displays a contextual message with an icon, a alertTitle, a alertSubtitle, an optional details, action button and close button.
 > It supports multiple usage types which influence the styling and iconography to convey different alert semantics such as info, success, warning, error, and notification.
 
 ## Usage
@@ -19,6 +19,7 @@ Here is an example:
   [usage]="'warning'"
   [backgroundColor]="'white'"
   [alertTitle]="'Network Issue Detected'"
+  [alertSubtitle]="'No network'"
   [dismissMode]="'closable'"
   [closeButtonAriaLabel]="'Close alert'"
   [actionButton]="true"
@@ -27,7 +28,7 @@ Here is an example:
   (actionButtonClicked)="onActionButtonClicked()"
   (closeButtonClicked)="onCloseButtonClicked()"
 >
-  <div alert-details>Your connection is unstable. Please check your network settings.</div>
+  Your connection is unstable. Please check your network settings.
 </mh-alert>
 ```
 
@@ -185,6 +186,17 @@ For example, a warning about an invalid input field might be displayed as a line
         <code>string</code>
       </td>
       <td>The alert alertTitle.</td>
+      <td>—</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>
+        <code>alertSubtitle</code>
+      </td>
+      <td>
+        <code>string</code>
+      </td>
+      <td>The alert alertSubtitle.</td>
       <td>—</td>
       <td>No</td>
     </tr>
