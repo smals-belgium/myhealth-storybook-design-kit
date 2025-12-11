@@ -12,7 +12,6 @@
 
 @mixin core(
   $use-material: true,
-  $use-local-fonts: true,
   $symbols-font-url: url('../../../assets/fonts/MatSymbols-Rounded.ttf'),
   $symbols-font-family: 'Material Symbols Rounded',
   $symbols-font-classes: (
@@ -20,13 +19,8 @@
     'material-symbols',
   )
 ) {
-  @include mh-fonts.use-font-open-sans($use-local-fonts);
-  @include mh-fonts.use-font-material-symbols(
-    $use-local-fonts,
-    $symbols-font-url,
-    $symbols-font-family,
-    $symbols-font-classes
-  );
+  @include mh-fonts.use-font-open-sans();
+  @include mh-fonts.use-font-material-symbols($symbols-font-url, $symbols-font-family, $symbols-font-classes);
   @include mh-global.use-globals();
   @include mh-global.use-classes();
   @include mh-components.use-all-components();
