@@ -1,5 +1,4 @@
 @mixin use-font-material-symbols(
-  $use-local-fonts: true,
   $symbols-font-url: url('../../../assets/fonts/MatSymbols-Rounded.ttf'),
   $symbols-font-family: 'Material Symbols Rounded',
   $symbols-font-classes: (
@@ -7,21 +6,11 @@
     'material-symbols',
   )
 ) {
-  @if ($use-local-fonts) {
-    @font-face {
-      font-family: $symbols-font-family;
-      font-style: normal;
-      font-weight: 100 700;
-      src: $symbols-font-url format('truetype');
-    }
-  } @else {
-    @font-face {
-      font-family: $symbols-font-family;
-      font-style: normal;
-      font-weight: 100 700;
-      src: url(https://fonts.gstatic.com/s/materialsymbolsrounded/v226/sykg-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjzaqkNCeE.woff2)
-        format('woff2');
-    }
+  @font-face {
+    font-family: $symbols-font-family;
+    font-style: normal;
+    font-weight: 100 700;
+    src: $symbols-font-url format('truetype');
   }
 
   @each $class in $symbols-font-classes {

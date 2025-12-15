@@ -9,18 +9,17 @@ import { Meta, ColorItem, ColorPalette } from '@storybook/blocks';
 
 ## core
 
-The `core($use-material, $use-local-fonts)` mixin is the base of the design kit.
+The `core($use-material)` mixin is the base of the design kit.
 
-This mixin allows the following variables to be passed: `$use-material: boolean`, `$use-local-fonts: boolean`.
+This mixin allows the following variables to be passed: `$use-material: boolean`.
 
 - `$use-material` is a boolean that dictates if `core()` **includes Angular Material** theme in the design kit or not.
-- `$use-local-fonts` is a boolean that dictates if `core()` includes the **local fonts or** gets them from the **Google Fonts CDN**.
-- `$symbols-font-url` is an `url()` that specifies the path to the Material Symbols font file. This is only used if `$use-local-fonts` is set to `true`.
+- `$symbols-font-url` is an `url()` that specifies the path to the Material Symbols font file.
 
 This mixin in turn calls following mixins:
 
-- [use-font-open-sans($use-local-fonts)](#use-font-open-sans)
-- [use-font-material-symbols($use-local-fonts)](#use-font-material-symbols)
+- [use-font-open-sans()](#use-font-open-sans)
+- [use-font-material-symbols()](#use-font-material-symbols)
 - [use-globals()](#use-globals)
 - [use-classes()](#use-classes)
 - [use-all-components()](#use-all-components)
@@ -31,20 +30,15 @@ Optional:
 
 ### use-font-open-sans
 
-The `use-font-open-sans($use-material, $use-local-fonts)` includes the Open Sans font into SCSS `@font-face`.
-
-This mixin allows the following variables to be passed: `$use-local-fonts: boolean`.
-
-- `$use-local-fonts` is a boolean that dictates if `use-font-open-sans()` includes the **local fonts or** gets them from the **Google Fonts CDN**.
+The `use-font-open-sans()` includes the Open Sans font into SCSS `@font-face`.
 
 ### use-font-material-symbols
 
-The `use-font-material-symbols($use-material, $use-local-fonts)` includes the Open Sans font into SCSS `@font-face`.
+The `use-font-material-symbols($symbols-font-url)` includes the Open Sans font into SCSS `@font-face`.
 
-This mixin allows the following variables to be passed: `$use-local-fonts: boolean`.
+This mixin allows the following variables to be passed: `$symbols-font-url: url(string)`.
 
-- `$use-local-fonts` is a boolean that dictates if `use-font-open-sans()` includes the **local fonts or** gets them from the **Google Fonts CDN**.
-- `$symbols-font-url` is an `url()` that specifies the path to the Material Symbols font file. This is only used if `$use-local-fonts` is set to `true`.
+- `$symbols-font-url` is an `url()` that specifies the path to the Material Symbols font file.
 
 #### Optimization
 
