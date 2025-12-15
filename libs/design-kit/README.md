@@ -17,13 +17,15 @@ In your project's main SCSS file, include MH's core like so:
 ```scss
 @use '@myhealth-belgium/design-kit' as mh;
 
-@include mh.core($use-material: true);
+@include mh.core($use-material: true, $symbols-font-url: url('assets/fonts/MatSymbols-Rounded.ttf'));
 ```
 
-The options passed to `mh.core()` are `$use-material`, which are defaulted to `$use-material: true` if not specified.
+The options passed to `mh.core()` are `$use-material` and `$symbols-font-url`, which are defaulted to `$use-material: true` and a default font path for the symbols if not specified.
 
 If `$use-material: true` is added, the mixin will initialize Angular Material with MH's house style.
 Make sure to **not** import Angular Material into your application when this option is enabled. Including the mixin will include Angular Material for you.
+
+For `$symbols-font-url`, specificy the url path to your local fonts **TrueType Font** file, f.e.: `url('assets/fonts/MatSymbols-Rounded.ttf')`.
 
 ### Mixins & optimization
 
