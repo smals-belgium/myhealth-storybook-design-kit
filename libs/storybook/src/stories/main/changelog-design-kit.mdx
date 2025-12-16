@@ -4,7 +4,7 @@ import { Meta } from '@storybook/blocks';
 
 # Changelog Design Kit
 
-## 4.1.0 (15 December 2025)
+## 4.1.0 (16 December 2025)
 
 **New features:**
 
@@ -35,6 +35,14 @@ import { Meta } from '@storybook/blocks';
 - Updated [Typography](/docs/foundations-typography--docs) to reflect the actual code mixins (mistakes in documentation).
 - Added checkbox group example to [Checkbox documentation](/story/angular-components-selectors-checkbox--checkbox-group).
 - Updated [Dialog documentation](/docs/angular-components-dialog--docs) to include guidelines on dialog actions alignment.
+
+## 4.0.0 (15 December 2025)
+
+**Potentially breaking changes:**
+
+- Removed the `$use-local-fonts` parameter from the `mh.core()`, `mh.use-font-open-sans()` and `mh.use-font-material-symbols()` mixins.
+  The design kit will now always load fonts locally to improve performance, privacy and security.
+  Make sure to include the font files in your application when using the design kit.
 
 ## 3.1.0 (3 October 2025)
 

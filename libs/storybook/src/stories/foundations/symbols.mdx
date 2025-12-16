@@ -21,15 +21,15 @@ Because you will need more icons than just the ones in Storybook, we will guide 
 ```css
 @use '@myhealth-belgium/design-kit' as mh;
 
-@include mh.core($use-material: true, $use-local-fonts: true, $symbols-font-url: url('assets/symbols.ttf'));
+@include mh.core($use-material: true, $symbols-font-url: url('assets/symbols.ttf'));
 ```
 
-Make sure `$use-local-fonts` is set to `true` and `$symbols-font-url` points to the location of the TTF file in your application.
+Make sure `$symbols-font-url` points to the location of the TTF file in your application.
 
 Alternatively, you can also pass it directly to the symbols mixin if you're not using the `mh.core()` mixin:
 
 ```css
-@include mh-fonts.use-font-material-symbols($use-local-fonts: true, $symbols-font-url: url('assets/symbols.ttf'));
+@include mh-fonts.use-font-material-symbols($symbols-font-url: url('assets/symbols.ttf'));
 ```
 
 ### Symbols download script
