@@ -1,5 +1,6 @@
 @use '@angular/material' as mat;
 @use '../../core/variables' as mh;
+@use '../../core/mixins' as mh-mixins;
 
 @mixin override-mat-form-field() {
   // Provide a custom class as a wrapper
@@ -14,20 +15,34 @@
         color: mh.$typography-semantic-error-medium;
       }
 
-      &:has(+ .mat-mdc-form-field.mat-form-field-invalid) {
-        color: mh.$typography-semantic-error-medium;
-      }
-
       &:has(+ .mat-mdc-form-field.mat-form-field-disabled) {
         color: mh.$typography-brand-neutral-medium;
       }
     }
   }
 
+  .mh-input-suffix {
+    @include mh-mixins.font-label();
+    line-height: unset;
+    position: relative;
+    bottom: 6px;
+  }
+
   .mat-mdc-form-field {
     .mat-mdc-form-field-hint-wrapper,
     .mat-mdc-form-field-error-wrapper {
-      padding: 0;
+      padding: 2px 8px;
+      margin-top: 2px;
+      border-radius: 2px;
+      color: mh.$typography-brand-neutral-dark;
+    }
+
+    .mat-mdc-form-field-error-wrapper {
+      background-color: mh.$surface-semantic-error-light;
+
+      .mat-mdc-form-field-error {
+        color: mh.$typography-semantic-error-dark;
+      }
     }
 
     .mat-mdc-form-field-infix {
@@ -36,6 +51,16 @@
 
     .mat-mdc-notch-piece {
       background-color: mh.$color-white;
+    }
+
+    .mh-suffix-error {
+      display: none;
+    }
+
+    &.mat-form-field-invalid {
+      .mh-suffix-error {
+        display: inline-block;
+      }
     }
 
     // Disabled state
@@ -49,42 +74,6 @@
       @include mat.icon-overrides(
         (
           color: mh.$typography-brand-neutral-medium,
-        )
-      );
-    }
-
-    // Error state
-    &.mat-form-field-invalid {
-      // Background color
-      .mat-mdc-notch-piece {
-        background-color: mh.$surface-semantic-error-lighter;
-      }
-
-      .mat-mdc-form-field-icon-suffix,
-      .mat-mdc-form-field-icon-prefix {
-        button.mat-mdc-icon-button:not(:focus, :hover, :active) {
-          color: mh.$typography-semantic-error-medium;
-        }
-      }
-
-      // Input
-      .mat-mdc-input-element {
-        color: mh.$typography-semantic-error-medium;
-
-        &.mdc-text-field__input::placeholder {
-          color: mh.$typography-semantic-error-medium;
-        }
-      }
-
-      // Hint
-      .mat-mdc-form-field-hint-wrapper,
-      .mat-mdc-form-field-error-wrapper {
-        color: mh.$typography-semantic-error-medium;
-      }
-
-      @include mat.icon-overrides(
-        (
-          color: mh.$typography-semantic-error-medium,
         )
       );
     }
@@ -111,8 +100,11 @@
       outlined-focus-outline-width: mh.$border-width-m,
       outlined-focus-outline-color: mh.$border-brand-primary-medium,
 
-      // Active
+      // Icons
       trailing-icon-color: mh.$typography-brand-primary-medium,
+      error-trailing-icon-color: mh.$typography-semantic-error-medium,
+      error-focus-trailing-icon-color: mh.$typography-semantic-error-medium,
+      error-hover-trailing-icon-color: mh.$typography-semantic-error-medium,
       enabled-select-arrow-color: mh.$typography-brand-primary-medium,
 
       // Error

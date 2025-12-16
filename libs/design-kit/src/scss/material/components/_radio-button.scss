@@ -7,6 +7,16 @@
     flex-direction: column;
     align-items: flex-start;
   }
+  mat-radio-button.mat-mdc-radio-button {
+    // Align radio button with label text
+    .mdc-form-field {
+      align-items: flex-start;
+
+      .mdc-label {
+        margin-top: 10px;
+      }
+    }
+  }
   @include mat.radio-overrides(
     (
       ripple-color: mh.$surface-brand-primary-medium,

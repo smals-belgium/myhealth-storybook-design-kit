@@ -5,8 +5,17 @@ $_checkbox-border-radius: 4px;
 
 @mixin override-mat-checkbox() {
   mat-checkbox.mat-mdc-checkbox {
-    .mdc-checkbox .mdc-checkbox__background {
-      border-radius: $_checkbox-border-radius;
+    // Align checkbox with label text
+    .mdc-form-field {
+      align-items: flex-start;
+
+      .mdc-checkbox .mdc-checkbox__background {
+        border-radius: $_checkbox-border-radius;
+      }
+
+      .mdc-label {
+        margin-top: 10px;
+      }
     }
   }
 

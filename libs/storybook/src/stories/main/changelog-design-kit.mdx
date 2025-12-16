@@ -4,6 +4,38 @@ import { Meta } from '@storybook/blocks';
 
 # Changelog Design Kit
 
+## 4.1.0 (15 December 2025)
+
+**New features:**
+
+- Aligned the checkbox for [Checkbox component](/story/angular-components-selectors-checkbox--default) with the first line of the label text.
+  This improves readability and accessibility, especially for checkboxes with multi-line labels.
+- Aligned the radio button for [Radio Button component](/story/angular-components-selectors-radio-button--default) with the first line of the label text.
+  This improves readability and accessibility, especially for radio buttons with multi-line labels.
+- Added the `mh-input-suffix` class to the [Form Field component](/docs/components-form-field--docs) documentation.
+  This class should be used when adding a textual suffix to an input field to ensure proper styling and alignment.
+- Added the `mh-suffix-error` class to the [Form Field component](/docs/components-form-field--docs) documentation.
+  This class should be used when adding an error icon as a suffix to an input field to ensure proper styling and alignment.
+
+**Fixzed bugs:**
+
+- Fixed styling inconsistencies for dialog component.
+
+**Removed features:**
+
+- Removed deprecated typography color tokens: `$typography-semantic-success` and `$typography-semantic-warning`.
+  These have been replaced by `$typography-semantic-success-medium` and `$typography-semantic-warning-medium` respectively.
+  Please update your code accordingly if you are still using the deprecated tokens.
+- Removed deprecated typography color token: `$typography-brand-neutral-light`.
+  This token is no longer used in the design system and has been removed to prevent confusion.
+
+**Updated documentation:**
+
+- Updated [Color Tokens documentation](/docs/foundations-color-tokens--docs) to reflect the removal of deprecated typography color tokens.
+- Updated [Typography](/docs/foundations-typography--docs) to reflect the actual code mixins (mistakes in documentation).
+- Added checkbox group example to [Checkbox documentation](/story/angular-components-selectors-checkbox--checkbox-group).
+- Updated [Dialog documentation](/docs/angular-components-dialog--docs) to include guidelines on dialog actions alignment.
+
 ## 3.1.0 (3 October 2025)
 
 **Added features:**

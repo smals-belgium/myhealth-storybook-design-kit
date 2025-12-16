@@ -37,8 +37,10 @@ An example on how to use this class:
   <label for="field1">Label <span aria-hidden class="mh-label-required">*</span></label>
   <mat-form-field appearance="outline">
     <input id="field1" matInput placeholder="Placeholder" [formControl]="myInputControl" />
+    <mat-icon matSuffix class="mh-suffix-error">error</mat-icon>
     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
     <mat-hint>Hint text</mat-hint>
+    <mat-error>Error message</mat-error>
   </mat-form-field>
 </div>
 ```
@@ -50,4 +52,27 @@ The class should be added to a span element inside the label, as shown in the ex
 
 ```html
 <label for="field1">Label <span aria-hidden class="mh-label-required">*</span></label>
+```
+
+#### Textual prefix & suffix class
+
+When adding a suffix that is not an icon, the class `mh-input-suffix` should be added to the suffix element to ensure proper styling.
+
+```html
+<mat-form-field appearance="outline">
+  <input matInput placeholder="Amount" />
+  <span matSuffix class="mh-input-suffix">EUR</span>
+</mat-form-field>
+```
+
+#### Error suffix icon class
+
+When adding an error icon as suffix, the class `mh-suffix-error` should be added to the icon element to ensure proper styling.
+
+```html
+<mat-form-field appearance="outline">
+  <input matInput placeholder="Field with error" />
+  <mat-icon matSuffix class="mh-suffix-error">error</mat-icon>
+  <mat-error>Error message</mat-error>
+</mat-form-field>
 ```

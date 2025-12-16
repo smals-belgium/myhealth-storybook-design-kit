@@ -12,9 +12,11 @@ import { MatInputModule } from '@angular/material/input';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputComponent {
+  readonly view = input<'default' | 'icons' | 'error'>('default');
   readonly disabled: InputSignal<boolean> = input.required();
-  readonly myInputControl = new FormControl('', [Validators.required]);
-  readonly myTextareaControl = new FormControl('', [Validators.required]);
+  readonly myInputControl = new FormControl('');
+  readonly myTextareaControl = new FormControl('');
+  readonly myRequiredInputControl = new FormControl('', { validators: [Validators.required] });
 
   constructor() {
     effect(() => {

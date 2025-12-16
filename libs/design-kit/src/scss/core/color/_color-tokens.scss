@@ -6,7 +6,7 @@ $color-secondary: m3.$secondary-40;
 $color-white: m3.$neutral-100;
 $color-black: #0d0d0d;
 
-$color-accent: $color-secondary; /// @deprecated Use $color-secondary instead
+$color-accent: $color-secondary; /// @deprecated `Use $color-secondary` instead
 
 // === Typography ===
 // === Typography colors refer to the text colors of the application ===
@@ -20,15 +20,24 @@ $typography-brand-primary-lighter: m3.$primary-100;
 $typography-brand-neutral-darker: $color-black;
 $typography-brand-neutral-dark: #5c5c5c;
 $typography-brand-neutral-medium: m3.$neutral-50;
-$typography-brand-neutral-light: m3.$neutral-60;
+$typography-brand-neutral-light: m3.$neutral-60; /// @deprecated Will be removed in future versions
 $typography-brand-neutral-lighter: m3.$neutral-100;
-// Semantic
-$typography-semantic-success: m3.$success-30;
-$typography-semantic-warning: m3.$warning-25;
+// Success
+$typography-semantic-success-darker: m3.$success-20;
+$typography-semantic-success-dark: m3.$success-25;
+$typography-semantic-success-medium: m3.$success-30;
+// Warning
+$typography-semantic-warning-darker: m3.$warning-20;
+$typography-semantic-warning-dark: m3.$warning-25;
+$typography-semantic-warning-medium: m3.$warning-30;
 // Error
 $typography-semantic-error-darker: m3.$error-20;
 $typography-semantic-error-dark: m3.$error-25;
 $typography-semantic-error-medium: m3.$error-30;
+
+// Deprecated
+$typography-semantic-success: $typography-semantic-success-medium; /// @deprecated Use `$typography-semantic-success-medium` instead
+$typography-semantic-warning: $typography-semantic-warning-medium; /// @deprecated Use `$typography-semantic-warning-medium` instead
 
 // === Surface ===
 // === Surface colors refer to the background colors of the application ===

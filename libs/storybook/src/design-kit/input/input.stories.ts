@@ -9,6 +9,9 @@ const meta: Meta<InputComponent> = {
     disabled: {
       control: { type: 'boolean' },
     },
+    view: {
+      table: { disable: true },
+    },
   },
   decorators: [
     applicationConfig({
@@ -23,5 +26,19 @@ type Story = StoryObj<InputComponent>;
 export const Default: Story = {
   args: {
     disabled: false,
+  },
+};
+
+export const Icons: Story = {
+  args: {
+    disabled: false,
+    view: 'icons',
+  },
+};
+
+export const Error: Story = {
+  args: {
+    disabled: false,
+    view: 'error',
   },
 };

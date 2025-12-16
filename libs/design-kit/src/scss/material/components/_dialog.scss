@@ -25,17 +25,6 @@
   .mh-dialog-container mat-dialog-container {
     div.mat-mdc-dialog-surface.mdc-dialog__surface {
       padding: mh.$spacing-l;
-
-      .mat-mdc-dialog-title {
-        margin-bottom: mh.$spacing-s;
-        border-bottom: mh.$border-width-s solid mh.$color-gray-4;
-      }
-
-      mat-dialog-actions.mat-mdc-dialog-actions {
-        padding-top: mh.$spacing-s;
-        margin-top: mh.$spacing-s;
-        border-top: mh.$border-width-s solid mh.$color-gray-4;
-      }
     }
   }
 
@@ -55,22 +44,11 @@
 
     .mh-dialog-container mat-dialog-container {
       div.mat-mdc-dialog-surface.mdc-dialog__surface {
-        padding-inline: mh.$spacing-l;
-        padding-bottom: mh.$spacing-l;
-        padding-top: 0;
-
-        .mat-mdc-dialog-title {
-          margin-bottom: 0;
-          border-bottom: none;
-        }
-
         mat-dialog-content {
           padding: 0;
         }
 
         mat-dialog-actions.mat-mdc-dialog-actions {
-          padding-top: 0;
-          border-top: none;
           flex-direction: column;
           gap: mh.$spacing-xs;
 
