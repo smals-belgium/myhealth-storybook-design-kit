@@ -4,7 +4,7 @@ import { Meta } from '@storybook/blocks';
 
 # Changelog Design Kit
 
-## 4.1.0 (16 December 2025)
+## 4.1.0 (17 December 2025)
 
 **New features:**
 
@@ -16,18 +16,25 @@ import { Meta } from '@storybook/blocks';
   This class should be used when adding a textual suffix to an input field to ensure proper styling and alignment.
 - Added the `mh-suffix-error` class to the [Form Field component](/docs/components-form-field--docs) documentation.
   This class should be used when adding an error icon as a suffix to an input field to ensure proper styling and alignment.
+- Added entirely new styling for material tables.
+  Please make sure to implement the new expandable table as described in the [Table documentation](/docs/components-table--docs).
+  Also make sure to implement the icon in the sortable column headers, as described in the documentation.
+  The new implementation improves accessibility and usability.
 
-**Fixzed bugs:**
+**Fixed bugs:**
 
 - Fixed styling inconsistencies for dialog component.
 
-**Removed features:**
+**Deprecated features:**
 
-- Removed deprecated typography color tokens: `$typography-semantic-success` and `$typography-semantic-warning`.
+- Deprecated typography color tokens: `$typography-semantic-success` and `$typography-semantic-warning`.
   These have been replaced by `$typography-semantic-success-medium` and `$typography-semantic-warning-medium` respectively.
   Please update your code accordingly if you are still using the deprecated tokens.
-- Removed deprecated typography color token: `$typography-brand-neutral-light`.
+- Deprecated typography color token: `$typography-brand-neutral-light`.
   This token is no longer used in the design system and has been removed to prevent confusion.
+- Deprecated expandable table implementation in favor of the new implementation introduced in version 4.1.0.
+  The new implementation offers improved accessibility and usability.
+  Please refer to the updated [Table documentation](/docs/components-table--docs) for guidance on using the new expandable table.
 
 **Updated documentation:**
 

@@ -9,12 +9,11 @@ th {
   white-space: nowrap;
 }
 
-.show-more {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-
-  &-button {
-    white-space: nowrap;
+dl {
+  dt {
+    font-weight: mh.$font-weight-semibold;
+  }
+  dd {
+    margin: 0 0 mh.$spacing-s 0;
   }
 }
