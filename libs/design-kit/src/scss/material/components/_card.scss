@@ -21,7 +21,7 @@
     gap: mh.$spacing-m;
 
     &[appearance='outlined'] {
-      border-color: mh.$color-gray-4;
+      border-color: mh.$border-brand-neutral-lighter;
     }
 
     mat-card-header.mat-mdc-card-header {

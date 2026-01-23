@@ -8,13 +8,13 @@
 
     @include mat.snack-bar-overrides(
       (
-        container-color: mh.$mat-primary-50,
-        supporting-text-color: mh.$mat-primary-900,
+        container-color: mh.$surface-brand-neutral-darker,
+        supporting-text-color: mh.$typography-brand-neutral-lighter,
+        button-color: mh.$typography-brand-neutral-lighter,
         container-shape: mh.$border-radius-m,
         supporting-text-line-height: 24px,
         supporting-text-size: mh.$font-size-m,
         supporting-text-weight: mh.$font-weight-semibold,
-        button-color: mh.$color-dark-gray-text,
       )
     );
 
@@ -26,12 +26,24 @@
       )
     );
 
+    &--info {
+      @extend .mh-snackbar;
+      @include mat.snack-bar-overrides(
+        (
+          container-color: mh.$surface-brand-primary-lighter,
+          supporting-text-color: mh.$typography-brand-primary-dark,
+          button-color: mh.$typography-brand-primary-dark,
+        )
+      );
+    }
+
     &--success {
       @extend .mh-snackbar;
       @include mat.snack-bar-overrides(
         (
-          container-color: mh.$mat-accent-50,
-          supporting-text-color: mh.$mat-accent-900,
+          container-color: mh.$surface-semantic-success-lighter,
+          supporting-text-color: mh.$typography-semantic-success-dark,
+          button-color: mh.$typography-semantic-success-dark,
         )
       );
     }
@@ -40,8 +52,9 @@
       @extend .mh-snackbar;
       @include mat.snack-bar-overrides(
         (
-          container-color: color.adjust(mh.$color-error, $lightness: 33%),
-          supporting-text-color: color.adjust(mh.$color-error, $lightness: -30%),
+          container-color: mh.$surface-semantic-error-lighter,
+          supporting-text-color: mh.$typography-semantic-error-medium,
+          button-color: mh.$typography-semantic-warning-medium,
         )
       );
     }

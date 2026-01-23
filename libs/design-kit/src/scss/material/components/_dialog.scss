@@ -4,7 +4,7 @@
 @mixin override-mat-dialog {
   @include mat.dialog-overrides(
     (
-      subhead-color: mh.$color-primary-text,
+      subhead-color: mh.$typography-brand-neutral-darker,
       subhead-weight: mh.$font-weight-semibold,
       subhead-size: mh.$font-size-xl,
       container-shape: mh.$border-radius-s,
