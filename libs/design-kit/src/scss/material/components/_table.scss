@@ -35,7 +35,11 @@
         }
 
         &.mat-sort-header {
-          // Hide icon on hover, focus, or when sorted
+          /*
+           * Hide sort icon on hover, focus, or when sorted
+           * This is needed because the default behavior of Material is to show a sorting icon in any of these states.
+           * It ensures that the custom icon we use gets replaced by this default sorting icon.
+          */
           &:hover,
           &:focus,
           &[aria-sort='ascending'],

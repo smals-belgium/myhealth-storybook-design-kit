@@ -87,12 +87,12 @@ The class should be added to a span element inside the label, as shown in the ex
 
 #### Textual prefix & suffix class
 
-When adding a suffix that is not an icon, the class `mh-input-suffix` should be added to the suffix element to ensure proper styling.
+When adding a suffix that is not an icon, use the Material directives `matTextPrefix` & `matTextSuffix`.
 
 ```html
 <mat-form-field appearance="outline">
   <input matInput placeholder="Amount" />
-  <span matSuffix class="mh-input-suffix">EUR</span>
+  <span matTextSuffix>EUR</span>
 </mat-form-field>
 ```
 

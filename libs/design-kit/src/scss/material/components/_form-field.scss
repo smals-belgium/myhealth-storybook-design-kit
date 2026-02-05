@@ -21,13 +21,6 @@
     }
   }
 
-  .mh-input-suffix {
-    @include mh-mixins.font-label();
-    line-height: unset;
-    position: relative;
-    bottom: 6px;
-  }
-
   .mat-mdc-form-field {
     .mat-mdc-form-field-hint-wrapper,
     .mat-mdc-form-field-error-wrapper {
@@ -49,8 +42,9 @@
       z-index: 1;
     }
 
-    .mat-mdc-notch-piece {
-      background-color: mh.$color-white;
+    .mat-mdc-form-field-text-prefix,
+    .mat-mdc-form-field-text-suffix {
+      @include mh-mixins.font-label();
     }
 
     .mh-suffix-error {
