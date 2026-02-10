@@ -41,10 +41,9 @@ The most frequently used colors for typography.
     title="$typography-brand-neutral-x"
     subtitle="Neutral color swatches for brand typography, where `x` is the specified swatch"
     colors={{
-      darker: '#000000',
-      dark: '#424242',
+      darker: '#0d0d0d',
+      dark: '#5c5c5c',
       medium: '#808080',
-      light: '#8f8f8f',
       lighter: '#ffffff',
     }}
   />
@@ -58,22 +57,20 @@ Semantic colors should be used scarcely, and only when the context requires it.
   <ColorItem
     title="$typography-semantic-success"
     subtitle="Success typography color ($success-30)"
-    colors={['#1d8657']}
+    colors={{
+      darker: '#0a2e1e',
+      dark: '#145c3c',
+      medium: '#1d8657',
+    }}
   />
   <ColorItem
     title="$typography-semantic-warning"
     subtitle="Warning typography color ($warning-25)"
-    colors={['#662e00']}
-  />
-  <ColorItem
-    title="$typography-semantic-error-darker"
-    subtitle="Error typography color ($error-20)"
-    colors={['#470600']}
-  />
-  <ColorItem
-    title="$typography-semantic-error-dark"
-    subtitle="Error typography color ($error-25)"
-    colors={['#8f0c00']}
+    colors={{
+      darker: '#331700',
+      dark: '#662e00',
+      medium: '#994500',
+    }}
   />
   <ColorItem
     title="$typography-semantic-error-x"

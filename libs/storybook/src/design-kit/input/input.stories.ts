@@ -9,6 +9,12 @@ const meta: Meta<InputComponent> = {
     disabled: {
       control: { type: 'boolean' },
     },
+    maxLength: {
+      control: { type: 'number' },
+    },
+    view: {
+      table: { disable: true },
+    },
   },
   decorators: [
     applicationConfig({
@@ -23,5 +29,30 @@ type Story = StoryObj<InputComponent>;
 export const Default: Story = {
   args: {
     disabled: false,
+    maxLength: 200,
+  },
+};
+
+export const Textarea: Story = {
+  args: {
+    disabled: false,
+    maxLength: 200,
+    view: 'textarea',
+  },
+};
+
+export const Icons: Story = {
+  args: {
+    disabled: false,
+    maxLength: 200,
+    view: 'icons',
+  },
+};
+
+export const Error: Story = {
+  args: {
+    disabled: false,
+    maxLength: 200,
+    view: 'error',
   },
 };

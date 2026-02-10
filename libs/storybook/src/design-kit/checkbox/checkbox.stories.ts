@@ -23,3 +23,11 @@ export const Default: Story = {
     checked: false,
   },
 };
+
+export const CheckboxGroup: Story = {
+  args: {
+    disabled: false,
+    checked: false,
+    showGroup: true,
+  },
+};

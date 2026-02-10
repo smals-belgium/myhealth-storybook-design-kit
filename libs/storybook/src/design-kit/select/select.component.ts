@@ -1,12 +1,13 @@
 import { Component, effect, input, InputSignal } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'mh-select',
-  imports: [MatFormFieldModule, MatInputModule, MatSelectModule, ReactiveFormsModule],
+  imports: [MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule, ReactiveFormsModule],
   templateUrl: './select.component.html',
   styleUrl: './select.component.scss',
 })

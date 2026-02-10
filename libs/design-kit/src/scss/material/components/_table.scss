@@ -1,108 +1,128 @@
+@use '@angular/material' as mat;
 @use '../../core/variables' as mh;
 
 @mixin override-mat-table() {
-  table.mat-mdc-table,
-  mat-table.mat-mdc-table {
-    margin-bottom: mh.$spacing-xs;
-  }
+  @include mat.table-overrides(
+    (
+      header-headline-color: mh.$typography-brand-neutral-darker,
+      header-headline-size: mh.$font-size-m,
+      header-headline-weight: mh.$font-weight-semibold,
+      row-item-outline-color: mh.$border-brand-neutral-lighter,
+      row-item-label-text-size: mh.$font-size-m,
+    )
+  );
 
-  tr.mat-mdc-header-row {
-    color: mh.$color-black;
-    font-size: mh.$font-size-m;
-    font-weight: mh.$font-weight-bold;
+  @include mat.sort-overrides(
+    (
+      arrow-color: mh.$typography-brand-primary-medium,
+    )
+  );
 
-    th.mat-mdc-header-cell {
-      border-bottom: mh.$border-width-m solid mh.$color-accent;
-    }
-  }
+  table.mat-mdc-table {
+    margin-bottom: mh.$spacing-2xs;
 
-  tr.mat-mdc-row {
-    color: mh.$color-black;
-    font-size: mh.$font-size-m;
-    background-color: mh.$color-gray-1;
+    thead tr.mat-mdc-header-row {
+      th.mat-mdc-header-cell {
+        background-color: mh.$surface-brand-primary-lighter;
+        border: none;
 
-    &:not(tr.mh-detail-row) {
-      &:nth-child(even) {
-        background-color: mh.$color-gray-3;
+        &:first-child {
+          border-top-left-radius: mh.$border-radius-m;
+        }
+
+        &:last-child {
+          border-top-right-radius: mh.$border-radius-m;
+        }
+
+        &.mat-sort-header {
+          /*
+           * Hide sort icon on hover, focus, or when sorted
+           * This is needed because the default behavior of Material is to show a sorting icon in any of these states.
+           * It ensures that the custom icon we use gets replaced by this default sorting icon.
+          */
+          &:hover,
+          &:focus,
+          &[aria-sort='ascending'],
+          &[aria-sort='descending'] {
+            .mat-sort-header-content mat-icon {
+              display: none;
+            }
+
+            .mat-sort-header-arrow {
+              margin-right: 24px;
+            }
+          }
+
+          mat-icon {
+            @include mat.icon-overrides(
+              (
+                color: mh.$typography-brand-neutral-medium,
+              )
+            );
+          }
+
+          .mat-sort-header-arrow {
+            transition: none;
+          }
+        }
       }
     }
 
-    td.mat-mdc-cell {
-      border-bottom: mh.$border-width-s solid mh.$color-gray-4;
-    }
-  }
+    tbody {
+      tr.mat-mdc-row {
+        // Detail row
+        &.mh-detail-row {
+          // display: none;
 
-  tr.mat-mdc-row + tr.mh-detail-row {
-    &:nth-child(4n - 1),
-    &:nth-child(4n) {
-      background-color: mh.$color-gray-3;
-    }
-  }
+          &--expanded {
+            // display: table-row;
+            background-color: mh.$surface-brand-neutral-lighter;
+            border-bottom: mh.$border-width-s solid mh.$border-brand-neutral-lighter;
+          }
+        }
 
-  tr.mh-detail-row + tr.mat-mdc-row {
-    &:nth-child(4n - 1),
-    &:nth-child(4n) {
-      background-color: mh.$color-gray-3;
-    }
-  }
+        // Previous row (expanded from column)
+        &:has(+ tr.mat-mdc-row.mh-detail-row--expanded) {
+          background-color: mh.$surface-brand-neutral-lighter;
 
-  // Selector of the row on which the expand button is pressed
-  tr.mat-mdc-row:has(+ tr.mh-detail-row > td.mh-detail-row--expanded) {
-    td.mat-mdc-cell {
-      border-bottom: none;
+          td.mat-mdc-cell {
+            border-bottom: none;
+          }
+        }
 
-      &:first-child {
-        border-left: mh.$border-width-s solid mh.$color-gray-5;
-      }
-
-      &:last-child {
-        border-right: mh.$border-width-s solid mh.$color-gray-5;
+        td.mat-column-expand,
+        td.mat-column-actions {
+          text-align: center;
+        }
       }
     }
 
-    &:not(:first-child) {
-      td.mat-mdc-cell {
-        border-top: mh.$border-width-s solid mh.$color-gray-5;
+    /// @deprecated: Legacy styles for old expansion implementation
+    tbody {
+      tr.mat-mdc-row {
+        &:has(+ tr.mh-detail-row td.mh-detail-row--expanded) {
+          background-color: mh.$surface-brand-neutral-lighter;
+
+          td.mat-mdc-cell {
+            border-bottom: none;
+          }
+        }
+
+        &.mh-detail-row {
+          display: none;
+
+          &:has(td.mh-detail-row--expanded) {
+            display: table-row;
+          }
+
+          td.mat-mdc-cell {
+            &.mh-detail-row--expanded {
+              background-color: mh.$surface-brand-neutral-lighter;
+              border-bottom: mh.$border-width-s solid mh.$border-brand-neutral-lighter;
+            }
+          }
+        }
       }
-    }
-  }
-
-  tr.mh-detail-row {
-    height: 0;
-
-    td.mat-mdc-cell {
-      border-bottom: none;
-
-      * {
-        // Hide everything when the detail row is not expanded
-        height: 0;
-      }
-    }
-
-    td.mh-detail-row--expanded {
-      border: mh.$border-width-s solid mh.$color-gray-5;
-      border-top: none;
-      padding: mh.$spacing-l mh.$spacing-m;
-      background-color: mh.$color-white;
-      animation: detailExpandAnimation 0.2s;
-
-      * {
-        // Show everything when the detail row is expanded
-        height: auto;
-      }
-    }
-  }
-
-  tr.mdc-data-table__row:last-child td.mat-mdc-cell.mh-detail-row--expanded {
-    border-bottom: mh.$border-width-s solid mh.$color-gray-5;
-  }
-
-  @keyframes detailExpandAnimation {
-    0% {
-      height: 0;
-    }
-    100% {
-      height: auto;
     }
   }
 }

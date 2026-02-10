@@ -79,10 +79,92 @@ Implement breakpoints to display a table layout on desktop and automatically swi
 
 ### Desktop
 
+#### Sortable Table
+
+The Design Kit offers support for sortable tables, as seen in Angular Material's [example](https://material.angular.dev/components/table/examples#table-sorting).
+The implementation remains largely the same; it's simply a matter of adding the appropriate elements inside of the sortable headers.
+
+The only change is that the **sortable header needs to include a sort icon:** `<mat-icon fontIcon="swap_vert" />`.
+
+```html
+<!-- Sortable column -->
+<ng-container matColumnDef="columnName">
+  <th mat-header-cell mat-sort-header *matHeaderCellDef>
+    <span>Column Name</span>
+    <mat-icon fontIcon="swap_vert" />
+  </th>
+  <td mat-cell *matCellDef="let element">{{ element.columnName }}</td>
+</ng-container>
+```
+
 #### Expandable Table
 
 The Design Kit offers support for expandable tables, as seen in Angular Material's [example](https://material.angular.io/components/table/examples#table-expandable-rows).
 The implementation remains largely the same, it is only a matter of adding the right classes:
+
+The detail row in your table needs the class `mh-detail-row`, as well as the `mh-detail-row--expanded` class when the row is expanded:
+
+```html
+<!-- Detail row -->
+<tr
+  class="mh-detail-row"
+  mat-row
+  *matRowDef="let row; columns: ['expandDetail']"
+  [class.mh-detail-row--expanded]="row.index === expandedElementIndex()"
+  [hidden]="row.index !== expandedElementIndex()"
+  [id]="'detail-row-' + row.index"
+></tr>
+```
+
+Avoid repeating data from the collapsed panel. When users expand a row, they should be presented with new content only—don’t make them work to find what’s changed or added.
+
+<Canvas of={TableStories.Expandable} sourceState="none" />
+
+##### Expandable Table: Accessibility
+
+To enhance accessibility for expandable tables, it's important to manage the visibility of detail rows and its ARIA-attributes effectively.
+
+As such, the **detail row** should include:
+
+- The `hidden` attribute when it is not expanded. This ensures that screen readers do not announce content that is not currently visible to users.
+- An `id` attribute that links to the corresponding control button in the actions column. This helps users of assistive technologies to understand the relationship between the button and the content it controls.
+
+```html
+<!-- Detail row -->
+<tr
+  class="mh-detail-row"
+  mat-row
+  *matRowDef="let row; columns: ['expandDetail']"
+  [class.mh-detail-row--expanded]="row.index === expandedElementIndex()"
+  [hidden]="row.index !== expandedElementIndex()"
+  [id]="'detail-row-' + row.index"
+></tr>
+```
+
+The **expansion button** should include:
+
+- An `aria-label` that clearly indicates the action of the button, such as "Show more" or "Show less", depending on the current state.
+- The `aria-expanded` attribute to indicate whether the associated detail row is currently expanded or collapsed.
+- The `aria-controls` attribute that references the `id` of the corresponding detail row.
+
+```html
+<!-- Expansion button in actions column -->
+<button
+  mat-icon-button
+  type="button"
+  [attr.aria-label]="expandedElementIndex() === element.index ? 'Show less' : 'Show more'"
+  [attr.aria-expanded]="expandedElementIndex() === element.index"
+  [attr.aria-controls]="'detail-row-' + element.index"
+  (click)="setExpandedIndex(element.index)"
+>
+  <mat-icon [fontIcon]="expandedElementIndex() === element.index ? 'keyboard_arrow_up' : 'keyboard_arrow_down'" />
+</button>
+```
+
+##### Legacy expandable table (deprecated)
+
+This is the implementation of the expandable table before version 4.1.0 of the Design Kit. It is now deprecated in favor of the new implementation above.
+The deprecated implementation relied on adding the expanded class to the content cells instead of the detail row.
 
 The detail row in your table needs the class `mh-detail-row`:
 
@@ -108,10 +190,6 @@ In your `expandDetail` column's definition, add the class `mh-detail-row--expand
   </td>
 </ng-container>
 ```
-
-Avoid repeating data from the collapsed panel. When users expand a row, they should be presented with new content only—don’t make them work to find what’s changed or added.
-
-<Canvas of={TableStories.Expandable} sourceState="none" />
 
 #### Table with selection
 

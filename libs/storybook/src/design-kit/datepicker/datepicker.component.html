@@ -2,8 +2,10 @@
   <label for="field2">Label <span aria-hidden="true" class="mh-label-required">*</span></label>
   <mat-form-field appearance="outline">
     <input placeholder="DD/MM/YYYY" id="field2" matInput [formControl]="myControl" [matDatepicker]="picker" />
-    <mat-hint>Hint tesxt</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
+    <mat-icon class="mh-suffix-error" matSuffix>error</mat-icon>
+    <mat-hint>Hint text</mat-hint>
+    <mat-error>This field is required</mat-error>
   </mat-form-field>
 </div>

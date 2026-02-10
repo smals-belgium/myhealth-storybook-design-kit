@@ -3,11 +3,19 @@ import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'mh-datepicker',
-  imports: [MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, ReactiveFormsModule],
+  imports: [
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatIconModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+  ],
   templateUrl: './datepicker.component.html',
   styleUrl: './datepicker.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

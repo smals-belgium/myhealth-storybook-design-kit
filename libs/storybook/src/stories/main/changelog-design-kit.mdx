@@ -4,6 +4,44 @@ import { Meta } from '@storybook/blocks';
 
 # Changelog Design Kit
 
+## 4.1.0 (17 December 2025)
+
+**New features:**
+
+- Aligned the checkbox for [Checkbox component](/story/angular-components-selectors-checkbox--default) with the first line of the label text.
+  This improves readability and accessibility, especially for checkboxes with multi-line labels.
+- Aligned the radio button for [Radio Button component](/story/angular-components-selectors-radio-button--default) with the first line of the label text.
+  This improves readability and accessibility, especially for radio buttons with multi-line labels.
+- Added documentation on how to use textual prefix and Suffix in [Form Field component](/docs/angular-components-form-field--docs) documentation.
+- Added entirely new styling for material tables.
+  Please make sure to implement the new expandable table as described in the [Table documentation](/docs/angular-components-table--docs).
+  Also make sure to implement the icon in the sortable column headers, as described in the documentation.
+  The new implementation improves accessibility and usability.
+- Added dcoumentation to add a character counter to the textarea input field, as described in the [Form Field documentation](/docs/angular-components-form-field--docs).
+
+**Fixed bugs:**
+
+- Fixed styling inconsistencies for dialog component.
+- Got rid of deprecated color tokens in components.
+
+**Deprecated features:**
+
+- Deprecated typography color tokens: `$typography-semantic-success` and `$typography-semantic-warning`.
+  These have been replaced by `$typography-semantic-success-medium` and `$typography-semantic-warning-medium` respectively.
+  Please update your code accordingly if you are still using the deprecated tokens.
+- Deprecated typography color token: `$typography-brand-neutral-light`.
+  This token is no longer used in the design system and has been removed to prevent confusion.
+- Deprecated expandable table implementation in favor of the new implementation introduced in version 4.1.0.
+  The new implementation offers improved accessibility and usability.
+  Please refer to the updated [Table documentation](/docs/components-table--docs) for guidance on using the new expandable table.
+
+**Updated documentation:**
+
+- Updated [Color Tokens documentation](/docs/foundations-color-tokens--docs) to reflect the removal of deprecated typography color tokens.
+- Updated [Typography](/docs/foundations-typography--docs) to reflect the actual code mixins (mistakes in documentation).
+- Added checkbox group example to [Checkbox documentation](/story/angular-components-selectors-checkbox--checkbox-group).
+- Updated [Dialog documentation](/docs/angular-components-dialog--docs) to include guidelines on dialog actions alignment.
+
 ## 4.0.0 (15 December 2025)
 
 **Potentially breaking changes:**

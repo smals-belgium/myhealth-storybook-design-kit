@@ -12,9 +12,12 @@ import { MatInputModule } from '@angular/material/input';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputComponent {
+  readonly view = input<'default' | 'icons' | 'error' | 'textarea'>('default');
   readonly disabled: InputSignal<boolean> = input.required();
-  readonly myInputControl = new FormControl('', [Validators.required]);
-  readonly myTextareaControl = new FormControl('', [Validators.required]);
+  readonly maxLength = input<number>(200);
+  readonly myInputControl = new FormControl('');
+  readonly myTextareaControl = new FormControl('');
+  readonly myRequiredInputControl = new FormControl('', { validators: [Validators.required] });
 
   constructor() {
     effect(() => {
@@ -26,5 +29,9 @@ export class InputComponent {
         this.myTextareaControl.enable();
       }
     });
+  }
+
+  getCharacterCount(): number {
+    return this.myTextareaControl.value?.length || 0;
   }
 }

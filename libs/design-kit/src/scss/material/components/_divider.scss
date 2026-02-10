@@ -4,7 +4,7 @@
 @mixin override-mat-divider {
   @include mat.divider-overrides(
     (
-      color: mh.$color-gray-4,
+      color: mh.$border-brand-neutral-lighter,
     )
   );
 }
