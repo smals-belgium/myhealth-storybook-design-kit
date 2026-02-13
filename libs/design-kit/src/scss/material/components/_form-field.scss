@@ -42,9 +42,15 @@
       z-index: 1;
     }
 
+    .mat-mdc-notch-piece {
+      background: mh.$color-white;
+      z-index: 0;
+    }
+
     .mat-mdc-form-field-text-prefix,
     .mat-mdc-form-field-text-suffix {
       @include mh-mixins.font-label();
+      z-index: 1; // Bring the prefix and suffix above the notch-piece
     }
 
     .mh-suffix-error {

@@ -97,8 +97,6 @@ export class TableComponent {
     return ds;
   });
 
-  expandedElement?: unknown;
-
   columns = computed(() => {
     let columns = [...this.initialColumns];
     if (this.expandEnabled()) {
