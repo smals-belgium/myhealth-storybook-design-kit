@@ -60,12 +60,7 @@
   <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
   @if (expandEnabled()) {
   <ng-container matColumnDef="expandDetail">
-    <td
-      mat-cell
-      *matCellDef="let element"
-      [class.mh-detail-row--expanded]="element.index === expandedElementIndex()"
-      [colSpan]="columns().length"
-    >
+    <td mat-cell *matCellDef="let element" [colSpan]="columns().length">
       <dl>
         <dt>Name</dt>
         <dd>{{ element.name }}</dd>

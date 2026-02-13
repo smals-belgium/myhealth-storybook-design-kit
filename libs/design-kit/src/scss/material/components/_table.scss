@@ -68,35 +68,6 @@
       }
     }
 
-    tbody {
-      tr.mat-mdc-row {
-        // Detail row
-        &.mh-detail-row {
-          // display: none;
-
-          &--expanded {
-            // display: table-row;
-            background-color: mh.$surface-brand-neutral-lighter;
-            border-bottom: mh.$border-width-s solid mh.$border-brand-neutral-lighter;
-          }
-        }
-
-        // Previous row (expanded from column)
-        &:has(+ tr.mat-mdc-row.mh-detail-row--expanded) {
-          background-color: mh.$surface-brand-neutral-lighter;
-
-          td.mat-mdc-cell {
-            border-bottom: none;
-          }
-        }
-
-        td.mat-column-expand,
-        td.mat-column-actions {
-          text-align: center;
-        }
-      }
-    }
-
     /// @deprecated: Legacy styles for old expansion implementation
     tbody {
       tr.mat-mdc-row {
@@ -121,6 +92,35 @@
               border-bottom: mh.$border-width-s solid mh.$border-brand-neutral-lighter;
             }
           }
+        }
+      }
+    }
+
+    tbody {
+      tr.mat-mdc-row {
+        // Detail row
+        &.mh-detail-row {
+          display: none;
+
+          &--expanded {
+            display: table-row;
+            background-color: mh.$surface-brand-neutral-lighter;
+            border-bottom: mh.$border-width-s solid mh.$border-brand-neutral-lighter;
+          }
+        }
+
+        // Previous row (expanded from column)
+        &:has(+ tr.mat-mdc-row.mh-detail-row--expanded) {
+          background-color: mh.$surface-brand-neutral-lighter;
+
+          td.mat-mdc-cell {
+            border-bottom: none;
+          }
+        }
+
+        td.mat-column-expand,
+        td.mat-column-actions {
+          text-align: center;
         }
       }
     }
