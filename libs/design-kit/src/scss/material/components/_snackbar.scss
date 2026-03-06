@@ -58,5 +58,16 @@
         )
       );
     }
+
+    &--neutral {
+      @extend .mh-snackbar;
+      @include mat.snack-bar-overrides(
+        (
+          container-color: mh.$color-black,
+          supporting-text-color: mh.$color-white,
+          button-color: mh.$color-white,
+        )
+      );
+    }
   }
 }
