@@ -5,25 +5,24 @@
   html,
   body {
     height: 100%;
-    @at-root html,
-      body,
-      :host {
-      scroll-behavior: smooth;
+  }
+  html,
+  body,
+  :host {
+    scroll-behavior: smooth;
 
-      @media (prefers-reduced-motion) {
-        scroll-behavior: auto;
-      }
+    @media (prefers-reduced-motion) {
+      scroll-behavior: auto;
     }
   }
   body {
     margin: 0;
-
-    @at-root body,
-      :host {
-      font-family: mh.$font-stack;
-      color: mh.$color-black;
-      background-color: mh.$color-white;
-    }
+  }
+  body,
+  :host {
+    font-family: mh.$font-stack;
+    color: mh.$color-black;
+    background-color: mh.$color-white;
   }
 
   h1 {
