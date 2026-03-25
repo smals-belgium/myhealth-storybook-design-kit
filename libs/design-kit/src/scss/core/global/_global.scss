@@ -5,7 +5,9 @@
   html,
   body {
     height: 100%;
-    :host {
+    @at-root html,
+      body,
+      :host {
       scroll-behavior: smooth;
 
       @media (prefers-reduced-motion) {
@@ -16,7 +18,8 @@
   body {
     margin: 0;
 
-    :host {
+    @at-root body,
+      :host {
       font-family: mh.$font-stack;
       color: mh.$color-black;
       background-color: mh.$color-white;
