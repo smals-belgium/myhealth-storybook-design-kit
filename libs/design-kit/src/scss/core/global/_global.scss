@@ -3,19 +3,24 @@
 
 @mixin use-globals() {
   html,
-  body,
-  :host {
-    scroll-behavior: smooth;
+  body {
+    height: 100%;
+    :host {
+      scroll-behavior: smooth;
 
-    @media (prefers-reduced-motion) {
-      scroll-behavior: auto;
+      @media (prefers-reduced-motion) {
+        scroll-behavior: auto;
+      }
     }
   }
-  body,
-  :host {
-    font-family: mh.$font-stack;
-    color: mh.$color-black;
-    background-color: mh.$color-white;
+  body {
+    margin: 0;
+
+    :host {
+      font-family: mh.$font-stack;
+      color: mh.$color-black;
+      background-color: mh.$color-white;
+    }
   }
 
   h1 {
