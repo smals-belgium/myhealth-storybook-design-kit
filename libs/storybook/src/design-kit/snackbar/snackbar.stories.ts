@@ -16,3 +16,5 @@ export default meta;
 type Story = StoryObj<SnackbarComponent>;
 
 export const Default: Story = {};
+
+export const Neutral: Story = {};

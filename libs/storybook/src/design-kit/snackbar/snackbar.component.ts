@@ -18,4 +18,11 @@ export class SnackbarComponent {
       duration: 5000,
     });
   }
+
+  openNeutralSnackbar(message: string): void {
+    this.snackbar.open(message, 'Close', {
+      panelClass: ['mh-snackbar--neutral'],
+      duration: 5000,
+    });
+  }
 }
