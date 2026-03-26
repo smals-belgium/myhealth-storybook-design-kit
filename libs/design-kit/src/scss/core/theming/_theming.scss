@@ -12,7 +12,8 @@
     mat-override-typescale.$overrides
   );
 
-  html {
+  html,
+  :host {
     color-scheme: light;
 
     @include mat.theme(
