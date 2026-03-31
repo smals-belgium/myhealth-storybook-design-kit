@@ -15,6 +15,10 @@
         color: mh.$typography-semantic-error-medium;
       }
 
+      &:has(+ div .mat-button-toggle-group.disabled) {
+        color: mh.$typography-brand-neutral-medium;
+      }
+
       &:has(+ .mat-mdc-form-field.mat-form-field-disabled) {
         color: mh.$typography-brand-neutral-medium;
       }

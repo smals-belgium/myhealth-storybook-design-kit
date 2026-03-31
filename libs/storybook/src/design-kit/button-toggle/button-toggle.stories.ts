@@ -19,3 +19,10 @@ export const Default: Story = {
     disabled: false,
   },
 };
+
+export const Error: Story = {
+  args: {
+    disabled: false,
+    view: 'error',
+  },
+};
