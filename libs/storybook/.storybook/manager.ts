@@ -1,19 +1,17 @@
-import { addons } from '@storybook/manager-api';
-import { API_PreparedIndexEntry, API_StatusObject } from '@storybook/types';
+import { addons } from 'storybook/manager-api';
+import { API_FilterFunction } from 'storybook/internal/types';
 import rizivInamiTheme from './rizivInamiTheme';
+
+const hideInSidebarFilter: API_FilterFunction = (item) => {
+  return !(item.tags ?? []).includes('hideInSidebar');
+};
 
 addons.setConfig({
   theme: rizivInamiTheme,
   enableShortcuts: false,
   sidebar: {
     filters: {
-      patterns: (
-        item: API_PreparedIndexEntry & {
-          status: Record<string, API_StatusObject | null>;
-        }
-      ): boolean => {
-        return !(item.tags ?? []).includes('hideInSidebar');
-      },
+      patterns: hideInSidebarFilter,
     },
   },
 });

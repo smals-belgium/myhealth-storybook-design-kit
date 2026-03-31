@@ -1,14 +1,5 @@
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  InputSignal,
-  ViewChild,
-  Input,
-  signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, InputSignal, viewChild, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
@@ -38,7 +29,7 @@ import { SelectionModel } from '@angular/cdk/collections';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableComponent {
-  @Input() isMobile = false;
+  readonly isMobile = input(false);
 
   readonly search: InputSignal<boolean> = input.required();
   readonly expandEnabled: InputSignal<boolean> = input.required();
@@ -61,7 +52,7 @@ export class TableComponent {
   readonly initialColumns = ['name', 'description', 'date'];
   searchValue = '';
 
-  @ViewChild(MatSort) sort!: MatSort;
+  readonly sort = viewChild(MatSort);
 
   readonly dataSource = computed(() => {
     const ds = new MatTableDataSource<unknown>([
@@ -92,7 +83,7 @@ export class TableComponent {
     ]);
     // The sort will be set after Angular initializes the MatSort
     setTimeout(() => {
-      ds.sort = this.sort;
+      ds.sort = this.sort() ?? null;
     });
     return ds;
   });
