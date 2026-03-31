@@ -1,5 +1,33 @@
+@switch (view()) { @case ('default') {
 <mat-button-toggle-group name="numbers" [disabled]="disabled()">
   <mat-button-toggle value="one">Bold</mat-button-toggle>
   <mat-button-toggle value="two">Italic</mat-button-toggle>
   <mat-button-toggle value="three">Underline</mat-button-toggle>
 </mat-button-toggle-group>
+} @case ('error') {
+<div class="mh-form-field">
+  <label for="field1" class="mh-button-toggle-label"
+    >Label <span aria-hidden="true" class="mh-label-required">*</span></label
+  >
+  <div>
+    <mat-button-toggle-group
+      id="field1"
+      [formControl]="fontStyleControl"
+      [class.invalid]="fontStyleControl.invalid"
+      [class.disabled]="fontStyleControl.disabled"
+    >
+      <mat-button-toggle value="one">Bold</mat-button-toggle>
+      <mat-button-toggle value="two">Italic</mat-button-toggle>
+      <mat-button-toggle value="three">Underline</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <div class="mh-button-toggle-subscript-wrapper">
+    @if (fontStyleControl.invalid && fontStyleControl.touched) {
+    <div class="mh-button-toggle-error-wrapper">
+      <mat-icon class="mh-suffix-error" matSuffix>error</mat-icon>
+      <mat-error class="mh-button-toggle-error">This field is required</mat-error>
+    </div>
+    }
+  </div>
+</div>
+} }

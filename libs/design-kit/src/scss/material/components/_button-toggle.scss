@@ -35,6 +35,59 @@
         }
       }
     }
+
+    &.invalid {
+      border-color: mh.$border-semantic-error-medium;
+      mat-button-toggle.mat-button-toggle {
+        color: mh.$typography-semantic-error-medium;
+        &:hover:not(.mat-button-toggle-checked) {
+          color: mh.$typography-semantic-error-medium;
+          background-color: mh.$surface-semantic-error-lighter;
+        }
+
+        & + mat-button-toggle.mat-button-toggle {
+          border-color: mh.$border-semantic-error-medium;
+
+          &:hover {
+            border-color: mh.$border-semantic-error-dark;
+          }
+          &:focus {
+            border-color: mh.$border-semantic-error-darker;
+          }
+          &.mat-button-toggle-disabled {
+            border-color: mh.$border-brand-neutral-medium;
+          }
+        }
+      }
+    }
+  }
+
+  .mh-button-toggle-subscript-wrapper {
+    display: block;
+    width: fit-content;
+    font: var(--mat-sys-body-small);
+    -webkit-font-smoothing: antialiased;
+    margin-top: 2px;
+    &::before {
+      content: '';
+      display: inline-block;
+      height: mh.$spacing-m;
+    }
+    .mh-button-toggle-error-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background-color: mh.$error-95;
+      color: mh.$error-25;
+      padding: 2px 8px;
+      border-radius: 2px;
+
+      .mat-icon {
+        font-size: var(--mat-sys-body-small-size);
+        height: 1em;
+        width: 1em;
+      }
+    }
   }
 
   @include mat.button-toggle-overrides(

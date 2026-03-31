@@ -43,6 +43,43 @@ Depending on the type of selection, there are 2 categories segmented buttons:
 - **Multi-select buttons** are an alternative to checkboxes, allowing users to select multiple options simultaneously.
   - Always **communicate clearly** that multiple selections are allowed (e.g., “Select one or more options”).
 
+### Class for form-field use
+
+The MyHealth Design System requires labels to be placed outside of the segmented button. To achieve this, wrap the entire field in a div with the mh-form-field class.
+Make sure the label is linked to the segmented button by setting the `for` attribute on the label and a matching `id` on the `mat-button-toggle-group`.
+
+When the field is `required`, add a span with the `mh-label-required` class inside the label to render the required indicator. Set `aria-hidden="true"` on it so screen readers rely on the control's own required state instead.
+
+Apply `[class.invalid]` and `[class.disabled]` bindings on the toggle group to reflect the form control's state for styling purposes.
+The error message is rendered below the toggle group inside a mh-button-toggle-subscript-wrapper. It is only shown when the control is both invalid and touched.
+
+```html
+<div class="mh-form-field">
+  <label for="field1">Label <span aria-hidden="true" class="mh-label-required">*</span></label>
+  <div>
+    <mat-button-toggle-group
+      id="field1"
+      [formControl]="fontStyleControl"
+      [class.invalid]="fontStyleControl.invalid"
+      [class.disabled]="fontStyleControl.disabled"
+    >
+      <mat-button-toggle value="one">Bold</mat-button-toggle>
+      <mat-button-toggle value="two">Italic</mat-button-toggle>
+      <mat-button-toggle value="three">Underline</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div class="mh-button-toggle-subscript-wrapper">
+    @if (fontStyleControl.invalid && fontStyleControl.touched) {
+    <div class="mh-button-toggle-error-wrapper">
+      <mat-icon class="mh-suffix-error" matSuffix>error</mat-icon>
+      <mat-error class="mh-button-toggle-error">This field is required</mat-error>
+    </div>
+    }
+  </div>
+</div>
+```
+
 ### When to use it
 
 - Use a segmented button when there are **two to five available options**.
