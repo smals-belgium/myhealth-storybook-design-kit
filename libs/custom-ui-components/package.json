@@ -2,9 +2,9 @@
   "name": "@myhealth-belgium/myhealth-additional-ui-components",
   "version": "2.1.0",
   "peerDependencies": {
-    "@angular/core": "^19.0.0",
-    "@angular/common": "^19.0.0",
-    "@angular/material": "^19.0.0"
+    "@angular/core": "^21.0.0",
+    "@angular/common": "^21.0.0",
+    "@angular/material": "^21.0.0"
   },
   "sideEffects": false
 }

@@ -8,8 +8,8 @@
     "url": "https://github.com/smals-belgium/myhealth-storybook-design-kit"
   },
   "peerDependencies": {
-    "@angular/material": "^19.0.0",
-    "ngx-skeleton-loader": "^10.0.0 || ^11.0.0"
+    "@angular/material": "^21.2.0",
+    "ngx-skeleton-loader": "^12.0.0"
   },
   "sideEffects": false,
   "exports": {

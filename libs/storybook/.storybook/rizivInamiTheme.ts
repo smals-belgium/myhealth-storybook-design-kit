@@ -1,4 +1,4 @@
-import * as theming from '@storybook/theming';
+import * as theming from 'storybook/theming';
 
 export default theming.create({
   base: 'light',
