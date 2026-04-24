@@ -44,11 +44,19 @@
 
     .mh-dialog-container mat-dialog-container {
       div.mat-mdc-dialog-surface.mdc-dialog__surface {
+        padding-top: mh.$spacing-2xs;
+
+        .mat-mdc-dialog-title {
+          margin-bottom: 0;
+        }
+
         mat-dialog-content {
           padding: 0;
         }
 
         mat-dialog-actions.mat-mdc-dialog-actions {
+          padding-top: 0;
+          margin-top: mh.$spacing-s;
           flex-direction: column;
           gap: mh.$spacing-xs;
 
