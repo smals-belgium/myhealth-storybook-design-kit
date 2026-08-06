@@ -1,3 +1,24 @@
+@use 'sass:string';
+
+// Infers the @font-face format() from the file extension in $url, e.g. url('foo.woff2') -> format('woff2').
+@function get-symbols-font-format($url) {
+  $url-string: string.to-lower-case(#{$url});
+
+  @if string.index($url-string, '.woff2') {
+    @return format('woff2');
+  } @else if string.index($url-string, '.woff') {
+    @return format('woff');
+  } @else if string.index($url-string, '.otf') {
+    @return format('opentype');
+  } @else if string.index($url-string, '.eot') {
+    @return format('embedded-opentype');
+  } @else if string.index($url-string, '.svg') {
+    @return format('svg');
+  } @else {
+    @return format('truetype');
+  }
+}
+
 @mixin use-font-material-symbols(
   $symbols-font-url: url('../../../assets/fonts/MatSymbols-Rounded.ttf'),
   $symbols-font-family: 'Material Symbols Rounded',
@@ -10,7 +31,7 @@
     font-family: $symbols-font-family;
     font-style: normal;
     font-weight: 100 700;
-    src: $symbols-font-url format('truetype');
+    src: $symbols-font-url get-symbols-font-format($symbols-font-url);
   }
 
   @each $class in $symbols-font-classes {
