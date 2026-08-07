@@ -1,10 +1,11 @@
-import { Component, input, InputSignal } from '@angular/core';
+import { Component, input, InputSignal, ChangeDetectionStrategy } from '@angular/core';
 import { MatRadioModule } from '@angular/material/radio';
 
 @Component({
   selector: 'mh-radio-button',
   imports: [MatRadioModule],
   templateUrl: './radio-button.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './radio-button.component.scss',
 })
 export class RadioButtonComponent {

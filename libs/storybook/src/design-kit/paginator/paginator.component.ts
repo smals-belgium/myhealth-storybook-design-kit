@@ -1,10 +1,11 @@
-import { Component, input, InputSignal } from '@angular/core';
+import { Component, input, InputSignal, ChangeDetectionStrategy } from '@angular/core';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
 @Component({
   selector: 'mh-paginator',
   imports: [MatPaginatorModule],
   templateUrl: './paginator.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './paginator.component.scss',
 })
 export class PaginatorComponent {

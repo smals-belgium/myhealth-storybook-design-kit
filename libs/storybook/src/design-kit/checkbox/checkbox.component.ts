@@ -1,4 +1,4 @@
-import { Component, computed, effect, input, InputSignal, signal } from '@angular/core';
+import { Component, computed, effect, input, InputSignal, signal, ChangeDetectionStrategy } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 interface Task {
   name: string;
@@ -10,6 +10,7 @@ interface Task {
   selector: 'mh-checkbox',
   imports: [MatCheckboxModule],
   templateUrl: './checkbox.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './checkbox.component.scss',
 })
 export class CheckboxComponent {

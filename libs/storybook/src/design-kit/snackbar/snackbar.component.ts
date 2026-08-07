@@ -1,12 +1,13 @@
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'mh-snackbar',
   standalone: true,
   imports: [MatButtonModule],
   templateUrl: './snackbar.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./snackbar.component.scss'],
 })
 export class SnackbarComponent {

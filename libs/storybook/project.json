@@ -9,18 +9,17 @@
     "build": {
       "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "defaultConfiguration": "production",
       "options": {
-        "project": "libs/storybook/ng-package.json"
+        "project": "libs/storybook/ng-package.json",
+        "tsConfig": "libs/storybook/tsconfig.lib.json"
       },
       "configurations": {
         "production": {
           "tsConfig": "libs/storybook/tsconfig.lib.prod.json"
         },
-        "development": {
-          "tsConfig": "libs/storybook/tsconfig.lib.json"
-        }
-      },
-      "defaultConfiguration": "production"
+        "development": {}
+      }
     },
     "lint": {
       "executor": "@nx/eslint:lint"

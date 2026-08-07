@@ -1,4 +1,4 @@
-import { Component, effect, input, InputSignal } from '@angular/core';
+import { Component, effect, input, InputSignal, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -9,6 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
   selector: 'mh-select',
   imports: [MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule, ReactiveFormsModule],
   templateUrl: './select.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './select.component.scss',
 })
 export class SelectComponent {

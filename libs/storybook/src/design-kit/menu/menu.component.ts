@@ -1,6 +1,6 @@
 import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
   standalone: true,
   imports: [MatButtonModule, MatMenuModule, MatIconModule, MatDividerModule],
   templateUrl: './menu.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './menu.component.scss',
 })
 export class MenuComponent {}

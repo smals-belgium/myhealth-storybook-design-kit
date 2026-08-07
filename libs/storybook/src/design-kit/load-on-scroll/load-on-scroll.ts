@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { NgxSkeletonLoaderComponent } from 'ngx-skeleton-loader';
 
 @Component({
   selector: 'mh-load-on-scroll',
   templateUrl: './load-on-scroll.html',
   styleUrl: './load-on-scroll.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgxSkeletonLoaderComponent],
 })
 export class LoadOnScrollComponent {

@@ -1,4 +1,4 @@
-import { Component, input, computed, output, linkedSignal } from '@angular/core';
+import { Component, input, computed, output, linkedSignal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { MatButton } from '@angular/material/button';
@@ -7,6 +7,7 @@ import { MatButton } from '@angular/material/button';
   selector: 'mh-alert',
   imports: [CommonModule, MatIcon, MatButton],
   templateUrl: './alert.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./alert.component.scss'],
 })
 export class AlertComponent {

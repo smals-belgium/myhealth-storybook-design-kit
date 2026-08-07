@@ -1,4 +1,14 @@
-import { Component, computed, effect, input, InputSignal, signal, Signal, WritableSignal } from '@angular/core';
+import {
+  Component,
+  computed,
+  effect,
+  input,
+  InputSignal,
+  signal,
+  Signal,
+  WritableSignal,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -9,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
   selector: 'mh-autocomplete',
   imports: [MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatAutocompleteModule, MatIconModule],
   templateUrl: './autocomplete.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './autocomplete.component.scss',
 })
 export class AutocompleteComponent {

@@ -1,5 +1,5 @@
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
   standalone: true,
   imports: [MatButtonModule],
   templateUrl: './dialog-wrapper.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './dialog.component.scss',
 })
 export class DialogWrapperComponent {
@@ -24,6 +25,7 @@ export class DialogWrapperComponent {
   standalone: true,
   imports: [MatButtonModule, MatDialogModule],
   templateUrl: './dialog.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './dialog.component.scss',
 })
 export class DialogComponent {}

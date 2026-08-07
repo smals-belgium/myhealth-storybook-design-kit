@@ -19,7 +19,12 @@
       "@myhealth-belgium/design-kit": ["libs/design-kit/src/index.ts"],
       "@myhealth-storybook-design-kit/storybook": ["libs/storybook/src/index.ts"],
       "@smals-belgium/custom-ui-components": ["libs/custom-ui-components/src/index.ts"]
-    }
+    },
+    "strict": false,
+    "noUncheckedSideEffectImports": false,
+    "types": ["*"],
+    "esModuleInterop": false,
+    "ignoreDeprecations": "6.0"
   },
   "exclude": ["node_modules", "tmp"]
 }
