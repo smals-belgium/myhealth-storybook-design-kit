@@ -1,10 +1,11 @@
-import { Component, input, InputSignal } from '@angular/core';
+import { Component, input, InputSignal, ChangeDetectionStrategy } from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @Component({
   selector: 'mh-button-toggle',
   imports: [MatButtonToggleModule],
   templateUrl: './button-toggle.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './button-toggle.component.scss',
 })
 export class ButtonToggleComponent {

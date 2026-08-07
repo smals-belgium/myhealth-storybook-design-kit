@@ -1,10 +1,11 @@
-import { Component, input, InputSignal } from '@angular/core';
+import { Component, input, InputSignal, ChangeDetectionStrategy } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'mh-slide-toggle',
   imports: [MatSlideToggleModule],
   templateUrl: './slide-toggle.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './slide-toggle.component.scss',
 })
 export class SlideToggleComponent {

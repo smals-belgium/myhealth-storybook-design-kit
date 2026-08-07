@@ -1,6 +1,6 @@
 /** @type { import('@storybook/html').Preview } */
-import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { DocsPage, DocsContainer } from '@storybook/addon-docs';
+import { MINIMAL_VIEWPORTS } from 'storybook/viewport';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 
 const preview = {
   parameters: {
@@ -18,10 +18,10 @@ const preview = {
       },
     },
     viewport: {
-      viewports: {
+      viewport: { defaultViewport: 'mobile' },
+      options: {
         mobile: MINIMAL_VIEWPORTS['mobile1'],
       },
-      viewport: { defaultViewport: 'mobile' },
     },
     docs: {
       container: DocsContainer,

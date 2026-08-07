@@ -1,13 +1,12 @@
-import {Component, ElementRef} from '@angular/core';
-import {MatButtonModule} from "@angular/material/button";
+import { Component, ElementRef, ChangeDetectionStrategy } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'mh-scroll-to',
   templateUrl: './scroll-to.component.html',
   styleUrl: './scroll-to.component.scss',
-  imports: [
-    MatButtonModule
-  ]
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [MatButtonModule],
 })
 export class ScrollToComponent {
   behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';

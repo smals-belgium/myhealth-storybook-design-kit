@@ -1,4 +1,4 @@
-import { Component, input, InputSignal } from '@angular/core';
+import { Component, input, InputSignal, ChangeDetectionStrategy } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'mh-button-icon',
   imports: [MatButtonModule, MatIconModule],
   templateUrl: './button-icon.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './button-icon.component.scss',
 })
 export class ButtonIconComponent {
